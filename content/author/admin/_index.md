@@ -2,7 +2,7 @@
 authors:
 - admin
 bio: I'm passioned about R, Machine Learning, Speedcubing and Table Tennis.
-  matter.
+
 education:
   courses:
   - course: Civil Engineering Degree
