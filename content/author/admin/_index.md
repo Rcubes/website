@@ -7,7 +7,10 @@ education:
   courses:
   - course: Civil Engineering Degree
     institution: Universidad Santa Maria
-    year: 2012
+    year: 2013
+  - course: Machine Learning and Predictive Modeling Diploma
+    institution: Universidad Catolica Valparaiso
+    year: 2019
 
 email: "bigdrummer2@gmail.com"
 interests:
@@ -18,7 +21,7 @@ interests:
 - Table Tennis
 name: Alfonso Tobar
 organizations:
-- name: Universidad Santa Maria
+- name: Evalueserve Chile S.A
   url: ""
 role: Senior Business Analyst
 social:
