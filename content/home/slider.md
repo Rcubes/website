@@ -16,7 +16,7 @@ height = "300px"
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
-  title = "Welcome to tobaR"
+  title = "Welcome to datacubeR"
   content = "Let's learn Together :grin:"
   align = "right"  # Choose `center`, `left`, or `right`.
 
