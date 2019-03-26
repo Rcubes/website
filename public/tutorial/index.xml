@@ -17,9 +17,10 @@
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0300</pubDate>
       
       <guid>/tutorial/example/</guid>
-      <description>In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
-Tip 1 &amp;hellip;
-Tip 2 &amp;hellip;</description>
+      <description> In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
+getwd()  ## [1] &amp;quot;D:/Alfonso/website/content/tutorial&amp;quot;  Tip 1 &amp;hellip;
+Tip 2 &amp;hellip;
+bla bla </description>
     </item>
     
   </channel>

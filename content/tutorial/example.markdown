@@ -13,6 +13,15 @@ type: docs
 
 In this tutorial, I'll share my top 10 tips for getting started with Academic:
 
+
+```r
+getwd()
+```
+
+```
+## [1] "D:/Alfonso/website/content/tutorial"
+```
+
 ## Tip 1
 
 ...
@@ -20,3 +29,5 @@ In this tutorial, I'll share my top 10 tips for getting started with Academic:
 ## Tip 2
 
 ...
+
+### bla bla 
