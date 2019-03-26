@@ -30,7 +30,7 @@ height = "300px"
   #   Activate the button by specifying a URL and button label below.
   #   Deactivate by commenting out parameters, prefixing lines with `#`.
   cta_label = "Who am I"
-  cta_url = "http://127.0.0.1:5774/bio/"
+  cta_url = "https://datacube.netlify.com/bio/"
   cta_icon_pack = "fas"
   cta_icon = "question"
 
