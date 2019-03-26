@@ -58,5 +58,5 @@ date_format = "Jan 2006"
   location = "Viña del Mar, Chile"
   date_start = "2013-12-15"
   date_end = "2014-03-01"
-  description = """This was my first Job and I enjoyed this Job so much. I applied almost every subject of my degree in this job and I started my Coding Skills creating helpful Macros to enhance Reporting Processes. """
+  description = """This was my first Job and I enjoyed it so much. I applied almost every subject of my degree in here and I started my Coding Skills creating helpful Macros to enhance Reporting Processes. """
 +++

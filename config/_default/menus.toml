@@ -7,21 +7,23 @@
 #  name = "About me"
 #  url = "#about"
 #  weight = 10
+
+[[main]]
+name = "New"
+url = "#featured"
+weight = 10
+
+[[main]]
+  name = "Posts"
+  url = "#posts"
+  weight = 15
+
   
 [[main]]
   name = "Projects"
   url = "#projects"
   weight = 20
   
-[[main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 25
-  
-[[main]]
-name = "Publications"
-url = "#featured"
-weight = 40
   
 [[main]]
   name = "Bio"
