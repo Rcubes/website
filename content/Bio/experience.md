@@ -18,27 +18,45 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
-  company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
+  title = "Senior Bussiness Analyst"
+  company = "Evalueserve Chile S.A"
+  company_url = "https://www.evalueserve.com/"
+  location = "Viña del Mar, Chile"
+  date_start = "2015-06-01"
   date_end = ""
   description = """
   Responsibilities include:
   
-  * Analysing
-  * Modelling
-  * Deploying
+  * Data Analytics
+  * Data armonization
+  * ETL
+  * Dashboarding ( [Tableau](https://www.tableau.com/) )
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
-  company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  title = "R and Tableau Trainer"
+  company = "Evalueserve Chile S.A"
+  company_url = "https://www.evalueserve.com/"
+  location = "Viña del Mar, Chile"
+  date_start = "2016-06-01"
+  date_end = ""
+  description = """In charge of training new hires of the Company. I was in charge of developing the R syllabus and participated also developing advance classes for Tableau."""
 
+[[experience]]
+  title = "Analista de Produccion Elqui"
+  company = "Aguas del Valle S.A"
+  company_url = "http://portal.aguasdelvalle.cl/"
+  location = "La Serena, Chile"
+  date_start = "2014-03-17"
+  date_end = "2015-05-31"
+  description = """Basically I ended up forgetting everything I learned at University from Civil Enginnering and started learning somethings about data."""
+
+[[experience]]
+  title = "Ingeniero de Proyectos"
+  company = "Invar S.A"
+  company_url = "https://www.invar.cl/"
+  location = "Viña del Mar, Chile"
+  date_start = "2013-12-15"
+  date_end = "2014-03-01"
+  description = """This was my first Job and I enjoyed this Job so much. I applied almost every subject of my degree in this job and I started my Coding Skills creating helpful Macros to enhance Reporting Processes. """
 +++
