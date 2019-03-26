@@ -51,3 +51,5 @@ In my spare time I like to solve the Rubik's Cube, I average around 13 Seconds (
 
 My native Language is Spanish, so please forgive me for any Language aberration I can posibly write in the near future (I'm planning to have a Spanish Version too, but I'm still learning **Blogdown**). I'm happily married with Valentina for the last 4 years and ~~J.A.R.V.I.S~~ Jesus is my ~~co~~pilot.
 
+
+
