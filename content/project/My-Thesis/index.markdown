@@ -1,4 +1,6 @@
 ---
+authors:
+- admin
 date: "2016-04-27T00:00:00-03:00"
 external_link: ""
 image:
