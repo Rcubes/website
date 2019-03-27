@@ -36,6 +36,47 @@
     </item>
     
     <item>
+      <title>My Thesis Project</title>
+      <link>/post/my-thesis/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/post/my-thesis/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;
+
+&lt;p&gt;Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.&lt;/p&gt;
+
+&lt;p&gt;Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)&lt;/p&gt;
+
+&lt;p&gt;So I decide to go for Civil Engineering because it has a decent amount of advanced Maths that was something I was looking for and a High Employment Index.&lt;/p&gt;
+
+&lt;p&gt;Well I started working as a Civil Engineer in INVAR as soon as I finished my internship. I just loved it, I learned so much, but the thingwas that they didn&amp;rsquo;t pay too much. So I decided to take a position at Aguas del Valle. Sincerely, and very respectfully, it has been the worst choice of my life, not only because it was 5 hours away of my Hometown, but also because they took my soul out of my body and make me spend awful moments doing absolutely nothing. There is nothing more frustrating than doing nothing all day long in a desk in a Company you don&amp;rsquo;t feel a part of.&lt;/p&gt;
+
+&lt;p&gt;So the Evalueserve Post showed up. A friend referred me to the Data Science Program (DSP) and then I fell in love with Data Science. During the program I learned SQL, VBA, SAS 👍, R, Tableau and definitely built up my English and Communication skills. Felipe, help me prepare my first interview in English and thanks to him I had the English I needed to learn all I know so far.&lt;/p&gt;
+
+&lt;p&gt;Upskilling and moving through cities took all of my time, besides I got married (Best Decision so far) but a lot to do, hence, no time to finish my Thesis.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-happened-with-my-thesis&#34;&gt;What happened with my Thesis?&lt;/h2&gt;
+
+&lt;p&gt;Well in INVAR I worked as an Hidraulics Engineer so I started a Thesis back in 2013 about Water Hammer. Really interesting topic, that needed Finite Differences Methods to solve really complicated Partial Differential Equations. The only proffesor with this knowledge started working wih me, but after a year he got retired. So I had to find another Professor, so in order to avoid this issue to happen again, I decided to go with one of the youngest Professor, well he left me for his Phd.&lt;/p&gt;
+
+&lt;p&gt;Damn, Suddenly working in INVAR I noticed the CEO was my professor of Planning so I ask him to mentor me. This happened just before leaving to Aguas del Valle in La Serena. 6 months later a Cancer was diagnosed and he passed away, so freaking fast.
+The Chief of Department took over all of the abandoned Thesis that my Professor&amp;rsquo;s dead left behind, but he couldn&amp;rsquo;t continue to mentor me, because he considered being in La Serena was too far away.
+In 2015 I came back to Viña and I started to learn, upskill, teach, develop as a Data Scientist that I decided to put it on hold.
+On 2017 I started another Thesis. Another Professor wanted to mentor me but he was of the Structural Area. That meant I needed to move to that Area.
+We started investigating uncertainty on Structural Analysis. The thing is my work again didn&amp;rsquo;t give me any chance to continue.
+Until now. Why now? Probably I will explain it later, because it is also related with the creation of this site.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-my-thesis-is-going-to-be-about&#34;&gt;What My Thesis is going to be about?&lt;/h2&gt;
+
+&lt;p&gt;Good news, I will be able to mix my previous work with one thing I discovered as I developed as Data Science: &lt;strong&gt;Deep Learning in R&lt;/strong&gt; 👏.&lt;/p&gt;
+
+&lt;p&gt;I will be posting some progress about that. Hang tight!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bio</title>
       <link>/bio/</link>
       <pubDate>Fri, 01 Mar 2019 00:00:00 -0300</pubDate>
@@ -146,18 +187,12 @@ rm Untitled.md
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
+      <title>Coming Soon</title>
+      <link>/project/my-thesis/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
       
-      <guid>/project/internal-project/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;getwd()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;D:/Alfonso/website/content/project/internal-project&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+      <guid>/project/my-thesis/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 
@@ -566,57 +601,6 @@ git submodule update --init --recursive
       
       <guid>/publication/person-re-id/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>
-
-
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

@@ -15,7 +15,7 @@ authors:
 - MS Nixon
 date: "2013-07-01T00:00:00-04:00"
 doi: ""
-featured: true
+featured: false
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
   focal_point: ""

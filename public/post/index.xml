@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>My Thesis Project</title>
+      <link>/post/my-thesis/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/post/my-thesis/</guid>
+      <description>Why am I not graduated yet? Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.
+Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)</description>
+    </item>
+    
+    <item>
       <title>Display Jupyter Notebooks with Academic</title>
       <link>/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
@@ -31,17 +41,6 @@ Create a new blog post as usual Run the following commands in your Terminal, sub
       <description>Academic makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.
 Follow our easy step by step guide to learn how to build your own free website with Academic. Check out the personal demo or the business demo of what you&amp;rsquo;ll get in less than 10 minutes.
  View the documentation Ask a question Request a feature or report a bug Updating?</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>

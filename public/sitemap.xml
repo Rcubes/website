@@ -9,6 +9,12 @@
   
     <url>
     
+      <loc>/post/my-thesis/</loc>
+      <lastmod>2019-03-27T00:50:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/bio/</loc>
       <lastmod>2019-03-25T19:49:19-03:00</lastmod>
     </url>
@@ -39,8 +45,8 @@
   
     <url>
     
-      <loc>/project/internal-project/</loc>
-      <lastmod>2019-03-26T02:25:15-03:00</lastmod>
+      <loc>/project/my-thesis/</loc>
+      <lastmod>2016-04-27T00:00:00-03:00</lastmod>
     </url>
   
     <url>
@@ -52,12 +58,6 @@
     <url>
     
       <loc>/publication/person-re-id/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/post/2015-07-23-r-rmarkdown/</loc>
       <lastmod>2019-03-24T02:08:11-03:00</lastmod>
     </url>
   
@@ -108,7 +108,22 @@
   
     <url>
     
+      <loc>/categories/blog/</loc>
+      <lastmod>2019-03-27T00:50:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/categories/</loc>
+      <lastmod>2019-03-27T00:50:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/deep-learning/</loc>
+      <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -135,7 +150,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2019-03-26T02:25:15-03:00</lastmod>
+      <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -150,20 +165,6 @@
     
       <loc>/publication/</loc>
       <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/categories/r/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/tags/r-markdown/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-      <priority>0</priority>
     </url>
   
     <url>
@@ -194,35 +195,21 @@
   
     <url>
     
-      <loc>/tags/tidyverse/</loc>
-      <lastmod>2019-03-26T02:25:15-03:00</lastmod>
+      <loc>/tags/thesis/</loc>
+      <lastmod>2019-03-27T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
+      <lastmod>2019-03-27T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/tags/plot/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/tags/regression/</loc>
       <lastmod>2019-03-24T02:08:11-03:00</lastmod>
       <priority>0</priority>
     </url>
