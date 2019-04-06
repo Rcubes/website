@@ -36,11 +36,118 @@
     </item>
     
     <item>
+      <title>Deep Learning</title>
+      <link>/post/deep-learning/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/post/deep-learning/</guid>
+      <description>
+
+&lt;h2 id=&#34;deep-learning&#34;&gt;Deep Learning&lt;/h2&gt;
+
+&lt;p&gt;Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operational Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about.
+During my first real job (as a quasi-Engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason &lt;strong&gt;AI&lt;/strong&gt; was there, just sky-high level mentions in some classes.&lt;/p&gt;
+
+&lt;p&gt;Then I remember during my &lt;strong&gt;Data Science Program&lt;/strong&gt;, we had 3 different Research Projects (this was at my Butterflies and Unicorns time, if you don&amp;rsquo;t know what I&amp;rsquo;m talking, go here). One was Data Analytics to Measure Cars Price (super-duper boring), the second was Using Sentiment Analysis to Understand whether Lyrics of Top 20 Billboard were related to Decade&amp;rsquo;s Most Important Facts (I did this, and it was super interesting) and there was a third one I really tried to sneak out: Sentiment Annalysis with Machine Learning. Machine Learning sounded really scary to be my very first Data Science Project, so I put it off.&lt;/p&gt;
+
+&lt;p&gt;It turns out that a colleague just joined my team at EVS and he had this awesome Max Kuhn book: &lt;a href=&#34;https://www.bookdepository.com/Applied-Predictive-Modeling-Max-Kuhn/9781461468486?redirected=true&amp;amp;utm_medium=Google&amp;amp;utm_campaign=Base1&amp;amp;utm_source=CL&amp;amp;utm_content=Applied-Predictive-Modeling&amp;amp;selectCurrency=CLP&amp;amp;w=AF4JAU961V0NQ9A803TP&amp;amp;pdg=pla-309526196374:kwd-309526196374:cmp-1653769863:adg-64191594660:crv-318349950654:pid-9781461468486:dev-c&amp;amp;gclid=CjwKCAjw-ZvlBRBbEiwANw9UWplud3A9daFx70SYI7-0t29OmknuQProNRgQtt39d572kbgsKqflBhoCwV8QAvD_BwE&#34; target=&#34;_blank&#34;&gt;Applied Predictive Modeling&lt;/a&gt;. And I thought: &lt;strong&gt;&amp;ldquo;I&amp;rsquo;m more experienced now, so probably I can take a look at this&amp;rdquo;&lt;/strong&gt;. And well I discovered &lt;code&gt;caret&lt;/code&gt; and completely blew my mind (But I still dislike its little to null compatibility with Tidyverse, but thanks Max Kuhn for creating &lt;code&gt;parsnip&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Then Nico, I think, was the first guy mentioning Deep Learning, because he created the XoR problem in VBA and also took Andrew Ng specialization Course, and
+I started to feel interested in the Field.&lt;/p&gt;
+
+&lt;p&gt;Well, I dicovered Keras, the R API just came out (I think so) and I got this other super Book: &lt;a href=&#34;https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X&#34; target=&#34;_blank&#34;&gt;Deep Learning with R&lt;/a&gt; and I just learned so much, but not enough. I think I learned a bit of Keras but I suddenly realized I had no idea about the inner black-box, so I just wanted to learn and understand what the hell is happening inside that box.&lt;/p&gt;
+
+&lt;p&gt;Well here I am&amp;hellip; Trying to understand&amp;hellip; and I didn&amp;rsquo;t do very well. Internet has little to no information about theory. Codes are everywhere, but why that code is useful is just not important for users.&lt;/p&gt;
+
+&lt;p&gt;So my intent is creating content (R based obviously, because R is not popular for Deep Learning either) for me to learn, and hopefully spread the word about this.&lt;/p&gt;
+
+&lt;p&gt;Well, the thing is I need to finish my Thesis, and my Professor told me: &lt;strong&gt;&amp;ldquo;Why don&amp;rsquo;t you combine what you know about Deep Learning (sincerely, not too much) with Structure Engineering?&lt;/strong&gt; And you know what, this is something really unexplored in the field, so here I go.&lt;/p&gt;
+
+&lt;p&gt;Hopefully publishing my findings help to have a better understanding of what I&amp;rsquo;m doing, also i can keep track of it and help others on my way (I love teaching, so this is a good way to get started).&lt;/p&gt;
+
+&lt;p&gt;Hope to have news about my Thesis soon&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/publication/deep-learning/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/deep-learning/</guid>
+      <description>
+
+&lt;h2 id=&#34;deep-learning&#34;&gt;Deep Learning&lt;/h2&gt;
+
+&lt;p&gt;Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operation Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about.
+During my first real job (as an engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason &lt;strong&gt;AI&lt;/strong&gt; was there, just sky-high level mentions in some classes.&lt;/p&gt;
+
+&lt;p&gt;Then I remember during my Data Science Program, we had 3 different Research Projects (this was at my Butterflies and Unicorns time, if you don&amp;rsquo;t know what I&amp;rsquo;m talking, go here). One was Data Analytics to Measure Cars Price (super-duper boring), the second was Using Sentiment Analysis to Understand if the Topics of Top 20 Billboard were related to Decade&amp;rsquo;s Most Important Facts (I did this, and it was super interesting) and there was a third one I really tried to sneak out: Sentiment Annalysis with Machine Learning. Machine Learning sounded really scary to be my very first Data Science Project, so I put it off.&lt;/p&gt;
+
+&lt;p&gt;It turns out that a colleague just joined my team at EVS and he had this awesome Max Kuhn book: &lt;a href=&#34;https://www.bookdepository.com/Applied-Predictive-Modeling-Max-Kuhn/9781461468486?redirected=true&amp;amp;utm_medium=Google&amp;amp;utm_campaign=Base1&amp;amp;utm_source=CL&amp;amp;utm_content=Applied-Predictive-Modeling&amp;amp;selectCurrency=CLP&amp;amp;w=AF4JAU961V0NQ9A803TP&amp;amp;pdg=pla-309526196374:kwd-309526196374:cmp-1653769863:adg-64191594660:crv-318349950654:pid-9781461468486:dev-c&amp;amp;gclid=CjwKCAjw-ZvlBRBbEiwANw9UWplud3A9daFx70SYI7-0t29OmknuQProNRgQtt39d572kbgsKqflBhoCwV8QAvD_BwE&#34; target=&#34;_blank&#34;&gt;Applied Predictive Modeling&lt;/a&gt;. And I thought: &lt;strong&gt;&amp;ldquo;I&amp;rsquo;m more experienced now, so probably I can take a look at this&amp;rdquo;&lt;/strong&gt;. And well I discovered &lt;code&gt;caret&lt;/code&gt; and completely blew my mind (But I still dislike its little to null compatibility with Tidyverse, thanks Max Kuhn for creating Parsnip).&lt;/p&gt;
+
+&lt;p&gt;Then Nico, I think, was the first guy mentioning Deep Learning, because he created the XoR problem in VBA and also took Andrew Ng specialization, and
+I started to feel interested in the Field.&lt;/p&gt;
+
+&lt;p&gt;Well, I dicovered Keras, the R API just came out (I think so) and I got this other super Book: &lt;a href=&#34;https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X&#34; target=&#34;_blank&#34;&gt;Deep Learning with R&lt;/a&gt; and I just learned so much, but not enough. I think I learned a bit of Keras but suddenly realized I had no idea about the inner black-box, so I just wanted to learn and understand what the hell is happening inside that box.&lt;/p&gt;
+
+&lt;p&gt;Well here I am&amp;hellip; Trying to understand&amp;hellip; and I didn&amp;rsquo;t do very well, The Internet has little to no information about theory. Codes are everywhere, but why that code is useful is just not important for users.&lt;/p&gt;
+
+&lt;p&gt;So my intent is creating content (R based obviously, because R is not popular for Deep Learning either) for me to learn, and hopefully spread the word about this.&lt;/p&gt;
+
+&lt;p&gt;Well, the thing is I need to finish my Thesis, and my Professor told me why don&amp;rsquo;t we combine what you know about Deep Learning (sincerely, not too much) with Structure Engineering, and you know what this is something really unexplored in the field, so here I go. Hopefully publishing my findings help to have a better understanding of what I&amp;rsquo;m doing, also i can keep track of it, and I can help others (I love teaching, so this is a good way to get started).&lt;/p&gt;
+
+&lt;p&gt;Hope to have news about my Thesis soon&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>My Thesis Project</title>
       <link>/post/my-thesis/</link>
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
       
       <guid>/post/my-thesis/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;
+
+&lt;p&gt;Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.&lt;/p&gt;
+
+&lt;p&gt;Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)&lt;/p&gt;
+
+&lt;p&gt;So I decide to go for Civil Engineering because it has a decent amount of advanced Maths that was something I was looking for and a High Employment Index.&lt;/p&gt;
+
+&lt;p&gt;Well I started working as a Civil Engineer in INVAR as soon as I finished my internship. I just loved it, I learned so much, but the thingwas that they didn&amp;rsquo;t pay too much. So I decided to take a position at Aguas del Valle. Sincerely, and very respectfully, it has been the worst choice of my life, not only because it was 5 hours away of my Hometown, but also because they took my soul out of my body and make me spend awful moments doing absolutely nothing. There is nothing more frustrating than doing nothing all day long in a desk in a Company you don&amp;rsquo;t feel a part of.&lt;/p&gt;
+
+&lt;p&gt;So the Evalueserve Post showed up. A friend referred me to the Data Science Program (DSP) and then I fell in love with Data Science. During the program I learned SQL, VBA, SAS 👍, R, Tableau and definitely built up my English and Communication skills. Felipe, help me prepare my first interview in English and thanks to him I had the English I needed to learn all I know so far.&lt;/p&gt;
+
+&lt;p&gt;Upskilling and moving through cities took all of my time, besides I got married (Best Decision so far) but a lot to do, hence, no time to finish my Thesis.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-happened-with-my-thesis&#34;&gt;What happened with my Thesis?&lt;/h2&gt;
+
+&lt;p&gt;Well in INVAR I worked as an Hidraulics Engineer so I started a Thesis back in 2013 about Water Hammer. Really interesting topic, that needed Finite Differences Methods to solve really complicated Partial Differential Equations. The only proffesor with this knowledge started working wih me, but after a year he got retired. So I had to find another Professor, so in order to avoid this issue to happen again, I decided to go with one of the youngest Professor, well he left me for his Phd.&lt;/p&gt;
+
+&lt;p&gt;Damn, Suddenly working in INVAR I noticed the CEO was my professor of Planning so I ask him to mentor me. This happened just before leaving to Aguas del Valle in La Serena. 6 months later a Cancer was diagnosed and he passed away, so freaking fast.
+The Chief of Department took over all of the abandoned Thesis that my Professor&amp;rsquo;s dead left behind, but he couldn&amp;rsquo;t continue to mentor me, because he considered being in La Serena was too far away.
+In 2015 I came back to Viña and I started to learn, upskill, teach, develop as a Data Scientist that I decided to put it on hold.
+On 2017 I started another Thesis. Another Professor wanted to mentor me but he was of the Structural Area. That meant I needed to move to that Area.
+We started investigating uncertainty on Structural Analysis. The thing is my work again didn&amp;rsquo;t give me any chance to continue.
+Until now. Why now? Probably I will explain it later, because it is also related with the creation of this site.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-my-thesis-is-going-to-be-about&#34;&gt;What My Thesis is going to be about?&lt;/h2&gt;
+
+&lt;p&gt;Good news, I will be able to mix my previous work with one thing I discovered as I developed as Data Science: &lt;strong&gt;Deep Learning in R&lt;/strong&gt; 👏.&lt;/p&gt;
+
+&lt;p&gt;I will be posting some progress about that. Hang tight!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Thesis Project</title>
+      <link>/publication/my-thesis/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/my-thesis/</guid>
       <description>
 
 &lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;

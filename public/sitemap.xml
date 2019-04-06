@@ -9,8 +9,26 @@
   
     <url>
     
+      <loc>/post/deep-learning/</loc>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication/deep-learning/</loc>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/post/my-thesis/</loc>
-      <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication/my-thesis/</loc>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
     </url>
   
     <url>
@@ -109,21 +127,21 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/deep-learning/</loc>
-      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -196,14 +214,21 @@
     <url>
     
       <loc>/tags/thesis/</loc>
-      <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/categories/vampire-diaries/</loc>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
     </url>
   

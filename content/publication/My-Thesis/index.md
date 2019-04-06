@@ -8,6 +8,7 @@ tags: ["Thesis"]
 authors:
 - admin
 draft: false
+featured: true
 image:
   caption: Photo by [**Cole Keister**](https://unsplash.com/@coleito?) on Unsplash
   focal_point: "Center"

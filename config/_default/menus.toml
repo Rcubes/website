@@ -14,7 +14,7 @@ url = "#featured"
 weight = 10
 
 [[main]]
-  name = "Posts"
+  name = "Vampire Diaries"
   url = "#posts"
   weight = 15
 

@@ -7,8 +7,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
-title = "Recent Posts"
-subtitle = ""
+title = "My Vampire Diaries"
+subtitle = "I get activated during Night and normally ramble and try to save the world, find the cure for Cancer or come up with Super Incredible Ideas to... I don't know, do something in my spare time."
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
