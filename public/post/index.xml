@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Deep Learning</title>
+      <link>/post/deep-learning/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/post/deep-learning/</guid>
+      <description>Deep Learning Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operational Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about. During my first real job (as a quasi-Engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason AI was there, just sky-high level mentions in some classes.</description>
+    </item>
+    
+    <item>
       <title>My Thesis Project</title>
       <link>/post/my-thesis/</link>
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>

@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
 
-title = "Featured Publications"
-subtitle = ""
+title = "Highlights"
+subtitle = "These are the newer or more remarkable Post, according to me :grin:"
 
 [content]
   # Page type to display. E.g. post, talk, or publication.

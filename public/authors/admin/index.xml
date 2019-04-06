@@ -12,11 +12,39 @@
     
     
     <item>
+      <title>Deep Learning</title>
+      <link>/post/deep-learning/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/post/deep-learning/</guid>
+      <description>Deep Learning Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operational Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about. During my first real job (as a quasi-Engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason AI was there, just sky-high level mentions in some classes.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/publication/deep-learning/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/deep-learning/</guid>
+      <description>Deep Learning Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operation Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about. During my first real job (as an engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason AI was there, just sky-high level mentions in some classes.</description>
+    </item>
+    
+    <item>
       <title>My Thesis Project</title>
       <link>/post/my-thesis/</link>
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
       
       <guid>/post/my-thesis/</guid>
+      <description>Why am I not graduated yet? Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.
+Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)</description>
+    </item>
+    
+    <item>
+      <title>My Thesis Project</title>
+      <link>/publication/my-thesis/</link>
+      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/my-thesis/</guid>
       <description>Why am I not graduated yet? Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.
 Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)</description>
     </item>

@@ -3,11 +3,12 @@ title: "My Thesis Project"
 subtitle: Where, What and Why is ~~Gamora~~ my Thesis About?
 summary: Where, What and Why is ~~Gamora~~ my Thesis About?
 date: 2019-03-27T00:50:00
-categories: ["Vampire Diaries"]
+categories: ["Blog"]
 tags: ["Thesis"]
 authors:
 - admin
 draft: false
+featured: true
 image:
   caption: Photo by [**Cole Keister**](https://unsplash.com/@coleito?) on Unsplash
   focal_point: "Center"
