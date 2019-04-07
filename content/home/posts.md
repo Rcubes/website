@@ -7,7 +7,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
-title = "My Vampire Diaries"
+title = "Vampire Diaries"
 subtitle = "I get activated during Night and normally ramble and try to save the world, find the cure for Cancer or come up with Super Incredible Ideas to... I don't know, do something in my spare time."
 
 [content]

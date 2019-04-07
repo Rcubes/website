@@ -29,5 +29,17 @@
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
     </item>
     
+    <item>
+      <title>Intro to Neural Networks</title>
+      <link>/project/neural-networks-101/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>/project/neural-networks-101/</guid>
+      <description>What is a Artificial Neural Network? The Picture you see up there is far a way from what a real Neural Network looks like:
+Actually it is more similar to something like this:
+  Deep Leaning Network  
+The configuration showed above is nothing but a visual representation of serial Matrix Multiplications. The neural network (aka ANN that stands for Artificial Neural Networks) itself is not an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs1.</description>
+    </item>
+    
   </channel>
 </rss>

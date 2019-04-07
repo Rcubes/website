@@ -38,7 +38,7 @@ defaultContentLanguageInSubdir = false
 
 paginate = 10  # Number of items per page in paginated lists.
 enableEmoji = true
-footnotereturnlinkcontents = "<sup>^</sup>"
+footnotereturnlinkcontents = "<sup> ^</sup>"
 ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 
