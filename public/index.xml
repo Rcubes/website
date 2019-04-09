@@ -6,6 +6,7 @@
     <description>Recent content in datacubeR on datacubeR</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
+    <copyright>This is just mine. Use it giving proper credit.</copyright>
     <lastBuildDate>Sat, 01 Jun 2030 13:00:00 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
@@ -32,6 +33,288 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Activation Functions</title>
+      <link>/project/activation-functions/activation-functions/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/activation-functions/activation-functions/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#activation-functions&#34;&gt;Activation Functions&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#identity&#34;&gt;Identity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#step-function&#34;&gt;Step Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linear-function&#34;&gt;Linear Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sigmoid-function&#34;&gt;Sigmoid Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hyperbolic-tangent&#34;&gt;Hyperbolic Tangent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#relu&#34;&gt;ReLU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#leaky-relu&#34;&gt;Leaky ReLU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#softmax&#34;&gt;Softmax&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-to-choose-the-perfect-activation-function&#34;&gt;How to choose the perfect Activation function?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;activation-functions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Activation Functions&lt;/h1&gt;
+&lt;p&gt;Activation functions are one of the most important characteristic of ANN. They basically decide whether a neuron should be activated or not. When a particular threshold is reached the Neuron will fire, meaning they will transmit the input signal to the next layer of the Network. Another Important feature of Activation Functions is that some of them provide the non-linearity. This is particular important because Activation functions help expand the range of problems that the Neural Networks can address. Finally Activation functions will play a major role when optimizing the edges weights when Backpropagation Algorithm comes into play, depending of their derivatives values is how the Gradient will change helping to decrease the error associated the Network prediction.&lt;/p&gt;
+&lt;p&gt;Some of these Activation Functions are:&lt;/p&gt;
+&lt;div id=&#34;identity&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Identity&lt;/h2&gt;
+&lt;p&gt;It is the most basic Activation, basically, do not alter the Neuron at all. The problem with this type of activation function is that is linear, transforming the Network into a Linear Regression limiting its classification capabilities for non-linear phenomena.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step Function&lt;/h2&gt;
+&lt;p&gt;The binary function is extremely simple. It returns 1 if certain threshold is reached or 0 otherwise. The main drawback of this function is that his derivative is 0, meaning it is not useful in the optimizing process.&lt;/p&gt;
+&lt;p&gt;The function is defined as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x)= \left\{ \begin{array}{lcc}
+             0 &amp;amp;   if  &amp;amp; x &amp;lt; 0 \\
+             \\ 1 &amp;amp;  if  &amp;amp; x \geq 0 
+             \end{array}
+   \right. \]&lt;/span&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Step.PNG&#34; alt=&#34;\label{fig:figs}Step Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Step Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;linear-function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Linear Function&lt;/h2&gt;
+&lt;p&gt;This is another option, being the main difference the existence of a slope. In this case the derivative will be constant, which can be problematic because when trying to decrease the error no matter how right or off you are the gradient will be the same.&lt;/p&gt;
+&lt;p&gt;The function goes as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x) = a x \]&lt;/span&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Linear.PNG&#34; alt=&#34;\label{fig:figs2}Linear Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Linear Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sigmoid-function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sigmoid Function&lt;/h2&gt;
+&lt;p&gt;This is a very popular activation function. The main advantages of this function is that it is smooth, S-shaped, it is continuously differentiable and non-linear.&lt;/p&gt;
+&lt;p&gt;The function is defined as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x)= \frac{1}{1+e^{-x}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Sigmoid.PNG&#34; alt=&#34;\label{fig:figs3}Sigmoid Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Sigmoid Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;The derivative of this function is always positive and greater than 0 and x-dependent so it is very helpful when optimizing.&lt;/p&gt;
+&lt;p&gt;One of the setbacks is that only ranges from 0 to 1, for one thing is very limiting with the output but for the other it is particularly useful when dealing with probabilities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hyperbolic-tangent&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hyperbolic Tangent&lt;/h2&gt;
+&lt;p&gt;Hyperbolic Tangent or $ tanh(x) $ is just an scaled version of the Sigmoid function. It is defined as follows:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ tanh(x)= 2 \cdot sigmoid(2x) - 1 = \frac{2}{1+e^{-2x}} - 1 \]&lt;/span&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Tanh.PNG&#34; alt=&#34;\label{fig:figs4}Hyperbolic Tangent Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: Hyperbolic Tangent Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;$ tanh $ works similarly to sigmoid but it is symmetric at the x - axis. Normally $ tanh $ and sigmoid can be used interchangeably depending on the requirements of the problem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;relu&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;ReLU&lt;/h2&gt;
+&lt;p&gt;ReLu stands for Rectified Linear unit and it is defined as follows:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ f(x)= max(0,x) \]&lt;/span&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs5&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Relu.PNG&#34; alt=&#34;\label{fig:figs5}ReLU Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5: ReLU Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;It is the most used function nowadays in hidden layers. The main capability is that it doesn’t activate all of the functions creating sparsity in the network, allowing efficiency in computation.&lt;/p&gt;
+&lt;p&gt;This function is limited at the positive side so it is not suggested for Output Layers. Another drawback is that not activated neurons in the range $ x &amp;lt; 0 $ will not be optimized since derivative is zero.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;leaky-relu&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Leaky ReLU&lt;/h2&gt;
+&lt;p&gt;This is an improved version of the ReLU function. It is not widely used yet and it has a subtle difference with ReLu: &lt;span class=&#34;math display&#34;&gt;\[ f(x)= \left\{ \begin{array}{lcc}
+             ax &amp;amp;   if  &amp;amp; x &amp;lt; 0 \\
+             \\ x &amp;amp;  if  &amp;amp; x \geq 0 
+             \end{array}
+   \right. \]&lt;/span&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs6&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Leaky.PNG&#34; alt=&#34;\label{fig:figs6}Leaky ReLU Function&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 6: Leaky ReLU Function
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;This solves the problem of dead neurons during Optimization process, since the derivative of $ x &amp;lt; 0 $ is not zero.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;softmax&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Softmax&lt;/h2&gt;
+&lt;p&gt;This is a sigmoid kind-of function capable of handling more than 2 classes. The function is defined as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \sigma(z)_{j}=\frac{e^{z_{j}}}{\sum_{k=1}^{K}e^{z_{k}}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The softmax functions are normally used in output layers when trying to solve classification problems with more than 2 classes..&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-to-choose-the-perfect-activation-function&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;How to choose the perfect Activation function?&lt;/h1&gt;
+&lt;p&gt;Well, there is not a clear answer to this, but definitely some guidelines we can follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sigmoid functions generally work better in classification problems.&lt;/li&gt;
+&lt;li&gt;Sigmoids and tanh functions are sometimes avoided due to the &lt;em&gt;vanishing gradient problem&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;ReLU function is a general activation function and is used in most cases these days.&lt;/li&gt;
+&lt;li&gt;If we encounter a case of dead neurons in our networks the leaky ReLU function is the best choice.&lt;/li&gt;
+&lt;li&gt;Always keep in mind that ReLU function should only be used in the hidden layers.&lt;/li&gt;
+&lt;li&gt;As a rule of thumb, you can begin with using ReLU function and then move over to other activation functions in case ReLU doesn’t provide with optimum results.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-r&#34;&gt;Deep Learning with R&lt;/a&gt; provides some other Guidelines to use Activation Functions in the Output Layer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Binary Classification: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Multiclass Single-Label Classification: &lt;strong&gt;Softmax&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Multiclass Multi-Label Classification: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Regression to Arbitrary Values: &lt;strong&gt;Identity&lt;/strong&gt; or &lt;strong&gt;None&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Regression to Values between 0 to 1: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Intro to Neural Networks</title>
+      <link>/project/neural-nets-101/intro-to-nn/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/neural-nets-101/intro-to-nn/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-an-artificial-neural-network&#34;&gt;What is an Artificial Neural Network?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#basic-structure&#34;&gt;Basic Structure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-problems-can-neural-networks-solve&#34;&gt;What Problems can Neural Networks solve?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#classification&#34;&gt;Classification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#regression&#34;&gt;Regression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#typical-problems-solved-with-neural-networks&#34;&gt;Typical Problems solved with Neural Networks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;what-is-an-artificial-neural-network&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What is an Artificial Neural Network?&lt;/h2&gt;
+&lt;p&gt;The Picture you see up there is far a way from what a real Neural Network looks like:&lt;/p&gt;
+&lt;p&gt;Actually it is more similar to something like this:&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/ANN.jpg&#34; alt=&#34;\label{fig:figs}Multi-Layer Perceptron&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Multi-Layer Perceptron
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;The configuration showed above is nothing but a visual representation of serial Matrix Multiplications. The neural network (aka ANN that stands for Artificial Neural Networks) itself is not an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ANN are inspired by Neurons but they work in a completely different fashion. The main advantage of this system is that organizes successive Matrix multiplications and provides a visual representation of the different steps in the Optimization algorithm.&lt;/p&gt;
+&lt;p&gt;There are different types of Networks, Densely Connected, Convolutional, Recurrent, Long Short Memory, Radial Biased, Autoencoders, and so on. All of them having their own area of specialization, strengths and shortcomings.&lt;/p&gt;
+&lt;div id=&#34;basic-structure&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Basic Structure&lt;/h3&gt;
+&lt;p&gt;Every Network will contain Nodes/Units, emulating Neurons and Edges, emulating the connection between Units.&lt;/p&gt;
+&lt;p&gt;Normally the Units are organized by Layers, every Network should contain a first layer for Inputs, a last Layer for Outputs and Intermediate Layers, also known as Hidden Layers.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/Basic_ANN.jpg&#34; alt=&#34;\label{fig:figs2}Basic Neural Network&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Basic Neural Network
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Input Nodes $ i_{j} $ will contain Input Values to train the Network.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Edges will provide weights $ w_{j} $.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hidden Layer Nodes $ h_{j} $ will contain the result of Sum Product between Input Nodes and weighted edges connected to them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally Output Nodes $ o_{j} $ will contain the result of Sum Product between hidden Nodes and the Edges Connected to them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Optionally, Networks can include a Bias $ b_{j} $ to control values of the network.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Network then will calculate values in the following way:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h_{1} = w_{1} i_{1} + w_{2} i_{2} + b_{1} = 0.15 \cdot 0.05 + 0.25 \cdot 0.10 + 0.35 = 0.3825 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h_{2} = w_{2} i_{1} + w_{4} i_{2} + b_{1} = 0.20 \cdot 0.05 + 0.30 \cdot 0.10 + 0.35 = 0.39 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ o_{1} = w_{5} h_{1} + w_{7} h_{2} + b_{2} = 0.40 \cdot 0.3825 + 0.50 \cdot 0.39 + 0.60 = 0.948 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ o_{2} = w_{6} h_{1} + w_{8} h_{2} + b_{2} = 0.45 \cdot 0.3825 + 0.55 \cdot 0.39 + 0.60 = 0.986625 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is called a forward pass. All the Input Values were able to move through the Network by the Edge Connections up to the Output. Normally, when the Network is trained, there are expected Output values that will be compared with the ones obtained with the Forward Pass in order to compute the Error. In this case 0.01 and 0.99 respectively.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-problems-can-neural-networks-solve&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What Problems can Neural Networks solve?&lt;/h3&gt;
+&lt;p&gt;Normally there are two Problems that Neural Networks Solves, Classification and Regression.&lt;/p&gt;
+&lt;div id=&#34;classification&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Classification&lt;/h4&gt;
+&lt;p&gt;The Classification problem is the most common problem addressed by Neural Networks. It implies to classify based on a Probability. The output will calculate how likely is that an specific label corresponds to a class. Classification problems can be sub-divided into other sub-types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Binary Classification: As the name implies, it involves two classes: Spam or not Span, Positive or Negative, Man or Woman, etc.&lt;/li&gt;
+&lt;li&gt;Multiclass Classification: In this case several labels can be applied: Is it a Dog, Cat, Horse? What Car Brand is that? etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;regression&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Regression&lt;/h4&gt;
+&lt;p&gt;This kind of problems involved calculate a number associated to a Metric. Typical Problems are predicting House Values, Temperature, Balances, Displacements, etc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;typical-problems-solved-with-neural-networks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Typical Problems solved with Neural Networks&lt;/h3&gt;
+&lt;p&gt;Neural Networks are powerful and they are the most cutting-edge methodology to make computers do the most incredibly/creepy things.&lt;/p&gt;
+&lt;p&gt;Even though we think computers can do anything like Analyzing Photos, Driving Cars, Recognizing Animals, Predicting Prices and so on, the scope of their work is completely limited to just one thing: &lt;strong&gt;Computing Tensors&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Tensors are the generalization to N dimensions of Matrices. Basically any problem that can be represented by Tensors is something that Neural Networks could potentially solve.&lt;/p&gt;
+&lt;p&gt;Different kind of Tensors can solve specific problems. Here some examples taken from &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-r&#34;&gt;Deep Learning with R&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Vector data—2D tensors of shape (samples, features): This is the Most common Data Structure Data Scientist uses in a daily basis. Basically a Matrix, having Features as Columns and Samples as Rows.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Timeseries data or sequence data—3D tensors of shape (samples, timesteps, features): This is something a little bit fancier, having several timeseries organized as a collection of matrices, this creates a 3D Tensor.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/3D_Tensor.png&#34; alt=&#34;\label{fig:figs3}Multiple Timeseries data&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Multiple Timeseries data
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;Images—4D tensors of shape (samples, height, width, channels) or (samples, channels, height, width): Images are represented as Pixel Matrices, Every Pixel also has RGB Channels giving the color properties to it, thus a 3D Tensor. Adding several samples of Images to analize and you have a 4D Tensor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/4D_Tensor.png&#34; alt=&#34;\label{fig:figs4}Image Data&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: Image Data
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;Video—5D tensors of shape (samples, frames, height, width, channels) or (samples, frames, channels, height, width): Videos are nothing but a collection of Sequencial Images. So You’ll have different Samples of Sequencial Images producing which is a 4D Tensor, since you analize several samples of Videos, you’ll get a 5D Tensor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Neural Networks are simple visual representations of Tensor Calcultions that are capable of addressing different real life problems. So far we have covered how the Networks transmit Information from Input to Output also called Forward Pass, but there are some other concepts that are necessary to understan in order to fully unerstand how to properly train a Neural Network.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Wikipedia: &lt;a href=&#34;https://en.wikipedia.org/wiki/Artificial_neural_network&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Artificial_neural_network&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -718,189 +1001,6 @@ git submodule update --init --recursive
       
       <guid>/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Slides</title>
-      <link>/slides/example-slides/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/example-slides/</guid>
-      <description>
-
-&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
-&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
-&lt;li&gt;Supports speaker notes&lt;/li&gt;
-&lt;li&gt;Mobile friendly slides&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-
-&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Code block:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-
-&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-
-&lt;p&gt;Block math:&lt;/p&gt;
-
-&lt;p&gt;$$
-f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-
-&lt;p&gt;Make content appear incrementally&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-  One
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-  &lt;strong&gt;Two&lt;/strong&gt;
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-  Three
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-
-&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-
-&lt;aside class=&#34;notes&#34;&gt;
-  &lt;ul&gt;
-&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/aside&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
-&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
-&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
-&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
-&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
-&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-
-&lt;section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image=&#34;/img/boards.jpg&#34;
-  &gt;
-
-
-&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-
-&lt;p&gt;Customize the slide style and background&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-
-&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

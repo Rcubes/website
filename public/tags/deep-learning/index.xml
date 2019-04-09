@@ -6,10 +6,31 @@
     <description>Recent content in Deep Learning on datacubeR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2019 00:50:00 +0000</lastBuildDate>
+    <copyright>This is just mine. Use it giving proper credit.</copyright>
+    <lastBuildDate>Mon, 08 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Activation Functions</title>
+      <link>/project/activation-functions/activation-functions/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/activation-functions/activation-functions/</guid>
+      <description>Activation FunctionsIdentityStep FunctionLinear FunctionSigmoid FunctionHyperbolic TangentReLULeaky ReLUSoftmaxHow to choose the perfect Activation function?Activation FunctionsActivation functions are one of the most important characteristic of ANN. They basically decide whether a neuron should be activated or not. When a particular threshold is reached the Neuron will fire, meaning they will transmit the input signal to the next layer of the Network.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Neural Networks</title>
+      <link>/project/neural-nets-101/intro-to-nn/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/neural-nets-101/intro-to-nn/</guid>
+      <description>What is an Artificial Neural Network?Basic StructureWhat Problems can Neural Networks solve?ClassificationRegressionTypical Problems solved with Neural NetworksConclusionWhat is an Artificial Neural Network?The Picture you see up there is far a way from what a real Neural Network looks like:
+Actually it is more similar to something like this:
+Figure 1: Multi-Layer PerceptronThe configuration showed above is nothing but a visual representation of serial Matrix Multiplications.</description>
+    </item>
     
     <item>
       <title>Deep Learning</title>

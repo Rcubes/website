@@ -1,0 +1,138 @@
+---
+title: Intro to Neural Networks
+authors: 
+  - admin
+date: '2019-04-07'
+slug: Intro-to-NN
+categories:
+  - Basics
+tags:
+  - Deep Learning
+image:
+  caption: "Stolen Photo from [Google](https://www.google.com)"
+  focal_point: "Smart"
+summary: "Short Summary of What Neural Networks are"
+highlight: false
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+```
+
+
+## What is an Artificial Neural Network?
+
+The Picture you see up there is far a way from what a real Neural Network looks like:
+
+Actually it is more similar to something like this:
+
+<center>
+```{r figs, echo=FALSE, fig.cap="\\label{fig:figs}Multi-Layer Perceptron"}
+knitr::include_graphics('/img/ANN.jpg')
+```
+</center>
+
+The configuration showed above is nothing but a visual representation of serial Matrix Multiplications. The neural network (aka ANN that stands for Artificial Neural Networks) itself is not an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs^[Wikipedia: https://en.wikipedia.org/wiki/Artificial_neural_network].
+
+ANN are inspired by Neurons but they work in a completely different fashion. The main advantage of this system is that organizes successive Matrix multiplications and provides a visual representation of the different steps in the Optimization algorithm.
+
+There are different types of Networks, Densely Connected, Convolutional, Recurrent, Long Short Memory, Radial Biased, Autoencoders, and so on. All of them having their own area of specialization, strengths and shortcomings.
+
+### Basic Structure
+
+Every Network will contain Nodes/Units, emulating Neurons and Edges, emulating the connection between Units.
+
+Normally the Units are organized by Layers, every Network should contain a first layer for Inputs, a last Layer for Outputs and Intermediate Layers, also known as Hidden Layers.
+
+<center>
+```{r figs2, echo=FALSE, fig.cap="\\label{fig:figs2}Basic Neural Network"}
+knitr::include_graphics('/img/Basic_ANN.jpg')
+```
+</center>
+
+
++ Input Nodes $ i_{j} $ will contain Input Values to train the Network. 
+
++ Edges will provide weights $ w_{j} $. 
+
++ Hidden Layer Nodes $ h_{j} $ will contain the result of Sum Product between Input Nodes and weighted edges connected to them. 
+
++ Finally Output Nodes  $ o_{j} $ will contain the result of Sum Product between hidden Nodes and the Edges Connected to them.
+
++ Optionally, Networks can include a Bias $ b_{j} $ to control values of the network.
+
+The Network then will calculate values in the following way:  
+
+
+
+$$ h_{1} = w_{1} i_{1} + w_{2} i_{2} + b_{1} = 0.15 \cdot 0.05 + 0.25 \cdot 0.10 + 0.35 = 0.3825 $$
+
+
+$$ h_{2} = w_{2} i_{1} + w_{4} i_{2} + b_{1} = 0.20 \cdot 0.05 + 0.30 \cdot 0.10 + 0.35 = 0.39 $$
+
+$$ o_{1} = w_{5} h_{1} + w_{7} h_{2} + b_{2} = 0.40 \cdot 0.3825 + 0.50 \cdot 0.39 + 0.60 = 0.948 $$
+
+$$ o_{2} = w_{6} h_{1} + w_{8} h_{2} + b_{2} = 0.45 \cdot 0.3825 + 0.55 \cdot 0.39 + 0.60 = 0.986625 $$
+
+This is called a forward pass. All the Input Values were able to move through the Network by the Edge Connections up to the Output. Normally, when the Network is trained, there are expected Output values that will be compared with the ones obtained with the Forward Pass in order to compute the Error. In this case 0.01 and 0.99 respectively.
+
+### What Problems can Neural Networks solve?
+
+Normally there are two Problems that Neural Networks Solves, Classification and Regression.
+
+#### Classification
+
+The Classification problem is the most common problem addressed by Neural Networks. It implies to classify based on a Probability. The output will calculate how likely is that an specific label corresponds to a class.
+Classification problems can be sub-divided into other sub-types:
+
++ Binary Classification: As the name implies, it involves two classes: Spam or not Span, Positive or Negative, Man or Woman, etc. 
++ Multiclass Classification: In this case several labels can be applied: Is it a Dog, Cat, Horse? What Car Brand is that? etc.
+
+#### Regression
+This kind of problems involved calculate a  number associated to a Metric. Typical Problems are predicting House Values, Temperature, Balances, Displacements, etc.
+
+### Typical Problems solved with Neural Networks
+
+Neural Networks are powerful and they are the most cutting-edge methodology to make computers do the most incredibly/creepy things.
+
+Even though we think computers can do anything like Analyzing Photos, Driving Cars, Recognizing Animals, Predicting Prices and so on, the scope of their work is completely limited to just one thing: **Computing Tensors**.
+
+Tensors are the generalization to N dimensions of Matrices. Basically any problem that can be represented by Tensors is something that Neural Networks could potentially solve.
+
+Different kind of Tensors can solve specific problems. Here some examples taken from [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r):
+
+ 
+* Vector data—2D tensors of shape (samples, features): This is the Most common Data Structure Data Scientist uses in a daily basis. Basically a Matrix, having Features as Columns and Samples as Rows.
+
+* Timeseries data or sequence data—3D tensors of shape (samples, timesteps, features): This is something a little bit fancier, having several timeseries organized as a collection of matrices, this creates a 3D Tensor.
+
+<center>
+```{r figs3, echo=FALSE, fig.cap="\\label{fig:figs3}Multiple Timeseries data"}
+knitr::include_graphics('/img/3D_Tensor.png')
+```
+</center>
+
+* Images—4D tensors of shape (samples, height, width, channels) or (samples,
+channels, height, width): Images are represented as Pixel Matrices, Every Pixel also has RGB Channels giving the color properties to it, thus a 3D Tensor. Adding several samples of Images to analize and you have a 4D Tensor.
+
+<center>
+```{r figs4, echo=FALSE, fig.cap="\\label{fig:figs4}Image Data"}
+knitr::include_graphics('/img/4D_Tensor.png')
+```
+</center>
+
+* Video—5D tensors of shape (samples, frames, height, width, channels) or
+(samples, frames, channels, height, width): Videos are nothing but a collection of Sequencial Images. So You'll have different Samples of Sequencial Images producing which is a 4D Tensor, since you analize several samples of Videos, you'll get a 5D Tensor.
+
+## Conclusion
+
+Neural Networks are simple visual representations of Tensor Calcultions that are capable of addressing different real life problems. So far we have covered how the Networks transmit Information from Input to Output also called Forward Pass, but there are some other concepts that are necessary to understan in order to fully unerstand how to properly train a Neural Network.
+
+

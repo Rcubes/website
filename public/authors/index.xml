@@ -6,6 +6,7 @@
     <description>Recent content in Authors on datacubeR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>This is just mine. Use it giving proper credit.</copyright>
     
 	<atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     
@@ -31,7 +32,7 @@
     <item>
       <title>admin</title>
       <link>/authors/admin/</link>
-      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/authors/admin/</guid>
       <description></description>

@@ -1,0 +1,161 @@
+---
+title: Activation Functions
+authors: 
+  - admin
+date: '2019-04-08'
+slug: Activation-Functions
+categories:
+  - Basics
+tags:
+  - Deep Learning
+image:
+  caption: "Photo by [Hal Gatewood](https://unsplash.com/@halgatewood) on Unsplash"
+  focal_point: "Smart"
+summary: "Definitions of the Most Common ACtivations Functions."
+highlight: false
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+```
+
+# Activation Functions
+
+Activation functions are one of the most important characteristic of ANN. They basically decide whether a neuron should be activated or not. When a particular threshold is reached the Neuron will fire, meaning they will transmit the input signal to the next layer of the Network. 
+Another Important feature of Activation Functions is that some of them provide the non-linearity. This is particular important because Activation functions help expand the range of problems that the Neural Networks can address. 
+Finally Activation functions will play a major role when optimizing the edges weights when Backpropagation Algorithm comes into play, depending of their derivatives values is how the Gradient will change helping to decrease the error associated the Network prediction.
+
+Some of these Activation Functions are:
+
+## Identity
+
+It is the most basic Activation, basically, do not alter the Neuron at all. The problem with this type of activation function is that is linear, transforming the Network into a Linear Regression limiting its classification capabilities for non-linear phenomena.
+
+## Step Function
+
+The binary function is extremely simple. It returns 1 if certain threshold is reached or 0 otherwise. The main drawback of this function is that his derivative is 0, meaning it is not useful in the optimizing process.
+
+The function is defined as follows:
+
+$$ f(x)= \left\{ \begin{array}{lcc}
+             0 &   if  & x < 0 \\
+             \\ 1 &  if  & x \geq 0 
+             \end{array}
+   \right. $$
+   
+<center>
+```{r figs, echo=FALSE, fig.cap="\\label{fig:figs}Step Function"}
+knitr::include_graphics('/img/Step.PNG')
+```
+</center>
+   
+## Linear Function
+
+This is another option, being the main difference the existence of a slope. In this case the derivative will be constant, which can be problematic because when trying to decrease the error no matter how right or off you are the gradient will be the same.
+
+The function goes as follows:
+
+$$ f(x) = a x $$
+
+<center>
+```{r figs2, echo=FALSE, fig.cap="\\label{fig:figs2}Linear Function"}
+knitr::include_graphics('/img/Linear.PNG')
+```
+</center>
+
+## Sigmoid Function
+
+This is a very popular activation function. The main advantages of this function is that it is smooth, S-shaped, it is continuously differentiable and non-linear. 
+
+The function is defined as follows:
+
+$$ f(x)= \frac{1}{1+e^{-x}} $$
+
+<center>
+```{r figs3, echo=FALSE, fig.cap="\\label{fig:figs3}Sigmoid Function"}
+knitr::include_graphics('/img/Sigmoid.PNG')
+```
+</center>
+
+The derivative of this function is always positive and greater than 0 and x-dependent so it is very helpful when optimizing.
+
+One of the setbacks is that only ranges from 0 to 1, for one thing is very limiting with the output but for the other it is particularly useful when dealing with probabilities.
+
+## Hyperbolic Tangent
+
+Hyperbolic Tangent or $ tanh(x) $ is just an scaled version of the Sigmoid function. It is defined as follows:
+
+$$ tanh(x)= 2 \cdot sigmoid(2x) - 1 = \frac{2}{1+e^{-2x}} - 1 $$
+<center>
+```{r figs4, echo=FALSE, fig.cap="\\label{fig:figs4}Hyperbolic Tangent Function"}
+knitr::include_graphics('/img/Tanh.PNG')
+```
+</center>
+
+$ tanh $ works similarly to sigmoid but it is symmetric at the x - axis. Normally $ tanh $ and sigmoid can be used interchangeably depending on the requirements of the problem.
+
+## ReLU
+
+ReLu stands for Rectified Linear unit and it is defined as follows:
+
+$$ f(x)= max(0,x) $$
+<center>
+```{r figs5, echo=FALSE, fig.cap="\\label{fig:figs5}ReLU Function"}
+knitr::include_graphics('/img/Relu.PNG')
+```
+</center>
+
+It is the most used function nowadays in hidden layers. The main capability is that it doesn't activate all of the functions creating sparsity in the network, allowing efficiency in computation. 
+
+This function is limited at the positive side so it is not suggested for Output Layers. Another drawback is that not activated neurons in the range $ x < 0 $ will not be optimized since derivative is zero.
+
+## Leaky ReLU
+
+This is an improved version of the ReLU function. It is not widely used yet and it has a subtle difference with ReLu:
+$$ f(x)= \left\{ \begin{array}{lcc}
+             ax &   if  & x < 0 \\
+             \\ x &  if  & x \geq 0 
+             \end{array}
+   \right. $$
+   
+<center>
+```{r figs6, echo=FALSE, fig.cap="\\label{fig:figs6}Leaky ReLU Function"}
+knitr::include_graphics('/img/Leaky.PNG')
+```
+</center>
+   
+This solves the problem of dead neurons during Optimization process, since the derivative of $ x < 0 $ is not zero.
+
+## Softmax
+This is a sigmoid kind-of function capable of handling more than 2 classes. The function is defined as follows:
+
+$$ \sigma(z)_{j}=\frac{e^{z_{j}}}{\sum_{k=1}^{K}e^{z_{k}}} $$
+
+The softmax functions are normally used in output layers when trying to solve classification problems with more than 2 classes..
+
+# How to choose the perfect Activation function?
+
+Well, there is not a clear answer to this, but definitely some guidelines we can follow:
+
++ Sigmoid functions generally work better in classification problems.
++ Sigmoids and tanh functions are sometimes avoided due to the _vanishing gradient problem_.
++ ReLU function is a general activation function and is used in most cases these days.
++ If we encounter a case of dead neurons in our networks the leaky ReLU function is the best choice.
++ Always keep in mind that ReLU function should only be used in the hidden layers.
++ As a rule of thumb, you can begin with using ReLU function and then move over to other activation functions in case ReLU doesn’t provide with optimum results.
+
+[Deep Learning with R](https://www.manning.com/books/deep-learning-with-r) provides some other Guidelines to use Activation Functions in the Output Layer:
+
++ Binary Classification: **Sigmoid**
++ Multiclass Single-Label Classification: **Softmax**
++ Multiclass Multi-Label Classification: **Sigmoid**
++ Regression to Arbitrary Values: **Identity** or **None**
++ Regression to Values between 0 to 1: **Sigmoid**
+
