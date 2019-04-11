@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Mon, 08 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Propuesta Redes Convolucionales</title>
+      <link>/project/convolutional-nets-sp/memoria-1/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/convolutional-nets-sp/memoria-1/</guid>
+      <description>Redes Convolucionales¿Cómo se relaciona esto con las Redes Convolucionales?¿Cómo se va especializando la red para ser cada vez más detallista?¿Cómo se relaciona este problema con Estructuras?El Paper de FinolSoluciónPuntos Interesantes para la Investigación.1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)2da Sugerencia3era Sugerencia.4ta Sugerencia “Crear Imágenes Estructurales”Redes ConvolucionalesLas redes convolucionales es un tipo de Red que esta especializada principalmente en extraer características de imágenes.</description>
+    </item>
     
     <item>
       <title>Activation Functions</title>
