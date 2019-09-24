@@ -18,7 +18,64 @@ date_format = "Jan 2006"
 #   Leave other parameters empty if not required.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Building Web Applications in R with Shiny"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/598c7a8cb85389f1e4a273e3d3d5c3294f4411b7"
+  date_start = "2019-05-06"
+  date_end = ""
+  description = ""
 
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Developing R Packages"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/3be6e0a75fc30005dc66c1deffacf1cb704acda3"
+  date_start = "2019-09-24"
+  date_end = ""
+  description = ""
+
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Feature Engineering in R"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/1395a6d40cd37ae3c9574f776dde0da0fb7ed2a8"
+  date_start = "2019-04-01"
+  date_end = ""
+  description = ""
+
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Intermediate Functional Programming with purrr"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/f43c6588fabd04f0c0b23d795428f11433814634"
+  date_start = "2019-04-03"
+  date_end = ""
+  description = ""
+
+
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Network Science in R: A Tidy Approach"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/e14915891f0eb8aec4453f63aced3cfb1b676816"
+  date_start = "2019-03-26"
+  date_end = ""
+  description = ""
+  
+  
+[[item]]
+  organization = "DataCamp"
+  organization_url = "https://www.datacamp.com/"
+  title = "Optimizing R Code with Rcpp"
+  url = "https://www.datacamp.com/statement-of-accomplishment/course/ff73d626d2e4c78c9d5563084caa370fbdd1f7b0"
+  date_start = "2019-05-08"
+  date_end = ""
+  description = ""
+  
+  
+  
 [[item]]
   organization = "DataCamp"
   organization_url = "https://www.datacamp.com/"

@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My Final Project at the ML Diploma</title>
+      <link>/project/machine-learning-diploma/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/machine-learning-diploma/</guid>
+      <description>The MethodThe ProblemThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.</description>
+    </item>
+    
+    <item>
+      <title>My Thesis</title>
+      <link>/project/my-thesis/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      
+      <guid>/project/my-thesis/</guid>
+      <description>Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found Dr. Marcos Valdebenito. He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.</description>
+    </item>
+    
+    <item>
+      <title>The Stiffness Method</title>
+      <link>/project/stiffness-method/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/stiffness-method/</guid>
+      <description>The MethodThe ProblemRcpp BasicsCreating an Rcpp fileStiffness MethodStiff Matrix by ElementActive DoF AssemblyConnectivity ArrayStiffness Matrix AssemblyLoad Vector AssemblySolving the ProblemConclusionsThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure.</description>
+    </item>
     
     <item>
       <title>Propuesta Redes Convolucionales</title>
@@ -39,15 +66,6 @@
       <description>What is an Artificial Neural Network?Basic StructureWhat Problems can Neural Networks solve?ClassificationRegressionTypical Problems solved with Neural NetworksConclusionWhat is an Artificial Neural Network?The Picture you see up there is far a way from what a real Neural Network looks like:
 Actually it is more similar to something like this:
 Figure 1: Multi-Layer PerceptronThe configuration showed above is nothing but a visual representation of serial Matrix Multiplications.</description>
-    </item>
-    
-    <item>
-      <title>Coming Soon</title>
-      <link>/project/my-thesis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/project/my-thesis/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
     </item>
     
   </channel>

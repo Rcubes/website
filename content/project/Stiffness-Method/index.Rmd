@@ -1,0 +1,486 @@
+---
+title: The Stiffness Method
+authors: 
+  - admin
+date: '2019-09-23'
+categories:
+  - Basics
+tags:
+  - Deep Learning
+  - Convolutional Networks
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "How to Implement the Stiffness Method using Rcpp"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+library(Rcpp)
+library(RcppEigen)
+```
+
+# The Method
+
+The Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.
+
+The purpose of this Document is not get into deep details about the Method. If you want to learn about this you can go to this [paper](https://www.sciencedirect.com/topics/engineering/stiffness-method) to learn the Maths behind this. The idea is to show how to implement this in R. Since this is a computational expensive method I'll be using `library(Rcpp)`.
+
+## The Problem
+
+<center>
+```{r figs1, echo=FALSE, fig.cap="\\label{fig:figs1}Problem Structure"}
+knitr::include_graphics('/img/3_bar_problem.jpg')
+```
+</center>
+
+This is a simple problem and useful to understand the different steps of the Method.
+This is implementation is for a Truss with 3 Nodes and 3 Elements where:
+
+```{r}
+#Number of Nodes by Element
+NN_e <- 2
+#Number of Degrees of Freedom (DoF) by Node
+Ngl_N <- 2
+L <- 1 #Value of L
+E <- 2 * 10 ^ 11 # Young Module / Elasticity Metric
+A <- 0.0001 # Cross Sectional Area
+P <- 1000 # Load
+```
+
+The First and most simple Step is to organize the Input Data. All of the Data will be input in `tibble` form.
+
+Row i of the `Nodes` Matrix will store the X and Y Coordinates for Every Node. 
+```{r}
+(Nodes <-
+   tibble::tribble(~ Xi, ~ Yi,
+                   0,   0,
+                   sqrt(2) / 2 * L,  sqrt(2) / 2 * L,
+                   sqrt(2) * L, 0))
+```
+
+The Row j of the `Elements` Matrix will contain the Initial Node `ni`, the ending Node `nf` and the corresponding E and A properties for Element j. In this case all the Elements share the same properties.
+```{r}
+(Elements <-
+   tibble::tribble(~ ni, ~ nf,   ~ E,   ~ A,
+                   1,   2,    E,    A,
+                   2,   3,    E,    A,
+                   3,   1,    E,    A))
+```
+
+The Row i of the `Loads` Matrix contains the x and y vectorial component of the Loads for Node i.
+```{r}
+(Loads <-
+   tibble::tribble(~ Px, ~ Py,
+                   0,   0,
+                   0,   P,
+                   0,   0))
+
+```
+
+The Row i correspond to the freedom of the X and Y Component of the Node i. 1 meaning no Movement and 0 meaning free movement.
+```{r}
+(Supports <-
+   tibble::tribble(~ Rx, ~ Ry,
+                   1,   1,
+                   0,   0,
+                   0,   1))
+```
+
+## Rcpp Basics
+
+Rcpp is the R API package to access to the huge benefits that C++ offers. I´m not an expert in C++ actually I just learned a bit of C++ because Rcpp offers easy sintax to access to C++ Elements but always showing equivalents in the R Environment.
+
+C++ is far for being an adequate language for Data Science, but once you want to optimize code or algorithms is definitely the way to go. In these case I´ll be showing the algorithm to the different steps of the Stiffness Method and how can be implemented in Rcpp.
+
+My main sources to learn Rcpp were this excellent [Rcpp for Everyone](https://teuder.github.io/rcpp4everyone_en/) and of course [Hadley´s Help](http://adv-r.had.co.nz/Rcpp.html). With these two resources you should have more than enough to create your first Rcpp functions.
+
+## Creating an Rcpp file
+
+<center>
+```{r figs2, echo=FALSE, fig.cap="\\label{fig:figs2}Create a C++ File"}
+knitr::include_graphics('/img/cpp_file.png')
+```
+</center>
+
+If you work with RStudio you can go to File > New File > C++ File and will open a C++ Template like this:
+
+<center>
+```{r figs3, echo=FALSE, fig.cap="\\label{fig:figs3}C++ Template"}
+knitr::include_graphics('/img/cpp_template.png')
+```
+</center>
+
+The main thing you need to be aware of is loading the required libraries from C++. In this case we will use the following:
+
+All C++ code chunks will be combined to the chunk below:
+
+
+
+```{Rcpp, eval=FALSE}
+// [[Rcpp::depends(RcppEigen)]]
+#include <Rcpp.h>
+#include <RcppEigen.h>
+#include <Eigen/LU> 
+#include <Eigen/Eigenvalues> 
+
+using namespace Rcpp;
+using namespace Eigen;
+```
+
+As you may know C++ is a compiled language. Compilation means, in really simple words, to optimize and speed up the code making it available in R through functions. If you want functions to be available in the R environment they need to be preceeded by this special comment. Otherwise they can be called from within the C++ environment as intermediate functions but they won´t work in R.
+
+## Stiffness Method
+
+### Stiff Matrix by Element
+
+This Step calculates Stiff for the mini-structures, meaning every single bar. 
+
+Every Element Matrix has the following form that needs to be created according to its properties.
+
+$$
+[K]_j=\begin{bmatrix}
+    c^2 &  &  & sim\\
+    cs & s^2 &  & \\
+    -c^2 & -cs & c^2 & \\
+    -cs & -s^2 & cs & s^2 \\
+    \end{bmatrix}
+$$
+The pseudo code is as follows:  
+
+
+$$ Ne \leftarrow \text{Number of Rows in the Element Matrix} \\
+c \leftarrow  \text{ Sparse Matrix for Director Cosines, Dimension Ne x 1 } \\
+s \leftarrow  \text{ Sparse Matrix for Director Sinus, Dimension Ne x 1 } \\
+L \leftarrow  \text{ Sparse Matrix for Element Length, Dimension Ne x 1 } \\
+\text{for j = 1 to Ne do}
+\left\{ \begin{array}{lcc}
+             Ni=Elements(j,1) \\ 
+             Nf=Elements(j,2) \\
+             \Delta x = Nodes(Nf,1) - Nodes(Ni,1) \\
+             \Delta y = Nodes(Nf,2) - Nodes(Ni,2) \\
+             L(j)=\sqrt{\Delta x^2 + \Delta y^2} \\
+             c(j) = {\Delta x\over L(j)} \\
+             s(j) = {\Delta y\over L(j)}
+             \end{array}
+   \right.
+$$
+
+Now translating this into Rcpp looks like this:
+
+ * You need define every object to use preceeded by its type. 
+ * The output will be an R List since I want object storing the different Element Matrix.
+ * All of the Function arguments are Mandatory by default and need to go in the same order that will be used. If an Optional Argument is needed the default value needs to be defined as in NN_e.
+ 
+
+```{Rcpp, eval=FALSE}
+// [[Rcpp::export]]
+// First you define the Output Type. In this case an R List.
+List K_Element(NumericMatrix Nodes, NumericMatrix Elements, int NN_e = 2){
+  
+  // Ne is defined by using the nrow method to calculate number of rows.
+  int Num_Elements = Elements.nrow();
+  // c, s and L are defined Vectors since the second Dimension is 1.
+  NumericVector c (Num_Elements);
+  NumericVector s (Num_Elements);
+  NumericVector L (Num_Elements);
+  
+  int j,Ni,Nf;
+  // dx and dy are defined as doubles since they can contain decimals
+  double dx,dy;
+  List K_list (Num_Elements);
+  
+  
+  // C++ is defined from 0 as the first element. So the pseudo code needs to be adjusted accordingly.
+  // Notice the for syntax, from 0 to NE-1 defined as j<Num_Elementos and the ++j iterator
+  for(j=0;j<Num_Elements;++j){
+    Ni=Elements(j,0) -1;
+    Nf=Elements(j,1) - 1;
+    dx=Nodes(Nf,0)-Nodes(Ni,0);
+    dy=Nodes(Nf,1)-Nodes(Ni,1);
+    //pow is the C++ operator for ^
+    L[j]=sqrt(pow(dx,2)+pow(dy,2));
+    c(j)=dx/L(j);
+    s(j)=dy/L(j);
+    
+  // This is a special way to define a Matrix by Element coming from library(RcppEigen)
+    Matrix4f ke;
+    ke << pow(c[j],2),c[j]*s[j],-pow(c[j],2),-c[j]*s[j],
+         c[j]*s[j],pow(s[j],2),-c[j]*s[j], -pow(s[j],2),
+         -pow(c[j],2),-c[j]*s[j],pow(c[j],2),c[j]*s[j],
+          -c[j]*s[j],-pow(s[j],2),c[j]*s[j],pow(s[j],2);
+    //Here you populate every List Element with the corresponding Element Matrix
+    K_list[j]= Elements(j,NN_e)*Elements(j,NN_e + 1)/L[j]*ke;  
+    
+    
+  }
+  
+ 
+  
+  return K_list;
+}
+/*** R
+(K_E <- K_Element(Nodes,Elements))
+*/
+```
+
+### Active DoF Assembly
+
+The Stiffness Method needs to determine what Dof are actually active, meaning that are free to move, hence are unknowns of the equation of the problem.
+In order to do that it is necessary to determine which ones are free to move depending on the support Matrix and a Position Number is assigned to them.
+
+Pseudocode as follows:
+
+
+$$ Nn \leftarrow \text{Number of Rows in the Node Matrix} \\
+Gl_act \leftarrow  \text{ Sparse Matrix Dimension (NN \cdot Ngl_N) x 1 } \\
+cont = 0 \\
+\begin{aligned}
+& \text{for i = 1 to Nn do } \\
+& \text{for k = 1 to Ngl_N do} \\
+\end{aligned} \\
+\left\{ \begin{array}{lcc}
+             \text{if Apoyos(i,k) = 0 then} \\
+             cont= cont +1 \\
+             pos=Ngl_N \cdot (i-1) + k \\
+             Gl_act(pos)=cont \\
+             \end{array}
+   \right.
+$$
+Rcpp Code: 
+
+```{Rcpp, eval=FALSE}
+// [[Rcpp::export]] 
+// Sparse Vector that uses Support Matrix as Input 
+NumericVector Gr_Active(NumericMatrix Support, int Ngl_N = 2){
+  int Num_Nodes = Support.nrow();
+  int cont=0, i, k;
+  //Defining Dimension of Gl Vector
+  NumericVector Gl (Num_Nodes*Ngl_N);
+  
+  for(i = 0; i < Num_Nodes; ++i){
+    for(k = 0; k < Ngl_N; ++k){
+      
+      if(Apoyos(i,k)==0){
+        //Counter needs to be adapted since C++ starts off at Zero
+        Gl[Ngl_N*i+k] = ++cont;
+        
+      }
+    }  
+    
+  }
+  return Gl;
+  
+}
+
+```
+
+
+### Connectivity Array
+
+The Method determines an array to identify how the different elements are connected each other. This way it is possible to create an equivalent Matrix representing the Equivalent Stiffness of the ensembled elements.
+
+$$ Ngle = Ngl_N \cdot NN_e \\
+conect \leftarrow  \text{ Sparse Matrix Dimension Ne x Ngle } \\
+\begin{aligned}
+& \text{for j = 1 to Ne do } \\
+& \text{for k = 1 to NN_e do} \\
+& N_k=Elementos(j,k) \\
+& pos1= (N_k - 1) \cdot Ngl_N \\
+\end{aligned} \\
+\text{ for l= 1 to Ngl_N do } \\
+\left\{ \begin{array}{lcc}
+             pos2=pos1+l \\
+             pos3= (k-1) \cdot Ngl_N + l \\
+             conect(j,pos3) = Gl_act(pos2) \\
+             \end{array}
+   \right.
+$$
+Rcpp Code:
+
+```{Rcpp, eval=FALSE}
+// [[Rcpp::export]]
+// This is a Numeric Matrix using Elements Matrix and Gl Vector as Input
+NumericMatrix Arr_Connect(NumericMatrix Elements, NumericVector Gl, int NN_e = 2, int Ngl_N = 2){
+  int Num_Elements = Elements.nrow();
+  // Several counters an be defined simultaneously if sharing the same properties.
+  int j, k, l, pos1, pos2, pos3;
+  NumericMatrix conect(Num_Elements, NN_e * Ngl_N);
+  
+  for(j=0; j < Num_Elements; ++j){
+    for(k=0; k < NN_e; ++k){
+      pos1 = (Elements(j,k) - 1) * Ngl_N;
+      for(l=0; l < Ngl_N; ++l){
+        pos2 = pos1 + l;
+       // pos3 had to be adjusted because C++ index starting at 0     
+        pos3 = k * Ngl_N + l;
+        conect(j,pos3) = Gl[pos2];
+      }
+    }
+  }
+  
+  return conect;
+  
+}
+```
+
+### Stiffness Matrix Assembly
+
+Once the Connectivity Array and the Active DoFs are determined the Global Stiffness Matrix can be assembled. This matrix contains the Contribution of every element to an specific Node. Less Elements joined to a specific Node will end up adding less stiffness than a lot of elements being part of a Node. 
+
+Pseudocode as follows:
+
+$$ N_R \leftarrow \text{ sum of all of the entries of the support Matrix }  \\
+NGl_total = Ngl_N \cdot Nn - N_R \\
+K \leftarrow \text{ Sparse Matrix Ngl_total x Ngl_total }  \\
+\begin{aligned}
+& \text{for j = 1 to Ne do } \\
+& \text{for k = 1 to Ngle do} \\
+\end{aligned} \\
+\text{ for l= 1 to Ngl_e do } \\
+\left\{ \begin{array}{lcc}
+             pos1=conect(j,k) \\
+             pos2=conect(j,l) \\
+             text{ if conect(j,k) \neq 0 and conect(j,l) \neq 0 then } \\
+             K(pos1,pos2)=K_E{j}(k,l) + K(pos1,pos2) \\
+             \end{array}
+   \right.
+$$
+Rcpp Code: 
+
+```{Rcpp, eval=FALSE}
+// [[Rcpp::export]]
+//Numeric Matrix using Support, Gl and Conect Matrix and K_E List as Inputs
+NumericMatrix K_Total(List K_E, NumericMatrix Support, NumericVector Gl, NumericMatrix conect, 
+                      int NN_e = 2, int Ngl_N =2 ){
+  
+  int Num_Elements = K_E.length();
+  int Num_Nodes = Support.nrow();
+  int Nr=sum(Support), j, k, l, pos1, pos2;
+  NumericMatrix K( Ngl_N * Num_Nodos- Nr );
+  int Ngl_E = NN_e * Ngl_N;
+  
+  
+  for(j=0; j<Num_Elements; ++j){
+    for(k=0; k<Ngl_E; ++k){
+      for(l=0; l<Ngl_E; ++l){
+        pos1 = conect(j,k);
+        pos2 = conect(j,l);
+        //Notice that List Elements need to be pulled using brakets
+        NumericMatrix Ke = K_E[j];
+        // and operator uses double ampersand and inequality syntax follow same rules than R
+        if(pos1 != 0 && pos2 !=0){
+          // += is the C++ operator to sum the new value to the current one.
+          K(pos1 - 1, pos2 - 1) += Ke(k,l);
+        }
+      }
+    }
+  }
+  
+  return K;
+  
+  
+  
+}
+
+```
+
+### Load Vector Assembly
+
+This is the equivalent load Vector considering only Loads for active DoFs that are participating in the solution of the problem.
+
+$$ F \leftarrow \text{ Sparse Matrix dimension Ngl_total x 1 }  \\
+\begin{aligned}
+& \text{for i = 1 to Nn do } \\
+\end{aligned} \\
+\text{ for k= 1 to Ngl_n do } \\
+\left\{ \begin{array}{lcc}
+             pos1=Ngl_n \cdot (i-1) + k \\
+             pos2=Gl_act(pos1) \\
+             \text{ if pos2 Loads(i,k) } \\
+             F(pos2)=Cargas(i,k)\\
+             \end{array}
+   \right.
+$$
+Rcpp Code:
+
+```{Rcpp, eval = FALSE}
+// [[Rcpp::export]]
+NumericVector f_Total(NumericMatrix Loads, NumericVector Gl, int Nr, int Ngl_N = 2 ){
+  int Num_Nodos = Loads.nrow();
+  int N_t = Ngl_N * Num_Nodos - Nr;
+  NumericVector F (N_t);
+  int i,k,pos1,pos2;
+  
+  for(i=0; i < Num_Nodos; ++i){
+    for(k=0; k < Ngl_N; ++k){
+      pos1 = Ngl_N * i + k;
+      pos2 = Gl[pos1];
+      if(pos2 != 0){
+        F[pos2 - 1] = Cargas(i,k);
+      }
+    }
+  }
+  
+  return F;
+  
+}
+```
+
+### Solving the Problem
+
+All this Steps allows to pose the following problem:
+
+$$ [K] \cdot \{u\} = \{F\} $$
+
+In order to get the desired displacements it is just necessary to inverse $ [K] $.
+
+$$  \{u\} = [K]^{-1} \cdot \{F\}$$
+
+For this case I´ll be using RcppEigen, a Rcpp Linear Algebra Library that allows some extra Matrix operations that are useful for, in this case, Matrix inversion:
+
+```{Rcpp, eval=FALSE}
+// I have defined a new object type called MapMatd whih is a Matrix with no specific size of doubles
+typedef Map<MatrixXd> MapMatd;
+// Defined a Vector with same characteristics as before
+typedef Map<VectorXd> MapVecd;
+
+// [[Rcpp::export]]
+// I use a VectorXd non defined size X with double data type d
+VectorXd u_vect(NumericMatrix K_Total, NumericVector f_Total){
+  //I need to cast R Objects coming from Inputs into Eigen Objects. In this case i would just say trust me.
+  const MapMatd K(as<MapMatd>(K_Total));
+  const MapVecd f(as<MapVecd>(f_Total));
+  
+  //Applying Inverse Method, this is only available because K and f are already Eigen objets
+  VectorXd result = K.inverse()*f;
+  
+  return result;
+  
+}
+```
+
+## Conclusions
+
+  * R and Rcpp share a very similar syntax.
+  * All R objects are compatible with Rcpp, even Lists
+  * The Main advantage of using Rcpp is that is way too faster than Regular R. This makes it especially suitable for Algorithms and Matrix manipulation.
+  * Notice that Matrices use () for indexing whereas Vectors and Lists use [].
+  * Rcpp starts at 0, make the proper adjustments when dealing with indices.
+  
+
+I´ll be posting another Entry using the recently reated functions to show how fast they are. Stay tuned!!
+
+
+
+
+

@@ -17,30 +17,53 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+
+[[experience]]
+  title = "Thesis Project"
+  company = "Evalueserve Chile S.A"
+  company_url = "https://www.evalueserve.com/"
+  location = "Viña del Mar, Chile"
+  date_start = "2019-06-11"
+  date_end = ""
+  description = """ Decided to Apply the knowledge learned during my Data Sience stage into Civil Engineering. I started working on applying Convolutional Nets to solve FInite Elements problems in Civil Engineering such as Displacement Methods and Permeability Issues in Dams."""
+  
+  
 [[experience]]
   title = "Senior Bussiness Analyst"
   company = "Evalueserve Chile S.A"
   company_url = "https://www.evalueserve.com/"
   location = "Viña del Mar, Chile"
   date_start = "2015-06-01"
-  date_end = ""
+  date_end = "2019-06-10"
   description = """
-  Responsibilities include:
+  Worked at Evalueserve during 4 Years providing services for Wells Fargo in Data Analytics Tasks. Responsibilities included (but not limited to):
   
-  * Data Analytics
-  * Data armonization
-  * ETL
-  * Dashboarding ( [Tableau](https://www.tableau.com/) )
+  * Data Analytics.
+  * Data Harmonization.
+  * Data Reporting.
+  * ETLs.
+  * Calculation Engines.
+  * Dashboarding ( [Tableau](https://www.tableau.com/) ).
+  * Developing POCs (Machine Learning powered Apps using Shiny, Caret/Parsnip backend for ML and dbplyr Storage backend.).
   """
 
 [[experience]]
-  title = "R and Tableau Trainer"
+  title = "R Training Leader"
   company = "Evalueserve Chile S.A"
   company_url = "https://www.evalueserve.com/"
   location = "Viña del Mar, Chile"
   date_start = "2016-06-01"
-  date_end = ""
-  description = """In charge of training new hires of the Company. I was in charge of developing the R syllabus and participated also developing advance classes for Tableau."""
+  date_end = "2019-06-10"
+  description = """Training Lead in charge of developing the R program syllabus, responsible of Introducing the Tidyverse and developing Research Projects to apply the learned concepts during the Program."""
+  
+[[experience]]
+  title = "Tableau Trainer"
+  company = "Evalueserve Chile S.A"
+  company_url = "https://www.evalueserve.com/"
+  location = "Viña del Mar, Chile"
+  date_start = "2016-06-01"
+  date_end = "2019-06-10"
+  description = """Trainer in charge of the Advanced Classes covering topics like Performance, Non-standard charts, LOD and Tableau Advanced Tips and Tricks"""
 
 [[experience]]
   title = "Analista de Produccion Elqui"

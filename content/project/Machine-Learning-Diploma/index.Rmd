@@ -1,0 +1,44 @@
+---
+title: My Final Project at the ML Diploma
+authors: 
+  - admin
+date: '2019-09-24'
+categories:
+  - Tutorial
+tags:
+  - Logistic Regression
+  - Machine Learning
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "This is will be some kind of tutorial of the different Packages I used to perform a Machine Learning Project"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+library(Rcpp)
+library(RcppEigen)
+```
+
+# The Method
+
+The Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.
+
+The purpose of this Document is not get into deep details about the Method. If you want to learn about this you can go to this [paper](https://www.sciencedirect.com/topics/engineering/stiffness-method) to learn the Maths behind this. The idea is to show how to implement this in R. Since this is a computational expensive method I'll be using `library(Rcpp)`.
+
+## The Problem
+
+<center>
+```{r figs1, echo=FALSE, fig.cap="\\label{fig:figs1}Problem Structure"}
+knitr::include_graphics('/img/3_bar_problem.jpg')
+```
+</center>

@@ -10,7 +10,7 @@ tags:
   - Deep Learning
   - Convolutional Networks
 image:
-  caption: "Photo by [Hal Gatewood](https://unsplash.com/@halgatewood) on Unsplash"
+  caption: ""
   focal_point: "Smart"
 summary: "Propuestas para Uso de CNN en estructuras."
 highlight: false
@@ -49,7 +49,8 @@ output:
 <p>Las redes convolucionales es un tipo de Red que esta especializada principalmente en extraer características de imágenes. Si bien es cierto es posible utilizar Redes convolucionales para otras aplicaciones, el análisis de imágenes y la Visión Computacional son la especialidad de estas redes.</p>
 <p>La Principal ventaja sobre una Red neural normal es que no está densamente conectada. Sino que selecciona cuidadosamente las neuronas a las que se conectará cambiando la operación matricial de Producto Punto por una convolución.</p>
 <p>La definición formal de Convolución es:</p>
-<p><span class="math display">\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]</span> La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.</p>
+<p><span class="math display">\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]</span>
+La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.</p>
 <div id="como-se-relaciona-esto-con-las-redes-convolucionales" class="section level2">
 <h2>¿Cómo se relaciona esto con las Redes Convolucionales?</h2>
 <p>El análisis de Imágenes es bastante complicado. La manera en la que un computador es capaz de ver una imágen es parseando e interpretandola por un Tensor de Pixeles. Dependiendo de la resolución dela Imagen este Tensor será cada vez más grande, por lo tanto usar Redes Densas supone un gran costo computacional por todos los $ w_{i,j}$ que será necesario calcular.</p>
@@ -65,10 +66,7 @@ Figure 1: Estructura de Tensores de Imágenes
 <p>La Matriz de Pixeles de Dimensiones Alto x Ancho más una Pofundidad de Canales RGB que dan el color.</p>
 <p>Es por esto que las redes convolucionales ocupan esta operación para reconocer patrones específicos dentro del Tensor de Imagen. La manera en que está convolución se lleva a cabo es por medio de un Filtro. Este filtro es otro Tensor que posee generalmente dimensiones de 3x3 o 5x5 el cual se desplaza a través del tensor de imágenes para construir un Mapa de Características.</p>
 <center>
-<div class="figure">
-<img src="https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/01.jpg?iv=124" />
-
-</div>
+<p><img src="https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/01.jpg?iv=124" /></p>
 </center>
 <center>
 <div class="figure"><span id="fig:figs2"></span>
@@ -78,10 +76,7 @@ Figure 2: Aplicación de un Filtro en redes Convolucionales
 </p>
 </div>
 </center>
-<div class="figure">
-<img src="http://ufldl.stanford.edu/tutorial/images/Convolution_schematic.gif" />
-
-</div>
+<p><img src="http://ufldl.stanford.edu/tutorial/images/Convolution_schematic.gif" /></p>
 <p>Normalmente luego de la Aplicación del Filtro el Mapa de Características es pasado por una ReLU lo que genera que se realcen ciertos atributos de la imagen lo que permite que la red aprenda a diferenciar características específicas.</p>
 <p>Dependiendo del filtro aplicado, se verán ciertos atributos de la imagen o no. Cabe destacar que los filtros parten como números aleatorios que se van entrenando en los distintos Pasos de la red (Forward and Backward).</p>
 <p>Si intentamos analizar la foto de un gato, luego de aplicar filtros, esto es lo que un computador comienza a ver:</p>
@@ -127,7 +122,8 @@ Figure 6: Especialización de la Red
 </div>
 <div id="como-se-relaciona-este-problema-con-estructuras" class="section level2">
 <h2>¿Cómo se relaciona este problema con Estructuras?</h2>
-<p>No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes. Las dos principales caracerísticas de las Redes Convolucionales son:</p>
+<p>No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes.
+Las dos principales caracerísticas de las Redes Convolucionales son:</p>
 <ul>
 <li>La extracción de Características</li>
 <li>Translation/Shift Invariance</li>
@@ -161,7 +157,8 @@ Figure 7: Solución de Finol
 <li>Al no utilizar padding el vector se reduce a 98 x 1 x 275 donde 275 corresponde teóricamente al número de filtros que está utilizando. Esto no sale definido en el Paper y es algo que averigué investigando por mi parte.</li>
 <li>Se utiliza una segunda capa convolucional. La razón de esto no lo sé. Normalmente no he visto casos de dos Capas convolucionales seguidas excepto en modelos muy avanzados.</li>
 <li>Se utiliza una capa Max Pooling para reducir de largo 2 que disminuye el tamaño de la red a la mitad.</li>
-<li>Luego de esto se une con una Red Convencional densamente conectada. Lo que normalmente he visto es que se usa una flatten Layer que aplana la reducción de dimensiones que se ha dado hasta ahora. El valor esperado debería ser de 275 x 48, pero no sé porque ocupa 500 nodos. *Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.</li>
+<li>Luego de esto se une con una Red Convencional densamente conectada. Lo que normalmente he visto es que se usa una flatten Layer que aplana la reducción de dimensiones que se ha dado hasta ahora. El valor esperado debería ser de 275 x 48, pero no sé porque ocupa 500 nodos.
+*Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.</li>
 </ul>
 </div>
 <div id="puntos-interesantes-para-la-investigacion." class="section level2">
@@ -195,7 +192,8 @@ Figure 8: Transformación de Matriz en Imágen
 </div>
 <div id="da-sugerencia" class="section level4">
 <h4>2da Sugerencia</h4>
-<p>Si bien las redes Convolucionales pueden dar buenos resultados para data secuencial, dada su caracteristica de <em>“Invariante a la Traslación”</em>, puede encontrar patrones incorrectos cuando el orden sí importa. Se desaconseja su uso en series de tiempo, ya que el orden de la información importa al momento de predecir. Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda a establecer la secuencia como un prerequisito del análisis.</p>
+<p>Si bien las redes Convolucionales pueden dar buenos resultados para data secuencial, dada su caracteristica de <em>“Invariante a la Traslación”</em>, puede encontrar patrones incorrectos cuando el orden sí importa. Se desaconseja su uso en series de tiempo, ya que el orden de la información importa al momento de predecir.
+Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda a establecer la secuencia como un prerequisito del análisis.</p>
 <ul>
 <li>Es posible realizar modelos paralelos en la que se ingrese data distinta como input de la Red. Por ejemplo la Matriz de Rigidez del problema como <em>“imagen”</em> y los Propiedades Mecánicas como vector o hasta las Cargas a las que está sometida la estructura como vector, de esa manera todos los elementos son parte de los Input del problema para predecir de manera más acertada los desplazamientos normales o umbrales del problema.</li>
 </ul>
@@ -211,7 +209,8 @@ Figure 8: Transformación de Matriz en Imágen
 </div>
 <div id="ta-sugerencia-crear-imagenes-estructurales" class="section level4">
 <h4>4ta Sugerencia “Crear Imágenes Estructurales”</h4>
-<p>Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y. Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.</p>
+<p>Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y.
+Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.</p>
 <p>Para un Enrejado de 9 Elementos esto sería una Imágen de 9 x 9 x 3, lo cual no supondría una gran cantidad de casos para entrenar.</p>
 </div>
 </div>

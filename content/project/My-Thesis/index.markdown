@@ -1,37 +1,40 @@
 ---
 authors:
 - admin
-date: "2016-04-27T00:00:00-03:00"
+date: "2019-09-23T00:00:00-03:00"
 external_link: ""
 image:
-  caption: Photo by [Cole Keister](https://unsplash.com/@coleito) on Unsplash
+  caption: Photo by [Charlie Foster](https://unsplash.com/@charliefoster) on Unsplash
   focal_point: Smart
 links:
 - icon: twitter
   icon_pack: fab
   name: Follow
-  url: https://twitter.com/big_drummer
+  url: https://twitter.com/tobar_with_R
 #slides: example-slides
 
 summary: This is What my Thesis Project will be about.
 tags:
 - Deep Learning
+- Finite Elements
+- Rayleigh - Ritz
 
-title: Coming Soon
+title: My Thesis
 url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
 
+Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found [Dr. Marcos Valdebenito](http://www.ociv.usm.cl/profesores/valdebenito-c-marcos-2/). He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.
 
+Normally to study the effect of Ramdom fields in Structures a Montecarlo Simulation is run several times to determine how the Structure response is affected. This is done by analyzing the mean and the Covariance of the simulations. This process is omputationally expensive since normally 10,000 to 1,000,000 simulations are needed. Every one of those simulations solves the following problem, also called the Rayleigh - Ritz Method:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+$$ [K] \{u\} = \{f\}$$
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.
+Where $ [K] $ is the Finite Element Matrix representing the Equivalent Stiffness of the different Degrees of Fredom of the Structure.  $ \{f\} $ is the Equivalent Load Vector representing the forces affecting the Structure. In order to solve this problem $ [K]^{-1} $ needs to be pre-multiplied with $ \{f\}$ to obtain the Struture Response $ \{u\} $ representing the Structure displacement at every Degree of freedom. Normally $ [K] $ is a fairly large Matrix and the Inversion process costly so alternative methods to Montecarlo Simulation are deeply appreciated.
 
-Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.
+So that is how we came up with a Project. What about considering $ [K] $ as a black and white image (1 channel), representing the stiffness of a Truss. Therefore, Convolutional Networks could be a good alternative to analyze the Matrix and train a Network capable of determinimg in a first instance the displacement of the Structure ($\{u\}$) and afterwards the failure of the Structure, transforming the problem into a Clasification Binary Problem (Failing - not Failing).
 
-Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.
+I'll be posting more technical content about how I've been tackling the problem. Stay tuned!!!
 
-Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.

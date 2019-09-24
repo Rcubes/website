@@ -7,10 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Latin R</title>
+      <link>/post/latin-r/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/latin-r/</guid>
+      <description>Latin RLatin R is a conference organize by RLadies Latam and is the oportunity we have here to know the last breakthrough and how is being using in Research, companies, etc.They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge 3 Main R users are coming:
+Mine Çetinkaya-RundelShe is one of the most important persons involved into R Teaching.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma</title>
+      <link>/project/machine-learning-diploma/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/machine-learning-diploma/</guid>
+      <description>The MethodThe ProblemThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.</description>
+    </item>
+    
+    <item>
+      <title>My Thesis</title>
+      <link>/project/my-thesis/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      
+      <guid>/project/my-thesis/</guid>
+      <description>Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found Dr. Marcos Valdebenito. He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.</description>
+    </item>
+    
+    <item>
+      <title>The Stiffness Method</title>
+      <link>/project/stiffness-method/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/stiffness-method/</guid>
+      <description>The MethodThe ProblemRcpp BasicsCreating an Rcpp fileStiffness MethodStiff Matrix by ElementActive DoF AssemblyConnectivity ArrayStiffness Matrix AssemblyLoad Vector AssemblySolving the ProblemConclusionsThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure.</description>
+    </item>
     
     <item>
       <title>Propuesta Redes Convolucionales</title>
@@ -80,45 +117,14 @@ Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering b
     </item>
     
     <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/jupyter/</guid>
-      <description>from IPython.core.display import Image Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)  print(&amp;quot;Welcome to Academic!&amp;quot;)  Welcome to Academic!  Install Python and Jupyter Install Anaconda which includes Python 3 and Jupyter notebook.
-Otherwise, for advanced users, install Jupyter notebook with pip3 install jupyter.
-Create a new blog post as usual Run the following commands in your Terminal, substituting &amp;lt;MY_WEBSITE_FOLDER&amp;gt; and my-post with the file path to your Academic website folder and a name for your blog post (without spaces), respectively:</description>
-    </item>
-    
-    <item>
-      <title>Coming Soon</title>
-      <link>/project/my-thesis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/project/my-thesis/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>Academic makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.
-Follow our easy step by step guide to learn how to build your own free website with Academic. Check out the personal demo or the business demo of what you&amp;rsquo;ll get in less than 10 minutes.
- View the documentation Ask a question Request a feature or report a bug Updating?</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/author/admin/</link>
       <pubDate>Tue, 26 Mar 2019 21:41:17 -0300</pubDate>
       
       <guid>/author/admin/</guid>
       <description>I&amp;rsquo;m almost a Civil Engineer that for well-unknown reasons ended up working as a Data Scientist prior to finish my Thesis Project (more to come on this) and it seems I enjoy it.
-I like Data Science and I love to solve the Rubiks&amp;rsquo;s Cube, so for now you should have figured out why the site name.
-I&amp;rsquo;ve been working at Evalueserve for the last 4 years working in some interesting and a lot of not-so-interesting Data Science projects.</description>
+I love solving the Rubiks&amp;rsquo;s Cube when analizing data in R, that should be enough insight to figure out why the site name.
+I worked at Evalueserve during 4 years on some interesting and a lot of not-so-interesting Data Science projects.</description>
     </item>
     
   </channel>

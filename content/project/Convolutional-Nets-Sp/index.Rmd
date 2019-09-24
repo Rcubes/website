@@ -10,7 +10,7 @@ tags:
   - Deep Learning
   - Convolutional Networks
 image:
-  caption: "Photo by [Hal Gatewood](https://unsplash.com/@halgatewood) on Unsplash"
+  caption: ""
   focal_point: "Smart"
 summary: "Propuestas para Uso de CNN en estructuras."
 highlight: false
@@ -200,7 +200,6 @@ Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: R
 Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.
 
 Para un Enrejado de 9 Elementos esto sería una Imágen de 9 x 9 x 3, lo cual no supondría una gran cantidad de casos para entrenar.
-
 
 
 

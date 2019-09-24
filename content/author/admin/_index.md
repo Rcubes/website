@@ -1,12 +1,12 @@
 ---
 authors:
 - admin
-bio: I'm passioned about R, Machine Learning, Speedcubing and Table Tennis.
+bio: I'm passioned about R, Machine Learning, Speedcubing, Drumming and Table Tennis.
 
 education:
   courses:
   - course: Civil Engineering Degree
-    institution: Universidad Santa Maria
+    institution: Universidad Tecnica Federico Santa Maria
     year: 2013
   - course: Machine Learning and Predictive Modeling Diploma
     institution: Universidad Catolica Valparaiso
@@ -30,7 +30,7 @@ social:
   link: '#contact'
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/big_drummer
+  link: https://twitter.com/tobar_with_R
 - icon: github
   icon_pack: fab
   link: https://github.com/Rcubes
@@ -41,13 +41,13 @@ user_groups:
 ---
 
 I'm almost a Civil Engineer that for **_well-unknown_**  reasons ended up working as a Data Scientist prior to finish my Thesis Project (more to come on this) and it seems I enjoy it.  
-I like Data Science and I love to solve the Rubiks's Cube, so for now you should have figured out **_why the site name_**.
+I love solving the Rubiks's Cube when analizing data in R, that should be enough insight to figure out **_why the site name_**.
 
-I've been working at Evalueserve for the last 4 years working in some interesting and a lot of not-so-interesting Data Science projects. I started getting bored since R started to be banned from Production Processes in my Company (probably I'll write about this later) so I decided to come up with this site to showcase the Power of R.  
+I worked at Evalueserve during 4 years on some interesting and a lot of not-so-interesting Data Science projects. I started getting bored since R started to be banned from Production Processes (probably I'll write about this later) so I decided to come up with this site to showcase the Power of R and some use-cases in my Thesis Project
 
 The purpose of this site is to honor Yihui Xie's quote: **__"I web, therefore I am ~~Spiderman~~"__** (but I have to say I feel more identified with Tony Stark, not because I'm a Genius, Billionaire, Playboy nor Philanthropist, but I like his creativity...and his **Armor**)  and of course learn together about how R can achieve really cool Data Science Stuffs. I feel I'm a pretty advanced useR, I've been using R since I joined EVS and the **Tidyverse** just changed my life.  
 
-In my spare time I like to solve the Rubik's Cube (of course!! :stuck_out_tongue:), I average around 13 Seconds (by 2019-03) and play some Table Tennis . I'm a Big Fan of the Marvel Cinematic Universe (I haven't read any comics, I just like the Movies) and I can't wait to see [**Avengers: Endgame**](https://www.youtube.com/watch?v=JyGGLB542ks) .  
+In my spare time I like to solve the Rubik's Cube (of course!! :stuck_out_tongue:), I average around 13 Seconds (by 2019-03) and play some Table Tennis . I'm a Big Fan of the Marvel Cinematic Universe (I haven't read any comics, I just like the Movies) and I really enjoyed [**Avengers: Endgame**](https://www.youtube.com/watch?v=JyGGLB542ks).  
 
 My native Language is Spanish, so please forgive me for any Language aberration I can posibly write in the near future (I'm planning to have a Spanish Version too, but I'm still learning **Blogdown**). I'm happily married with Valentina since 2015 and ~~J.A.R.V.I.S~~ Jesus is my ~~co~~pilot.
 

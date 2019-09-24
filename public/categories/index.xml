@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Basics</title>
       <link>/categories/basics/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/basics/</guid>
       <description></description>
@@ -31,11 +31,38 @@
     </item>
     
     <item>
+      <title>Rambling</title>
+      <link>/categories/rambling/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/rambling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>/categories/tutorial/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vampire Diaries</title>
       <link>/categories/vampire-diaries/</link>
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
       
       <guid>/categories/vampire-diaries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vapire Diaries</title>
+      <link>/categories/vapire-diaries/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/vapire-diaries/</guid>
       <description></description>
     </item>
     

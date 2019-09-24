@@ -31,10 +31,10 @@ weight = 10
   weight = 30
 
 
-[[main]]
-  name = "Cubing"
-  url = "/tutorial/"
-  weight = 50
+#[[main]]
+#  name = "Cubing"
+#  url = "/tutorial/"
+#  weight = 50
 
 [[main]]
   name = "Contact"

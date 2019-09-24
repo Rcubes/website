@@ -9,8 +9,32 @@
   
     <url>
     
+      <loc>/post/latin-r/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/project/machine-learning-diploma/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/project/my-thesis/</loc>
+      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/project/stiffness-method/</loc>
+      <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/project/convolutional-nets-sp/memoria-1/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-11T01:53:57-04:00</lastmod>
     </url>
   
     <url>
@@ -57,12 +81,6 @@
   
     <url>
     
-      <loc>/post/jupyter/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-    </url>
-  
-    <url>
-    
       <loc>/tutorial/example/</loc>
       <lastmod>2019-03-25T22:06:40-03:00</lastmod>
     </url>
@@ -76,18 +94,6 @@
     <url>
     
       <loc>/privacy/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/project/my-thesis/</loc>
-      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/post/getting-started/</loc>
       <lastmod>2019-03-24T02:08:11-03:00</lastmod>
     </url>
   
@@ -125,13 +131,6 @@
   
     <url>
     
-      <loc>/tags/academic/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
       <loc>/author/</loc>
       <priority>0</priority>
     </url>
@@ -145,7 +144,7 @@
     <url>
     
       <loc>/categories/basics/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -159,21 +158,35 @@
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/conference/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/convolutional-networks/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/deep-learning/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/finite-elements/</loc>
+      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -186,8 +199,22 @@
   
     <url>
     
+      <loc>/tags/logistic-regression/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/authors/ms-nixon/</loc>
       <lastmod>2019-03-27T01:39:45-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/machine-learning/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -200,7 +227,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -215,6 +242,27 @@
     
       <loc>/publication/</loc>
       <lastmod>2019-03-24T02:08:11-03:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/categories/rambling/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/rayleigh-ritz/</loc>
+      <lastmod>2019-03-27T01:51:29-03:00</lastmod>
+      <priority>0</priority>
     </url>
   
     <url>
@@ -239,7 +287,7 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -252,6 +300,13 @@
   
     <url>
     
+      <loc>/categories/tutorial/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/categories/vampire-diaries/</loc>
       <lastmod>2019-04-06T00:36:48-03:00</lastmod>
       <priority>0</priority>
@@ -259,8 +314,15 @@
   
     <url>
     
+      <loc>/categories/vapire-diaries/</loc>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/authors/admin/</loc>
-      <lastmod>2019-04-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   

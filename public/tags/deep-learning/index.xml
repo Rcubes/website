@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My Thesis</title>
+      <link>/project/my-thesis/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      
+      <guid>/project/my-thesis/</guid>
+      <description>Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found Dr. Marcos Valdebenito. He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.</description>
+    </item>
+    
+    <item>
+      <title>The Stiffness Method</title>
+      <link>/project/stiffness-method/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/stiffness-method/</guid>
+      <description>The MethodThe ProblemRcpp BasicsCreating an Rcpp fileStiffness MethodStiff Matrix by ElementActive DoF AssemblyConnectivity ArrayStiffness Matrix AssemblyLoad Vector AssemblySolving the ProblemConclusionsThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure.</description>
+    </item>
     
     <item>
       <title>Propuesta Redes Convolucionales</title>
@@ -48,15 +66,6 @@ Actually it is more similar to something like this:
       
       <guid>/post/deep-learning/</guid>
       <description>Deep Learning Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operational Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about. During my first real job (as a quasi-Engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason AI was there, just sky-high level mentions in some classes.</description>
-    </item>
-    
-    <item>
-      <title>Coming Soon</title>
-      <link>/project/my-thesis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/project/my-thesis/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
     </item>
     
   </channel>

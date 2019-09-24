@@ -37,6 +37,543 @@
     </item>
     
     <item>
+      <title>Latin R</title>
+      <link>/post/latin-r/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/latin-r/</guid>
+      <description>
+
+
+&lt;div id=&#34;latin-r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Latin R&lt;/h2&gt;
+&lt;p&gt;Latin R is a conference organize by RLadies Latam and is the oportunity we have here to know the last breakthrough and how is being using in Research, companies, etc.
+They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge 3 Main R users are coming:&lt;/p&gt;
+&lt;div id=&#34;mine-cetinkaya-rundel&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mine Çetinkaya-Rundel&lt;/h3&gt;
+&lt;p&gt;She is one of the most important persons involved into R Teaching. I personally had the chance to take some Coursera and Datacamp Courses with her and I learned a lot. Having her now here in hile to meet her in person is suh a great Honor. I just can´t wait to hear about what she has to say.
+She will be conducting a Tutorial on how to Teach R and of Course a main Speech.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;erin-ledell&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Erin Ledell&lt;/h3&gt;
+&lt;p&gt;I have to say I don’t know a lot about her but she is the Chief Machine Learning Scientist at H2O and that is more than enough. She will be conducting a Tutorial on Machine Learning and Deep Learning that of course I´ll be taking so I´ll give more details on later post.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hadley-wickham&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hadley Wickham&lt;/h3&gt;
+&lt;p&gt;This Guy needs no Introduction. He is the Chief Scientist at RStudio and he will be giving the Main Speech of the Conference plus a Package Development Tutorial. Of ourse I will be in first row of this Tutorial and I expect to learn a lot and have a lot of questions prepared beforehand.&lt;/p&gt;
+&lt;p&gt;This guys is by far my most important inspiration when it comes to program in R. Definitely this guys has made my life easier beause of all of the pakages that he has created and I use almost everyday.&lt;/p&gt;
+&lt;p&gt;I’ll be the next 3 days in the Conference and I expect to share some pictures and experiences about the things I will learned.&lt;/p&gt;
+&lt;p&gt;Stay tuned!!!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma</title>
+      <link>/project/machine-learning-diploma/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/machine-learning-diploma/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-method&#34;&gt;The Method&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-problem&#34;&gt;The Problem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;the-method&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Method&lt;/h1&gt;
+&lt;p&gt;The Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.&lt;/p&gt;
+&lt;p&gt;The purpose of this Document is not get into deep details about the Method. If you want to learn about this you can go to this &lt;a href=&#34;https://www.sciencedirect.com/topics/engineering/stiffness-method&#34;&gt;paper&lt;/a&gt; to learn the Maths behind this. The idea is to show how to implement this in R. Since this is a computational expensive method I’ll be using &lt;code&gt;library(Rcpp)&lt;/code&gt;.&lt;/p&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/3_bar_problem.jpg&#34; alt=&#34;\label{fig:figs1}Problem Structure&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Problem Structure
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Thesis</title>
+      <link>/project/my-thesis/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      
+      <guid>/project/my-thesis/</guid>
+      <description>&lt;p&gt;Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found &lt;a href=&#34;http://www.ociv.usm.cl/profesores/valdebenito-c-marcos-2/&#34; target=&#34;_blank&#34;&gt;Dr. Marcos Valdebenito&lt;/a&gt;. He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.&lt;/p&gt;
+
+&lt;p&gt;Normally to study the effect of Ramdom fields in Structures a Montecarlo Simulation is run several times to determine how the Structure response is affected. This is done by analyzing the mean and the Covariance of the simulations. This process is omputationally expensive since normally 10,000 to 1,000,000 simulations are needed. Every one of those simulations solves the following problem, also called the Rayleigh - Ritz Method:&lt;/p&gt;
+
+&lt;p&gt;$$ [K] {u} = {f}$$&lt;/p&gt;
+
+&lt;p&gt;Where $ [K] $ is the Finite Element Matrix representing the Equivalent Stiffness of the different Degrees of Fredom of the Structure.  $ {f} $ is the Equivalent Load Vector representing the forces affecting the Structure. In order to solve this problem $ [K]^{-1} $ needs to be pre-multiplied with $ {f}$ to obtain the Struture Response $ {u} $ representing the Structure displacement at every Degree of freedom. Normally $ [K] $ is a fairly large Matrix and the Inversion process costly so alternative methods to Montecarlo Simulation are deeply appreciated.&lt;/p&gt;
+
+&lt;p&gt;So that is how we came up with a Project. What about considering $ [K] $ as a black and white image (1 channel), representing the stiffness of a Truss. Therefore, Convolutional Networks could be a good alternative to analyze the Matrix and train a Network capable of determinimg in a first instance the displacement of the Structure (${u}$) and afterwards the failure of the Structure, transforming the problem into a Clasification Binary Problem (Failing - not Failing).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be posting more technical content about how I&amp;rsquo;ve been tackling the problem. Stay tuned!!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Stiffness Method</title>
+      <link>/project/stiffness-method/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/stiffness-method/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-method&#34;&gt;The Method&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-problem&#34;&gt;The Problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rcpp-basics&#34;&gt;Rcpp Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#creating-an-rcpp-file&#34;&gt;Creating an Rcpp file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#stiffness-method&#34;&gt;Stiffness Method&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#stiff-matrix-by-element&#34;&gt;Stiff Matrix by Element&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#active-dof-assembly&#34;&gt;Active DoF Assembly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#connectivity-array&#34;&gt;Connectivity Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#stiffness-matrix-assembly&#34;&gt;Stiffness Matrix Assembly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#load-vector-assembly&#34;&gt;Load Vector Assembly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#solving-the-problem&#34;&gt;Solving the Problem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusions&#34;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;the-method&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Method&lt;/h1&gt;
+&lt;p&gt;The Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.&lt;/p&gt;
+&lt;p&gt;The purpose of this Document is not get into deep details about the Method. If you want to learn about this you can go to this &lt;a href=&#34;https://www.sciencedirect.com/topics/engineering/stiffness-method&#34;&gt;paper&lt;/a&gt; to learn the Maths behind this. The idea is to show how to implement this in R. Since this is a computational expensive method I’ll be using &lt;code&gt;library(Rcpp)&lt;/code&gt;.&lt;/p&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/3_bar_problem.jpg&#34; alt=&#34;\label{fig:figs1}Problem Structure&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Problem Structure
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;This is a simple problem and useful to understand the different steps of the Method.
+This is implementation is for a Truss with 3 Nodes and 3 Elements where:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Number of Nodes by Element
+NN_e &amp;lt;- 2
+#Number of Degrees of Freedom (DoF) by Node
+Ngl_N &amp;lt;- 2
+L &amp;lt;- 1 #Value of L
+E &amp;lt;- 2 * 10 ^ 11 # Young Module / Elasticity Metric
+A &amp;lt;- 0.0001 # Cross Sectional Area
+P &amp;lt;- 1000 # Load&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The First and most simple Step is to organize the Input Data. All of the Data will be input in &lt;code&gt;tibble&lt;/code&gt; form.&lt;/p&gt;
+&lt;p&gt;Row i of the &lt;code&gt;Nodes&lt;/code&gt; Matrix will store the X and Y Coordinates for Every Node.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Nodes &amp;lt;-
+   tibble::tribble(~ Xi, ~ Yi,
+                   0,   0,
+                   sqrt(2) / 2 * L,  sqrt(2) / 2 * L,
+                   sqrt(2) * L, 0))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
+##      Xi    Yi
+##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+## 1 0     0    
+## 2 0.707 0.707
+## 3 1.41  0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Row j of the &lt;code&gt;Elements&lt;/code&gt; Matrix will contain the Initial Node &lt;code&gt;ni&lt;/code&gt;, the ending Node &lt;code&gt;nf&lt;/code&gt; and the corresponding E and A properties for Element j. In this case all the Elements share the same properties.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Elements &amp;lt;-
+   tibble::tribble(~ ni, ~ nf,   ~ E,   ~ A,
+                   1,   2,    E,    A,
+                   2,   3,    E,    A,
+                   3,   1,    E,    A))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 4
+##      ni    nf            E      A
+##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt;
+## 1     1     2 200000000000 0.0001
+## 2     2     3 200000000000 0.0001
+## 3     3     1 200000000000 0.0001&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Row i of the &lt;code&gt;Loads&lt;/code&gt; Matrix contains the x and y vectorial component of the Loads for Node i.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Loads &amp;lt;-
+   tibble::tribble(~ Px, ~ Py,
+                   0,   0,
+                   0,   P,
+                   0,   0))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
+##      Px    Py
+##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+## 1     0     0
+## 2     0  1000
+## 3     0     0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Row i correspond to the freedom of the X and Y Component of the Node i. 1 meaning no Movement and 0 meaning free movement.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Supports &amp;lt;-
+   tibble::tribble(~ Rx, ~ Ry,
+                   1,   1,
+                   0,   0,
+                   0,   1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
+##      Rx    Ry
+##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+## 1     1     1
+## 2     0     0
+## 3     0     1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;rcpp-basics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Rcpp Basics&lt;/h2&gt;
+&lt;p&gt;Rcpp is the R API package to access to the huge benefits that C++ offers. I´m not an expert in C++ actually I just learned a bit of C++ because Rcpp offers easy sintax to access to C++ Elements but always showing equivalents in the R Environment.&lt;/p&gt;
+&lt;p&gt;C++ is far for being an adequate language for Data Science, but once you want to optimize code or algorithms is definitely the way to go. In these case I´ll be showing the algorithm to the different steps of the Stiffness Method and how can be implemented in Rcpp.&lt;/p&gt;
+&lt;p&gt;My main sources to learn Rcpp were this excellent &lt;a href=&#34;https://teuder.github.io/rcpp4everyone_en/&#34;&gt;Rcpp for Everyone&lt;/a&gt; and of course &lt;a href=&#34;http://adv-r.had.co.nz/Rcpp.html&#34;&gt;Hadley´s Help&lt;/a&gt;. With these two resources you should have more than enough to create your first Rcpp functions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creating-an-rcpp-file&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creating an Rcpp file&lt;/h2&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/cpp_file.png&#34; alt=&#34;\label{fig:figs2}Create a C++ File&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Create a C++ File
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;If you work with RStudio you can go to File &amp;gt; New File &amp;gt; C++ File and will open a C++ Template like this:&lt;/p&gt;
+&lt;center&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/img/cpp_template.png&#34; alt=&#34;\label{fig:figs3}C++ Template&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: C++ Template
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;The main thing you need to be aware of is loading the required libraries from C++. In this case we will use the following:&lt;/p&gt;
+&lt;p&gt;All C++ code chunks will be combined to the chunk below:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::depends(RcppEigen)]]
+#include &amp;lt;Rcpp.h&amp;gt;
+#include &amp;lt;RcppEigen.h&amp;gt;
+#include &amp;lt;Eigen/LU&amp;gt; 
+#include &amp;lt;Eigen/Eigenvalues&amp;gt; 
+
+using namespace Rcpp;
+using namespace Eigen;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you may know C++ is a compiled language. Compilation means, in really simple words, to optimize and speed up the code making it available in R through functions. If you want functions to be available in the R environment they need to be preceeded by this special comment. Otherwise they can be called from within the C++ environment as intermediate functions but they won´t work in R.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stiffness-method&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stiffness Method&lt;/h2&gt;
+&lt;div id=&#34;stiff-matrix-by-element&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Stiff Matrix by Element&lt;/h3&gt;
+&lt;p&gt;This Step calculates Stiff for the mini-structures, meaning every single bar.&lt;/p&gt;
+&lt;p&gt;Every Element Matrix has the following form that needs to be created according to its properties.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+[K]_j=\begin{bmatrix}
+    c^2 &amp;amp;  &amp;amp;  &amp;amp; sim\\
+    cs &amp;amp; s^2 &amp;amp;  &amp;amp; \\
+    -c^2 &amp;amp; -cs &amp;amp; c^2 &amp;amp; \\
+    -cs &amp;amp; -s^2 &amp;amp; cs &amp;amp; s^2 \\
+    \end{bmatrix}
+\]&lt;/span&gt;
+The pseudo code is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Ne \leftarrow \text{Number of Rows in the Element Matrix} \\
+c \leftarrow  \text{ Sparse Matrix for Director Cosines, Dimension Ne x 1 } \\
+s \leftarrow  \text{ Sparse Matrix for Director Sinus, Dimension Ne x 1 } \\
+L \leftarrow  \text{ Sparse Matrix for Element Length, Dimension Ne x 1 } \\
+\text{for j = 1 to Ne do}
+\left\{ \begin{array}{lcc}
+             Ni=Elements(j,1) \\ 
+             Nf=Elements(j,2) \\
+             \Delta x = Nodes(Nf,1) - Nodes(Ni,1) \\
+             \Delta y = Nodes(Nf,2) - Nodes(Ni,2) \\
+             L(j)=\sqrt{\Delta x^2 + \Delta y^2} \\
+             c(j) = {\Delta x\over L(j)} \\
+             s(j) = {\Delta y\over L(j)}
+             \end{array}
+   \right.
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now translating this into Rcpp looks like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You need define every object to use preceeded by its type.&lt;/li&gt;
+&lt;li&gt;The output will be an R List since I want object storing the different Element Matrix.&lt;/li&gt;
+&lt;li&gt;All of the Function arguments are Mandatory by default and need to go in the same order that will be used. If an Optional Argument is needed the default value needs to be defined as in NN_e.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
+// First you define the Output Type. In this case an R List.
+List K_Element(NumericMatrix Nodes, NumericMatrix Elements, int NN_e = 2){
+  
+  // Ne is defined by using the nrow method to calculate number of rows.
+  int Num_Elements = Elements.nrow();
+  // c, s and L are defined Vectors since the second Dimension is 1.
+  NumericVector c (Num_Elements);
+  NumericVector s (Num_Elements);
+  NumericVector L (Num_Elements);
+  
+  int j,Ni,Nf;
+  // dx and dy are defined as doubles since they can contain decimals
+  double dx,dy;
+  List K_list (Num_Elements);
+  
+  
+  // C++ is defined from 0 as the first element. So the pseudo code needs to be adjusted accordingly.
+  // Notice the for syntax, from 0 to NE-1 defined as j&amp;lt;Num_Elementos and the ++j iterator
+  for(j=0;j&amp;lt;Num_Elements;++j){
+    Ni=Elements(j,0) -1;
+    Nf=Elements(j,1) - 1;
+    dx=Nodes(Nf,0)-Nodes(Ni,0);
+    dy=Nodes(Nf,1)-Nodes(Ni,1);
+    //pow is the C++ operator for ^
+    L[j]=sqrt(pow(dx,2)+pow(dy,2));
+    c(j)=dx/L(j);
+    s(j)=dy/L(j);
+    
+  // This is a special way to define a Matrix by Element coming from library(RcppEigen)
+    Matrix4f ke;
+    ke &amp;lt;&amp;lt; pow(c[j],2),c[j]*s[j],-pow(c[j],2),-c[j]*s[j],
+         c[j]*s[j],pow(s[j],2),-c[j]*s[j], -pow(s[j],2),
+         -pow(c[j],2),-c[j]*s[j],pow(c[j],2),c[j]*s[j],
+          -c[j]*s[j],-pow(s[j],2),c[j]*s[j],pow(s[j],2);
+    //Here you populate every List Element with the corresponding Element Matrix
+    K_list[j]= Elements(j,NN_e)*Elements(j,NN_e + 1)/L[j]*ke;  
+    
+    
+  }
+  
+ 
+  
+  return K_list;
+}
+/*** R
+(K_E &amp;lt;- K_Element(Nodes,Elements))
+*/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;active-dof-assembly&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Active DoF Assembly&lt;/h3&gt;
+&lt;p&gt;The Stiffness Method needs to determine what Dof are actually active, meaning that are free to move, hence are unknowns of the equation of the problem.
+In order to do that it is necessary to determine which ones are free to move depending on the support Matrix and a Position Number is assigned to them.&lt;/p&gt;
+&lt;p&gt;Pseudocode as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Nn \leftarrow \text{Number of Rows in the Node Matrix} \\
+Gl_act \leftarrow  \text{ Sparse Matrix Dimension (NN \cdot Ngl_N) x 1 } \\
+cont = 0 \\
+\begin{aligned}
+&amp;amp; \text{for i = 1 to Nn do } \\
+&amp;amp; \text{for k = 1 to Ngl_N do} \\
+\end{aligned} \\
+\left\{ \begin{array}{lcc}
+             \text{if Apoyos(i,k) = 0 then} \\
+             cont= cont +1 \\
+             pos=Ngl_N \cdot (i-1) + k \\
+             Gl_act(pos)=cont \\
+             \end{array}
+   \right.
+\]&lt;/span&gt;
+Rcpp Code:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]] 
+// Sparse Vector that uses Support Matrix as Input 
+NumericVector Gr_Active(NumericMatrix Support, int Ngl_N = 2){
+  int Num_Nodes = Support.nrow();
+  int cont=0, i, k;
+  //Defining Dimension of Gl Vector
+  NumericVector Gl (Num_Nodes*Ngl_N);
+  
+  for(i = 0; i &amp;lt; Num_Nodes; ++i){
+    for(k = 0; k &amp;lt; Ngl_N; ++k){
+      
+      if(Apoyos(i,k)==0){
+        //Counter needs to be adapted since C++ starts off at Zero
+        Gl[Ngl_N*i+k] = ++cont;
+        
+      }
+    }  
+    
+  }
+  return Gl;
+  
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;connectivity-array&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Connectivity Array&lt;/h3&gt;
+&lt;p&gt;The Method determines an array to identify how the different elements are connected each other. This way it is possible to create an equivalent Matrix representing the Equivalent Stiffness of the ensembled elements.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Ngle = Ngl_N \cdot NN_e \\
+conect \leftarrow  \text{ Sparse Matrix Dimension Ne x Ngle } \\
+\begin{aligned}
+&amp;amp; \text{for j = 1 to Ne do } \\
+&amp;amp; \text{for k = 1 to NN_e do} \\
+&amp;amp; N_k=Elementos(j,k) \\
+&amp;amp; pos1= (N_k - 1) \cdot Ngl_N \\
+\end{aligned} \\
+\text{ for l= 1 to Ngl_N do } \\
+\left\{ \begin{array}{lcc}
+             pos2=pos1+l \\
+             pos3= (k-1) \cdot Ngl_N + l \\
+             conect(j,pos3) = Gl_act(pos2) \\
+             \end{array}
+   \right.
+\]&lt;/span&gt;
+Rcpp Code:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
+// This is a Numeric Matrix using Elements Matrix and Gl Vector as Input
+NumericMatrix Arr_Connect(NumericMatrix Elements, NumericVector Gl, int NN_e = 2, int Ngl_N = 2){
+  int Num_Elements = Elements.nrow();
+  // Several counters an be defined simultaneously if sharing the same properties.
+  int j, k, l, pos1, pos2, pos3;
+  NumericMatrix conect(Num_Elements, NN_e * Ngl_N);
+  
+  for(j=0; j &amp;lt; Num_Elements; ++j){
+    for(k=0; k &amp;lt; NN_e; ++k){
+      pos1 = (Elements(j,k) - 1) * Ngl_N;
+      for(l=0; l &amp;lt; Ngl_N; ++l){
+        pos2 = pos1 + l;
+       // pos3 had to be adjusted because C++ index starting at 0     
+        pos3 = k * Ngl_N + l;
+        conect(j,pos3) = Gl[pos2];
+      }
+    }
+  }
+  
+  return conect;
+  
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stiffness-matrix-assembly&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Stiffness Matrix Assembly&lt;/h3&gt;
+&lt;p&gt;Once the Connectivity Array and the Active DoFs are determined the Global Stiffness Matrix can be assembled. This matrix contains the Contribution of every element to an specific Node. Less Elements joined to a specific Node will end up adding less stiffness than a lot of elements being part of a Node.&lt;/p&gt;
+&lt;p&gt;Pseudocode as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ N_R \leftarrow \text{ sum of all of the entries of the support Matrix }  \\
+NGl_total = Ngl_N \cdot Nn - N_R \\
+K \leftarrow \text{ Sparse Matrix Ngl_total x Ngl_total }  \\
+\begin{aligned}
+&amp;amp; \text{for j = 1 to Ne do } \\
+&amp;amp; \text{for k = 1 to Ngle do} \\
+\end{aligned} \\
+\text{ for l= 1 to Ngl_e do } \\
+\left\{ \begin{array}{lcc}
+             pos1=conect(j,k) \\
+             pos2=conect(j,l) \\
+             text{ if conect(j,k) \neq 0 and conect(j,l) \neq 0 then } \\
+             K(pos1,pos2)=K_E{j}(k,l) + K(pos1,pos2) \\
+             \end{array}
+   \right.
+\]&lt;/span&gt;
+Rcpp Code:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
+//Numeric Matrix using Support, Gl and Conect Matrix and K_E List as Inputs
+NumericMatrix K_Total(List K_E, NumericMatrix Support, NumericVector Gl, NumericMatrix conect, 
+                      int NN_e = 2, int Ngl_N =2 ){
+  
+  int Num_Elements = K_E.length();
+  int Num_Nodes = Support.nrow();
+  int Nr=sum(Support), j, k, l, pos1, pos2;
+  NumericMatrix K( Ngl_N * Num_Nodos- Nr );
+  int Ngl_E = NN_e * Ngl_N;
+  
+  
+  for(j=0; j&amp;lt;Num_Elements; ++j){
+    for(k=0; k&amp;lt;Ngl_E; ++k){
+      for(l=0; l&amp;lt;Ngl_E; ++l){
+        pos1 = conect(j,k);
+        pos2 = conect(j,l);
+        //Notice that List Elements need to be pulled using brakets
+        NumericMatrix Ke = K_E[j];
+        // and operator uses double ampersand and inequality syntax follow same rules than R
+        if(pos1 != 0 &amp;amp;&amp;amp; pos2 !=0){
+          // += is the C++ operator to sum the new value to the current one.
+          K(pos1 - 1, pos2 - 1) += Ke(k,l);
+        }
+      }
+    }
+  }
+  
+  return K;
+  
+  
+  
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-vector-assembly&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Load Vector Assembly&lt;/h3&gt;
+&lt;p&gt;This is the equivalent load Vector considering only Loads for active DoFs that are participating in the solution of the problem.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ F \leftarrow \text{ Sparse Matrix dimension Ngl_total x 1 }  \\
+\begin{aligned}
+&amp;amp; \text{for i = 1 to Nn do } \\
+\end{aligned} \\
+\text{ for k= 1 to Ngl_n do } \\
+\left\{ \begin{array}{lcc}
+             pos1=Ngl_n \cdot (i-1) + k \\
+             pos2=Gl_act(pos1) \\
+             \text{ if pos2 Loads(i,k) } \\
+             F(pos2)=Cargas(i,k)\\
+             \end{array}
+   \right.
+\]&lt;/span&gt;
+Rcpp Code:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
+NumericVector f_Total(NumericMatrix Loads, NumericVector Gl, int Nr, int Ngl_N = 2 ){
+  int Num_Nodos = Loads.nrow();
+  int N_t = Ngl_N * Num_Nodos - Nr;
+  NumericVector F (N_t);
+  int i,k,pos1,pos2;
+  
+  for(i=0; i &amp;lt; Num_Nodos; ++i){
+    for(k=0; k &amp;lt; Ngl_N; ++k){
+      pos1 = Ngl_N * i + k;
+      pos2 = Gl[pos1];
+      if(pos2 != 0){
+        F[pos2 - 1] = Cargas(i,k);
+      }
+    }
+  }
+  
+  return F;
+  
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solving-the-problem&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solving the Problem&lt;/h3&gt;
+&lt;p&gt;All this Steps allows to pose the following problem:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ [K] \cdot \{u\} = \{F\} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In order to get the desired displacements it is just necessary to inverse $ [K] $.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[  \{u\} = [K]^{-1} \cdot \{F\}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;For this case I´ll be using RcppEigen, a Rcpp Linear Algebra Library that allows some extra Matrix operations that are useful for, in this case, Matrix inversion:&lt;/p&gt;
+&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// I have defined a new object type called MapMatd whih is a Matrix with no specific size of doubles
+typedef Map&amp;lt;MatrixXd&amp;gt; MapMatd;
+// Defined a Vector with same characteristics as before
+typedef Map&amp;lt;VectorXd&amp;gt; MapVecd;
+
+// [[Rcpp::export]]
+// I use a VectorXd non defined size X with double data type d
+VectorXd u_vect(NumericMatrix K_Total, NumericVector f_Total){
+  //I need to cast R Objects coming from Inputs into Eigen Objects. In this case i would just say trust me.
+  const MapMatd K(as&amp;lt;MapMatd&amp;gt;(K_Total));
+  const MapVecd f(as&amp;lt;MapVecd&amp;gt;(f_Total));
+  
+  //Applying Inverse Method, this is only available because K and f are already Eigen objets
+  VectorXd result = K.inverse()*f;
+  
+  return result;
+  
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;R and Rcpp share a very similar syntax.&lt;/li&gt;
+&lt;li&gt;All R objects are compatible with Rcpp, even Lists&lt;/li&gt;
+&lt;li&gt;The Main advantage of using Rcpp is that is way too faster than Regular R. This makes it especially suitable for Algorithms and Matrix manipulation.&lt;/li&gt;
+&lt;li&gt;Notice that Matrices use () for indexing whereas Vectors and Lists use [].&lt;/li&gt;
+&lt;li&gt;Rcpp starts at 0, make the proper adjustments when dealing with indices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I´ll be posting another Entry using the recently reated functions to show how fast they are. Stay tuned!!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Propuesta Redes Convolucionales</title>
       <link>/project/convolutional-nets-sp/memoria-1/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
@@ -68,7 +605,8 @@
 &lt;p&gt;Las redes convolucionales es un tipo de Red que esta especializada principalmente en extraer características de imágenes. Si bien es cierto es posible utilizar Redes convolucionales para otras aplicaciones, el análisis de imágenes y la Visión Computacional son la especialidad de estas redes.&lt;/p&gt;
 &lt;p&gt;La Principal ventaja sobre una Red neural normal es que no está densamente conectada. Sino que selecciona cuidadosamente las neuronas a las que se conectará cambiando la operación matricial de Producto Punto por una convolución.&lt;/p&gt;
 &lt;p&gt;La definición formal de Convolución es:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]&lt;/span&gt; La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]&lt;/span&gt;
+La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.&lt;/p&gt;
 &lt;div id=&#34;como-se-relaciona-esto-con-las-redes-convolucionales&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;¿Cómo se relaciona esto con las Redes Convolucionales?&lt;/h2&gt;
 &lt;p&gt;El análisis de Imágenes es bastante complicado. La manera en la que un computador es capaz de ver una imágen es parseando e interpretandola por un Tensor de Pixeles. Dependiendo de la resolución dela Imagen este Tensor será cada vez más grande, por lo tanto usar Redes Densas supone un gran costo computacional por todos los $ w_{i,j}$ que será necesario calcular.&lt;/p&gt;
@@ -84,10 +622,7 @@ Figure 1: Estructura de Tensores de Imágenes
 &lt;p&gt;La Matriz de Pixeles de Dimensiones Alto x Ancho más una Pofundidad de Canales RGB que dan el color.&lt;/p&gt;
 &lt;p&gt;Es por esto que las redes convolucionales ocupan esta operación para reconocer patrones específicos dentro del Tensor de Imagen. La manera en que está convolución se lleva a cabo es por medio de un Filtro. Este filtro es otro Tensor que posee generalmente dimensiones de 3x3 o 5x5 el cual se desplaza a través del tensor de imágenes para construir un Mapa de Características.&lt;/p&gt;
 &lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/01.jpg?iv=124&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/01.jpg?iv=124&#34; /&gt;&lt;/p&gt;
 &lt;/center&gt;
 &lt;center&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
@@ -97,10 +632,7 @@ Figure 2: Aplicación de un Filtro en redes Convolucionales
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/center&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://ufldl.stanford.edu/tutorial/images/Convolution_schematic.gif&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;http://ufldl.stanford.edu/tutorial/images/Convolution_schematic.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Normalmente luego de la Aplicación del Filtro el Mapa de Características es pasado por una ReLU lo que genera que se realcen ciertos atributos de la imagen lo que permite que la red aprenda a diferenciar características específicas.&lt;/p&gt;
 &lt;p&gt;Dependiendo del filtro aplicado, se verán ciertos atributos de la imagen o no. Cabe destacar que los filtros parten como números aleatorios que se van entrenando en los distintos Pasos de la red (Forward and Backward).&lt;/p&gt;
 &lt;p&gt;Si intentamos analizar la foto de un gato, luego de aplicar filtros, esto es lo que un computador comienza a ver:&lt;/p&gt;
@@ -146,7 +678,8 @@ Figure 6: Especialización de la Red
 &lt;/div&gt;
 &lt;div id=&#34;como-se-relaciona-este-problema-con-estructuras&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;¿Cómo se relaciona este problema con Estructuras?&lt;/h2&gt;
-&lt;p&gt;No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes. Las dos principales caracerísticas de las Redes Convolucionales son:&lt;/p&gt;
+&lt;p&gt;No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes.
+Las dos principales caracerísticas de las Redes Convolucionales son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;La extracción de Características&lt;/li&gt;
 &lt;li&gt;Translation/Shift Invariance&lt;/li&gt;
@@ -180,7 +713,8 @@ Figure 7: Solución de Finol
 &lt;li&gt;Al no utilizar padding el vector se reduce a 98 x 1 x 275 donde 275 corresponde teóricamente al número de filtros que está utilizando. Esto no sale definido en el Paper y es algo que averigué investigando por mi parte.&lt;/li&gt;
 &lt;li&gt;Se utiliza una segunda capa convolucional. La razón de esto no lo sé. Normalmente no he visto casos de dos Capas convolucionales seguidas excepto en modelos muy avanzados.&lt;/li&gt;
 &lt;li&gt;Se utiliza una capa Max Pooling para reducir de largo 2 que disminuye el tamaño de la red a la mitad.&lt;/li&gt;
-&lt;li&gt;Luego de esto se une con una Red Convencional densamente conectada. Lo que normalmente he visto es que se usa una flatten Layer que aplana la reducción de dimensiones que se ha dado hasta ahora. El valor esperado debería ser de 275 x 48, pero no sé porque ocupa 500 nodos. *Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.&lt;/li&gt;
+&lt;li&gt;Luego de esto se une con una Red Convencional densamente conectada. Lo que normalmente he visto es que se usa una flatten Layer que aplana la reducción de dimensiones que se ha dado hasta ahora. El valor esperado debería ser de 275 x 48, pero no sé porque ocupa 500 nodos.
+*Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;puntos-interesantes-para-la-investigacion.&#34; class=&#34;section level2&#34;&gt;
@@ -214,7 +748,8 @@ Figure 8: Transformación de Matriz en Imágen
 &lt;/div&gt;
 &lt;div id=&#34;da-sugerencia&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;2da Sugerencia&lt;/h4&gt;
-&lt;p&gt;Si bien las redes Convolucionales pueden dar buenos resultados para data secuencial, dada su caracteristica de &lt;em&gt;“Invariante a la Traslación”&lt;/em&gt;, puede encontrar patrones incorrectos cuando el orden sí importa. Se desaconseja su uso en series de tiempo, ya que el orden de la información importa al momento de predecir. Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda a establecer la secuencia como un prerequisito del análisis.&lt;/p&gt;
+&lt;p&gt;Si bien las redes Convolucionales pueden dar buenos resultados para data secuencial, dada su caracteristica de &lt;em&gt;“Invariante a la Traslación”&lt;/em&gt;, puede encontrar patrones incorrectos cuando el orden sí importa. Se desaconseja su uso en series de tiempo, ya que el orden de la información importa al momento de predecir.
+Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda a establecer la secuencia como un prerequisito del análisis.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Es posible realizar modelos paralelos en la que se ingrese data distinta como input de la Red. Por ejemplo la Matriz de Rigidez del problema como &lt;em&gt;“imagen”&lt;/em&gt; y los Propiedades Mecánicas como vector o hasta las Cargas a las que está sometida la estructura como vector, de esa manera todos los elementos son parte de los Input del problema para predecir de manera más acertada los desplazamientos normales o umbrales del problema.&lt;/li&gt;
 &lt;/ul&gt;
@@ -230,7 +765,8 @@ Figure 8: Transformación de Matriz en Imágen
 &lt;/div&gt;
 &lt;div id=&#34;ta-sugerencia-crear-imagenes-estructurales&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;4ta Sugerencia “Crear Imágenes Estructurales”&lt;/h4&gt;
-&lt;p&gt;Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y. Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.&lt;/p&gt;
+&lt;p&gt;Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y.
+Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.&lt;/p&gt;
 &lt;p&gt;Para un Enrejado de 9 Elementos esto sería una Imágen de 9 x 9 x 3, lo cual no supondría una gran cantidad de casos para entrenar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -678,69 +1214,6 @@ Until now. Why now? Probably I will explain it later, because it is also related
     </item>
     
     <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/jupyter/</guid>
-      <description>
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;./academic_0_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;install-python-and-jupyter&#34;&gt;Install Python and Jupyter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34; target=&#34;_blank&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and Jupyter notebook.&lt;/p&gt;
-
-&lt;p&gt;Otherwise, for advanced users, install Jupyter notebook with &lt;code&gt;pip3 install jupyter&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;create-a-new-blog-post-as-usual-https-sourcethemes-com-academic-docs-managing-content-create-a-blog-post&#34;&gt;Create a new blog post &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-a-blog-post&#34; target=&#34;_blank&#34;&gt;as usual&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY_WEBSITE_FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;my-post&lt;/code&gt; with the file path to your Academic website folder and a name for your blog post (without spaces), respectively:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd &amp;lt;MY_WEBSITE_FOLDER&amp;gt;
-hugo new  --kind post post/my-post
-cd &amp;lt;MY_WEBSITE_FOLDER&amp;gt;/content/post/my-post/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-
-&lt;p&gt;Run the following command to start Jupyter within your new blog post folder. Then create a new Jupyter notebook (&lt;em&gt;New &amp;gt; Python Notebook&lt;/em&gt;) or upload a notebook.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter notebook
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert Untitled.ipynb --to markdown --NbConvertApp.output_files_dir=.
-
-# Copy the contents of Untitled.md and append it to index.md:
-cat Untitled.md | tee -a index.md
-
-# Remove the temporary file:
-rm Untitled.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-
-&lt;p&gt;Open &lt;code&gt;index.md&lt;/code&gt; in your text editor and edit the title etc. in the &lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34; target=&#34;_blank&#34;&gt;front matter&lt;/a&gt; according to your preference.&lt;/p&gt;
-
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34; target=&#34;_blank&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&amp;rsquo;s folder.&lt;/p&gt;
-
-&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Example Page</title>
       <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0300</pubDate>
@@ -775,424 +1248,6 @@ rm Untitled.md
       
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Coming Soon</title>
-      <link>/project/my-thesis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/project/my-thesis/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.&lt;/p&gt;
-
-&lt;p&gt;Follow our easy &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/&#34; target=&#34;_blank&#34;&gt;step by step guide&lt;/a&gt; to learn how to build your own free website with Academic. &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34;&gt;Check out the personal demo&lt;/a&gt; or the &lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;business demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;View the documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://discuss.gohugo.io/&#34; target=&#34;_blank&#34;&gt;Ask a question&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;Request a feature or report a bug&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Updating? View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Support development of Academic:
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://paypal.me/cushen&#34; target=&#34;_blank&#34;&gt;Donate a coffee&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.patreon.com/cushen&#34; target=&#34;_blank&#34;&gt;Become a backer on Patreon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34; target=&#34;_blank&#34;&gt;Decorate your laptop or journal with an Academic sticker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://academic.threadless.com/&#34; target=&#34;_blank&#34;&gt;Wear the T-shirt&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-cupcake.png&#34; data-caption=&#34;Cupcake&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-cupcake_hueba8cfa8cfbc7543924fcbf387a99e92_23986_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-    
-    
-    
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;/post/getting-started/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;/post/getting-started/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
-  &lt;/a&gt;
-  
-
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-id/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0300</pubDate>
-      
-      <guid>/publication/person-re-id/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
