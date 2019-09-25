@@ -6,8 +6,8 @@ date: '2019-09-23'
 categories:
   - Basics
 tags:
-  - Deep Learning
-  - Convolutional Networks
+  - Civil Engineering
+  - Stiffness Method
 image:
   caption: ""
   focal_point: "Smart"

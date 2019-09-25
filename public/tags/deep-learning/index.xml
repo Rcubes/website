@@ -7,28 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>My Thesis</title>
-      <link>/project/my-thesis/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
-      
-      <guid>/project/my-thesis/</guid>
-      <description>Coming up with an Interesting Thesis Project is not easy at all. Actually I had 3 different projets and 5 different professors. None of them were really interested in my propositions. Thank God I found Dr. Marcos Valdebenito. He is really interested in Reliability Analysis in Structures and Study the Response of Random Field Variables into Strutures, you can learn more about his work on his website. Once I talked to him about I was doing in my former job he was really interested in applying Machine Learning techniques to solve this kind of problems.</description>
-    </item>
-    
-    <item>
-      <title>The Stiffness Method</title>
-      <link>/project/stiffness-method/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/stiffness-method/</guid>
-      <description>The MethodThe ProblemRcpp BasicsCreating an Rcpp fileStiffness MethodStiff Matrix by ElementActive DoF AssemblyConnectivity ArrayStiffness Matrix AssemblyLoad Vector AssemblySolving the ProblemConclusionsThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure.</description>
-    </item>
     
     <item>
       <title>Propuesta Redes Convolucionales</title>

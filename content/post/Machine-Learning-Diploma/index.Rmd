@@ -1,0 +1,179 @@
+---
+title: My Final Project at the ML Diploma (Part I)
+authors: 
+  - admin
+date: '2019-09-24'
+categories:
+  - Tutorial
+tags:
+  - Machine Learning
+  - Data Import (haven)
+  - Data Cleaning
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "This is will be some kind of tutorial of the different Packages I used to perform a Machine Learning Project for my diploma. This first Part will be focused on Importing Data and a high level Data Harmonization."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+```
+
+During my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.
+
+I will try to demonstrate as much of the packages I used to perform this analysis.
+
+
+# Importing Data
+
+Since the data is coming from a SAS format, it was absolutely necessary to use this incredibly tidyverse package called `haven`.
+
+The code to import the data is super simple and goes like this:
+
+```{r}
+#Loading silent tidyverse to make normal utility functions available
+suppressPackageStartupMessages(library(tidyverse))
+library(haven)
+data <- read_sas("develop.sas7bdat")
+```
+
+This will import the data into an R object:
+
+```{r}
+#Showing 10 first Obs
+data %>%
+  head
+```
+
+```{r}
+(data_types <- data %>%
+   map_dfc(class) %>%
+   gather(key = "Variable", value = "Type"))
+```
+
+```{r, warning=FALSE}
+data_types %>%
+  count(Type)
+```
+
+We can notice that 2 out of 48 Variables are strings and all the rest are Numeric. This is not necessary correct because some of the variables could be factors. Having Metadata will be super useful right know.
+
+# Redefining Categorical Variables
+
+After taking a look at the data and the Metadata (that I can´t find now, but I promise I will upload) all the Variables listed next are not correctly numbers but Factors:
+
+```{r}
+#Listing all of the Categorical Variables according to Metadata
+categorical <- c("ATM", "Branch", "CC", "CD", "DDA", "DirDep", "HMOwn", "ILS", "IRA", "InArea", "Ins", "Inv", "LOC", "MM", "MTG", "Moved", "NSF", "Res", "SDB", "Sav")
+```
+We can quickly transform this into factors by using dplyr, with no need to even loop.
+
+```{r}
+#Transforming to Factor (Categorical Data Type in R)
+data <- data %>%
+  mutate_at(vars(categorical), as_factor)
+```
+
+The excellent package forcats offers really easy functions to recode the numbers 1 and 0 into "yes" and "no".
+
+```{r}
+#Factor variables will be relabeled for better intepretation of the data
+data <- data %>%
+  mutate_if(is.factor, ~ fct_recode(. , yes = '1', no = '0')) 
+```
+
+```{r}
+data <- data %>%
+  mutate_at("Res", ~fct_recode(
+    . ,
+    rural = 'R',
+    suburb = 'S',
+    urban = 'U'
+  ))
+
+```
+
+The "Ins" Variable is the response variable and by using forcats we can shift the order of the Event Variable correctly.
+
+```{r}
+#Defining Yes as the Event/Positive Category.
+data$Ins <- data$Ins %>% fct_shift
+```
+
+# Discovering Missing Values
+```{r}
+data %>%
+  summarize_all(funs(. %>% is.na %>% sum)) %>%
+  map_df( ~ .x * 100 / nrow(data)) %>%
+  gather(key = "Variable", value = "percent_NAs") %>%
+  arrange(desc(percent_NAs)) %>%
+  filter(percent_NAs > 0)
+```
+We can show this results in a fancy way with the following code:
+
+
+```{r}
+#Counting if columns have any NAs in them
+data_NA <- data %>%
+  map_dfr(anyNA) %>%
+  gather(key = "Variable", value = "any_NA") %>%
+  filter(any_NA == TRUE)
+
+#This hunk was run before to obtain the atual data types of every column
+data_types <- data %>%
+  map_dfc(class) %>%
+  gather(key = "Variable", value = "Type")
+
+#This Chunk counts the actual Number of NAs 
+n_NA <- data %>%
+  summarize_all(funs(. %>%
+    is.na %>%
+      sum)) %>%
+    gather(key = "Variable", value = "n_NA")
+
+# All the previous results are joined into a summary Table
+data_NA %>%
+  left_join(data_types, by = "Variable") %>%
+  left_join(n_NA, by = "Variable") %>%
+    arrange(Type)
+
+
+```
+
+It can be seen that:
+
+ * 15 Variables have Missing Values. T
+ * The range of Missing values varies from 2.19 % to 19.7 %.  
+ * 3 out of 15 are Categorical Values whereas the rest are Numeric Variables.
+
+During the Diploma a 2% threshold for Missing Values was discussed. Imputation was not recommended if Missing Values are greater than that. So in order to simplify the problem we will just get rid of NAs. The tidyr package does this really easily.
+
+> __Sidenote__: I´m not completely sure about this criterion. I will be asking about this during LatinR_2019.
+
+```{r}
+#Droping observations with missing Values
+data <-  data %>% drop_na()
+#Showing distribution of records of th Target Variable
+data %>% count(Ins)
+```
+
+# Conclusion
+
+So far we have been able to import a SAS dataset and apply a high level cleansing to organize the data, discover factor variables, reorganize the event Variable correctly and get rid of NAs.
+
+```{r}
+data %>% glimpse
+```
+
+
+More to come on this problem. Stay Tuned!!!

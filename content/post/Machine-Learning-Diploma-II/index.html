@@ -1,0 +1,206 @@
+---
+title: My Final Project at the ML Diploma (Part II)
+authors: 
+  - admin
+date: '2019-09-24'
+categories:
+  - Tutorial
+tags:
+  - Machine Learning
+  - Data Import (haven)
+  - Data Cleaning
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Second Part of the ML Diploma Project. This time I´ll be showing some EDA"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#checking-numerical-distribution"><span class="toc-section-number">1</span> Checking Numerical Distribution</a></li>
+<li><a href="#checking-categorical-variables"><span class="toc-section-number">2</span> Checking Categorical Variables</a></li>
+<li><a href="#chi-square-test"><span class="toc-section-number">3</span> Chi-Square Test</a></li>
+<li><a href="#conclusion"><span class="toc-section-number">4</span> Conclusion</a></li>
+</ul>
+</div>
+
+<p>Last time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.</p>
+<div id="checking-numerical-distribution" class="section level1">
+<h1><span class="header-section-number">1</span> Checking Numerical Distribution</h1>
+<p>In order to do this I should pick Numerical Variables one by one and create a ggplot.
+This ould actually be quite tedious, why not to use the power of the tidyverse?</p>
+<p>We will combine select_if and walk 2 to create histograms for every of the 28 Numerical Variables.</p>
+<blockquote>
+<p>Notice that in order to make walk work silently I had to add a print function that will use .x (every column) to create a histogram labeling it with .y that is the actual name of the current .x.</p>
+</blockquote>
+<pre class="r"><code># Take the data
+data %&gt;%
+  # I select only data that is numerical
+  select_if(is.numeric) %&gt;%
+  # I use walk 2 where .x is every numerical column seleted by select_if and
+  #.y are the names of .x that will be used to add the proper label.
+  walk2(names(.), ~ print( data %&gt;%
+                             ggplot(aes(.x)) + geom_histogram() + labs(x = .y))) </code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-12.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-13.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-14.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-15.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-16.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-17.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-18.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-19.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-20.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-21.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-22.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-23.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-24.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-25.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-26.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-27.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-28.png" width="672" /></p>
+</div>
+<div id="checking-categorical-variables" class="section level1">
+<h1><span class="header-section-number">2</span> Checking Categorical Variables</h1>
+<p>Something equivalent can be done with categorical variables to check how they are distributed with the following code:</p>
+<pre class="r"><code>data %&gt;%
+  select_if(is.factor) %&gt;%
+  summary()</code></pre>
+<pre><code>##   DDA        DirDep       NSF         Sav         ATM          CD       
+##  no : 3742   no :14838   no :19044   no :11135   no : 8085   no :18244  
+##  yes:17135   yes: 6039   yes: 1833   yes: 9742   yes:12792   yes: 2633  
+##                                                                         
+##                                                                         
+##                                                                         
+##                                                                         
+##                                                                         
+##   IRA         LOC         ILS          MM         MTG          CC       
+##  no :19837   no :19742   no :19926   no :18588   no :19932   no :10936  
+##  yes: 1040   yes: 1135   yes:  951   yes: 2289   yes:  945   yes: 9941  
+##                                                                         
+##                                                                         
+##                                                                         
+##                                                                         
+##                                                                         
+##   SDB        HMOwn       Moved       InArea       Ins       
+##  no :18573   no : 9617   no :20251   no :  823   yes: 7504  
+##  yes: 2304   yes:11260   yes:  626   yes:20054   no :13373  
+##                                                             
+##                                                             
+##                                                             
+##                                                             
+##                                                             
+##      Branch         Res        Inv       
+##  B4     :4586   rural :5532   no :20272  
+##  B3     :2332   suburb:7359   yes:  605  
+##  B1     :2292   urban :7986              
+##  B5     :2269                            
+##  B2     :2267                            
+##  B16    :1261                            
+##  (Other):5870</code></pre>
+<p>In case you want something more visual you could go with this:</p>
+<pre class="r"><code># Take the data
+data %&gt;%
+  # I select only data that is numerical
+  select_if(is.factor) %&gt;%
+  # I use walk 2 where .x is every numerical column seleted by select_if and
+  #.y are the names of .x that will be used to add the proper label.
+  walk2(names(.), ~ print( data %&gt;%
+                             ggplot(aes(.x)) + geom_bar() + labs(x = .y))) </code></pre>
+<p><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-3.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-4.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-5.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-6.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-7.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-8.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-9.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-10.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-11.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-12.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-13.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-14.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-15.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-16.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-17.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-18.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-19.png" width="672" /><img src="/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-20.png" width="672" /></p>
+</div>
+<div id="chi-square-test" class="section level1">
+<h1><span class="header-section-number">3</span> Chi-Square Test</h1>
+<p>What about performing a Chi-Square test to check the relationship between the Response variable and the Categorical Variables.</p>
+<p>Let´s create a NSE function to apply Chi-Square using purrr.</p>
+<p>We´ll use the Categorical Object created in the previous part to be looped over the chi-square function.</p>
+<pre class="r"><code>#Listing all of the Categorical Variables according to Metadata
+categorical &lt;- c(&quot;ATM&quot;, &quot;Branch&quot;, &quot;CC&quot;, &quot;CD&quot;, &quot;DDA&quot;, &quot;DirDep&quot;, &quot;HMOwn&quot;, &quot;ILS&quot;, &quot;IRA&quot;, &quot;InArea&quot;, &quot;Ins&quot;, &quot;Inv&quot;, &quot;LOC&quot;, &quot;MM&quot;, &quot;MTG&quot;, &quot;Moved&quot;, &quot;NSF&quot;, &quot;Res&quot;, &quot;SDB&quot;, &quot;Sav&quot;)</code></pre>
+<pre class="r"><code>#Loading rlang
+suppressPackageStartupMessages(library(rlang))
+  
+#since I want to use var as a Non Standard Evaluation Variable I need to pass that variable using the Curly-Curly Operator. That way I don´t need to quote variables and can go directly into dplyr functions such as select.
+  chi_comparison &lt;- function(var){
+    
+   pred &lt;- data %&gt;%
+     select({{ var }})
+   
+   #Performs Chi-Square test and returns p.value
+   return(tibble(p_val = chisq.test(pred, data$Ins)$p.value))
+  }
+
+(independent &lt;- categorical %&gt;%
+    map_dfr(chi_comparison) %&gt;%
+    cbind(independent = categorical) %&gt;%
+    filter(p_val &gt; 0.05) 
+)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["p_val"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["independent"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"0.1629036","2":"HMOwn"},{"1":"0.5485035","2":"ILS"},{"1":"0.1298597","2":"MTG"},{"1":"0.8984779","2":"Moved"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>This results in 4 Variables returning a p-value grater than 0.05. This means this variables are independent to the Response Variables, so no relationship between them exist, hence they could be removed from the model to build.</p>
+</div>
+<div id="conclusion" class="section level1">
+<h1><span class="header-section-number">4</span> Conclusion</h1>
+<p>A quick EDA has been performed using ggplot2 combined with purrr and dplyr.
+* It can be seen that Age and CRSore have distribution fairly close to Normal.
+* Income is right skewed.
+* Most of the Numerical Variables are higly concentrated at lower values.
+On the categorical side:
+* Most of the categorical variables show severe problems with class imbalances.
+* HMOwn, ILS, MTG and Moved seem to have no relationship with the Response Variable.
+* The Response Variable Ins show some imbalances but nothing to severe to be treated in a special way.</p>
+<p>More to come on this problem. Stay Tuned!!!</p>
+</div>

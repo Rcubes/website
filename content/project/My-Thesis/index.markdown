@@ -15,9 +15,9 @@ links:
 
 summary: This is What my Thesis Project will be about.
 tags:
-- Deep Learning
+- Civil Engineering
 - Finite Elements
-- Rayleigh - Ritz
+- Stiffness Method
 
 title: My Thesis
 url_code: ""

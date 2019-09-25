@@ -1,0 +1,132 @@
+---
+title: My Final Project at the ML Diploma (Part II)
+authors: 
+  - admin
+date: '2019-09-24'
+categories:
+  - Tutorial
+tags:
+  - Machine Learning
+  - Data Import (haven)
+  - Data Cleaning
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Second Part of the ML Diploma Project. This time I´ll be showing some EDA"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap')
+load("data-II.R")
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+
+Last time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.
+
+# Checking Numerical Distribution
+
+In order to do this I should pick Numerical Variables one by one and create a ggplot.
+This ould actually be quite tedious, why not to use the power of the tidyverse?
+
+We will combine select_if and walk 2 to create histograms for every of the 28 Numerical Variables.
+
+> Notice that in order to make walk work silently I had to add a print function that will use .x (every column) to create a histogram labeling it with .y that is the actual name of the current .x.
+
+
+```{r}
+# Take the data
+data %>%
+  # I select only data that is numerical
+  select_if(is.numeric) %>%
+  # I use walk 2 where .x is every numerical column seleted by select_if and
+  #.y are the names of .x that will be used to add the proper label.
+  walk2(names(.), ~ print( data %>%
+                             ggplot(aes(.x)) + geom_histogram() + labs(x = .y))) 
+```
+
+# Checking Categorical Variables
+
+Something equivalent can be done with categorical variables to check how they are distributed with the following code:
+
+```{r}
+data %>%
+  select_if(is.factor) %>%
+  summary()
+
+```
+
+In case you want something more visual you could go with this:
+
+```{r}
+# Take the data
+data %>%
+  # I select only data that is numerical
+  select_if(is.factor) %>%
+  # I use walk 2 where .x is every numerical column seleted by select_if and
+  #.y are the names of .x that will be used to add the proper label.
+  walk2(names(.), ~ print( data %>%
+                             ggplot(aes(.x)) + geom_bar() + labs(x = .y))) 
+```
+
+
+# Chi-Square Test
+
+What about performing a Chi-Square test to check the relationship between the Response variable and the Categorical Variables.
+
+Let´s create a NSE function to apply Chi-Square using purrr.
+
+We´ll use the Categorical Object created in the previous part to be looped over the chi-square function.
+
+```{r}
+#Listing all of the Categorical Variables according to Metadata
+categorical <- c("ATM", "Branch", "CC", "CD", "DDA", "DirDep", "HMOwn", "ILS", "IRA", "InArea", "Ins", "Inv", "LOC", "MM", "MTG", "Moved", "NSF", "Res", "SDB", "Sav")
+```
+
+
+```{r}
+#Loading rlang
+suppressPackageStartupMessages(library(rlang))
+  
+#since I want to use var as a Non Standard Evaluation Variable I need to pass that variable using the Curly-Curly Operator. That way I don´t need to quote variables and can go directly into dplyr functions such as select.
+  chi_comparison <- function(var){
+    
+   pred <- data %>%
+     select({{ var }})
+   
+   #Performs Chi-Square test and returns p.value
+   return(tibble(p_val = chisq.test(pred, data$Ins)$p.value))
+  }
+
+(independent <- categorical %>%
+    map_dfr(chi_comparison) %>%
+    cbind(independent = categorical) %>%
+    filter(p_val > 0.05) 
+)
+```
+
+This results in 4 Variables returning a p-value grater than 0.05. This means this variables are independent to the Response Variables, so no relationship between them exist, hence they could be removed from the model to build.
+
+# Conclusion
+
+A quick EDA has been performed using ggplot2 combined with purrr and dplyr.
+ * It can be seen that Age and CRSore have distribution fairly close to Normal.
+ * Income is right skewed.
+ * Most of the Numerical Variables are higly concentrated at lower values.
+ On the categorical side:
+ * Most of the categorical variables show severe problems with class imbalances.
+ * HMOwn, ILS, MTG and Moved seem to have no relationship with the Response Variable.
+ * The Response Variable Ins show some imbalances but nothing to severe to be treated in a special way.
+
+
+More to come on this problem. Stay Tuned!!!

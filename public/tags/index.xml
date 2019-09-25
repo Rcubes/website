@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Civil Engineering</title>
+      <link>/tags/civil-engineering/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      
+      <guid>/tags/civil-engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Conference</title>
@@ -24,16 +33,34 @@
     <item>
       <title>Convolutional Networks</title>
       <link>/tags/convolutional-networks/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/convolutional-networks/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Data Cleaning</title>
+      <link>/tags/data-cleaning/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-cleaning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Import (haven)</title>
+      <link>/tags/data-import-haven/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-import-haven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deep Learning</title>
       <link>/tags/deep-learning/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/deep-learning/</guid>
       <description></description>
@@ -45,15 +72,6 @@
       <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
       
       <guid>/tags/finite-elements/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logistic Regression</title>
-      <link>/tags/logistic-regression/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/logistic-regression/</guid>
       <description></description>
     </item>
     
@@ -76,11 +94,11 @@
     </item>
     
     <item>
-      <title>Rayleigh - Ritz</title>
-      <link>/tags/rayleigh-ritz/</link>
+      <title>Stiffness Method</title>
+      <link>/tags/stiffness-method/</link>
       <pubDate>Mon, 23 Sep 2019 00:00:00 -0300</pubDate>
       
-      <guid>/tags/rayleigh-ritz/</guid>
+      <guid>/tags/stiffness-method/</guid>
       <description></description>
     </item>
     

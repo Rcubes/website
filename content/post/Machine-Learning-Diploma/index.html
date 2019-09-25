@@ -1,0 +1,233 @@
+---
+title: My Final Project at the ML Diploma (Part I)
+authors: 
+  - admin
+date: '2019-09-24'
+categories:
+  - Tutorial
+tags:
+  - Machine Learning
+  - Data Import (haven)
+  - Data Cleaning
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "This is will be some kind of tutorial of the different Packages I used to perform a Machine Learning Project for my diploma. This first Part will be focused on Importing Data and a high level Data Harmonization."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#importing-data"><span class="toc-section-number">1</span> Importing Data</a></li>
+<li><a href="#redefining-categorical-variables"><span class="toc-section-number">2</span> Redefining Categorical Variables</a></li>
+<li><a href="#discovering-missing-values"><span class="toc-section-number">3</span> Discovering Missing Values</a></li>
+<li><a href="#conclusion"><span class="toc-section-number">4</span> Conclusion</a></li>
+</ul>
+</div>
+
+<p>During my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.</p>
+<p>I will try to demonstrate as much of the packages I used to perform this analysis.</p>
+<div id="importing-data" class="section level1">
+<h1><span class="header-section-number">1</span> Importing Data</h1>
+<p>Since the data is coming from a SAS format, it was absolutely necessary to use this incredibly tidyverse package called <code>haven</code>.</p>
+<p>The code to import the data is super simple and goes like this:</p>
+<pre class="r"><code>#Loading silent tidyverse to make normal utility functions available
+suppressPackageStartupMessages(library(tidyverse))
+library(haven)
+data &lt;- read_sas(&quot;develop.sas7bdat&quot;)</code></pre>
+<p>This will import the data into an R object:</p>
+<pre class="r"><code>#Showing 10 first Obs
+data %&gt;%
+  head</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["AcctAge"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["DDA"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["DDABal"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["CashBk"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Checks"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["DirDep"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["NSF"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["NSFAmt"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Phone"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Teller"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Sav"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["SavBal"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["ATM"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["ATMAmt"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["POS"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["POSAmt"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["CD"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["CDBal"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["IRA"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["IRABal"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["LOC"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["LOCBal"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["ILS"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["ILSBal"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["MM"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["MMBal"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["MMCred"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["MTG"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["MTGBal"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["CC"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["CCBal"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["CCPurc"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["SDB"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Income"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["HMOwn"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["LORes"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["HMVal"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["Age"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["CRScore"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["Moved"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["InArea"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["Ins"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["Branch"],"name":[43],"type":["chr"],"align":["left"]},{"label":["Res"],"name":[44],"type":["chr"],"align":["left"]},{"label":["Dep"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["DepAmt"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["Inv"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["InvBal"],"name":[48],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.3","2":"1","3":"419.27","4":"0","5":"0","6":"0","7":"0","8":"0","9":"0","10":"0","11":"1","12":"10233.72","13":"1","14":"106.74","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"1","31":"483.65","32":"0","33":"0","34":"16","35":"1","36":"11.0","37":"89","38":"63","39":"696","40":"0","41":"1","42":"1","43":"B17","44":"R","45":"2","46":"1170.06","47":"0","48":"0"},{"1":"0.7","2":"1","3":"1986.81","4":"0","5":"1","6":"1","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0.00","13":"1","14":"268.88","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"1","31":"0.00","32":"1","33":"0","34":"4","35":"1","36":"7.0","37":"87","38":"51","39":"674","40":"0","41":"1","42":"0","43":"B2","44":"R","45":"1","46":"446.93","47":"0","48":"0"},{"1":"4.1","2":"0","3":"0.00","4":"0","5":"0","6":"0","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0.00","13":"0","14":"0.00","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"1","31":"0.00","32":"0","33":"0","34":"30","35":"1","36":"8.5","37":"97","38":"60","39":"640","40":"0","41":"1","42":"1","43":"B3","44":"S","45":"0","46":"0.00","47":"0","48":"0"},{"1":"0.5","2":"1","3":"1594.84","4":"0","5":"1","6":"0","7":"0","8":"0","9":"0","10":"1","11":"1","12":"425.06","13":"1","14":"278.07","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"1","31":"65.76","32":"0","33":"0","34":"125","35":"1","36":"7.5","37":"145","38":"44","39":"672","40":"0","41":"1","42":"0","43":"B1","44":"S","45":"1","46":"1144.24","47":"0","48":"0"},{"1":"6.7","2":"1","3":"2813.45","4":"0","5":"2","6":"0","7":"0","8":"0","9":"0","10":"5","11":"1","12":"2716.55","13":"0","14":"0.00","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0.00","32":"0","33":"0","34":"25","35":"1","36":"6.0","37":"101","38":"46","39":"648","40":"0","41":"1","42":"1","43":"B1","44":"S","45":"2","46":"1208.94","47":"0","48":"0"},{"1":"12.3","2":"1","3":"1069.78","4":"0","5":"13","6":"1","7":"0","8":"0","9":"2","10":"9","11":"0","12":"0.00","13":"0","14":"0.00","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"1","31":"38.62","32":"0","33":"0","34":"19","35":"0","36":"3.0","37":"107","38":"55","39":"662","40":"0","41":"1","42":"1","43":"B7","44":"U","45":"5","46":"6813.58","47":"0","48":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>(data_types &lt;- data %&gt;%
+   map_dfc(class) %&gt;%
+   gather(key = &quot;Variable&quot;, value = &quot;Type&quot;))</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Type"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"AcctAge","2":"numeric"},{"1":"DDA","2":"numeric"},{"1":"DDABal","2":"numeric"},{"1":"CashBk","2":"numeric"},{"1":"Checks","2":"numeric"},{"1":"DirDep","2":"numeric"},{"1":"NSF","2":"numeric"},{"1":"NSFAmt","2":"numeric"},{"1":"Phone","2":"numeric"},{"1":"Teller","2":"numeric"},{"1":"Sav","2":"numeric"},{"1":"SavBal","2":"numeric"},{"1":"ATM","2":"numeric"},{"1":"ATMAmt","2":"numeric"},{"1":"POS","2":"numeric"},{"1":"POSAmt","2":"numeric"},{"1":"CD","2":"numeric"},{"1":"CDBal","2":"numeric"},{"1":"IRA","2":"numeric"},{"1":"IRABal","2":"numeric"},{"1":"LOC","2":"numeric"},{"1":"LOCBal","2":"numeric"},{"1":"ILS","2":"numeric"},{"1":"ILSBal","2":"numeric"},{"1":"MM","2":"numeric"},{"1":"MMBal","2":"numeric"},{"1":"MMCred","2":"numeric"},{"1":"MTG","2":"numeric"},{"1":"MTGBal","2":"numeric"},{"1":"CC","2":"numeric"},{"1":"CCBal","2":"numeric"},{"1":"CCPurc","2":"numeric"},{"1":"SDB","2":"numeric"},{"1":"Income","2":"numeric"},{"1":"HMOwn","2":"numeric"},{"1":"LORes","2":"numeric"},{"1":"HMVal","2":"numeric"},{"1":"Age","2":"numeric"},{"1":"CRScore","2":"numeric"},{"1":"Moved","2":"numeric"},{"1":"InArea","2":"numeric"},{"1":"Ins","2":"numeric"},{"1":"Branch","2":"character"},{"1":"Res","2":"character"},{"1":"Dep","2":"numeric"},{"1":"DepAmt","2":"numeric"},{"1":"Inv","2":"numeric"},{"1":"InvBal","2":"numeric"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>data_types %&gt;%
+  count(Type)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Type"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"character","2":"2"},{"1":"numeric","2":"46"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>We can notice that 2 out of 48 Variables are strings and all the rest are Numeric. This is not necessary correct because some of the variables could be factors. Having Metadata will be super useful right know.</p>
+</div>
+<div id="redefining-categorical-variables" class="section level1">
+<h1><span class="header-section-number">2</span> Redefining Categorical Variables</h1>
+<p>After taking a look at the data and the Metadata (that I can´t find now, but I promise I will upload) all the Variables listed next are not correctly numbers but Factors:</p>
+<pre class="r"><code>#Listing all of the Categorical Variables according to Metadata
+categorical &lt;- c(&quot;ATM&quot;, &quot;Branch&quot;, &quot;CC&quot;, &quot;CD&quot;, &quot;DDA&quot;, &quot;DirDep&quot;, &quot;HMOwn&quot;, &quot;ILS&quot;, &quot;IRA&quot;, &quot;InArea&quot;, &quot;Ins&quot;, &quot;Inv&quot;, &quot;LOC&quot;, &quot;MM&quot;, &quot;MTG&quot;, &quot;Moved&quot;, &quot;NSF&quot;, &quot;Res&quot;, &quot;SDB&quot;, &quot;Sav&quot;)</code></pre>
+<p>We can quickly transform this into factors by using dplyr, with no need to even loop.</p>
+<pre class="r"><code>#Transforming to Factor (Categorical Data Type in R)
+data &lt;- data %&gt;%
+  mutate_at(vars(categorical), as_factor)</code></pre>
+<p>The excellent package forcats offers really easy functions to recode the numbers 1 and 0 into “yes” and “no”.</p>
+<pre class="r"><code>#Factor variables will be relabeled for better intepretation of the data
+data &lt;- data %&gt;%
+  mutate_if(is.factor, ~ fct_recode(. , yes = &#39;1&#39;, no = &#39;0&#39;)) </code></pre>
+<pre><code>## Warning: Unknown levels in `f`: 1, 0
+
+## Warning: Unknown levels in `f`: 1, 0</code></pre>
+<pre class="r"><code>data &lt;- data %&gt;%
+  mutate_at(&quot;Res&quot;, ~fct_recode(
+    . ,
+    rural = &#39;R&#39;,
+    suburb = &#39;S&#39;,
+    urban = &#39;U&#39;
+  ))</code></pre>
+<p>The “Ins” Variable is the response variable and by using forcats we can shift the order of the Event Variable correctly.</p>
+<pre class="r"><code>#Defining Yes as the Event/Positive Category.
+data$Ins &lt;- data$Ins %&gt;% fct_shift</code></pre>
+</div>
+<div id="discovering-missing-values" class="section level1">
+<h1><span class="header-section-number">3</span> Discovering Missing Values</h1>
+<pre class="r"><code>data %&gt;%
+  summarize_all(funs(. %&gt;% is.na %&gt;% sum)) %&gt;%
+  map_df( ~ .x * 100 / nrow(data)) %&gt;%
+  gather(key = &quot;Variable&quot;, value = &quot;percent_NAs&quot;) %&gt;%
+  arrange(desc(percent_NAs)) %&gt;%
+  filter(percent_NAs &gt; 0)</code></pre>
+<pre><code>## Warning: funs() is soft deprecated as of dplyr 0.8.0
+## Please use a list of either functions or lambdas: 
+## 
+##   # Simple named list: 
+##   list(mean = mean, median = median)
+## 
+##   # Auto named with `tibble::lst()`: 
+##   tibble::lst(mean, median)
+## 
+##   # Using lambdas
+##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+## This warning is displayed once per session.</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["percent_NAs"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Age","2":"19.703075"},{"1":"Income","2":"17.920903"},{"1":"LORes","2":"17.920903"},{"1":"HMVal","2":"17.920903"},{"1":"HMOwn","2":"17.149145"},{"1":"Phone","2":"12.809943"},{"1":"POS","2":"12.809943"},{"1":"POSAmt","2":"12.809943"},{"1":"CC","2":"12.809943"},{"1":"CCBal","2":"12.809943"},{"1":"CCPurc","2":"12.809943"},{"1":"Inv","2":"12.809943"},{"1":"InvBal","2":"12.809943"},{"1":"AcctAge","2":"6.415819"},{"1":"CRScore","2":"2.191297"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>We can show this results in a fancy way with the following code:</p>
+<pre class="r"><code>#Counting if columns have any NAs in them
+data_NA &lt;- data %&gt;%
+  map_dfr(anyNA) %&gt;%
+  gather(key = &quot;Variable&quot;, value = &quot;any_NA&quot;) %&gt;%
+  filter(any_NA == TRUE)
+
+#This hunk was run before to obtain the atual data types of every column
+data_types &lt;- data %&gt;%
+  map_dfc(class) %&gt;%
+  gather(key = &quot;Variable&quot;, value = &quot;Type&quot;)
+
+#This Chunk counts the actual Number of NAs 
+n_NA &lt;- data %&gt;%
+  summarize_all(funs(. %&gt;%
+    is.na %&gt;%
+      sum)) %&gt;%
+    gather(key = &quot;Variable&quot;, value = &quot;n_NA&quot;)
+
+# All the previous results are joined into a summary Table
+data_NA %&gt;%
+  left_join(data_types, by = &quot;Variable&quot;) %&gt;%
+  left_join(n_NA, by = &quot;Variable&quot;) %&gt;%
+    arrange(Type)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["any_NA"],"name":[2],"type":["lgl"],"align":["right"]},{"label":["Type"],"name":[3],"type":["chr"],"align":["left"]},{"label":["n_NA"],"name":[4],"type":["int"],"align":["right"]}],"data":[{"1":"CC","2":"TRUE","3":"factor","4":"4133"},{"1":"HMOwn","2":"TRUE","3":"factor","4":"5533"},{"1":"Inv","2":"TRUE","3":"factor","4":"4133"},{"1":"AcctAge","2":"TRUE","3":"numeric","4":"2070"},{"1":"Phone","2":"TRUE","3":"numeric","4":"4133"},{"1":"POS","2":"TRUE","3":"numeric","4":"4133"},{"1":"POSAmt","2":"TRUE","3":"numeric","4":"4133"},{"1":"CCBal","2":"TRUE","3":"numeric","4":"4133"},{"1":"CCPurc","2":"TRUE","3":"numeric","4":"4133"},{"1":"Income","2":"TRUE","3":"numeric","4":"5782"},{"1":"LORes","2":"TRUE","3":"numeric","4":"5782"},{"1":"HMVal","2":"TRUE","3":"numeric","4":"5782"},{"1":"Age","2":"TRUE","3":"numeric","4":"6357"},{"1":"CRScore","2":"TRUE","3":"numeric","4":"707"},{"1":"InvBal","2":"TRUE","3":"numeric","4":"4133"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>It can be seen that:</p>
+<ul>
+<li>15 Variables have Missing Values. T</li>
+<li>The range of Missing values varies from 2.19 % to 19.7 %.<br />
+</li>
+<li>3 out of 15 are Categorical Values whereas the rest are Numeric Variables.</li>
+</ul>
+<p>During the Diploma a 2% threshold for Missing Values was discussed. Imputation was not recommended if Missing Values are greater than that. So in order to simplify the problem we will just get rid of NAs. The tidyr package does this really easily.</p>
+<blockquote>
+<p><strong>Sidenote</strong>: I´m not completely sure about this criterion. I will be asking about this during LatinR_2019.</p>
+</blockquote>
+<pre class="r"><code>#Droping observations with missing Values
+data &lt;-  data %&gt;% drop_na()
+#Showing distribution of records of th Target Variable
+data %&gt;% count(Ins)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Ins"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"yes","2":"7504"},{"1":"no","2":"13373"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1><span class="header-section-number">4</span> Conclusion</h1>
+<p>So far we have been able to import a SAS dataset and apply a high level cleansing to organize the data, discover factor variables, reorganize the event Variable correctly and get rid of NAs.</p>
+<pre class="r"><code>data %&gt;% glimpse</code></pre>
+<pre><code>## Observations: 20,877
+## Variables: 48
+## $ AcctAge &lt;dbl&gt; 0.3, 0.7, 4.1, 0.5, 6.7, 12.3, 8.8, 9.3, 0.9, 3.0, 4.8...
+## $ DDA     &lt;fct&gt; yes, yes, no, yes, yes, yes, yes, yes, yes, yes, yes, ...
+## $ DDABal  &lt;dbl&gt; 419.27, 1986.81, 0.00, 1594.84, 2813.45, 1069.78, 1437...
+## $ CashBk  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
+## $ Checks  &lt;dbl&gt; 0, 1, 0, 1, 2, 13, 12, 2, 4, 1, 0, 0, 5, 4, 9, 8, 0, 2...
+## $ DirDep  &lt;fct&gt; no, yes, no, no, no, yes, yes, yes, no, yes, no, no, n...
+## $ NSF     &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, ye...
+## $ NSFAmt  &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
+## $ Phone   &lt;dbl&gt; 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, ...
+## $ Teller  &lt;dbl&gt; 0, 0, 0, 1, 5, 9, 0, 0, 2, 1, 0, 0, 3, 2, 1, 1, 0, 2, ...
+## $ Sav     &lt;fct&gt; yes, no, no, yes, yes, no, no, yes, yes, no, no, yes, ...
+## $ SavBal  &lt;dbl&gt; 10233.72, 0.00, 0.00, 425.06, 2716.55, 0.00, 0.00, 967...
+## $ ATM     &lt;fct&gt; yes, yes, no, yes, no, no, yes, yes, yes, no, no, no, ...
+## $ ATMAmt  &lt;dbl&gt; 106.74, 268.88, 0.00, 278.07, 0.00, 0.00, 391.63, 276....
+## $ POS     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 5, 0, 0, 0, 0, ...
+## $ POSAmt  &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 23.13,...
+## $ CD      &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ CDBal   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
+## $ IRA     &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ IRABal  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
+## $ LOC     &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ LOCBal  &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
+## $ ILS     &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ ILSBal  &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
+## $ MM      &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ MMBal   &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
+## $ MMCred  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, ...
+## $ MTG     &lt;fct&gt; no, no, no, no, no, no, yes, no, no, no, no, no, no, n...
+## $ MTGBal  &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 94539.95, 0.00, 0....
+## $ CC      &lt;fct&gt; yes, yes, yes, yes, no, yes, yes, yes, no, no, yes, ye...
+## $ CCBal   &lt;dbl&gt; 483.65, 0.00, 0.00, 65.76, 0.00, 38.62, 85202.99, 0.00...
+## $ CCPurc  &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, ...
+## $ SDB     &lt;fct&gt; no, no, no, no, no, no, no, no, yes, no, no, no, no, n...
+## $ Income  &lt;dbl&gt; 16, 4, 30, 125, 25, 19, 55, 13, 54, 25, 100, 13, 7, 9,...
+## $ HMOwn   &lt;fct&gt; yes, yes, yes, yes, yes, no, yes, no, no, yes, yes, ye...
+## $ LORes   &lt;dbl&gt; 11.0, 7.0, 8.5, 7.5, 6.0, 3.0, 3.5, 4.5, 4.0, 7.5, 13....
+## $ HMVal   &lt;dbl&gt; 89, 87, 97, 145, 101, 107, 128, 99, 129, 95, 135, 77, ...
+## $ Age     &lt;dbl&gt; 63, 51, 60, 44, 46, 55, 57, 58, 73, 29, 75, 51, 49, 39...
+## $ CRScore &lt;dbl&gt; 696, 674, 640, 672, 648, 662, 659, 675, 667, 612, 715,...
+## $ Moved   &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ InArea  &lt;fct&gt; yes, yes, yes, yes, yes, yes, yes, yes, yes, yes, yes,...
+## $ Ins     &lt;fct&gt; yes, no, yes, no, yes, yes, no, yes, yes, no, no, no, ...
+## $ Branch  &lt;fct&gt; B17, B2, B3, B1, B1, B7, B1, B5, B6, B4, B9, B7, B7, B...
+## $ Res     &lt;fct&gt; rural, rural, suburb, suburb, suburb, urban, urban, ur...
+## $ Dep     &lt;dbl&gt; 2, 1, 0, 1, 2, 5, 2, 3, 2, 2, 0, 1, 3, 5, 2, 4, 1, 1, ...
+## $ DepAmt  &lt;dbl&gt; 1170.06, 446.93, 0.00, 1144.24, 1208.94, 6813.58, 2237...
+## $ Inv     &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
+## $ InvBal  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...</code></pre>
+<p>More to come on this problem. Stay Tuned!!!</p>
+</div>

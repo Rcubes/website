@@ -23,12 +23,32 @@ Mine Çetinkaya-RundelShe is one of the most important persons involved into R 
     </item>
     
     <item>
-      <title>My Final Project at the ML Diploma</title>
-      <link>/project/machine-learning-diploma/</link>
+      <title>My Final Project at the ML Diploma (Part I)</title>
+      <link>/post/machine-learning-diploma/</link>
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/project/machine-learning-diploma/</guid>
-      <description>The MethodThe ProblemThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.</description>
+      <guid>/post/machine-learning-diploma/</guid>
+      <description>1 Importing Data2 Redefining Categorical Variables3 Discovering Missing Values4 ConclusionDuring my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.
+I will try to demonstrate as much of the packages I used to perform this analysis.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma (Part II)</title>
+      <link>/post/machine-learning-diploma-ii/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-diploma-ii/</guid>
+      <description>1 Checking Numerical Distribution2 Checking Categorical Variables3 Chi-Square Test4 ConclusionLast time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.
+1 Checking Numerical DistributionIn order to do this I should pick Numerical Variables one by one and create a ggplot.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma (Part III)</title>
+      <link>/post/machine-learning-diploma-iii/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-diploma-iii/</guid>
+      <description>1 COMING SOON1 COMING SOON</description>
     </item>
     
     <item>
@@ -119,7 +139,7 @@ Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering b
     <item>
       <title></title>
       <link>/author/admin/</link>
-      <pubDate>Tue, 26 Mar 2019 21:41:17 -0300</pubDate>
+      <pubDate>Tue, 24 Sep 2019 19:01:36 -0300</pubDate>
       
       <guid>/author/admin/</guid>
       <description>I&amp;rsquo;m almost a Civil Engineer that for well-unknown reasons ended up working as a Data Scientist prior to finish my Thesis Project (more to come on this) and it seems I enjoy it.
