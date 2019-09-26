@@ -2,13 +2,15 @@
 title: My Final Project at the ML Diploma (Part III)
 authors: 
   - admin
-date: '2019-09-24'
+date: '2019-08-27'
 categories:
   - Tutorial
 tags:
   - Machine Learning
-  - Data Import (haven)
-  - Data Cleaning
+  - Parsnip
+  - Rsample
+  - Recipes
+  - Yardstick
 image:
   caption: ""
   focal_point: "Smart"
@@ -31,4 +33,121 @@ load("data-II.R")
 suppressPackageStartupMessages(library(tidyverse))
 ```
 
-# COMING SOON
+Now we have an idea on how the data looks like it is time to Model.
+
+# Tidymodels
+
+I´m a huge fan of tidymodels framework and the way Max Kuhn has put together all of this system. I´ll be using several packages from this framework in order to show different steps of the Machine Learning Process.
+
+## Spliting the Data
+
+We will be splitting Data into Training and Test Sets with 70/30 proportion based on the Ins Response Variable.
+
+```{r}
+library(rsample)
+#Reproducibility
+set.seed(27101986)
+#70/30 Split stratifying the Target Variable Ins
+split <- initial_split(data, prop = 0.7, strata = "Ins")
+data_training <- split %>% training()
+data_testing <- split %>% testing()
+
+```
+
+## Pre Processing
+
+After splitting Data I will be conducting Pre Processing with the great Recipes Package. 
+
+Recipes basically mimics the Pre Processing Steps to a Baking Recipe following different sequential steps in order to prepare and Bake the Data (Make the Data Ready to Model).
+
+Recipes have `step_*` functions in charge of applying different Pre-Processing Steps. Plus includes Variable helpers to call Variables by Type or Role.
+
+```{r}
+library(recipes)
+# Sets the Recipe indicating that Ins will be modeled using all the rest of the variables
+advance_rec <- recipe(Ins ~ . , data = data_training) %>%
+  step_dummy(all_nominal(), -all_outcomes()) %>% #create dummy variables for all categorical variables excepting the Ins Variable
+  step_nzv(all_numeric()) %>% #eliminates numerical variables with variance near to zero
+  step_corr(all_predictors()) %>% #eliminates highly correlated variables
+  step_BoxCox(all_predictors()) %>% #fix highly skewed variables
+  step_center(all_numeric()) %>% #substracts mean
+  step_scale(all_numeric()) %>% #divides by sd. This both steps standardize the variables
+  #Prepares the data according to the data in the Training Set
+  prep(training = data_training)
+  
+  #Applies Training Data according to Preprocessing
+  train_advance <- bake(advance_rec, new_data = data_training)
+  #The main difference with Bake is that Bake skips the processes affecting the outcome variable, suh as resamples, logs transform, etc. 
+  test_advance <- bake(advance_rec, new_data = data_testing)
+  
+ 
+```
+
+# Create the Logistic Regression
+
+We will use Logistic regresson using Parsnip and we will Assess the Model using yardstick
+
+
+```{r}
+
+library(parsnip)
+
+#Using Parsnip to run classification, using glm engine and fitting train data already pre-processed
+full_advance <- logistic_reg(mode = "classification") %>%
+                                set_engine("glm") %>%
+                                  fit(Ins ~ ., data = train_advance)
+
+#Predicting Class with Model "Full Advance" in the Test Set
+full_pred_advance <- full_advance %>%
+                  predict(new_data= test_advance, type = "class")
+
+#Predicting class Probabilities with Model "Full Advance"
+full_pred_probs_advance <- full_advance %>%
+                  predict(new_data= test_advance, type = "prob")
+
+
+library(yardstick)
+
+comparison_test <- bind_cols(
+  "Real" = test_advance$Ins,
+  "Prediction" = full_pred_advance,
+  "Class1" = full_pred_probs_advance$.pred_yes
+  
+) %>% setNames(c("Real","Prediction","Class1"))
+
+#Calculating Confusion Matrix
+comparison_test %>% 
+    conf_mat(Real,Prediction)
+
+#Calculating Assesment Metrics for Model
+comparison_test %>% 
+    conf_mat(Real,Prediction) %>%
+    summary()
+
+
+#ROC Curve
+comparison_test %>%
+  roc_curve(Real,Class1) %>%
+    autoplot()
+
+#ROC AUC
+comparison_test %>%
+  roc_auc(Real,Class1)
+  
+#Calculated Model
+full_advance$fit %>%
+  tidy() 
+
+```
+
+# Conclusions
+
+We have run a Machine Learning Process using:
+
+* rsamples for splitting data.
+* recipes for Pre-Processing.
+* parsnip to fit the model
+* yardstick to measure the performance.
+
+Finally 41 variables were kept getting a 72% of accuracy and a 77.3% of ROC AUC.
+

@@ -2,13 +2,15 @@
 title: My Final Project at the ML Diploma (Part III)
 authors: 
   - admin
-date: '2019-09-24'
+date: '2019-08-27'
 categories:
   - Tutorial
 tags:
   - Machine Learning
-  - Data Import (haven)
-  - Data Cleaning
+  - Parsnip
+  - Rsample
+  - Recipes
+  - Yardstick
 image:
   caption: ""
   focal_point: "Smart"
@@ -30,10 +32,148 @@ output:
 
 <div id="TOC">
 <ul>
-<li><a href="#coming-soon"><span class="toc-section-number">1</span> COMING SOON</a></li>
+<li><a href="#tidymodels"><span class="toc-section-number">1</span> Tidymodels</a><ul>
+<li><a href="#spliting-the-data"><span class="toc-section-number">1.1</span> Spliting the Data</a></li>
+<li><a href="#pre-processing"><span class="toc-section-number">1.2</span> Pre Processing</a></li>
+</ul></li>
+<li><a href="#create-the-logistic-regression"><span class="toc-section-number">2</span> Create the Logistic Regression</a></li>
+<li><a href="#conclusions"><span class="toc-section-number">3</span> Conclusions</a></li>
 </ul>
 </div>
 
-<div id="coming-soon" class="section level1">
-<h1><span class="header-section-number">1</span> COMING SOON</h1>
+<p>Now we have an idea on how the data looks like it is time to Model.</p>
+<div id="tidymodels" class="section level1">
+<h1><span class="header-section-number">1</span> Tidymodels</h1>
+<p>I´m a huge fan of tidymodels framework and the way Max Kuhn has put together all of this system. I´ll be using several packages from this framework in order to show different steps of the Machine Learning Process.</p>
+<div id="spliting-the-data" class="section level2">
+<h2><span class="header-section-number">1.1</span> Spliting the Data</h2>
+<p>We will be splitting Data into Training and Test Sets with 70/30 proportion based on the Ins Response Variable.</p>
+<pre class="r"><code>library(rsample)
+#Reproducibility
+set.seed(27101986)
+#70/30 Split stratifying the Target Variable Ins
+split &lt;- initial_split(data, prop = 0.7, strata = &quot;Ins&quot;)
+data_training &lt;- split %&gt;% training()
+data_testing &lt;- split %&gt;% testing()</code></pre>
+</div>
+<div id="pre-processing" class="section level2">
+<h2><span class="header-section-number">1.2</span> Pre Processing</h2>
+<p>After splitting Data I will be conducting Pre Processing with the great Recipes Package.</p>
+<p>Recipes basically mimics the Pre Processing Steps to a Baking Recipe following different sequential steps in order to prepare and Bake the Data (Make the Data Ready to Model).</p>
+<p>Recipes have <code>step_*</code> functions in charge of applying different Pre-Processing Steps. Plus includes Variable helpers to call Variables by Type or Role.</p>
+<pre class="r"><code>library(recipes)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;recipes&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stringr&#39;:
+## 
+##     fixed</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     step</code></pre>
+<pre class="r"><code># Sets the Recipe indicating that Ins will be modeled using all the rest of the variables
+advance_rec &lt;- recipe(Ins ~ . , data = data_training) %&gt;%
+  step_dummy(all_nominal(), -all_outcomes()) %&gt;% #create dummy variables for all categorical variables excepting the Ins Variable
+  step_nzv(all_numeric()) %&gt;% #eliminates numerical variables with variance near to zero
+  step_corr(all_predictors()) %&gt;% #eliminates highly correlated variables
+  step_BoxCox(all_predictors()) %&gt;% #fix highly skewed variables
+  step_center(all_numeric()) %&gt;% #substracts mean
+  step_scale(all_numeric()) %&gt;% #divides by sd. This both steps standardize the variables
+  #Prepares the data according to the data in the Training Set
+  prep(training = data_training)
+  
+  #Applies Training Data according to Preprocessing
+  train_advance &lt;- bake(advance_rec, new_data = data_training)
+  #The main difference with Bake is that Bake skips the processes affecting the outcome variable, suh as resamples, logs transform, etc. 
+  test_advance &lt;- bake(advance_rec, new_data = data_testing)</code></pre>
+</div>
+</div>
+<div id="create-the-logistic-regression" class="section level1">
+<h1><span class="header-section-number">2</span> Create the Logistic Regression</h1>
+<p>We will use Logistic regresson using Parsnip and we will Assess the Model using yardstick</p>
+<pre class="r"><code>library(parsnip)
+
+#Using Parsnip to run classification, using glm engine and fitting train data already pre-processed
+full_advance &lt;- logistic_reg(mode = &quot;classification&quot;) %&gt;%
+                                set_engine(&quot;glm&quot;) %&gt;%
+                                  fit(Ins ~ ., data = train_advance)
+
+#Predicting Class with Model &quot;Full Advance&quot; in the Test Set
+full_pred_advance &lt;- full_advance %&gt;%
+                  predict(new_data= test_advance, type = &quot;class&quot;)
+
+#Predicting class Probabilities with Model &quot;Full Advance&quot;
+full_pred_probs_advance &lt;- full_advance %&gt;%
+                  predict(new_data= test_advance, type = &quot;prob&quot;)
+
+
+library(yardstick)</code></pre>
+<pre><code>## For binary classification, the first factor level is assumed to be the event.
+## Set the global option `yardstick.event_first` to `FALSE` to change this.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;yardstick&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     spec</code></pre>
+<pre class="r"><code>comparison_test &lt;- bind_cols(
+  &quot;Real&quot; = test_advance$Ins,
+  &quot;Prediction&quot; = full_pred_advance,
+  &quot;Class1&quot; = full_pred_probs_advance$.pred_yes
+  
+) %&gt;% setNames(c(&quot;Real&quot;,&quot;Prediction&quot;,&quot;Class1&quot;))
+
+#Calculating Confusion Matrix
+comparison_test %&gt;% 
+    conf_mat(Real,Prediction)</code></pre>
+<pre><code>##           Truth
+## Prediction  yes   no
+##        yes 1003  464
+##        no  1248 3547</code></pre>
+<pre class="r"><code>#Calculating Assesment Metrics for Model
+comparison_test %&gt;% 
+    conf_mat(Real,Prediction) %&gt;%
+    summary()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[".metric"],"name":[1],"type":["chr"],"align":["left"]},{"label":[".estimator"],"name":[2],"type":["chr"],"align":["left"]},{"label":[".estimate"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"accuracy","2":"binary","3":"0.7266049"},{"1":"kap","2":"binary","3":"0.3571922"},{"1":"sens","2":"binary","3":"0.4455797"},{"1":"spec","2":"binary","3":"0.8843181"},{"1":"ppv","2":"binary","3":"0.6837082"},{"1":"npv","2":"binary","3":"0.7397289"},{"1":"mcc","2":"binary","3":"0.3737526"},{"1":"j_index","2":"binary","3":"0.3298979"},{"1":"bal_accuracy","2":"binary","3":"0.6649489"},{"1":"detection_prevalence","2":"binary","3":"0.2342702"},{"1":"precision","2":"binary","3":"0.6837082"},{"1":"recall","2":"binary","3":"0.4455797"},{"1":"f_meas","2":"binary","3":"0.5395374"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>#ROC Curve
+comparison_test %&gt;%
+  roc_curve(Real,Class1) %&gt;%
+    autoplot()</code></pre>
+<pre><code>## Setting direction: controls &lt; cases</code></pre>
+<pre><code>## Warning in coords.roc(curv, x = unique(c(-Inf, options$predictor, Inf)), :
+## An upcoming version of pROC will set the &#39;transpose&#39; argument to FALSE
+## by default. Set transpose = TRUE explicitly to keep the current behavior,
+## or transpose = FALSE to adopt the new one and silence this warning. Type
+## help(coords_transpose) for additional information.</code></pre>
+<p><img src="/post/Machine-Learning-Diploma-III/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>#ROC AUC
+comparison_test %&gt;%
+  roc_auc(Real,Class1)</code></pre>
+<pre><code>## Setting direction: controls &lt; cases</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[".metric"],"name":[1],"type":["chr"],"align":["left"]},{"label":[".estimator"],"name":[2],"type":["chr"],"align":["left"]},{"label":[".estimate"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"roc_auc","2":"binary","3":"0.7733382"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>#Calculated Model
+full_advance$fit %&gt;%
+  tidy() </code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["term"],"name":[1],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"6.117855e-01","3":"0.01993088","4":"3.069536e+01","5":"6.563661e-207"},{"1":"AcctAge","2":"1.274360e-01","3":"0.02041803","4":"6.241345e+00","5":"4.338251e-10"},{"1":"DDABal","2":"-3.345807e-01","3":"0.04233735","4":"-7.902732e+00","5":"2.728554e-15"},{"1":"Checks","2":"8.001763e-02","3":"0.02764014","4":"2.894979e+00","5":"3.791843e-03"},{"1":"Phone","2":"1.188238e-01","3":"0.02661229","4":"4.464997e+00","5":"8.006974e-06"},{"1":"Teller","2":"-1.992734e-01","3":"0.02252055","4":"-8.848515e+00","5":"8.869169e-19"},{"1":"SavBal","2":"-6.805505e-01","3":"0.04626114","4":"-1.471106e+01","5":"5.474173e-49"},{"1":"ATMAmt","2":"-3.045024e-01","3":"0.03644366","4":"-8.355428e+00","5":"6.519615e-17"},{"1":"POS","2":"9.988335e-02","3":"0.03999723","4":"2.497256e+00","5":"1.251584e-02"},{"1":"POSAmt","2":"-1.015285e-01","3":"0.03693182","4":"-2.749079e+00","5":"5.976290e-03"},{"1":"CCBal","2":"6.859325e-02","3":"0.01891700","4":"3.626011e+00","5":"2.878328e-04"},{"1":"CCPurc","2":"-2.941948e-02","3":"0.02026686","4":"-1.451605e+00","5":"1.466114e-01"},{"1":"Income","2":"1.272866e-01","3":"0.03479794","4":"3.657877e+00","5":"2.543134e-04"},{"1":"LORes","2":"-6.014610e-02","3":"0.02823814","4":"-2.129960e+00","5":"3.317495e-02"},{"1":"HMVal","2":"-1.935050e-01","3":"0.03770266","4":"-5.132397e+00","5":"2.860749e-07"},{"1":"Age","2":"-2.219778e-05","3":"0.02288118","4":"-9.701325e-04","5":"9.992259e-01"},{"1":"CRScore","2":"1.337544e-02","3":"0.02203018","4":"6.071418e-01","5":"5.437568e-01"},{"1":"Dep","2":"1.028510e-01","3":"0.03356444","4":"3.064284e+00","5":"2.181913e-03"},{"1":"DepAmt","2":"-1.901625e-02","3":"0.02478175","4":"-7.673488e-01","5":"4.428742e-01"},{"1":"DDA_yes","2":"2.707683e-01","3":"0.02521098","4":"1.074009e+01","5":"6.597812e-27"},{"1":"DirDep_yes","2":"7.152448e-03","3":"0.02218401","4":"3.224146e-01","5":"7.471386e-01"},{"1":"NSF_yes","2":"-2.370392e-02","3":"0.02123988","4":"-1.116010e+00","5":"2.644177e-01"},{"1":"Sav_yes","2":"-2.547525e-01","3":"0.02196270","4":"-1.159932e+01","5":"4.153464e-31"},{"1":"ATM_yes","2":"1.292603e-01","3":"0.02414396","4":"5.353733e+00","5":"8.615816e-08"},{"1":"CD_yes","2":"-2.918515e-01","3":"0.01859470","4":"-1.569541e+01","5":"1.625822e-55"},{"1":"LOC_yes","2":"6.110583e-03","3":"0.01938014","4":"3.153013e-01","5":"7.525329e-01"},{"1":"MM_yes","2":"-2.589903e-01","3":"0.01974444","4":"-1.311713e+01","5":"2.627075e-39"},{"1":"CC_yes","2":"-1.798393e-01","3":"0.02157689","4":"-8.334809e+00","5":"7.762339e-17"},{"1":"SDB_yes","2":"-3.708755e-02","3":"0.01901094","4":"-1.950853e+00","5":"5.107453e-02"},{"1":"HMOwn_yes","2":"-1.060297e-02","3":"0.02920242","4":"-3.630853e-01","5":"7.165412e-01"},{"1":"Branch_B2","2":"-4.272629e-03","3":"0.02524865","4":"-1.692221e-01","5":"8.656220e-01"},{"1":"Branch_B3","2":"-2.564723e-02","3":"0.02535713","4":"-1.011440e+00","5":"3.118057e-01"},{"1":"Branch_B1","2":"2.605656e-02","3":"0.02565672","4":"1.015584e+00","5":"3.098275e-01"},{"1":"Branch_B7","2":"3.878624e-02","3":"0.02309364","4":"1.679521e+00","5":"9.305058e-02"},{"1":"Branch_B5","2":"-1.824560e-02","3":"0.02531664","4":"-7.206961e-01","5":"4.710965e-01"},{"1":"Branch_B6","2":"-8.867298e-03","3":"0.02270427","4":"-3.905563e-01","5":"6.961252e-01"},{"1":"Branch_B4","2":"-1.583160e-02","3":"0.02902725","4":"-5.454048e-01","5":"5.854752e-01"},{"1":"Branch_B16","2":"1.673182e-01","3":"0.02501004","4":"6.690040e+00","5":"2.231092e-11"},{"1":"Branch_B8","2":"-4.156275e-02","3":"0.02204090","4":"-1.885710e+00","5":"5.933403e-02"},{"1":"Res_suburb","2":"2.037763e-02","3":"0.02505362","4":"8.133607e-01","5":"4.160113e-01"},{"1":"Res_urban","2":"4.361963e-02","3":"0.02516920","4":"1.733056e+00","5":"8.308567e-02"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="conclusions" class="section level1">
+<h1><span class="header-section-number">3</span> Conclusions</h1>
+<p>We have run a Machine Learning Process using:</p>
+<ul>
+<li>rsamples for splitting data.</li>
+<li>recipes for Pre-Processing.</li>
+<li>parsnip to fit the model</li>
+<li>yardstick to measure the performance.</li>
+</ul>
+<p>Finally 41 variables were kept getting a 72% of accuracy and a 77.3% of ROC AUC.</p>
 </div>

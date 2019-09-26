@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is just mine. Use it giving proper credit.</copyright>
-    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Latin R (Day 1)</title>
+      <link>/publication/latin-r-i/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/latin-r-i/</guid>
+      <description>Latin R (Tutorials Day)Today Latin R just got started. It was really impressive to see how many people actually uses R. I have to say the popularity of Python in Data Sciences has always been something that worries me tons, but today I was able to see a lot of other Subjects where people actually use R. Probably I was one of the few people working in Data Science there.</description>
+    </item>
     
     <item>
       <title>Latin R</title>
@@ -18,37 +27,8 @@
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/latin-r/</guid>
-      <description>Latin RLatin R is a conference organize by RLadies Latam and is the oportunity we have here to know the last breakthrough and how is being using in Research, companies, etc.They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge 3 Main R users are coming:
+      <description>Latin RLatin R is a conference organized by RLadies Latam and is the oportunity we have here in Chile to get acquainted about the last R breakthrough and how is being using in Research, companies, etc.They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge, because 3 Main R users are coming:
 Mine Çetinkaya-RundelShe is one of the most important persons involved into R Teaching.</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part I)</title>
-      <link>/post/machine-learning-diploma/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/machine-learning-diploma/</guid>
-      <description>1 Importing Data2 Redefining Categorical Variables3 Discovering Missing Values4 ConclusionDuring my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.
-I will try to demonstrate as much of the packages I used to perform this analysis.</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part II)</title>
-      <link>/post/machine-learning-diploma-ii/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/machine-learning-diploma-ii/</guid>
-      <description>1 Checking Numerical Distribution2 Checking Categorical Variables3 Chi-Square Test4 ConclusionLast time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.
-1 Checking Numerical DistributionIn order to do this I should pick Numerical Variables one by one and create a ggplot.</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part III)</title>
-      <link>/post/machine-learning-diploma-iii/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/machine-learning-diploma-iii/</guid>
-      <description>1 COMING SOON1 COMING SOON</description>
     </item>
     
     <item>
@@ -67,6 +47,36 @@ I will try to demonstrate as much of the packages I used to perform this analysi
       
       <guid>/project/stiffness-method/</guid>
       <description>The MethodThe ProblemRcpp BasicsCreating an Rcpp fileStiffness MethodStiff Matrix by ElementActive DoF AssemblyConnectivity ArrayStiffness Matrix AssemblyLoad Vector AssemblySolving the ProblemConclusionsThe MethodThe Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma (Part III)</title>
+      <link>/post/machine-learning-diploma-iii/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-diploma-iii/</guid>
+      <description>1 Tidymodels1.1 Spliting the Data1.2 Pre Processing2 Create the Logistic Regression3 ConclusionsNow we have an idea on how the data looks like it is time to Model.
+1 TidymodelsI´m a huge fan of tidymodels framework and the way Max Kuhn has put together all of this system. I´ll be using several packages from this framework in order to show different steps of the Machine Learning Process.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma (Part II)</title>
+      <link>/post/machine-learning-diploma-ii/</link>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-diploma-ii/</guid>
+      <description>1 Checking Numerical Distribution2 Checking Categorical Variables3 Chi-Square Test4 ConclusionLast time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.
+1 Checking Numerical DistributionIn order to do this I should pick Numerical Variables one by one and create a ggplot.</description>
+    </item>
+    
+    <item>
+      <title>My Final Project at the ML Diploma (Part I)</title>
+      <link>/post/machine-learning-diploma/</link>
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-diploma/</guid>
+      <description>1 Importing Data2 Redefining Categorical Variables3 Discovering Missing Values4 ConclusionDuring my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.
+I will try to demonstrate as much of the packages I used to perform this analysis.</description>
     </item>
     
     <item>

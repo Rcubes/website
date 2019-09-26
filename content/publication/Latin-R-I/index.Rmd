@@ -1,0 +1,112 @@
+---
+title: Latin R (Day 1)
+authors: 
+  - admin
+date: '2019-09-25'
+categories:
+  - Vampire Diaries
+  - Rambling
+tags:
+  - R
+  - Conference
+  - Latin R
+image:
+  caption: ""
+  focal_point: "Center"
+summary: "I took 2 tutorials at the LatinR Conference. I´ll be commenting about them."
+highlight: true
+featured: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+## Latin R (Tutorials Day)
+
+Today Latin R just got started. It was really impressive to see how many people actually uses R. I have to say the popularity of Python in Data Sciences has always been something that worries me tons, but today I was able to see a lot of other Subjects where people actually use R. Probably I was one of the few people working in Data Science there.
+
+Regarding Tutorials, they were awesome. 4 Tutorials were conducted today. 
+
+During Morning, Mine Çetinkaya-Rundel taught about Teaching R. I wasn´t there so I cannot comment a lot. In parallel Erin Ledell taught about using H2o for Machine Learning.
+
+In the afternoon, Joshua Kunst taught about Highcharter with plotly for data Viz and of course Hadley Wickham was in charge of teaching about Package Development.
+
+# H2o Tutorial
+
+<center>
+```{r figs, echo=FALSE}
+knitr::include_graphics('/img/h20-ai.png')
+```
+</center>
+
+[Erin Ledell](https://twitter.com/ledell) conducted this tutorial that was more like a demonstration of the capabilities of H2o. I have to say I have heard about H2o in Matt Danchos' tutorials but I never got impressed because I´m a super fan of Tidymodels and H2o is not there yet.
+
+For me I think a great tool was presented. H2o is a Java implementation of several Machine Learning Models. This includes Pre-processing, Grid Search, Cross Validation, Stacked Models and running in Clusters using CPU and GPU, The best is that it´s absolutely free.
+
+### Pros
+ * Super easy and Intuitive syntax. Very similar to parsnip.
+ * Super fast implementation in Java.
+ It has a variety of Models including GLM, Random Forest, SVM, even some Deep Learning things.
+ It has a localhost implementation with a GUI interface for non-coders.
+ * Runs super smoothly in rstudio.cloud. 
+ * Offers Stacked Models and AutoML algorithms.
+ 
+### Downsides
+ * It needs Java 8-12 to be installed. And Installing it is a pain.
+ * xgboost is not implemented for Windows users (this is a huge setback).
+ * Clasification or Regression Problems are detected depending on the data type of the Target Variable. (Not a huge issue but I like to have control over that).
+ * It tends to oversimplify things running things behind the scenes to facilitate user experience, but you don´t always are aware of things happening.
+
+### Overall
+
+Don´t get me wrong. H2o is awesome and a great starting point for people recently learning about Machine Learning and for experienced Machine Learning people that want fast algorithms.
+
+It also offers AutoMl and stacked ensembles that with little work can help to achieve excellent performance.
+
+Another think I liked, more like a sidenote, was that running this into Rstudio cloud was super smooth. I just had to install the h2o package as any other R package and that was it. The internet was not the best and even so everything ran super fast.
+
+I think I will share a short tutorial about the commands I learned during the tutorial.
+
+# Package Development Tutorial
+
+<center>
+```{r figs2, echo=FALSE}
+knitr::include_graphics('/img/pkg_dev.png')
+```
+</center>
+ 
+[Hadley Wickham](http://hadley.nz/) was in charge of this Tutorial and it was huge.
+
+The content was not a big deal, he showed the necessary steps to create a package that is actually easy than expected. But the way in whih he directed the class:
+
+ * 4 to 5 TAs to help people in need by using a Post it signal to ask for help without interrupting the class.
+ * A lot of hands-on exercises.
+ * Makes us meet our neighbours to work peer to peer.
+ * And the usethis package.
+ 
+The [usethis](https://usethis.r-lib.org/) Package was a huge deal. I had heard about it but I never dimensioned how powerful it is.
+
+First it helps simplify really tedious process in the Package development such as the Creation of Package Directories, edit .Rprofile file, even share Material or Courses. It also creates test files to run with testthat (another super great package), helps create vignettes, upload to github, set Travis and create pkgdown sites.
+
+I think usethis is one of the great great things I take away during this Tutorial. Another great surprise is the utility of roxygen2. I know that is THE package for Documentation purposes but today I really understood how important it is. It really simplifies Documentation creation but also helps compile all the tedious Documentation files that are mandatory to pass CRAN checks.
+
+# Lessons learned
+
+* To value my job. Hadley had all of its work, inluding PDFs files licensed and I think that gives value to the things you do. 
+* If a package is on CRAN is because the creator put a lot of love in it. Because submitting is so convoluted and tedious that if you work that hard to pass CRAN checks is because you really think you are contributing with something that is important to you as creator. Hadley mentioned that submitting to CRAN gives credibility to the author, quality to the actual package because of all of the test to be accepted and a lot of experience as an R Programmer.
+
+My goal after this: My Thesis definitely needs to end up in a package. I´ll do my best.
+
+One of Hadley best tips: 
+
+> "Finish your daily work with a test failing so you can now exactly how to resume your work the next day."
+
+Tomorrow is day 2. Stay tuned!!
+
+
+ 

@@ -24,7 +24,7 @@
     <item>
       <title>Conference</title>
       <link>/tags/conference/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/conference/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Data Cleaning</title>
       <link>/tags/data-cleaning/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-cleaning/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Data Import (haven)</title>
       <link>/tags/data-import-haven/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-import-haven/</guid>
       <description></description>
@@ -76,20 +76,56 @@
     </item>
     
     <item>
+      <title>Latin R</title>
+      <link>/tags/latin-r/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/latin-r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Machine Learning</title>
       <link>/tags/machine-learning/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Parsnip</title>
+      <link>/tags/parsnip/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/parsnip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recipes</title>
+      <link>/tags/recipes/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recipes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rsample</title>
+      <link>/tags/rsample/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rsample/</guid>
       <description></description>
     </item>
     
@@ -108,6 +144,15 @@
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
       
       <guid>/tags/thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yardstick</title>
+      <link>/tags/yardstick/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/yardstick/</guid>
       <description></description>
     </item>
     
