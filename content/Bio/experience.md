@@ -20,12 +20,12 @@ date_format = "Jan 2006"
 
 [[experience]]
   title = "Thesis Project"
-  company = "Evalueserve Chile S.A"
+  company = "Santa Maria university"
   company_url = "https://www.evalueserve.com/"
   location = "Viña del Mar, Chile"
   date_start = "2019-06-11"
   date_end = ""
-  description = """ Decided to Apply the knowledge learned during my Data Sience stage into Civil Engineering. I started working on applying Convolutional Nets to solve FInite Elements problems in Civil Engineering such as Displacement Methods and Permeability Issues in Dams."""
+  description = """ Decided to Apply the knowledge learned during my Data Science stage into Civil Engineering. I started working on applying Convolutional Nets to solve FInite Elements problems in Civil Engineering such as Displacement Methods and Permeability Issues in Dams."""
   
   
 [[experience]]
@@ -72,7 +72,7 @@ date_format = "Jan 2006"
   location = "La Serena, Chile"
   date_start = "2014-03-17"
   date_end = "2015-05-31"
-  description = """Basically I ended up forgetting everything I learned at University from Civil Enginnering and started learning somethings about data."""
+  description = """Basically I ended up forgetting everything I learned at University from Civil Enginnering and started learning some things about data."""
 
 [[experience]]
   title = "Ingeniero de Proyectos"
