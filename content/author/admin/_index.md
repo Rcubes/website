@@ -49,7 +49,7 @@ The purpose of this site is to honor Yihui Xie's quote: **__"I web, therefore I 
 
 In my spare time I like to solve the Rubik's Cube (of course!! :stuck_out_tongue:), I average around 13 Seconds (by 2019-03) and play some Table Tennis . I'm a Big Fan of the Marvel Cinematic Universe (I haven't read any comics, I just like the Movies) and I really enjoyed [**Avengers: Endgame**](https://www.youtube.com/watch?v=JyGGLB542ks).  
 
-My native Language is Spanish, so please forgive me for any Language aberration I can posibly write in the near future (I'm planning to have a Spanish Version too, but I'm still learning **Blogdown**). I'm happily married with Valentina since 2015 and ~~J.A.R.V.I.S~~ Jesus is my ~~co~~pilot.
+My native Language is Spanish, so please forgive me for any Language aberration I can posibly write in the near future (I'm planning to have a Spanish Version too, but I'm still learning **Blogdown**). I'm happily married to Valentina since 2015 and ~~J.A.R.V.I.S~~ Jesus is my ~~co~~pilot.
 
 
 
