@@ -21,7 +21,7 @@ publishDate: "2017-01-01T00:00:00-03:00"
 slides: example-slides
 summary: An example talk using Academic's Markdown slides feature.
 tags: []
-title: Example Talk
+title: COMING SOON
 url_code: ""
 url_pdf: ""
 url_slides: ""

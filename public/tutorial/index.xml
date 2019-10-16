@@ -6,7 +6,7 @@
     <description>Recent content in Overview on datacubeR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>This is just mine. Use it giving proper credit.</copyright>
+    <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
     <lastBuildDate>Sun, 09 Sep 2018 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="/tutorial/index.xml" rel="self" type="application/rss+xml" />
@@ -20,6 +20,18 @@
       <guid>/tutorial/example/</guid>
       <description> In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
 getwd()  ## [1] &amp;quot;D:/Alfonso/website/content/tutorial&amp;quot;  Tip 1 &amp;hellip;
+Tip 2 &amp;hellip;
+bla bla </description>
+    </item>
+    
+    <item>
+      <title>Example Page</title>
+      <link>/tutorial/copyofexample/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0300</pubDate>
+      
+      <guid>/tutorial/copyofexample/</guid>
+      <description> In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
+getwd()  ## [1] &amp;quot;E:/Alfonso/website/content/tutorial&amp;quot;  Tip 1 &amp;hellip;
 Tip 2 &amp;hellip;
 bla bla </description>
     </item>

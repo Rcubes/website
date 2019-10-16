@@ -6,12 +6,12 @@
     <description>Recent content in datacubeR on datacubeR</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>This is just mine. Use it giving proper credit.</copyright>
+    <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
     <lastBuildDate>Sat, 01 Jun 2030 13:00:00 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Example Talk</title>
+      <title>COMING SOON</title>
       <link>/talk/example/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 -0400</pubDate>
       
@@ -37,11 +37,93 @@
     </item>
     
     <item>
+      <title>Latin R (Days 2 and 3)</title>
+      <link>/post/latin-r-ii/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/latin-r-ii/</guid>
+      <description>
+
+
+&lt;div id=&#34;latin-r-conferences-days&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Latin R (Conferences Days)&lt;/h2&gt;
+&lt;p&gt;Today the Conference Days just got started, and I have to say I watched some really impresive presentations and Data Products.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Day 1&lt;/strong&gt; started with a &lt;a href=&#34;https://www.uai.cl/&#34;&gt;UAI&lt;/a&gt; local presenter talking about Sports Analytics in R, then a huge presentation by Mine Cetinkaya about Teaching R to move to specific small presentation in parallel so I was able just to watch half of the Presentations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Day 2&lt;/strong&gt; started with a &lt;a href=&#34;https://www.uc.cl/&#34;&gt;UC&lt;/a&gt; local presenter talking about applying Data Science in R to Government Data, then Erin Ledell talked about H2o to move forward to the small presentations in Parallel. The day finished with Poster presentations and Hadley Wickham talking about different dplyr backends.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;day-1-summary&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Day 1 Summary&lt;/h1&gt;
+&lt;div id=&#34;sports-analytics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sports Analytics&lt;/h2&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/LatinR2019?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#LatinR2019&lt;/a&gt; partiendo con datos espaciales. Hermoso :) &lt;a href=&#34;https://t.co/xUCYltzJNi&#34;&gt;pic.twitter.com/xUCYltzJNi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Steph Orellana Bello (@sporella) &lt;a href=&#34;https://twitter.com/sporella/status/1177197501247627265?ref_src=twsrc%5Etfw&#34;&gt;September 26, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;Ahora &lt;a href=&#34;https://twitter.com/raimun2?ref_src=twsrc%5Etfw&#34;&gt;@raimun2&lt;/a&gt; nos cuenta cómo generó sus mapas para analítica de deportes de montaña 🗺&lt;br&gt;&lt;br&gt;❇️ 25% de la población tiene un cerro a menos de 3  km de distancia&lt;br&gt;&lt;br&gt;❇️ 100% un cerro a menos de 10 km de distancia &lt;a href=&#34;https://t.co/l8ziSS7yXX&#34;&gt;pic.twitter.com/l8ziSS7yXX&lt;/a&gt;&lt;/p&gt;&amp;mdash; LatinR (@LatinR_Conf) &lt;a href=&#34;https://twitter.com/LatinR_Conf/status/1177199273064173568?ref_src=twsrc%5Etfw&#34;&gt;September 26, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;The Conference kicked off with Spatial Data applied to some kind of Mountain Trekking. The presenter showed how to use R to calculate the distances from every Santiago door to have access to the Mountains.&lt;/p&gt;
+&lt;p&gt;The most interesting thing about this is that this showed the huge power of R in the Spatial Data side, that is defnitely something I have no idea.&lt;/p&gt;
+&lt;p&gt;During the Presentation the following packages were presented:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;ggmap:&lt;/strong&gt; of Course from the ggplot family this package allows to work with Stamen maps that I think is some kind of Raster (Map Images).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;ElevatR:&lt;/strong&gt; to get access to Topographic Maps with Elevations for free.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rstrava:&lt;/strong&gt; An API to get access to trekking routes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think this was some kind of Introduction to really interesting Spatial Presentations that showed me that there is a lot to learn about that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;teaching-r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Teaching R&lt;/h2&gt;
+&lt;p&gt;One of my passions is Teaching R, that is why this talk was specially touching to me. I worked hard during my time in EVS to have the Best R classes possible and we made it, a lot of people learned R but there was still a lot of things I know I did wrong and a lot of Tips that Mine presented that I have never thougth about.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;.&lt;a href=&#34;https://twitter.com/minebocek?ref_src=twsrc%5Etfw&#34;&gt;@minebocek&lt;/a&gt; hablando sobre la enseñanza de R. Las diapositivas disponibles en este enlace &lt;a href=&#34;https://t.co/GEtWKB5vjV&#34;&gt;https://t.co/GEtWKB5vjV&lt;/a&gt; &lt;a href=&#34;https://t.co/aLvWQJruVv&#34;&gt;pic.twitter.com/aLvWQJruVv&lt;/a&gt;&lt;/p&gt;&amp;mdash; LatinR (@LatinR_Conf) &lt;a href=&#34;https://twitter.com/LatinR_Conf/status/1177201090363822080?ref_src=twsrc%5Etfw&#34;&gt;September 26, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;The whole talk can be found &lt;a href=&#34;https://speakerdeck.com/minecr/r4all-welcoming-plus-inclusive-practices-for-teaching-r&#34;&gt;here&lt;/a&gt; but there was a couple of things that I think it is important to highlight:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Using Students feedback earlier:&lt;/strong&gt; She explained is really helpful to give our students the chance to raise questions and how the material can be improved as soon as possible, speially little things like font size, voice volume, backgorund color, contents and course expectations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Help them get help:&lt;/strong&gt; I think the best things here were {searcher}, a pakage to make automatic searchs in google or stackoverflow about errors, the well-known {reprex} and this super helpful explanation about R help format:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/help.png&#34; /&gt;&lt;!-- --&gt;
+&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;{livecode}&lt;/strong&gt;: Mine remarked the importance of live coding to explain workflows and give confidence to students, plus it helps to express the correct way to refer to R elements. the {livecode} package is being developed and this could be a life-changer tool for people who likes to teach.&lt;/li&gt;
+&lt;li&gt;Peer review: The R community is really open and we need to encourage the constructive feedback to make each other a better useR.________&lt;/li&gt;
+&lt;li&gt;Encourage creativity: I just loved this point speially in the kind of challenges that can be given, for instance, creating a Christmas tree with R.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/christmas-tree.png&#34; /&gt;&lt;!-- --&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;alicer-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;alicer package&lt;/h2&gt;
+&lt;p&gt;For me this was the most mature and powerful data Product presented during the Conference.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;.&lt;a href=&#34;https://twitter.com/minebocek?ref_src=twsrc%5Etfw&#34;&gt;@minebocek&lt;/a&gt; hablando sobre la enseñanza de R. Las diapositivas disponibles en este enlace &lt;a href=&#34;https://t.co/GEtWKB5vjV&#34;&gt;https://t.co/GEtWKB5vjV&lt;/a&gt; &lt;a href=&#34;https://t.co/aLvWQJruVv&#34;&gt;pic.twitter.com/aLvWQJruVv&lt;/a&gt;&lt;/p&gt;&amp;mdash; LatinR (@LatinR_Conf) &lt;a href=&#34;https://twitter.com/LatinR_Conf/status/1177201090363822080?ref_src=twsrc%5Etfw&#34;&gt;September 26, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;My main takeaways from this presentation are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You don´t need to be Hadley to create an awesome package.&lt;/li&gt;
+&lt;li&gt;Use use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Latin R (Day 1)</title>
-      <link>/publication/latin-r-i/</link>
+      <link>/post/latin-r-i/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/publication/latin-r-i/</guid>
+      <guid>/post/latin-r-i/</guid>
       <description>
 
 
@@ -63,11 +145,12 @@
 &lt;h3&gt;Pros&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Super easy and Intuitive syntax. Very similar to parsnip.&lt;/li&gt;
-&lt;li&gt;Super fast implementation in Java.
-It has a variety of Models including GLM, Random Forest, SVM, even some Deep Learning things.
-It has a localhost implementation with a GUI interface for non-coders.&lt;/li&gt;
-&lt;li&gt;Runs super smoothly in rstudio.cloud.&lt;/li&gt;
+&lt;li&gt;Super fast implementation in Java.&lt;/li&gt;
+&lt;li&gt;It has a variety of Models including GLM, Random Forest, SVM, even some Deep Learning things.&lt;/li&gt;
+&lt;li&gt;It has a localhost implementation with a GUI interface for non-coders.&lt;/li&gt;
+&lt;li&gt;Runs super smoothly in Rstudio.cloud.&lt;/li&gt;
 &lt;li&gt;Offers Stacked Models and AutoML algorithms.&lt;/li&gt;
+&lt;li&gt;Super Easy Implementation into Production.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;downsides&#34; class=&#34;section level3&#34;&gt;
@@ -75,16 +158,16 @@ It has a localhost implementation with a GUI interface for non-coders.&lt;/li&gt
 &lt;ul&gt;
 &lt;li&gt;It needs Java 8-12 to be installed. And Installing it is a pain.&lt;/li&gt;
 &lt;li&gt;xgboost is not implemented for Windows users (this is a huge setback).&lt;/li&gt;
-&lt;li&gt;Clasification or Regression Problems are detected depending on the data type of the Target Variable. (Not a huge issue but I like to have control over that).&lt;/li&gt;
+&lt;li&gt;Classification or Regression Problems are detected depending on the data type of the Target Variable. (Not a huge issue but I like to have control over that).&lt;/li&gt;
 &lt;li&gt;It tends to oversimplify things running things behind the scenes to facilitate user experience, but you don´t always are aware of things happening.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;overall&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Overall&lt;/h3&gt;
 &lt;p&gt;Don´t get me wrong. H2o is awesome and a great starting point for people recently learning about Machine Learning and for experienced Machine Learning people that want speed and scalability.&lt;/p&gt;
-&lt;p&gt;It also offers AutoMl and stacked ensembles that with little work can help to achieve excellent performance.&lt;/p&gt;
-&lt;p&gt;Another think I liked, more like a sidenote, was that running this into Rstudio cloud was super smooth. I just had to install the h2o package as any other R package and that was it. The internet was not the best and even so everything ran super fast.&lt;/p&gt;
-&lt;p&gt;Finally Erin mentioned that Max Kuhn and his team is working in integrating H2o with the tidymodels ecosystem. If that happens H2o will start liking even more.&lt;/p&gt;
+&lt;p&gt;It also offers AutoML and stacked ensembles that with little work can help to achieve excellent performance.&lt;/p&gt;
+&lt;p&gt;Another think I liked, more like a side note, was that running this into Rstudio cloud was super smooth. I just had to install the h2o package as any other R package and that was it. The internet was not the best and even so everything ran super fast.&lt;/p&gt;
+&lt;p&gt;Finally Erin mentioned that &lt;a href=&#34;https://twitter.com/topepos&#34;&gt;Max Kuhn&lt;/a&gt; and his team is working on integrating H2o with the TidyModels ecosystem. If that happens H2o will start being definitely one of my favorites even more.&lt;/p&gt;
 &lt;p&gt;I think I will share a short tutorial about the commands I learned during the tutorial.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -94,25 +177,25 @@ It has a localhost implementation with a GUI interface for non-coders.&lt;/li&gt
 &lt;img src=&#34;/img/pkg_dev.png&#34; /&gt;&lt;!-- --&gt;
 &lt;/center&gt;
 &lt;p&gt;&lt;a href=&#34;http://hadley.nz/&#34;&gt;Hadley Wickham&lt;/a&gt; was in charge of this Tutorial and it was huge.&lt;/p&gt;
-&lt;p&gt;The content was not a big deal, he showed the necessary steps to create a package that is actually easy than expected. But the way he directed the class:&lt;/p&gt;
+&lt;p&gt;The content was not a big deal, he showed the necessary steps to create a package that is actually easier than expected. But the way he directed the class:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;4 to 5 TAs to help people in need by using a Post it signal to ask for help without interrupting the class.&lt;/li&gt;
+&lt;li&gt;4 to 5 TAs to help people in need by using a Post-it signal to ask for help without interrupting the class.&lt;/li&gt;
 &lt;li&gt;A lot of hands-on exercises.&lt;/li&gt;
-&lt;li&gt;Makes us meet our neighbours to work peer to peer.&lt;/li&gt;
+&lt;li&gt;Makes us meet our neighbors to work peer to peer.&lt;/li&gt;
 &lt;li&gt;And the usethis package.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The &lt;a href=&#34;https://usethis.r-lib.org/&#34;&gt;usethis&lt;/a&gt; Package was a huge deal. I had heard about it but I never dimensioned how powerful it is.&lt;/p&gt;
-&lt;p&gt;First it helps simplify really tedious process in the Package development such as the Creation of Package Directories, edit .Rprofile file, even share Material or Courses. It also creates test files to run with testthat (another super great package), helps create vignettes, upload to github, set Travis and create pkgdown sites.&lt;/p&gt;
-&lt;p&gt;I think usethis is one of the great great things I take away during this Tutorial. Another great surprise is the utility of roxygen2. I know that is THE package for Documentation purposes but today I really understood how important it is. It really simplifies Documentation creation but also helps compile all the tedious Documentation files that are mandatory to pass CRAN checks.&lt;/p&gt;
+&lt;p&gt;First it helps simplify really tedious process in the Package development such as the Creation of Package Directories, edit &lt;em&gt;.Rprofile&lt;/em&gt; file, even share Material or Courses. It also creates test files to run with testthat (another super great package), helps create vignettes, upload to github, set Travis and create pkgdown sites.&lt;/p&gt;
+&lt;p&gt;I think usethis is one of the great great things I take away during this Tutorial. Another great surprise is the utility of roxygen2. I know that is &lt;strong&gt;THE&lt;/strong&gt; package for Documentation purposes but today I really understood how important it is. It really simplifies Documentation creation but also helps compile all the tedious Documentation files that are mandatory to pass CRAN checks.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;lessons-learned&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Lessons learned&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;To value my job. Hadley had all of its work, inluding PDFs files licensed and I think that gives value to the things you do.&lt;/li&gt;
-&lt;li&gt;If a package is on CRAN is because the creator put a lot of love in it. Because submitting is so convoluted and tedious that if you work that hard to pass CRAN checks is because you really think you are contributing with something that is important to you as creator. Hadley mentioned that submitting to CRAN gives credibility to the author, quality to the actual package because of all of the test to be accepted and a lot of experience as an R Programmer.&lt;/li&gt;
-&lt;li&gt;I don´t fully prepared to create a huge package yet, but I´m not afraid anymore.&lt;/li&gt;
+&lt;li&gt;To value my job. Hadley had all of its work, including PDF files licensed and I think that gives value to the things you do.&lt;/li&gt;
+&lt;li&gt;If a package is on CRAN is because the creator put a lot of love in it. Because submitting is so convoluted and tedious that if you work that hard to pass CRAN checks is because you really think you are contributing with something that is important to you as creator. Hadley mentioned that submitting to CRAN gives credibility to the author, quality to the actual package because of all of the test that needs to pass to be accepted and a lot of experience as an R Programmer.&lt;/li&gt;
+&lt;li&gt;I don´t feel fully prepared to create a huge package yet, but I´m not afraid anymore.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;My goal after this: My Thesis definitely needs to end up in a package. I´ll do my best.&lt;/p&gt;
+&lt;p&gt;My goal after this: My Thesis definitely needs to end up into a package. I´ll do my best.&lt;/p&gt;
 &lt;p&gt;One of Hadley best tips:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“Finish your daily work with a test failing so you can now exactly how to resume your work the next day.”&lt;/p&gt;
@@ -626,10 +709,10 @@ VectorXd u_vect(NumericMatrix K_Total, NumericVector f_Total){
     
     <item>
       <title>My Final Project at the ML Diploma (Part III)</title>
-      <link>/post/machine-learning-diploma-iii/</link>
+      <link>/project/machine-learning-diploma-iii/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/machine-learning-diploma-iii/</guid>
+      <guid>/project/machine-learning-diploma-iii/</guid>
       <description>
 &lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
@@ -786,10 +869,10 @@ full_advance$fit %&amp;gt;%
     
     <item>
       <title>My Final Project at the ML Diploma (Part II)</title>
-      <link>/post/machine-learning-diploma-ii/</link>
+      <link>/project/machine-learning-diploma-ii/</link>
       <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/machine-learning-diploma-ii/</guid>
+      <guid>/project/machine-learning-diploma-ii/</guid>
       <description>
 &lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
@@ -975,10 +1058,10 @@ On the categorical side:
     
     <item>
       <title>My Final Project at the ML Diploma (Part I)</title>
-      <link>/post/machine-learning-diploma/</link>
+      <link>/project/machine-learning-diploma/</link>
       <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/machine-learning-diploma/</guid>
+      <guid>/project/machine-learning-diploma/</guid>
       <description>
 &lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
@@ -1744,47 +1827,6 @@ I started to feel interested in the Field.&lt;/p&gt;
       <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
       
       <guid>/post/my-thesis/</guid>
-      <description>
-
-&lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;
-
-&lt;p&gt;Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.&lt;/p&gt;
-
-&lt;p&gt;Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)&lt;/p&gt;
-
-&lt;p&gt;So I decide to go for Civil Engineering because it has a decent amount of advanced Maths that was something I was looking for and a High Employment Index.&lt;/p&gt;
-
-&lt;p&gt;Well I started working as a Civil Engineer in INVAR as soon as I finished my internship. I just loved it, I learned so much, but the thingwas that they didn&amp;rsquo;t pay too much. So I decided to take a position at Aguas del Valle. Sincerely, and very respectfully, it has been the worst choice of my life, not only because it was 5 hours away of my Hometown, but also because they took my soul out of my body and make me spend awful moments doing absolutely nothing. There is nothing more frustrating than doing nothing all day long in a desk in a Company you don&amp;rsquo;t feel a part of.&lt;/p&gt;
-
-&lt;p&gt;So the Evalueserve Post showed up. A friend referred me to the Data Science Program (DSP) and then I fell in love with Data Science. During the program I learned SQL, VBA, SAS 👍, R, Tableau and definitely built up my English and Communication skills. Felipe, help me prepare my first interview in English and thanks to him I had the English I needed to learn all I know so far.&lt;/p&gt;
-
-&lt;p&gt;Upskilling and moving through cities took all of my time, besides I got married (Best Decision so far) but a lot to do, hence, no time to finish my Thesis.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-happened-with-my-thesis&#34;&gt;What happened with my Thesis?&lt;/h2&gt;
-
-&lt;p&gt;Well in INVAR I worked as an Hidraulics Engineer so I started a Thesis back in 2013 about Water Hammer. Really interesting topic, that needed Finite Differences Methods to solve really complicated Partial Differential Equations. The only proffesor with this knowledge started working wih me, but after a year he got retired. So I had to find another Professor, so in order to avoid this issue to happen again, I decided to go with one of the youngest Professor, well he left me for his Phd.&lt;/p&gt;
-
-&lt;p&gt;Damn, Suddenly working in INVAR I noticed the CEO was my professor of Planning so I ask him to mentor me. This happened just before leaving to Aguas del Valle in La Serena. 6 months later a Cancer was diagnosed and he passed away, so freaking fast.
-The Chief of Department took over all of the abandoned Thesis that my Professor&amp;rsquo;s dead left behind, but he couldn&amp;rsquo;t continue to mentor me, because he considered being in La Serena was too far away.
-In 2015 I came back to Viña and I started to learn, upskill, teach, develop as a Data Scientist that I decided to put it on hold.
-On 2017 I started another Thesis. Another Professor wanted to mentor me but he was of the Structural Area. That meant I needed to move to that Area.
-We started investigating uncertainty on Structural Analysis. The thing is my work again didn&amp;rsquo;t give me any chance to continue.
-Until now. Why now? Probably I will explain it later, because it is also related with the creation of this site.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-my-thesis-is-going-to-be-about&#34;&gt;What My Thesis is going to be about?&lt;/h2&gt;
-
-&lt;p&gt;Good news, I will be able to mix my previous work with one thing I discovered as I developed as Data Science: &lt;strong&gt;Deep Learning in R&lt;/strong&gt; 👏.&lt;/p&gt;
-
-&lt;p&gt;I will be posting some progress about that. Hang tight!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Thesis Project</title>
-      <link>/publication/my-thesis/</link>
-      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
-      
-      <guid>/publication/my-thesis/</guid>
       <description>
 
 &lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;

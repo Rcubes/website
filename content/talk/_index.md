@@ -2,6 +2,7 @@
 header:
   caption: ""
   image: ""
-title: Recent & Upcoming Talks
+title: Quick Solves
+subtitle: Here I'll be providing quick Tips to solve short Data issues that might arise.
 view: 2
 ---

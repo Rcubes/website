@@ -8,42 +8,47 @@
 #  url = "#about"
 #  weight = 10
 
-[[main]]
-name = "New"
-url = "#featured"
-weight = 10
+#[[main]]
+#name = "New"
+#url = "#featured"
+#weight = 10
 
 [[main]]
-  name = "Vampire Diaries"
-  url = "#posts"
+  name = "BLOG"
+  url = "/post/"
   weight = 15
 
   
 [[main]]
-  name = "Thesis"
-  url = "#projects"
+ name = "PROJECTS"
+  url = "/projects"
+  weight = 20
+  
+[[main]]
+ name = "Quick SOLVES"
+  url = "/talk"
   weight = 20
   
   
 [[main]]
-  name = "Bio"
+  name = "ABOUT ME"
   url = "/Bio/"
   weight = 30
 
 
 #[[main]]
 #  name = "Cubing"
-#  url = "/tutorial/"
+#  url = "/talk"
 #  weight = 50
 
 [[main]]
-  name = "Contact"
-  url = "#contact"
+  name = "CONTACT"
+  url = "/Contact"
   weight = 60
 
-# Link to a PDF of your resume/CV from the menu.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# [[main]]
-#    name = "CV"
-#    url = "files/cv.pdf"
-#    weight = 70
+#Link to a PDF of your resume/CV from the menu.
+#To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+[[main]]
+    name = "CV"
+    url = "files/cv.pdf"
+    weight = 70

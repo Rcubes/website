@@ -1,0 +1,118 @@
+---
+title: Latin R (Days 2 and 3)
+authors: 
+  - admin
+date: '2019-09-30'
+categories:
+  - Vampire Diaries
+  - Rambling
+tags:
+  - R
+  - Conference
+  - Latin R
+image:
+  caption: "Photo took from [@data_datum](https://twitter.com/data_datum/status/1178460619399401473)"
+  focal_point: "Center"
+summary: "I took 2 tutorials at the LatinR Conference. I´ll be commenting about them."
+highlight: true
+featured: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+## Latin R (Conferences Days)
+
+Today the Conference Days just got started, and I have to say I watched some really impresive presentations and Data Products.
+
+__Day 1__ started with a [UAI](https://www.uai.cl/) local presenter talking about Sports Analytics in R, then a huge presentation by Mine Cetinkaya about Teaching R to move to specific small presentation in parallel so I was able just to watch half of the Presentations.
+
+
+__Day 2__ started with a [UC](https://www.uc.cl/) local presenter talking about applying Data Science in R to Government Data, then Erin Ledell talked about H2o to move forward to the small presentations in Parallel. The day finished with Poster presentations and Hadley Wickham talking about different dplyr backends.
+
+# Day 1 Summary
+
+## Sports Analytics
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1177197501247627265')
+```
+</center>
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1177199273064173568')
+```
+</center>
+
+
+
+The Conference kicked off with Spatial Data applied to some kind of Mountain Trekking. The presenter showed how to use R to calculate the distances from every Santiago door to have access to the Mountains. 
+
+The most interesting thing about this is that this showed the huge power of R in the Spatial Data side, that is defnitely something I have no idea.
+
+During the Presentation the following packages were presented:
+
+ * __ggmap:__ of Course from the ggplot family this package allows to work with Stamen maps that I think is some kind of Raster (Map Images).
+ 
+ * __ElevatR:__ to get access to Topographic Maps with Elevations for free.
+ 
+ * __Rstrava:__ An API to get access to trekking routes.
+ 
+I think this was some kind of Introduction to really interesting Spatial Presentations that showed me that there is a lot to learn about that.
+
+## Teaching R
+
+One of my passions is Teaching R, that is why this talk was specially touching to me. I worked hard during my time in EVS to have the Best R classes possible and we made it, a lot of people learned R but there was still a lot of things I know I did wrong and a lot of Tips that Mine presented that I have never thougth about.
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1177201090363822080')
+```
+</center>
+
+The whole talk can be found [here](https://speakerdeck.com/minecr/r4all-welcoming-plus-inclusive-practices-for-teaching-r) but there was a couple of things that I think it is important to highlight:
+
+ * __Using Students feedback earlier:__ She explained is really helpful to give our students the chance to raise questions and how the material can be improved as soon as possible, speially little things like font size, voice volume, backgorund color, contents and course expectations.
+ * __Help them get help:__ I think the best things here were {searcher}, a pakage to make automatic searchs in google or stackoverflow about errors, the well-known {reprex} and this super helpful explanation about R help format:
+ 
+ 
+<center>
+```{r fig_help, echo=FALSE}
+knitr::include_graphics('/img/help.png')
+```
+</center> 
+
+ * __{livecode}__: Mine remarked the importance of live coding to explain workflows and give confidence to students, plus it helps to express the correct way to refer to R elements. the {livecode} package is being developed and this could be a life-changer tool for people who likes to teach.
+ * Peer review: The R community is really open and we need to encourage the constructive feedback to make each other a better useR.________
+ * Encourage creativity: I just loved this point speially in the kind of challenges that can be given, for instance, creating a Christmas tree with R.
+ 
+<center>
+```{r tree, echo=FALSE}
+knitr::include_graphics('/img/christmas-tree.png')
+```
+</center> 
+
+
+## alicer package
+
+For me this was the most mature and powerful data Product presented during the Conference.
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1177201090363822080')
+```
+</center>
+
+My main takeaways from this presentation are:
+
+ * You don´t need to be Hadley to create an awesome package.
+ * Use use
+
+ 

@@ -18,13 +18,13 @@ subtitle = ""
   icon = "r-project"
   icon_pack = "fab"
   name = "useR"
-  description = "I learned R during the Data Scientist Trainee Program at Evalueserve. I learned old fashion Base R but even so I just loved how versatile and powerful R is. Then I moved to the Tidyverse and it was a life-changer."
+  description = "Advanced R Developer. I just love using R in every aspect of the Data Science Workflow. My favorite Packages are Tidyverse, Tidymodel and Shiny."
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
   name = "Tableau"
-  description = "I'm an advanced Tableau user. I think it is a powerful tool for quickly sketch Dashboard. It is easy and quick but it lacks the flexibility of a proper framework can provide."  
+  description = "I'm an advanced Tableau user. I think it is a powerful tool for quickly sketch Dashboards."  
   
 [[feature]]
   icon = "robot"
