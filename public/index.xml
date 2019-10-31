@@ -7,32 +7,902 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Sat, 01 Jun 2030 13:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>COMING SOON</title>
-      <link>/talk/example/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 -0400</pubDate>
+      <title>Dealing with dates</title>
+      <link>/publication/problem-7/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
+      <guid>/publication/problem-7/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
-  &lt;/div&gt;
+
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;Here is the challenge:&lt;/p&gt;
+&lt;p&gt;Calculate the time difference between Max and Min Dates found in a date vector.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+date_vec &amp;lt;- c(&amp;quot;2019/10/24 10:00:00&amp;quot;,&amp;quot;2019/10/23 11:00:00&amp;quot;,&amp;quot;2019/10/25 12:00:00&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;The thing is super easy to get, but the idea is to create a pipeline that can calculate this in just a series of steps:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(lubridate)
+
+date_vec %&amp;gt;%
+  #Transforming characters into dates using ymd for dates and hms for time
+  ymd_hms() %&amp;gt;%
+  #range() retrieves max and min date
+  range() %&amp;gt;%
+  #Calculate the time difference
+  diff() %&amp;gt;%
+  #Transform into lubridate duration object %&amp;gt;%
+   as.duration() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;176400s (~2.04 days)&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I got a new Job!!</title>
+      <link>/post/new-job/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/new-job/</guid>
+      <description>
+
+&lt;h2 id=&#34;my-new-job&#34;&gt;My new Job&lt;/h2&gt;
+
+&lt;p&gt;My working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.&lt;/p&gt;
+
+&lt;p&gt;The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying &amp;ldquo;&lt;em&gt;you will work here&lt;/em&gt;&amp;rdquo; (although I had some hesitation). So I will be a &lt;strong&gt;Senior Data Scientist&lt;/strong&gt; working at Scotiabank Cencosud, a Retail Company, and I´ll be part of the Advanced Analytics Team.&lt;/p&gt;
+
+&lt;p&gt;It seems there is a lot of interesting opportunities for my carreer. So let´s break them down:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a real Modeling Position.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I will be primarily involved in developing Machine Learning in Production. This is something super exciting because I think I have learned and practiced a lot to be involved into this. I feel super prepared and eager to start applying the knowledge learned in the POCs I´ve worked in EVS and in the ML Diploma.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We´ll have a real Data Lake with plenty of Data&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is important, I don´t remember where I read about the things I needed to pay attention when applying to a new Job, and of course if we are doing Data Science we need Data. Well Cencosud is a Company that is positioning itself as an IDO (Insight Driven organization) and its primary focus is to make Data Driven Decisions.&lt;/p&gt;
+
+&lt;p&gt;I think, I will have the chance to work with large amounts of Data and hopefully use Spark, this is something I really want to incorporate into my skill set.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There´s space for Innovative Research&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At least in my conversations with the High Management during Interviews they guaranteed some space to innovate and experiment. This is something really fun to me and that I was looking for. So I expect to have the opportunity to implement new models, or algorithms that i haven´t work with before.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I will use R&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This was a main thing to me. I applied to several position where R was not an option, but I just couldn´t stand it. I want to work with R, and here I will have the opportunity to use it from end to end. I even twitted about it 😜 and I got one 😁.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;- I want/need a new job. 😕&lt;br&gt;- I don&amp;#39;t mind what area: Data cleaning, process automations, data reporting, data visualization, machine learning, deep learning, long etc.🤔&lt;br&gt;- but I want to use &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt;.😅&lt;br&gt;&lt;br&gt;Is that a crime?&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hashtag/rstatses?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstatses&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/LatinR_Conf?ref_src=twsrc%5Etfw&#34;&gt;@LatinR_Conf&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hashtag/newjobplease?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#newjobplease&lt;/a&gt; 🤔🙄😅🤨😁&lt;/p&gt;&amp;mdash; Alfonso Tobar (@tobar_with_R) &lt;a href=&#34;https://twitter.com/tobar_with_R/status/1183107543113093120?ref_src=twsrc%5Etfw&#34;&gt;October 12, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Many thanks to all the people that provided assitance and help to find job opportunities.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I´m well paid and with plenty of Benefits&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Of course I will not disclose my salary (to avoid jealousy ), but I feel happy with the Offering. This was really an issue in my previous job, so I expect good things to happen in here.&lt;/p&gt;
+
+&lt;p&gt;More to come after the first month, I think, but at least for now. &lt;strong&gt;I´m happy&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unique Id Challenge</title>
+      <link>/publication/problem-8/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-8/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;Another Twitter Challenge:&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; I&amp;#39;m sure there&amp;#39;s an elegant solution that I&amp;#39;m just totally missing. How do I create a unique episode_ID that increases by 1 for instances where episode_flag == &amp;quot;new&amp;quot; but just repeats the value from the row above when episode_flag == &amp;quot;same&amp;quot;? &lt;a href=&#34;https://t.co/Dl5ZtAiE7J&#34;&gt;pic.twitter.com/Dl5ZtAiE7J&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jessica Streeter (@phillynerd) &lt;a href=&#34;https://twitter.com/phillynerd/status/1189641234639400961?ref_src=twsrc%5Etfw&#34;&gt;October 30, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;It is almost there, I just added a couple of lines to get the expected output elegantly:&lt;/p&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;member&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;appt&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;episode_flag&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;same&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;same&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;same&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df %&amp;gt;%
+  group_by(episode_flag) %&amp;gt;%
+  mutate(episode_ID = ifelse(episode_flag ==&amp;quot;new&amp;quot;, row_number(), NA)) %&amp;gt;%
+  # Eliminating groups to apply next function
+  ungroup() %&amp;gt;%
+  # Filling NAs with previous non-NA values
+  fill(episode_ID)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;member&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;appt&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;episode_flag&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;episode_ID&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;,&#34;4&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;same&#34;,&#34;4&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;,&#34;4&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;same&#34;,&#34;4&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;same&#34;,&#34;4&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;,&#34;4&#34;:&#34;3&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;new&#34;,&#34;4&#34;:&#34;4&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transposing a dataframe</title>
+      <link>/publication/problem-6/</link>
+      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-6/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;Here is the challenge:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- data.frame(
+  &amp;quot;id&amp;quot; = c(901, 902, 903, &amp;quot;age&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;language&amp;quot;),
+  &amp;quot;rater1&amp;quot; = c(7, 9, 9, 21, 1, 1),
+  &amp;quot;rater2&amp;quot; = c(9, 9, 9, 39, 2, 2),
+  &amp;quot;rater3&amp;quot; = c(9, 9, 9, 38, 2, 1),
+  &amp;quot;rater4&amp;quot; = c(9, 9, 9, 33, 2, 1),
+  &amp;quot;rater5&amp;quot; = c(2, 9, 9, 21, 2, 1)
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Filter all the ratings with gender 1, or language 1, or gender 1 AND language 1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;The thing is super easy, we need to transpose, the thing transposition is not a valid operation when it comes to data frames, how can we apply this in a data frame using &lt;code&gt;tidyverse&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So in order to understand what happens I will run the solution by parts.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;%
+  transpose()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [[1]]$id
+## [1] 1
+## 
+## [[1]]$rater1
+## [1] 7
+## 
+## [[1]]$rater2
+## [1] 9
+## 
+## [[1]]$rater3
+## [1] 9
+## 
+## [[1]]$rater4
+## [1] 9
+## 
+## [[1]]$rater5
+## [1] 2
+## 
+## 
+## [[2]]
+## [[2]]$id
+## [1] 2
+## 
+## [[2]]$rater1
+## [1] 9
+## 
+## [[2]]$rater2
+## [1] 9
+## 
+## [[2]]$rater3
+## [1] 9
+## 
+## [[2]]$rater4
+## [1] 9
+## 
+## [[2]]$rater5
+## [1] 9
+## 
+## 
+## [[3]]
+## [[3]]$id
+## [1] 3
+## 
+## [[3]]$rater1
+## [1] 9
+## 
+## [[3]]$rater2
+## [1] 9
+## 
+## [[3]]$rater3
+## [1] 9
+## 
+## [[3]]$rater4
+## [1] 9
+## 
+## [[3]]$rater5
+## [1] 9
+## 
+## 
+## [[4]]
+## [[4]]$id
+## [1] 4
+## 
+## [[4]]$rater1
+## [1] 21
+## 
+## [[4]]$rater2
+## [1] 39
+## 
+## [[4]]$rater3
+## [1] 38
+## 
+## [[4]]$rater4
+## [1] 33
+## 
+## [[4]]$rater5
+## [1] 21
+## 
+## 
+## [[5]]
+## [[5]]$id
+## [1] 5
+## 
+## [[5]]$rater1
+## [1] 1
+## 
+## [[5]]$rater2
+## [1] 2
+## 
+## [[5]]$rater3
+## [1] 2
+## 
+## [[5]]$rater4
+## [1] 2
+## 
+## [[5]]$rater5
+## [1] 2
+## 
+## 
+## [[6]]
+## [[6]]$id
+## [1] 6
+## 
+## [[6]]$rater1
+## [1] 1
+## 
+## [[6]]$rater2
+## [1] 2
+## 
+## [[6]]$rater3
+## [1] 1
+## 
+## [[6]]$rater4
+## [1] 1
+## 
+## [[6]]$rater5
+## [1] 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The problem using transpose is that the results is a list of lists, so it´s necessary to transform inner list into vectors:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  #select raters
+  select(contains(&amp;quot;rater&amp;quot;)) %&amp;gt;%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %&amp;gt;%
+  #unlisting into double vectors
+  map(flatten_dbl)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## rater1 rater2 rater3 rater4 rater5 
+##      7      9      9      9      2 
+## 
+## [[2]]
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## [[3]]
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## [[4]]
+## rater1 rater2 rater3 rater4 rater5 
+##     21     39     38     33     21 
+## 
+## [[5]]
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      2      2      2 
+## 
+## [[6]]
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      1      1      1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now every list slot can be renamed with the corresponding id:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  #select raters
+  select(contains(&amp;quot;rater&amp;quot;)) %&amp;gt;%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %&amp;gt;%
+  #unlisting 
+  map(flatten_dbl) %&amp;gt;%
+  set_names(data$id)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $`901`
+## rater1 rater2 rater3 rater4 rater5 
+##      7      9      9      9      2 
+## 
+## $`902`
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## $`903`
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## $age
+## rater1 rater2 rater3 rater4 rater5 
+##     21     39     38     33     21 
+## 
+## $gender
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      2      2      2 
+## 
+## $language
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      1      1      1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally we can reorganize using map_dfc() function that reorder the data into dataframes by column:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(
+  new_data &amp;lt;- data %&amp;gt;%
+    #select raters
+    select(contains(&amp;quot;rater&amp;quot;)) %&amp;gt;%
+    #transpose, the problem is that this transform data into lists of lists.
+    transpose() %&amp;gt;%
+    #unlisting
+    map(flatten_dbl) %&amp;gt;%
+    set_names(data$id) %&amp;gt;%
+    map_dfc( ~ .x)
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;901&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;902&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;903&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;age&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gender&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;language&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;7&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;1&#34;,&#34;_row&#34;:&#34;rater1&#34;},{&#34;1&#34;:&#34;9&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;39&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;2&#34;,&#34;_row&#34;:&#34;rater2&#34;},{&#34;1&#34;:&#34;9&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;38&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;,&#34;_row&#34;:&#34;rater3&#34;},{&#34;1&#34;:&#34;9&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;33&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;,&#34;_row&#34;:&#34;rater4&#34;},{&#34;1&#34;:&#34;2&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;,&#34;_row&#34;:&#34;rater5&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;Now we can filter accordingly the requested filterings:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;new_data %&amp;gt;%
+  filter(gender == 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;901&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;902&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;903&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;age&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gender&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;language&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;7&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;1&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;new_data %&amp;gt;%
+  filter(language == 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;901&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;902&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;903&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;age&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gender&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;language&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;7&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;9&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;38&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;9&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;33&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;2&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;1&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;new_data %&amp;gt;%
+  filter(gender == 1 &amp;amp; language == 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;901&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;902&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;903&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;age&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gender&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;language&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;7&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;21&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;1&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>List Challenge</title>
+      <link>/publication/problem-5/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-5/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;This is simple, If Names of List are found in List B then Replace:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- list(x = 1, y = TRUE, z = &amp;quot;a&amp;quot;)
+b &amp;lt;- list(x = 2, z = &amp;quot;b&amp;quot;)
+expected &amp;lt;- list(x = 2, y = TRUE, z = &amp;quot;b&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;It was hard to think in something simple, because the problem is not as complicated, it is just List is a complicated object to deal with, but I came with this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- list(x = 1, y = TRUE, z = &amp;quot;a&amp;quot;)
+b &amp;lt;- list(x = 2, z = &amp;quot;b&amp;quot;)
+
+val_names &amp;lt;- names(a) %in% names(b) %&amp;gt;% names(a)[.]
+a[val_names] &amp;lt;- b[val_names]
+
+a&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $x
+## [1] 2
+## 
+## $y
+## [1] TRUE
+## 
+## $z
+## [1] &amp;quot;b&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ugly Untied Dataset</title>
+      <link>/publication/problem-4/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-4/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Even though the Data looks messy and an Intruitive solution didn´t pop up inmediately, It was relatively short to fix.&lt;/p&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;I want to save some words so I’ll go to the source&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hey &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; peeps. I have ~36 tables like this extracted from the LCMM 📦 results. &lt;br&gt;I need to tidy it. &lt;br&gt;I want 5 rows with the values for intercept and sofa_study_day in individual columns. &lt;br&gt;&lt;br&gt;Suggestions? &lt;a href=&#34;https://t.co/1rFku6T0qt&#34;&gt;pic.twitter.com/1rFku6T0qt&lt;/a&gt;&lt;/p&gt;&amp;mdash; jsonpott (@jsonpott) &lt;a href=&#34;https://twitter.com/jsonpott/status/1185527244569174017?ref_src=twsrc%5Etfw&#34;&gt;October 19, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;So I just replicated the data and did the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Made data longer eliminating all the NAs that showed up.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Divided into Intercept and sofa_study_day.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Joining both together to obtain the 5 records.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The code looks like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- tibble::tribble(
+  ~Sofa.time.point,     ~Se,   ~Wald, ~p.value,      ~x1,      ~x2,      ~x3,      ~x4,      ~x5,
+       &amp;quot;intercept&amp;quot;, 0.12395, -24.333,        0,       NA,       NA,       NA, -3.01592,       NA,
+       &amp;quot;intercept&amp;quot;, 0.13165, -40.045,        0,       NA,       NA,       NA,       NA, -5.27211,
+       &amp;quot;intercept&amp;quot;, 0.21603,  -7.372,        0,       NA, -1.59253,       NA,       NA,       NA,
+       &amp;quot;intercept&amp;quot;, 0.23614,  -5.085,        0,       NA,       NA, -1.20082,       NA,       NA,
+       &amp;quot;intercept&amp;quot;,      NA,      NA,        0,        0,       NA,       NA,       NA,       NA,
+  &amp;quot;sofa_study_day&amp;quot;, 0.00411, -14.669,        0,       NA,       NA,       NA,       NA, -0.06028,
+  &amp;quot;sofa_study_day&amp;quot;, 0.00479, -34.798,        0,       NA,       NA,       NA, -0.16685,       NA,
+  &amp;quot;sofa_study_day&amp;quot;, 0.00615, -39.744,        0, -0.24443,       NA,       NA,       NA,       NA,
+  &amp;quot;sofa_study_day&amp;quot;, 0.00756,  -9.975,        0,       NA,       NA, -0.07543,       NA,       NA,
+  &amp;quot;sofa_study_day&amp;quot;, 0.02224, -24.673,        0,       NA,  -0.5488,       NA,       NA,       NA
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tidy_data &amp;lt;- data %&amp;gt;%
+  pivot_longer(
+    # keeping columns from &amp;quot;Sofa.time.point&amp;quot; to &amp;quot;p.value&amp;quot;
+    -(Sofa.time.point:p.value),
+    # transform x columns into just one column
+    names_to = &amp;quot;x&amp;quot;,
+    # populate with values
+    values_to = &amp;quot;values&amp;quot;,
+    # dropping NAs
+    values_drop_na = TRUE
+  )
+
+# &amp;quot;intercept&amp;quot; data
+tidy_data %&amp;gt;%
+  filter(Sofa.time.point == &amp;quot;intercept&amp;quot;) %&amp;gt;%
+  left_join(
+    #joined with &amp;quot;sofa_study_day&amp;quot;
+    tidy_data %&amp;gt;%
+      filter(Sofa.time.point == &amp;quot;sofa_study_day&amp;quot;),
+    # joining by &amp;quot;x&amp;quot;
+    by = &amp;quot;x&amp;quot;,
+    # adding identifiers to columns having the same name
+    suffix = c(&amp;quot;.intercept&amp;quot;, &amp;quot;.sofa&amp;quot;)
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Sofa.time.point.intercept&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Se.intercept&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Wald.intercept&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;p.value.intercept&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;x&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;values.intercept&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Sofa.time.point.sofa&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Se.sofa&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Wald.sofa&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;p.value.sofa&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;values.sofa&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;intercept&#34;,&#34;2&#34;:&#34;0.12395&#34;,&#34;3&#34;:&#34;-24.333&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;x4&#34;,&#34;6&#34;:&#34;-3.01592&#34;,&#34;7&#34;:&#34;sofa_study_day&#34;,&#34;8&#34;:&#34;0.00479&#34;,&#34;9&#34;:&#34;-34.798&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;-0.16685&#34;},{&#34;1&#34;:&#34;intercept&#34;,&#34;2&#34;:&#34;0.13165&#34;,&#34;3&#34;:&#34;-40.045&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;x5&#34;,&#34;6&#34;:&#34;-5.27211&#34;,&#34;7&#34;:&#34;sofa_study_day&#34;,&#34;8&#34;:&#34;0.00411&#34;,&#34;9&#34;:&#34;-14.669&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;-0.06028&#34;},{&#34;1&#34;:&#34;intercept&#34;,&#34;2&#34;:&#34;0.21603&#34;,&#34;3&#34;:&#34;-7.372&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;x2&#34;,&#34;6&#34;:&#34;-1.59253&#34;,&#34;7&#34;:&#34;sofa_study_day&#34;,&#34;8&#34;:&#34;0.02224&#34;,&#34;9&#34;:&#34;-24.673&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;-0.54880&#34;},{&#34;1&#34;:&#34;intercept&#34;,&#34;2&#34;:&#34;0.23614&#34;,&#34;3&#34;:&#34;-5.085&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;x3&#34;,&#34;6&#34;:&#34;-1.20082&#34;,&#34;7&#34;:&#34;sofa_study_day&#34;,&#34;8&#34;:&#34;0.00756&#34;,&#34;9&#34;:&#34;-9.975&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;-0.07543&#34;},{&#34;1&#34;:&#34;intercept&#34;,&#34;2&#34;:&#34;NA&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;x1&#34;,&#34;6&#34;:&#34;0.00000&#34;,&#34;7&#34;:&#34;sofa_study_day&#34;,&#34;8&#34;:&#34;0.00615&#34;,&#34;9&#34;:&#34;-39.744&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;-0.24443&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Missing Value Imputation</title>
+      <link>/publication/problem-1/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-1/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Surfing at Stack Overflow I noticed a problem that I found interesting to solve:
+The following Data was presented:&lt;/p&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;The following Data is presented:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sample &amp;lt;-
+  structure(
+    list(
+      `Country Name` = c(
+        &amp;quot;Aruba&amp;quot;,
+        &amp;quot;Afghanistan&amp;quot;,
+        &amp;quot;Angola&amp;quot;,
+        &amp;quot;Albania&amp;quot;,
+        &amp;quot;Andorra&amp;quot;,
+        &amp;quot;Arab World&amp;quot;,
+        &amp;quot;United Arab Emirates&amp;quot;,
+        &amp;quot;Argentina&amp;quot;,
+        &amp;quot;Armenia&amp;quot;,
+        &amp;quot;American Samoa&amp;quot;,
+        &amp;quot;Antigua and Barbuda&amp;quot;,
+        &amp;quot;Australia&amp;quot;
+      ),
+      `Country Code` = c(
+        &amp;quot;ABW&amp;quot;,
+        &amp;quot;AFG&amp;quot;,
+        &amp;quot;AGO&amp;quot;,
+        &amp;quot;ALB&amp;quot;,
+        &amp;quot;AND&amp;quot;,
+        &amp;quot;ARB&amp;quot;,
+        &amp;quot;ARE&amp;quot;,
+        &amp;quot;ARG&amp;quot;,
+        &amp;quot;ARM&amp;quot;,
+        &amp;quot;ASM&amp;quot;,
+        &amp;quot;ATG&amp;quot;,
+        &amp;quot;AUS&amp;quot;
+      ),
+      `2007` = c(
+        5.39162036843645,
+        8.68057078513406,
+        12.2514974459487,
+        2.93268248162318,
+        NA,
+        4.74356585295154,
+        NA,
+        NA,
+        NA,
+        NA,
+        1.41605259409743,
+        NA
+      ),
+      `2008` = c(
+        8.95722105296535,
+        26.4186641547444,
+        12.4758291326398,
+        3.36313757366391,
+        NA,
+        NA,
+        12.2504202448139,
+        NA,
+        8.94995335353386,
+        NA,
+        5.33380639820232,
+        NA
+      ),
+      `2009` = c(
+        -2.13630037272305,-6.81116108898995,
+        13.7302839288409,
+        2.23139683475865,
+        NA,
+        2.92089711805365,
+        1.55980098148558,
+        NA,
+        3.40676682683799,
+        NA,
+        -0.550159995508869,
+        NA
+      ),
+      `2010` = c(
+        2.07773902027782,
+        2.1785375238942,
+        14.4696564932574,
+        3.61538461538463,
+        NA,
+        3.91106195534027,
+        0.879216764156813,
+        NA,
+        8.17636138473956,
+        NA,
+        3.3700254022015,
+        2.91834002677376
+      ),
+      `2011` = c(
+        4.31633194082721,
+        11.8041858089129,
+        13.4824679218511,
+        3.44283593170005,
+        NA,
+        4.75316388885632,
+        NA,
+        NA,
+        7.6500080785929,
+        NA,
+        3.45674967234599,
+        3.30385015608744
+      ),
+      `2012` = c(
+        0.627927921638161,
+        6.44121280934118,
+        10.2779049218839,
+        2.03642235579081,
+        NA,
+        4.61184432206646,
+        0.662268900269082,
+        NA,
+        2.55802007757907,
+        NA,
+        3.37688044338879,
+        1.76278015613193
+      ),
+      `2013` = c(
+        -2.37226328015073,
+        7.38577178397857,
+        8.77781429332619,
+        1.92544399507649,
+        NA,
+        3.23423783752364,
+        1.10111836375706,
+        NA,
+        5.78966778544654,
+        NA,
+        1.05949782356168,
+        2.44988864142539
+      ),
+      `2014` = c(
+        0.421637771012246,
+        4.67399603536339,
+        7.28038730361125,
+        1.61304235314414,
+        NA,
+        2.77261158414198,
+        2.34626865671643,
+        NA,
+        2.98130868933673,
+        NA,
+        1.08944157435363,
+        2.48792270531403
+      )
+    ),
+    class = c(&amp;quot;tbl_df&amp;quot;, &amp;quot;tbl&amp;quot;, &amp;quot;data.frame&amp;quot;),
+    row.names = c(NA,-12L)
+  )
+
+sample&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Country Name&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Country Code&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;2007&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2008&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2009&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2010&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2011&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2012&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2013&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2014&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;Aruba&#34;,&#34;2&#34;:&#34;ABW&#34;,&#34;3&#34;:&#34;5.391620&#34;,&#34;4&#34;:&#34;8.957221&#34;,&#34;5&#34;:&#34;-2.136300&#34;,&#34;6&#34;:&#34;2.0777390&#34;,&#34;7&#34;:&#34;4.316332&#34;,&#34;8&#34;:&#34;0.6279279&#34;,&#34;9&#34;:&#34;-2.372263&#34;,&#34;10&#34;:&#34;0.4216378&#34;},{&#34;1&#34;:&#34;Afghanistan&#34;,&#34;2&#34;:&#34;AFG&#34;,&#34;3&#34;:&#34;8.680571&#34;,&#34;4&#34;:&#34;26.418664&#34;,&#34;5&#34;:&#34;-6.811161&#34;,&#34;6&#34;:&#34;2.1785375&#34;,&#34;7&#34;:&#34;11.804186&#34;,&#34;8&#34;:&#34;6.4412128&#34;,&#34;9&#34;:&#34;7.385772&#34;,&#34;10&#34;:&#34;4.6739960&#34;},{&#34;1&#34;:&#34;Angola&#34;,&#34;2&#34;:&#34;AGO&#34;,&#34;3&#34;:&#34;12.251497&#34;,&#34;4&#34;:&#34;12.475829&#34;,&#34;5&#34;:&#34;13.730284&#34;,&#34;6&#34;:&#34;14.4696565&#34;,&#34;7&#34;:&#34;13.482468&#34;,&#34;8&#34;:&#34;10.2779049&#34;,&#34;9&#34;:&#34;8.777814&#34;,&#34;10&#34;:&#34;7.2803873&#34;},{&#34;1&#34;:&#34;Albania&#34;,&#34;2&#34;:&#34;ALB&#34;,&#34;3&#34;:&#34;2.932682&#34;,&#34;4&#34;:&#34;3.363138&#34;,&#34;5&#34;:&#34;2.231397&#34;,&#34;6&#34;:&#34;3.6153846&#34;,&#34;7&#34;:&#34;3.442836&#34;,&#34;8&#34;:&#34;2.0364224&#34;,&#34;9&#34;:&#34;1.925444&#34;,&#34;10&#34;:&#34;1.6130424&#34;},{&#34;1&#34;:&#34;Andorra&#34;,&#34;2&#34;:&#34;AND&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;NA&#34;,&#34;5&#34;:&#34;NA&#34;,&#34;6&#34;:&#34;NA&#34;,&#34;7&#34;:&#34;NA&#34;,&#34;8&#34;:&#34;NA&#34;,&#34;9&#34;:&#34;NA&#34;,&#34;10&#34;:&#34;NA&#34;},{&#34;1&#34;:&#34;Arab World&#34;,&#34;2&#34;:&#34;ARB&#34;,&#34;3&#34;:&#34;4.743566&#34;,&#34;4&#34;:&#34;NA&#34;,&#34;5&#34;:&#34;2.920897&#34;,&#34;6&#34;:&#34;3.9110620&#34;,&#34;7&#34;:&#34;4.753164&#34;,&#34;8&#34;:&#34;4.6118443&#34;,&#34;9&#34;:&#34;3.234238&#34;,&#34;10&#34;:&#34;2.7726116&#34;},{&#34;1&#34;:&#34;United Arab Emirates&#34;,&#34;2&#34;:&#34;ARE&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;12.250420&#34;,&#34;5&#34;:&#34;1.559801&#34;,&#34;6&#34;:&#34;0.8792168&#34;,&#34;7&#34;:&#34;NA&#34;,&#34;8&#34;:&#34;0.6622689&#34;,&#34;9&#34;:&#34;1.101118&#34;,&#34;10&#34;:&#34;2.3462687&#34;},{&#34;1&#34;:&#34;Argentina&#34;,&#34;2&#34;:&#34;ARG&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;NA&#34;,&#34;5&#34;:&#34;NA&#34;,&#34;6&#34;:&#34;NA&#34;,&#34;7&#34;:&#34;NA&#34;,&#34;8&#34;:&#34;NA&#34;,&#34;9&#34;:&#34;NA&#34;,&#34;10&#34;:&#34;NA&#34;},{&#34;1&#34;:&#34;Armenia&#34;,&#34;2&#34;:&#34;ARM&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;8.949953&#34;,&#34;5&#34;:&#34;3.406767&#34;,&#34;6&#34;:&#34;8.1763614&#34;,&#34;7&#34;:&#34;7.650008&#34;,&#34;8&#34;:&#34;2.5580201&#34;,&#34;9&#34;:&#34;5.789668&#34;,&#34;10&#34;:&#34;2.9813087&#34;},{&#34;1&#34;:&#34;American Samoa&#34;,&#34;2&#34;:&#34;ASM&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;NA&#34;,&#34;5&#34;:&#34;NA&#34;,&#34;6&#34;:&#34;NA&#34;,&#34;7&#34;:&#34;NA&#34;,&#34;8&#34;:&#34;NA&#34;,&#34;9&#34;:&#34;NA&#34;,&#34;10&#34;:&#34;NA&#34;},{&#34;1&#34;:&#34;Antigua and Barbuda&#34;,&#34;2&#34;:&#34;ATG&#34;,&#34;3&#34;:&#34;1.416053&#34;,&#34;4&#34;:&#34;5.333806&#34;,&#34;5&#34;:&#34;-0.550160&#34;,&#34;6&#34;:&#34;3.3700254&#34;,&#34;7&#34;:&#34;3.456750&#34;,&#34;8&#34;:&#34;3.3768804&#34;,&#34;9&#34;:&#34;1.059498&#34;,&#34;10&#34;:&#34;1.0894416&#34;},{&#34;1&#34;:&#34;Australia&#34;,&#34;2&#34;:&#34;AUS&#34;,&#34;3&#34;:&#34;NA&#34;,&#34;4&#34;:&#34;NA&#34;,&#34;5&#34;:&#34;NA&#34;,&#34;6&#34;:&#34;2.9183400&#34;,&#34;7&#34;:&#34;3.303850&#34;,&#34;8&#34;:&#34;1.7627802&#34;,&#34;9&#34;:&#34;2.449889&#34;,&#34;10&#34;:&#34;2.4879227&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;The idea is to input Missing Values following some rules:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Some countries have NAs for all 8 years (columns 3:10), and in that case I want to replace all NAs with the column mean.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Other countries only have NAs in some columns, in which case I want to replace NA with the previous year’s value.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The final condition is that, if the NA is in the first year (2007), I want to replace it with the 2007 column mean instead of the next year (2008 was the financial crisis so all the inflation rates went nuts).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Of course this can be easily programmed using Regular Programming Rules using For loops and If Statements, but the idea is to do it in a tidy way using the Tidyverse.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr, warn.conflicts = FALSE)
+library(tidyr)
+library(janitor)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;janitor&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     chisq.test, fisher.test&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Getting the Column Means to Replace according to Condition 1 and 3. 
+(replacement &amp;lt;- sample %&amp;gt;%
+    select_if(is.numeric) %&amp;gt;%
+    summarize_all( ~ mean(., na.rm = TRUE)) %&amp;gt;%
+    #Transformed to List since it is a requirement for tidyr::replace_na()
+    as.list())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $`2007`
+## [1] 5.902665
+## 
+## $`2008`
+## [1] 11.107
+## 
+## $`2009`
+## [1] 1.793941
+## 
+## $`2010`
+## [1] 4.621814
+## 
+## $`2011`
+## [1] 6.526199
+## 
+## $`2012`
+## [1] 3.595029
+## 
+## $`2013`
+## [1] 3.261242
+## 
+## $`2014`
+## [1] 2.851846&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sample %&amp;gt;%
+  pivot_longer(`2007`:`2014`, names_to = &amp;quot;year&amp;quot;, values_to = &amp;quot;int_rate&amp;quot;) %&amp;gt;%
+  group_by(`Country Name`) %&amp;gt;%
+  summarize(na_num = is.na(int_rate) %&amp;gt;% sum) %&amp;gt;%
+  #Joining the number of NAs na_num as a new column
+  left_join(sample, by = &amp;quot;Country Name&amp;quot;) %&amp;gt;%
+  #Replacing 2007 missing as a first value. Condition 3.
+  mutate(`2007` = if_else(between(na_num, 1, 7) &amp;amp;
+                            is.na(`2007`), replacement[[1]] , `2007`)) %&amp;gt;%
+  #Making dataset wider 
+  pivot_longer(`2007`:`2014`, names_to = &amp;quot;year&amp;quot;, values_to = &amp;quot;int_rate&amp;quot;) %&amp;gt;%
+  group_by(`Country Name`) %&amp;gt;%
+  #Using fill to impute NAs with the previous one. Condition 2.
+  fill(int_rate) %&amp;gt;%
+  pivot_wider(names_from = year, values_from = int_rate) %&amp;gt;%
+  #Replacing Values when all values are missing. Condition 1.
+  replace_na(replace = replacement) &lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Country Name&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;na_num&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Country Code&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;2007&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2008&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2009&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2010&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2011&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2012&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2013&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;2014&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;Afghanistan&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;AFG&#34;,&#34;4&#34;:&#34;8.680571&#34;,&#34;5&#34;:&#34;26.418664&#34;,&#34;6&#34;:&#34;-6.811161&#34;,&#34;7&#34;:&#34;2.1785375&#34;,&#34;8&#34;:&#34;11.8041858&#34;,&#34;9&#34;:&#34;6.4412128&#34;,&#34;10&#34;:&#34;7.385772&#34;,&#34;11&#34;:&#34;4.6739960&#34;},{&#34;1&#34;:&#34;Albania&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;ALB&#34;,&#34;4&#34;:&#34;2.932682&#34;,&#34;5&#34;:&#34;3.363138&#34;,&#34;6&#34;:&#34;2.231397&#34;,&#34;7&#34;:&#34;3.6153846&#34;,&#34;8&#34;:&#34;3.4428359&#34;,&#34;9&#34;:&#34;2.0364224&#34;,&#34;10&#34;:&#34;1.925444&#34;,&#34;11&#34;:&#34;1.6130424&#34;},{&#34;1&#34;:&#34;American Samoa&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;ASM&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;11.107005&#34;,&#34;6&#34;:&#34;1.793941&#34;,&#34;7&#34;:&#34;4.6218137&#34;,&#34;8&#34;:&#34;6.5261992&#34;,&#34;9&#34;:&#34;3.5950291&#34;,&#34;10&#34;:&#34;3.261242&#34;,&#34;11&#34;:&#34;2.8518463&#34;},{&#34;1&#34;:&#34;Andorra&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;AND&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;11.107005&#34;,&#34;6&#34;:&#34;1.793941&#34;,&#34;7&#34;:&#34;4.6218137&#34;,&#34;8&#34;:&#34;6.5261992&#34;,&#34;9&#34;:&#34;3.5950291&#34;,&#34;10&#34;:&#34;3.261242&#34;,&#34;11&#34;:&#34;2.8518463&#34;},{&#34;1&#34;:&#34;Angola&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;AGO&#34;,&#34;4&#34;:&#34;12.251497&#34;,&#34;5&#34;:&#34;12.475829&#34;,&#34;6&#34;:&#34;13.730284&#34;,&#34;7&#34;:&#34;14.4696565&#34;,&#34;8&#34;:&#34;13.4824679&#34;,&#34;9&#34;:&#34;10.2779049&#34;,&#34;10&#34;:&#34;8.777814&#34;,&#34;11&#34;:&#34;7.2803873&#34;},{&#34;1&#34;:&#34;Antigua and Barbuda&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;ATG&#34;,&#34;4&#34;:&#34;1.416053&#34;,&#34;5&#34;:&#34;5.333806&#34;,&#34;6&#34;:&#34;-0.550160&#34;,&#34;7&#34;:&#34;3.3700254&#34;,&#34;8&#34;:&#34;3.4567497&#34;,&#34;9&#34;:&#34;3.3768804&#34;,&#34;10&#34;:&#34;1.059498&#34;,&#34;11&#34;:&#34;1.0894416&#34;},{&#34;1&#34;:&#34;Arab World&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;ARB&#34;,&#34;4&#34;:&#34;4.743566&#34;,&#34;5&#34;:&#34;4.743566&#34;,&#34;6&#34;:&#34;2.920897&#34;,&#34;7&#34;:&#34;3.9110620&#34;,&#34;8&#34;:&#34;4.7531639&#34;,&#34;9&#34;:&#34;4.6118443&#34;,&#34;10&#34;:&#34;3.234238&#34;,&#34;11&#34;:&#34;2.7726116&#34;},{&#34;1&#34;:&#34;Argentina&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;ARG&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;11.107005&#34;,&#34;6&#34;:&#34;1.793941&#34;,&#34;7&#34;:&#34;4.6218137&#34;,&#34;8&#34;:&#34;6.5261992&#34;,&#34;9&#34;:&#34;3.5950291&#34;,&#34;10&#34;:&#34;3.261242&#34;,&#34;11&#34;:&#34;2.8518463&#34;},{&#34;1&#34;:&#34;Armenia&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;ARM&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;8.949953&#34;,&#34;6&#34;:&#34;3.406767&#34;,&#34;7&#34;:&#34;8.1763614&#34;,&#34;8&#34;:&#34;7.6500081&#34;,&#34;9&#34;:&#34;2.5580201&#34;,&#34;10&#34;:&#34;5.789668&#34;,&#34;11&#34;:&#34;2.9813087&#34;},{&#34;1&#34;:&#34;Aruba&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;ABW&#34;,&#34;4&#34;:&#34;5.391620&#34;,&#34;5&#34;:&#34;8.957221&#34;,&#34;6&#34;:&#34;-2.136300&#34;,&#34;7&#34;:&#34;2.0777390&#34;,&#34;8&#34;:&#34;4.3163319&#34;,&#34;9&#34;:&#34;0.6279279&#34;,&#34;10&#34;:&#34;-2.372263&#34;,&#34;11&#34;:&#34;0.4216378&#34;},{&#34;1&#34;:&#34;Australia&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;AUS&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;5.902665&#34;,&#34;6&#34;:&#34;5.902665&#34;,&#34;7&#34;:&#34;2.9183400&#34;,&#34;8&#34;:&#34;3.3038502&#34;,&#34;9&#34;:&#34;1.7627802&#34;,&#34;10&#34;:&#34;2.449889&#34;,&#34;11&#34;:&#34;2.4879227&#34;},{&#34;1&#34;:&#34;United Arab Emirates&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;ARE&#34;,&#34;4&#34;:&#34;5.902665&#34;,&#34;5&#34;:&#34;12.250420&#34;,&#34;6&#34;:&#34;1.559801&#34;,&#34;7&#34;:&#34;0.8792168&#34;,&#34;8&#34;:&#34;0.8792168&#34;,&#34;9&#34;:&#34;0.6622689&#34;,&#34;10&#34;:&#34;1.101118&#34;,&#34;11&#34;:&#34;2.3462687&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tidy Evaluation</title>
+      <link>/publication/problem-2/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-2/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Navigating Twitter I found this other Problem:&lt;/p&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;The following dummy_function is presented:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)
+#&amp;gt; 
+a &amp;lt;- sample(letters[1:5], 500, rep = TRUE)
+b &amp;lt;- sample(1:10, 500, rep = TRUE)
+df1 &amp;lt;- data.frame(a, b)
+ 
+dummy_function &amp;lt;- function(data, var1, var2){
+  # Creating summary statistics
+  df &amp;lt;- data %&amp;gt;%
+    group_by(var1, var2) %&amp;gt;%
+    summarise(n=n()) %&amp;gt;%
+    group_by(var1) %&amp;gt;%
+    mutate(perc=100*n/sum(n))
+    
+  df
+}
+dummy_function(df1, a, b)
+#&amp;gt; Error: Column `var1` is unknown&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+Created by the &lt;a href=&#34;https://reprex.tidyverse.org&#34;&gt;reprex package&lt;/a&gt; (v0.3.0)
+&lt;/p&gt;
+&lt;p&gt;This is a typical problem caused by one of the coolest things provided by the tidyverse: the Non-Standard Evaluation.&lt;/p&gt;
+&lt;p&gt;Non-Standard Evaluation is the ability that some R functions have (mainly in the tidyverse and all the packages following a tidy approach) when you can pass a variable within the data without quoting:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;% 
+  select(Species) %&amp;gt;%
+  head(10)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;&#34;],&#34;name&#34;:[&#34;_rn_&#34;],&#34;type&#34;:[&#34;&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Species&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;3&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;4&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;5&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;6&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;7&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;8&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;9&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;10&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;As you may see, you don´t need to quote Species, but R is not recognizing Species as an R object but as an existing variable within iris dataset. If you would like to do the same thing using “&lt;em&gt;Standard Evaluation&lt;/em&gt;” you´d have to code something like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(iris[&amp;quot;Species&amp;quot;], 10)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;&#34;],&#34;name&#34;:[&#34;_rn_&#34;],&#34;type&#34;:[&#34;&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Species&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;1&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;3&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;4&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;5&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;6&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;7&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;8&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;9&#34;},{&#34;1&#34;:&#34;setosa&#34;,&#34;_rn_&#34;:&#34;10&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;In this case you see Species is not an object but a quoted string that is passed as the Variable name for object Iris.&lt;/p&gt;
+&lt;p&gt;The error then pops up because in the dummy_function() you have group_by() that uses NSE having var1, var2 as arguments and var1 and var2 objects are not variables of data. What you actually want is to pass var1 and var2 values as the grouping variables.&lt;/p&gt;
+&lt;p&gt;Definitely NSE is a great addition and saves typing, but when it comes to create functions it used to be a nightmare. rlang package handled this using something called quosures, and the bang-bang operator. If you want to know about this Hadley teaches it in 5 minutes:&lt;/p&gt;
+&lt;center&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/nERXS3ssntw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;Fortunately, Hadley’s explanation is helpful to understand the problem but the solution now is super easy with the new version of rlang. You just need to wrap var1 and var2 in the new curly-curly operator to embrace the values of var1 and var2 and pass them along the group_by() function.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- sample(letters[1:5], 500, rep = TRUE)
+b &amp;lt;- sample(1:10, 500, rep = TRUE)
+df1 &amp;lt;- data.frame(a, b)
 
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+library(rlang)
+dummy_function &amp;lt;- function(data, var1, var2){
+  # Creating summary statistics
+  df &amp;lt;- data %&amp;gt;%
+    group_by({{var1}}, {{var2}}) %&amp;gt;%
+    summarise(n=n()) %&amp;gt;%
+    group_by({{var1}}) %&amp;gt;%
+    mutate(perc=100*n/sum(n))
+  
+  df
+}
+dummy_function(df1, a, b)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;a&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;b&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;n&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;perc&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;13&#34;,&#34;4&#34;:&#34;11.403509&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;12.280702&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;16&#34;,&#34;4&#34;:&#34;14.035088&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;3&#34;,&#34;4&#34;:&#34;2.631579&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;8.771930&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.017544&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;13&#34;,&#34;4&#34;:&#34;11.403509&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;13.157895&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;12.280702&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.017544&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.416667&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.333333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;5&#34;,&#34;4&#34;:&#34;5.208333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.333333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.375000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;11.458333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.375000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.692308&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.989011&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;12.087912&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.989011&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.791209&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.692308&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;12.087912&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.869565&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;15.217391&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.869565&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;13.043478&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.782609&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.695652&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;5&#34;,&#34;4&#34;:&#34;5.434783&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.695652&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.608696&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.782609&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;8.411215&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;17&#34;,&#34;4&#34;:&#34;15.887850&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;6&#34;,&#34;4&#34;:&#34;5.607477&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;11.214953&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.476636&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;6&#34;,&#34;4&#34;:&#34;5.607477&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;9.345794&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;8.411215&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;14.018692&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;14.018692&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why this is failing?</title>
+      <link>/publication/problem-3/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-3/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+&lt;p&gt;This is a pretty typical issue. Specially when you have dealing with data a long time you just stop seeing obvious things, and you just can´t find solution to inexistant problems. For instance:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
+  filter(cyl &amp;lt; 4)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;disp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;You want to get the rows having cyl less or equal to 4 and for quite a while you keep getting 0 results.
+Obviously something is wrong with the code but you just can´t notice it.&lt;/p&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;Well tidylog can give you an idea. Just load tidylog and watch:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#loading the package this way to avoid verbose messages
+library(tidylog)
+mtcars %&amp;gt;%
+  filter(cyl &amp;lt; 4)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## filter: removed all rows (100%)&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;disp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;Tidylog produces short log messages for dplyr and tidyr operations that help you understand what is happening with the data. Here definitely filter is incorrect, not producing an error but removing the 100% of the data, that is not what I was looking for.&lt;/p&gt;
+&lt;p&gt;Everytime you build a pipeline, tidylog will tell what is happening:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
+  filter(cyl &amp;gt; 4) %&amp;gt;%
+  select(-disp) %&amp;gt;%
+  mutate( overall = rowMeans(.)) %&amp;gt;%
+  summarize_all( ~ mean(.))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## filter: removed 11 rows (34%), 21 rows remaining&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## select: dropped one variable (disp)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## mutate: new variable &amp;#39;overall&amp;#39; with 21 unique values and 0% NA&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## summarize_all: now one row and 11 columns, ungrouped&lt;/code&gt;&lt;/pre&gt;
+&lt;div data-pagedtable=&#34;false&#34;&gt;
+&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
+{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;overall&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;16.64762&#34;,&#34;2&#34;:&#34;7.333333&#34;,&#34;3&#34;:&#34;180.2381&#34;,&#34;4&#34;:&#34;3.348095&#34;,&#34;5&#34;:&#34;3.70519&#34;,&#34;6&#34;:&#34;17.17381&#34;,&#34;7&#34;:&#34;0.1904762&#34;,&#34;8&#34;:&#34;0.2380952&#34;,&#34;9&#34;:&#34;3.47619&#34;,&#34;10&#34;:&#34;3.47619&#34;,&#34;11&#34;:&#34;23.58271&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -51,8 +921,8 @@
 &lt;p&gt;&lt;strong&gt;Day 1&lt;/strong&gt; started with a &lt;a href=&#34;https://www.uai.cl/&#34;&gt;UAI&lt;/a&gt; local presenter talking about Sports Analytics in R, then a huge presentation by Mine Cetinkaya about Teaching R to move to specific small presentation in parallel so I was able just to watch half of the Presentations.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Day 2&lt;/strong&gt; started with a &lt;a href=&#34;https://www.uc.cl/&#34;&gt;UC&lt;/a&gt; local presenter talking about applying Data Science in R to Government Data, then Erin Ledell talked about H2o to move forward to the small presentations in Parallel. The day finished with Poster presentations and Hadley Wickham talking about different dplyr backends.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;day-1-summary&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Day 1 Summary&lt;/h1&gt;
+&lt;div id=&#34;latinr-summary&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;LatinR Summary&lt;/h1&gt;
 &lt;div id=&#34;sports-analytics&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Sports Analytics&lt;/h2&gt;
 &lt;center&gt;
@@ -111,7 +981,27 @@
 &lt;p&gt;My main takeaways from this presentation are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You don´t need to be Hadley to create an awesome package.&lt;/li&gt;
-&lt;li&gt;Use use&lt;/li&gt;
+&lt;li&gt;Use {usethis}.&lt;/li&gt;
+&lt;li&gt;Give clear instructions to users.&lt;/li&gt;
+&lt;li&gt;If you have Functions used 3 times, it´s time to create a Package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hadleys-talk&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hadley´s Talk&lt;/h2&gt;
+&lt;p&gt;This is always I had waited for a long time. I used to follow the different talks he is giving around the world, because he is always presenting interesting things and that day he presented dplyr backends. Of course dbplyr is super interesting and I don´t want to overlook it, but I already knew it, and use it oftenly, so not very impressed. But {dtplyr} I think is something I had been waiting for a while.&lt;/p&gt;
+&lt;p&gt;During the start of the year I was stalking Hadley´s Repos and I just found this abandoned dtplyr, and he decided to revisit during this year and they just came up with something awesome. I don´t like data.table just because of the syntax, and I love dplyr just because of the syntax, so ombining effiiency that data.table has with dplyr simplicity is just the best thing ever, and a great way to show the collaborative spirit that exist in the R Community.&lt;/p&gt;
+&lt;p&gt;Just a fun fact, I asked about some new possible backends for arrays, and Hadley presented the {rray} package (check it out). For some reason he wanted to show the package logo, and he couldn´t so he opened a PR just to show me that. The fun thing is that David Vaughan the maintainer, quickly responded to that.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I feel honored that &lt;a href=&#34;https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw&#34;&gt;@hadleywickham&lt;/a&gt; raised a PR just to show me this awesome {rray} logo at &lt;a href=&#34;https://twitter.com/LatinR_Conf?ref_src=twsrc%5Etfw&#34;&gt;@LatinR_Conf&lt;/a&gt;. And the best thing was that it was responded pretty quick. XD&lt;a href=&#34;https://twitter.com/hashtag/LatinR2019?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#LatinR2019&lt;/a&gt; &lt;a href=&#34;https://t.co/i5hbIe5Cns&#34;&gt;https://t.co/i5hbIe5Cns&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alfonso Tobar (@tobar_with_R) &lt;a href=&#34;https://twitter.com/tobar_with_R/status/1178021572860420097?ref_src=twsrc%5Etfw&#34;&gt;September 28, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;Main takeaways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadley is a great teacher and presenter.&lt;/li&gt;
+&lt;li&gt;I can´t believe how creative Hadley is and I know a lot of interesting things I just can´t imagine will start to come up in R.&lt;/li&gt;
+&lt;li&gt;I just learned sparklyr is a dplyr implementation in spark (sorry it was not presented).&lt;/li&gt;
+&lt;li&gt;I want to work in RStudio, some time.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -218,7 +1108,7 @@
 &lt;h2&gt;Latin R&lt;/h2&gt;
 &lt;p&gt;Latin R is a conference organized by RLadies Latam and is the oportunity we have here in Chile to get acquainted about the last R breakthrough and how is being using in Research, companies, etc.
 They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge, because 3 Main R users are coming:&lt;/p&gt;
-&lt;div id=&#34;mine-cetinkaya-rundel&#34; class=&#34;section level3&#34;&gt;
+&lt;div id=&#34;mine-çetinkaya-rundel&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Mine Çetinkaya-Rundel&lt;/h3&gt;
 &lt;p&gt;She is one of the most important persons involved into R Teaching. Statistics Professor from Duke University. I personally had the chance to take some Coursera and Datacamp Courses with her and I learned a lot, really good teacher and really knowledgable. Having her now here in Chile to meet her in person is such a great Honor. I just can´t wait to hear about what she has to say.
 She will be conducting a Tutorial on how to Teach R and of Course a main Speech.&lt;/p&gt;
@@ -864,1001 +1754,6 @@ full_advance$fit %&amp;gt;%
 &lt;/ul&gt;
 &lt;p&gt;Finally 41 variables were kept getting a 72% of accuracy and a 77.3% of ROC AUC.&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part II)</title>
-      <link>/project/machine-learning-diploma-ii/</link>
-      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/machine-learning-diploma-ii/</guid>
-      <description>
-&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#checking-numerical-distribution&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1&lt;/span&gt; Checking Numerical Distribution&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#checking-categorical-variables&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2&lt;/span&gt; Checking Categorical Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#chi-square-test&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;3&lt;/span&gt; Chi-Square Test&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;4&lt;/span&gt; Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Last time we conducted a high level cleansing of the data. Now it´s time to understand what is going on in it. In order to do that we´ll use a lot ggplot to visualize the data.&lt;/p&gt;
-&lt;div id=&#34;checking-numerical-distribution&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;1&lt;/span&gt; Checking Numerical Distribution&lt;/h1&gt;
-&lt;p&gt;In order to do this I should pick Numerical Variables one by one and create a ggplot.
-This ould actually be quite tedious, why not to use the power of the tidyverse?&lt;/p&gt;
-&lt;p&gt;We will combine select_if and walk 2 to create histograms for every of the 28 Numerical Variables.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Notice that in order to make walk work silently I had to add a print function that will use .x (every column) to create a histogram labeling it with .y that is the actual name of the current .x.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Take the data
-data %&amp;gt;%
-  # I select only data that is numerical
-  select_if(is.numeric) %&amp;gt;%
-  # I use walk 2 where .x is every numerical column seleted by select_if and
-  #.y are the names of .x that will be used to add the proper label.
-  walk2(names(.), ~ print( data %&amp;gt;%
-                             ggplot(aes(.x)) + geom_histogram() + labs(x = .y))) &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-6.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-7.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-8.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-9.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-10.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-11.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-12.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-13.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-14.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-15.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-16.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-17.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-18.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-19.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-20.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-21.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-22.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-23.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-24.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-25.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-26.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-27.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-1-28.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;checking-categorical-variables&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;2&lt;/span&gt; Checking Categorical Variables&lt;/h1&gt;
-&lt;p&gt;Something equivalent can be done with categorical variables to check how they are distributed with the following code:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;%
-  select_if(is.factor) %&amp;gt;%
-  summary()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   DDA        DirDep       NSF         Sav         ATM          CD       
-##  no : 3742   no :14838   no :19044   no :11135   no : 8085   no :18244  
-##  yes:17135   yes: 6039   yes: 1833   yes: 9742   yes:12792   yes: 2633  
-##                                                                         
-##                                                                         
-##                                                                         
-##                                                                         
-##                                                                         
-##   IRA         LOC         ILS          MM         MTG          CC       
-##  no :19837   no :19742   no :19926   no :18588   no :19932   no :10936  
-##  yes: 1040   yes: 1135   yes:  951   yes: 2289   yes:  945   yes: 9941  
-##                                                                         
-##                                                                         
-##                                                                         
-##                                                                         
-##                                                                         
-##   SDB        HMOwn       Moved       InArea       Ins       
-##  no :18573   no : 9617   no :20251   no :  823   yes: 7504  
-##  yes: 2304   yes:11260   yes:  626   yes:20054   no :13373  
-##                                                             
-##                                                             
-##                                                             
-##                                                             
-##                                                             
-##      Branch         Res        Inv       
-##  B4     :4586   rural :5532   no :20272  
-##  B3     :2332   suburb:7359   yes:  605  
-##  B1     :2292   urban :7986              
-##  B5     :2269                            
-##  B2     :2267                            
-##  B16    :1261                            
-##  (Other):5870&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In case you want something more visual you could go with this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Take the data
-data %&amp;gt;%
-  # I select only data that is numerical
-  select_if(is.factor) %&amp;gt;%
-  # I use walk 2 where .x is every numerical column seleted by select_if and
-  #.y are the names of .x that will be used to add the proper label.
-  walk2(names(.), ~ print( data %&amp;gt;%
-                             ggplot(aes(.x)) + geom_bar() + labs(x = .y))) &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-3.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-4.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-5.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-6.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-7.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-8.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-9.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-10.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-11.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-12.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-13.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-14.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-15.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-16.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-17.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-18.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-19.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-II/index_files/figure-html/unnamed-chunk-3-20.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;chi-square-test&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;3&lt;/span&gt; Chi-Square Test&lt;/h1&gt;
-&lt;p&gt;What about performing a Chi-Square test to check the relationship between the Response variable and the Categorical Variables.&lt;/p&gt;
-&lt;p&gt;Let´s create a NSE function to apply Chi-Square using purrr.&lt;/p&gt;
-&lt;p&gt;We´ll use the Categorical Object created in the previous part to be looped over the chi-square function.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Listing all of the Categorical Variables according to Metadata
-categorical &amp;lt;- c(&amp;quot;ATM&amp;quot;, &amp;quot;Branch&amp;quot;, &amp;quot;CC&amp;quot;, &amp;quot;CD&amp;quot;, &amp;quot;DDA&amp;quot;, &amp;quot;DirDep&amp;quot;, &amp;quot;HMOwn&amp;quot;, &amp;quot;ILS&amp;quot;, &amp;quot;IRA&amp;quot;, &amp;quot;InArea&amp;quot;, &amp;quot;Ins&amp;quot;, &amp;quot;Inv&amp;quot;, &amp;quot;LOC&amp;quot;, &amp;quot;MM&amp;quot;, &amp;quot;MTG&amp;quot;, &amp;quot;Moved&amp;quot;, &amp;quot;NSF&amp;quot;, &amp;quot;Res&amp;quot;, &amp;quot;SDB&amp;quot;, &amp;quot;Sav&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Loading rlang
-suppressPackageStartupMessages(library(rlang))
-  
-#since I want to use var as a Non Standard Evaluation Variable I need to pass that variable using the Curly-Curly Operator. That way I don´t need to quote variables and can go directly into dplyr functions such as select.
-  chi_comparison &amp;lt;- function(var){
-    
-   pred &amp;lt;- data %&amp;gt;%
-     select({{ var }})
-   
-   #Performs Chi-Square test and returns p.value
-   return(tibble(p_val = chisq.test(pred, data$Ins)$p.value))
-  }
-
-(independent &amp;lt;- categorical %&amp;gt;%
-    map_dfr(chi_comparison) %&amp;gt;%
-    cbind(independent = categorical) %&amp;gt;%
-    filter(p_val &amp;gt; 0.05) 
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;p_val&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;independent&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;0.1629036&#34;,&#34;2&#34;:&#34;HMOwn&#34;},{&#34;1&#34;:&#34;0.5485035&#34;,&#34;2&#34;:&#34;ILS&#34;},{&#34;1&#34;:&#34;0.1298597&#34;,&#34;2&#34;:&#34;MTG&#34;},{&#34;1&#34;:&#34;0.8984779&#34;,&#34;2&#34;:&#34;Moved&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;This results in 4 Variables returning a p-value grater than 0.05. This means this variables are independent to the Response Variables, so no relationship between them exist, hence they could be removed from the model to build.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;4&lt;/span&gt; Conclusion&lt;/h1&gt;
-&lt;p&gt;A quick EDA has been performed using ggplot2 combined with purrr and dplyr.
-* It can be seen that Age and CRSore have distribution fairly close to Normal.
-* Income is right skewed.
-* Most of the Numerical Variables are higly concentrated at lower values.
-On the categorical side:
-* Most of the categorical variables show severe problems with class imbalances.
-* HMOwn, ILS, MTG and Moved seem to have no relationship with the Response Variable.
-* The Response Variable Ins show some imbalances but nothing to severe to be treated in a special way.&lt;/p&gt;
-&lt;p&gt;More to come on this problem. Stay Tuned!!!&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part I)</title>
-      <link>/project/machine-learning-diploma/</link>
-      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/machine-learning-diploma/</guid>
-      <description>
-&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#importing-data&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1&lt;/span&gt; Importing Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#redefining-categorical-variables&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2&lt;/span&gt; Redefining Categorical Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#discovering-missing-values&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;3&lt;/span&gt; Discovering Missing Values&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;4&lt;/span&gt; Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;During my Machine Learning Diploma I had the chance to work on a very interesting project that was actually created in SAS. Of course I absolutely refused to use that old fashioned tool and I move everything to R.&lt;/p&gt;
-&lt;p&gt;I will try to demonstrate as much of the packages I used to perform this analysis.&lt;/p&gt;
-&lt;div id=&#34;importing-data&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;1&lt;/span&gt; Importing Data&lt;/h1&gt;
-&lt;p&gt;Since the data is coming from a SAS format, it was absolutely necessary to use this incredibly tidyverse package called &lt;code&gt;haven&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The code to import the data is super simple and goes like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Loading silent tidyverse to make normal utility functions available
-suppressPackageStartupMessages(library(tidyverse))
-library(haven)
-data &amp;lt;- read_sas(&amp;quot;develop.sas7bdat&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will import the data into an R object:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Showing 10 first Obs
-data %&amp;gt;%
-  head&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;AcctAge&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;DDA&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;DDABal&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CashBk&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Checks&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;DirDep&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;NSF&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;NSFAmt&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Phone&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Teller&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Sav&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;SavBal&#34;],&#34;name&#34;:[12],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;ATM&#34;],&#34;name&#34;:[13],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;ATMAmt&#34;],&#34;name&#34;:[14],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;POS&#34;],&#34;name&#34;:[15],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;POSAmt&#34;],&#34;name&#34;:[16],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CD&#34;],&#34;name&#34;:[17],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CDBal&#34;],&#34;name&#34;:[18],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;IRA&#34;],&#34;name&#34;:[19],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;IRABal&#34;],&#34;name&#34;:[20],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;LOC&#34;],&#34;name&#34;:[21],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;LOCBal&#34;],&#34;name&#34;:[22],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;ILS&#34;],&#34;name&#34;:[23],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;ILSBal&#34;],&#34;name&#34;:[24],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;MM&#34;],&#34;name&#34;:[25],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;MMBal&#34;],&#34;name&#34;:[26],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;MMCred&#34;],&#34;name&#34;:[27],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;MTG&#34;],&#34;name&#34;:[28],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;MTGBal&#34;],&#34;name&#34;:[29],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CC&#34;],&#34;name&#34;:[30],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CCBal&#34;],&#34;name&#34;:[31],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CCPurc&#34;],&#34;name&#34;:[32],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;SDB&#34;],&#34;name&#34;:[33],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Income&#34;],&#34;name&#34;:[34],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;HMOwn&#34;],&#34;name&#34;:[35],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;LORes&#34;],&#34;name&#34;:[36],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;HMVal&#34;],&#34;name&#34;:[37],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Age&#34;],&#34;name&#34;:[38],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;CRScore&#34;],&#34;name&#34;:[39],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Moved&#34;],&#34;name&#34;:[40],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;InArea&#34;],&#34;name&#34;:[41],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Ins&#34;],&#34;name&#34;:[42],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Branch&#34;],&#34;name&#34;:[43],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Res&#34;],&#34;name&#34;:[44],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Dep&#34;],&#34;name&#34;:[45],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;DepAmt&#34;],&#34;name&#34;:[46],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Inv&#34;],&#34;name&#34;:[47],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;InvBal&#34;],&#34;name&#34;:[48],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;0.3&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;419.27&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;0&#34;,&#34;6&#34;:&#34;0&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;0&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;1&#34;,&#34;12&#34;:&#34;10233.72&#34;,&#34;13&#34;:&#34;1&#34;,&#34;14&#34;:&#34;106.74&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;1&#34;,&#34;31&#34;:&#34;483.65&#34;,&#34;32&#34;:&#34;0&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;16&#34;,&#34;35&#34;:&#34;1&#34;,&#34;36&#34;:&#34;11.0&#34;,&#34;37&#34;:&#34;89&#34;,&#34;38&#34;:&#34;63&#34;,&#34;39&#34;:&#34;696&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;1&#34;,&#34;43&#34;:&#34;B17&#34;,&#34;44&#34;:&#34;R&#34;,&#34;45&#34;:&#34;2&#34;,&#34;46&#34;:&#34;1170.06&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;},{&#34;1&#34;:&#34;0.7&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;1986.81&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;1&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;0&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;0&#34;,&#34;12&#34;:&#34;0.00&#34;,&#34;13&#34;:&#34;1&#34;,&#34;14&#34;:&#34;268.88&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;1&#34;,&#34;31&#34;:&#34;0.00&#34;,&#34;32&#34;:&#34;1&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;4&#34;,&#34;35&#34;:&#34;1&#34;,&#34;36&#34;:&#34;7.0&#34;,&#34;37&#34;:&#34;87&#34;,&#34;38&#34;:&#34;51&#34;,&#34;39&#34;:&#34;674&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;0&#34;,&#34;43&#34;:&#34;B2&#34;,&#34;44&#34;:&#34;R&#34;,&#34;45&#34;:&#34;1&#34;,&#34;46&#34;:&#34;446.93&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;},{&#34;1&#34;:&#34;4.1&#34;,&#34;2&#34;:&#34;0&#34;,&#34;3&#34;:&#34;0.00&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;0&#34;,&#34;6&#34;:&#34;0&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;0&#34;,&#34;10&#34;:&#34;0&#34;,&#34;11&#34;:&#34;0&#34;,&#34;12&#34;:&#34;0.00&#34;,&#34;13&#34;:&#34;0&#34;,&#34;14&#34;:&#34;0.00&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;1&#34;,&#34;31&#34;:&#34;0.00&#34;,&#34;32&#34;:&#34;0&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;30&#34;,&#34;35&#34;:&#34;1&#34;,&#34;36&#34;:&#34;8.5&#34;,&#34;37&#34;:&#34;97&#34;,&#34;38&#34;:&#34;60&#34;,&#34;39&#34;:&#34;640&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;1&#34;,&#34;43&#34;:&#34;B3&#34;,&#34;44&#34;:&#34;S&#34;,&#34;45&#34;:&#34;0&#34;,&#34;46&#34;:&#34;0.00&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;},{&#34;1&#34;:&#34;0.5&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;1594.84&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;1&#34;,&#34;6&#34;:&#34;0&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;0&#34;,&#34;10&#34;:&#34;1&#34;,&#34;11&#34;:&#34;1&#34;,&#34;12&#34;:&#34;425.06&#34;,&#34;13&#34;:&#34;1&#34;,&#34;14&#34;:&#34;278.07&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;1&#34;,&#34;31&#34;:&#34;65.76&#34;,&#34;32&#34;:&#34;0&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;125&#34;,&#34;35&#34;:&#34;1&#34;,&#34;36&#34;:&#34;7.5&#34;,&#34;37&#34;:&#34;145&#34;,&#34;38&#34;:&#34;44&#34;,&#34;39&#34;:&#34;672&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;0&#34;,&#34;43&#34;:&#34;B1&#34;,&#34;44&#34;:&#34;S&#34;,&#34;45&#34;:&#34;1&#34;,&#34;46&#34;:&#34;1144.24&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;},{&#34;1&#34;:&#34;6.7&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;2813.45&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;2&#34;,&#34;6&#34;:&#34;0&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;0&#34;,&#34;10&#34;:&#34;5&#34;,&#34;11&#34;:&#34;1&#34;,&#34;12&#34;:&#34;2716.55&#34;,&#34;13&#34;:&#34;0&#34;,&#34;14&#34;:&#34;0.00&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;0&#34;,&#34;31&#34;:&#34;0.00&#34;,&#34;32&#34;:&#34;0&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;25&#34;,&#34;35&#34;:&#34;1&#34;,&#34;36&#34;:&#34;6.0&#34;,&#34;37&#34;:&#34;101&#34;,&#34;38&#34;:&#34;46&#34;,&#34;39&#34;:&#34;648&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;1&#34;,&#34;43&#34;:&#34;B1&#34;,&#34;44&#34;:&#34;S&#34;,&#34;45&#34;:&#34;2&#34;,&#34;46&#34;:&#34;1208.94&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;},{&#34;1&#34;:&#34;12.3&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;1069.78&#34;,&#34;4&#34;:&#34;0&#34;,&#34;5&#34;:&#34;13&#34;,&#34;6&#34;:&#34;1&#34;,&#34;7&#34;:&#34;0&#34;,&#34;8&#34;:&#34;0&#34;,&#34;9&#34;:&#34;2&#34;,&#34;10&#34;:&#34;9&#34;,&#34;11&#34;:&#34;0&#34;,&#34;12&#34;:&#34;0.00&#34;,&#34;13&#34;:&#34;0&#34;,&#34;14&#34;:&#34;0.00&#34;,&#34;15&#34;:&#34;0&#34;,&#34;16&#34;:&#34;0&#34;,&#34;17&#34;:&#34;0&#34;,&#34;18&#34;:&#34;0&#34;,&#34;19&#34;:&#34;0&#34;,&#34;20&#34;:&#34;0&#34;,&#34;21&#34;:&#34;0&#34;,&#34;22&#34;:&#34;0&#34;,&#34;23&#34;:&#34;0&#34;,&#34;24&#34;:&#34;0&#34;,&#34;25&#34;:&#34;0&#34;,&#34;26&#34;:&#34;0&#34;,&#34;27&#34;:&#34;0&#34;,&#34;28&#34;:&#34;0&#34;,&#34;29&#34;:&#34;0&#34;,&#34;30&#34;:&#34;1&#34;,&#34;31&#34;:&#34;38.62&#34;,&#34;32&#34;:&#34;0&#34;,&#34;33&#34;:&#34;0&#34;,&#34;34&#34;:&#34;19&#34;,&#34;35&#34;:&#34;0&#34;,&#34;36&#34;:&#34;3.0&#34;,&#34;37&#34;:&#34;107&#34;,&#34;38&#34;:&#34;55&#34;,&#34;39&#34;:&#34;662&#34;,&#34;40&#34;:&#34;0&#34;,&#34;41&#34;:&#34;1&#34;,&#34;42&#34;:&#34;1&#34;,&#34;43&#34;:&#34;B7&#34;,&#34;44&#34;:&#34;U&#34;,&#34;45&#34;:&#34;5&#34;,&#34;46&#34;:&#34;6813.58&#34;,&#34;47&#34;:&#34;0&#34;,&#34;48&#34;:&#34;0&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(data_types &amp;lt;- data %&amp;gt;%
-   map_dfc(class) %&amp;gt;%
-   gather(key = &amp;quot;Variable&amp;quot;, value = &amp;quot;Type&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Variable&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;Type&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;AcctAge&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;DDA&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;DDABal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CashBk&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Checks&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;DirDep&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;NSF&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;NSFAmt&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Phone&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Teller&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Sav&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;SavBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;ATM&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;ATMAmt&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;POS&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;POSAmt&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CD&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CDBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;IRA&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;IRABal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;LOC&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;LOCBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;ILS&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;ILSBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;MM&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;MMBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;MMCred&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;MTG&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;MTGBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CC&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CCBal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CCPurc&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;SDB&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Income&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;HMOwn&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;LORes&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;HMVal&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Age&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;CRScore&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Moved&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;InArea&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Ins&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Branch&#34;,&#34;2&#34;:&#34;character&#34;},{&#34;1&#34;:&#34;Res&#34;,&#34;2&#34;:&#34;character&#34;},{&#34;1&#34;:&#34;Dep&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;DepAmt&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;Inv&#34;,&#34;2&#34;:&#34;numeric&#34;},{&#34;1&#34;:&#34;InvBal&#34;,&#34;2&#34;:&#34;numeric&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_types %&amp;gt;%
-  count(Type)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Type&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;n&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;character&#34;,&#34;2&#34;:&#34;2&#34;},{&#34;1&#34;:&#34;numeric&#34;,&#34;2&#34;:&#34;46&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;We can notice that 2 out of 48 Variables are strings and all the rest are Numeric. This is not necessary correct because some of the variables could be factors. Having Metadata will be super useful right know.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;redefining-categorical-variables&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;2&lt;/span&gt; Redefining Categorical Variables&lt;/h1&gt;
-&lt;p&gt;After taking a look at the data and the Metadata (that I can´t find now, but I promise I will upload) all the Variables listed next are not correctly numbers but Factors:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Listing all of the Categorical Variables according to Metadata
-categorical &amp;lt;- c(&amp;quot;ATM&amp;quot;, &amp;quot;Branch&amp;quot;, &amp;quot;CC&amp;quot;, &amp;quot;CD&amp;quot;, &amp;quot;DDA&amp;quot;, &amp;quot;DirDep&amp;quot;, &amp;quot;HMOwn&amp;quot;, &amp;quot;ILS&amp;quot;, &amp;quot;IRA&amp;quot;, &amp;quot;InArea&amp;quot;, &amp;quot;Ins&amp;quot;, &amp;quot;Inv&amp;quot;, &amp;quot;LOC&amp;quot;, &amp;quot;MM&amp;quot;, &amp;quot;MTG&amp;quot;, &amp;quot;Moved&amp;quot;, &amp;quot;NSF&amp;quot;, &amp;quot;Res&amp;quot;, &amp;quot;SDB&amp;quot;, &amp;quot;Sav&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can quickly transform this into factors by using dplyr, with no need to even loop.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Transforming to Factor (Categorical Data Type in R)
-data &amp;lt;- data %&amp;gt;%
-  mutate_at(vars(categorical), as_factor)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The excellent package forcats offers really easy functions to recode the numbers 1 and 0 into “yes” and “no”.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Factor variables will be relabeled for better intepretation of the data
-data &amp;lt;- data %&amp;gt;%
-  mutate_if(is.factor, ~ fct_recode(. , yes = &amp;#39;1&amp;#39;, no = &amp;#39;0&amp;#39;)) &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Unknown levels in `f`: 1, 0
-
-## Warning: Unknown levels in `f`: 1, 0&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- data %&amp;gt;%
-  mutate_at(&amp;quot;Res&amp;quot;, ~fct_recode(
-    . ,
-    rural = &amp;#39;R&amp;#39;,
-    suburb = &amp;#39;S&amp;#39;,
-    urban = &amp;#39;U&amp;#39;
-  ))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The “Ins” Variable is the response variable and by using forcats we can shift the order of the Event Variable correctly.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Defining Yes as the Event/Positive Category.
-data$Ins &amp;lt;- data$Ins %&amp;gt;% fct_shift&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;discovering-missing-values&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;3&lt;/span&gt; Discovering Missing Values&lt;/h1&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;%
-  summarize_all(funs(. %&amp;gt;% is.na %&amp;gt;% sum)) %&amp;gt;%
-  map_df( ~ .x * 100 / nrow(data)) %&amp;gt;%
-  gather(key = &amp;quot;Variable&amp;quot;, value = &amp;quot;percent_NAs&amp;quot;) %&amp;gt;%
-  arrange(desc(percent_NAs)) %&amp;gt;%
-  filter(percent_NAs &amp;gt; 0)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: funs() is soft deprecated as of dplyr 0.8.0
-## Please use a list of either functions or lambdas: 
-## 
-##   # Simple named list: 
-##   list(mean = mean, median = median)
-## 
-##   # Auto named with `tibble::lst()`: 
-##   tibble::lst(mean, median)
-## 
-##   # Using lambdas
-##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
-## This warning is displayed once per session.&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Variable&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;percent_NAs&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;Age&#34;,&#34;2&#34;:&#34;19.703075&#34;},{&#34;1&#34;:&#34;Income&#34;,&#34;2&#34;:&#34;17.920903&#34;},{&#34;1&#34;:&#34;LORes&#34;,&#34;2&#34;:&#34;17.920903&#34;},{&#34;1&#34;:&#34;HMVal&#34;,&#34;2&#34;:&#34;17.920903&#34;},{&#34;1&#34;:&#34;HMOwn&#34;,&#34;2&#34;:&#34;17.149145&#34;},{&#34;1&#34;:&#34;Phone&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;POS&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;POSAmt&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;CC&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;CCBal&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;CCPurc&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;Inv&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;InvBal&#34;,&#34;2&#34;:&#34;12.809943&#34;},{&#34;1&#34;:&#34;AcctAge&#34;,&#34;2&#34;:&#34;6.415819&#34;},{&#34;1&#34;:&#34;CRScore&#34;,&#34;2&#34;:&#34;2.191297&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;We can show this results in a fancy way with the following code:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Counting if columns have any NAs in them
-data_NA &amp;lt;- data %&amp;gt;%
-  map_dfr(anyNA) %&amp;gt;%
-  gather(key = &amp;quot;Variable&amp;quot;, value = &amp;quot;any_NA&amp;quot;) %&amp;gt;%
-  filter(any_NA == TRUE)
-
-#This hunk was run before to obtain the atual data types of every column
-data_types &amp;lt;- data %&amp;gt;%
-  map_dfc(class) %&amp;gt;%
-  gather(key = &amp;quot;Variable&amp;quot;, value = &amp;quot;Type&amp;quot;)
-
-#This Chunk counts the actual Number of NAs 
-n_NA &amp;lt;- data %&amp;gt;%
-  summarize_all(funs(. %&amp;gt;%
-    is.na %&amp;gt;%
-      sum)) %&amp;gt;%
-    gather(key = &amp;quot;Variable&amp;quot;, value = &amp;quot;n_NA&amp;quot;)
-
-# All the previous results are joined into a summary Table
-data_NA %&amp;gt;%
-  left_join(data_types, by = &amp;quot;Variable&amp;quot;) %&amp;gt;%
-  left_join(n_NA, by = &amp;quot;Variable&amp;quot;) %&amp;gt;%
-    arrange(Type)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Variable&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;any_NA&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;lgl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;Type&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;n_NA&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;CC&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;factor&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;HMOwn&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;factor&#34;,&#34;4&#34;:&#34;5533&#34;},{&#34;1&#34;:&#34;Inv&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;factor&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;AcctAge&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;2070&#34;},{&#34;1&#34;:&#34;Phone&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;POS&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;POSAmt&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;CCBal&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;CCPurc&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;},{&#34;1&#34;:&#34;Income&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;5782&#34;},{&#34;1&#34;:&#34;LORes&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;5782&#34;},{&#34;1&#34;:&#34;HMVal&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;5782&#34;},{&#34;1&#34;:&#34;Age&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;6357&#34;},{&#34;1&#34;:&#34;CRScore&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;707&#34;},{&#34;1&#34;:&#34;InvBal&#34;,&#34;2&#34;:&#34;TRUE&#34;,&#34;3&#34;:&#34;numeric&#34;,&#34;4&#34;:&#34;4133&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;It can be seen that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;15 Variables have Missing Values. T&lt;/li&gt;
-&lt;li&gt;The range of Missing values varies from 2.19 % to 19.7 %.&lt;br /&gt;
-&lt;/li&gt;
-&lt;li&gt;3 out of 15 are Categorical Values whereas the rest are Numeric Variables.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;During the Diploma a 2% threshold for Missing Values was discussed. Imputation was not recommended if Missing Values are greater than that. So in order to simplify the problem we will just get rid of NAs. The tidyr package does this really easily.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Sidenote&lt;/strong&gt;: I´m not completely sure about this criterion. I will be asking about this during LatinR_2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Droping observations with missing Values
-data &amp;lt;-  data %&amp;gt;% drop_na()
-#Showing distribution of records of th Target Variable
-data %&amp;gt;% count(Ins)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;Ins&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;n&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;yes&#34;,&#34;2&#34;:&#34;7504&#34;},{&#34;1&#34;:&#34;no&#34;,&#34;2&#34;:&#34;13373&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;4&lt;/span&gt; Conclusion&lt;/h1&gt;
-&lt;p&gt;So far we have been able to import a SAS dataset and apply a high level cleansing to organize the data, discover factor variables, reorganize the event Variable correctly and get rid of NAs.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% glimpse&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Observations: 20,877
-## Variables: 48
-## $ AcctAge &amp;lt;dbl&amp;gt; 0.3, 0.7, 4.1, 0.5, 6.7, 12.3, 8.8, 9.3, 0.9, 3.0, 4.8...
-## $ DDA     &amp;lt;fct&amp;gt; yes, yes, no, yes, yes, yes, yes, yes, yes, yes, yes, ...
-## $ DDABal  &amp;lt;dbl&amp;gt; 419.27, 1986.81, 0.00, 1594.84, 2813.45, 1069.78, 1437...
-## $ CashBk  &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
-## $ Checks  &amp;lt;dbl&amp;gt; 0, 1, 0, 1, 2, 13, 12, 2, 4, 1, 0, 0, 5, 4, 9, 8, 0, 2...
-## $ DirDep  &amp;lt;fct&amp;gt; no, yes, no, no, no, yes, yes, yes, no, yes, no, no, n...
-## $ NSF     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, ye...
-## $ NSFAmt  &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
-## $ Phone   &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, ...
-## $ Teller  &amp;lt;dbl&amp;gt; 0, 0, 0, 1, 5, 9, 0, 0, 2, 1, 0, 0, 3, 2, 1, 1, 0, 2, ...
-## $ Sav     &amp;lt;fct&amp;gt; yes, no, no, yes, yes, no, no, yes, yes, no, no, yes, ...
-## $ SavBal  &amp;lt;dbl&amp;gt; 10233.72, 0.00, 0.00, 425.06, 2716.55, 0.00, 0.00, 967...
-## $ ATM     &amp;lt;fct&amp;gt; yes, yes, no, yes, no, no, yes, yes, yes, no, no, no, ...
-## $ ATMAmt  &amp;lt;dbl&amp;gt; 106.74, 268.88, 0.00, 278.07, 0.00, 0.00, 391.63, 276....
-## $ POS     &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 5, 0, 0, 0, 0, ...
-## $ POSAmt  &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 23.13,...
-## $ CD      &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ CDBal   &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
-## $ IRA     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ IRABal  &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
-## $ LOC     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ LOCBal  &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
-## $ ILS     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ ILSBal  &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
-## $ MM      &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ MMBal   &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, ...
-## $ MMCred  &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, ...
-## $ MTG     &amp;lt;fct&amp;gt; no, no, no, no, no, no, yes, no, no, no, no, no, no, n...
-## $ MTGBal  &amp;lt;dbl&amp;gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 94539.95, 0.00, 0....
-## $ CC      &amp;lt;fct&amp;gt; yes, yes, yes, yes, no, yes, yes, yes, no, no, yes, ye...
-## $ CCBal   &amp;lt;dbl&amp;gt; 483.65, 0.00, 0.00, 65.76, 0.00, 38.62, 85202.99, 0.00...
-## $ CCPurc  &amp;lt;dbl&amp;gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, ...
-## $ SDB     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, yes, no, no, no, no, n...
-## $ Income  &amp;lt;dbl&amp;gt; 16, 4, 30, 125, 25, 19, 55, 13, 54, 25, 100, 13, 7, 9,...
-## $ HMOwn   &amp;lt;fct&amp;gt; yes, yes, yes, yes, yes, no, yes, no, no, yes, yes, ye...
-## $ LORes   &amp;lt;dbl&amp;gt; 11.0, 7.0, 8.5, 7.5, 6.0, 3.0, 3.5, 4.5, 4.0, 7.5, 13....
-## $ HMVal   &amp;lt;dbl&amp;gt; 89, 87, 97, 145, 101, 107, 128, 99, 129, 95, 135, 77, ...
-## $ Age     &amp;lt;dbl&amp;gt; 63, 51, 60, 44, 46, 55, 57, 58, 73, 29, 75, 51, 49, 39...
-## $ CRScore &amp;lt;dbl&amp;gt; 696, 674, 640, 672, 648, 662, 659, 675, 667, 612, 715,...
-## $ Moved   &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ InArea  &amp;lt;fct&amp;gt; yes, yes, yes, yes, yes, yes, yes, yes, yes, yes, yes,...
-## $ Ins     &amp;lt;fct&amp;gt; yes, no, yes, no, yes, yes, no, yes, yes, no, no, no, ...
-## $ Branch  &amp;lt;fct&amp;gt; B17, B2, B3, B1, B1, B7, B1, B5, B6, B4, B9, B7, B7, B...
-## $ Res     &amp;lt;fct&amp;gt; rural, rural, suburb, suburb, suburb, urban, urban, ur...
-## $ Dep     &amp;lt;dbl&amp;gt; 2, 1, 0, 1, 2, 5, 2, 3, 2, 2, 0, 1, 3, 5, 2, 4, 1, 1, ...
-## $ DepAmt  &amp;lt;dbl&amp;gt; 1170.06, 446.93, 0.00, 1144.24, 1208.94, 6813.58, 2237...
-## $ Inv     &amp;lt;fct&amp;gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no...
-## $ InvBal  &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More to come on this problem. Stay Tuned!!!&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Propuesta Redes Convolucionales</title>
-      <link>/project/convolutional-nets-sp/memoria-1/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/convolutional-nets-sp/memoria-1/</guid>
-      <description>
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#redes-convolucionales&#34;&gt;Redes Convolucionales&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#como-se-relaciona-esto-con-las-redes-convolucionales&#34;&gt;¿Cómo se relaciona esto con las Redes Convolucionales?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#como-se-va-especializando-la-red-para-ser-cada-vez-mas-detallista&#34;&gt;¿Cómo se va especializando la red para ser cada vez más detallista?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#como-se-relaciona-este-problema-con-estructuras&#34;&gt;¿Cómo se relaciona este problema con Estructuras?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#el-paper-de-finol&#34;&gt;El Paper de Finol&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#solucion&#34;&gt;Solución&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#puntos-interesantes-para-la-investigacion.&#34;&gt;Puntos Interesantes para la Investigación.&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#era-sugerencia-quizas-no-para-la-memoria-pero-para-seguir-investigando&#34;&gt;1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#da-sugerencia&#34;&gt;2da Sugerencia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#era-sugerencia.&#34;&gt;3era Sugerencia.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#ta-sugerencia-crear-imagenes-estructurales&#34;&gt;4ta Sugerencia “Crear Imágenes Estructurales”&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;redes-convolucionales&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Redes Convolucionales&lt;/h1&gt;
-&lt;p&gt;Las redes convolucionales es un tipo de Red que esta especializada principalmente en extraer características de imágenes. Si bien es cierto es posible utilizar Redes convolucionales para otras aplicaciones, el análisis de imágenes y la Visión Computacional son la especialidad de estas redes.&lt;/p&gt;
-&lt;p&gt;La Principal ventaja sobre una Red neural normal es que no está densamente conectada. Sino que selecciona cuidadosamente las neuronas a las que se conectará cambiando la operación matricial de Producto Punto por una convolución.&lt;/p&gt;
-&lt;p&gt;La definición formal de Convolución es:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]&lt;/span&gt;
-La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.&lt;/p&gt;
-&lt;div id=&#34;como-se-relaciona-esto-con-las-redes-convolucionales&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;¿Cómo se relaciona esto con las Redes Convolucionales?&lt;/h2&gt;
-&lt;p&gt;El análisis de Imágenes es bastante complicado. La manera en la que un computador es capaz de ver una imágen es parseando e interpretandola por un Tensor de Pixeles. Dependiendo de la resolución dela Imagen este Tensor será cada vez más grande, por lo tanto usar Redes Densas supone un gran costo computacional por todos los $ w_{i,j}$ que será necesario calcular.&lt;/p&gt;
-&lt;p&gt;Normalmente el análisis de Imágenes utiliza tensor de este estilo:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs1&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/4D_Tensor.png&#34; alt=&#34;\label{fig:figs1}Estructura de Tensores de Imágenes&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Estructura de Tensores de Imágenes
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;La Matriz de Pixeles de Dimensiones Alto x Ancho más una Pofundidad de Canales RGB que dan el color.&lt;/p&gt;
-&lt;p&gt;Es por esto que las redes convolucionales ocupan esta operación para reconocer patrones específicos dentro del Tensor de Imagen. La manera en que está convolución se lleva a cabo es por medio de un Filtro. Este filtro es otro Tensor que posee generalmente dimensiones de 3x3 o 5x5 el cual se desplaza a través del tensor de imágenes para construir un Mapa de Características.&lt;/p&gt;
-&lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/01.jpg?iv=124&#34; /&gt;&lt;/p&gt;
-&lt;/center&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Invisible.PNG&#34; alt=&#34;\label{fig:figs2}Aplicación de un Filtro en redes Convolucionales&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Aplicación de un Filtro en redes Convolucionales
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;&lt;img src=&#34;http://ufldl.stanford.edu/tutorial/images/Convolution_schematic.gif&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Normalmente luego de la Aplicación del Filtro el Mapa de Características es pasado por una ReLU lo que genera que se realcen ciertos atributos de la imagen lo que permite que la red aprenda a diferenciar características específicas.&lt;/p&gt;
-&lt;p&gt;Dependiendo del filtro aplicado, se verán ciertos atributos de la imagen o no. Cabe destacar que los filtros parten como números aleatorios que se van entrenando en los distintos Pasos de la red (Forward and Backward).&lt;/p&gt;
-&lt;p&gt;Si intentamos analizar la foto de un gato, luego de aplicar filtros, esto es lo que un computador comienza a ver:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Cat.PNG&#34; alt=&#34;\label{fig:figs3}Feature Map&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: Feature Map
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs4&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Cat_Filters.PNG&#34; alt=&#34;\label{fig:figs4}Resultado del Entrenamiento de Filtros&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 4: Resultado del Entrenamiento de Filtros
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;/div&gt;
-&lt;div id=&#34;como-se-va-especializando-la-red-para-ser-cada-vez-mas-detallista&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;¿Cómo se va especializando la red para ser cada vez más detallista?&lt;/h2&gt;
-Luego de la red Convolucional hay una reducción de Dimensionalidad, para llevarse acabo se utiliza una Capa de pooling, esta puede ser una Average Pooling o Max Pooling (generalmente ésta última es la más utilizada) la cual reduce la dimensión del problema para luego aplicar una nueva Capa de Red convolucional pero con más filtros que el paso anterior.
-&lt;center&gt;
-&lt;img src=&#34;https://cdn-images-1.medium.com/max/800/1*vbfPq-HvBCkAcZhiSTZybg.png&#34; /&gt;
-&lt;/center&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs5&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Invisible.PNG&#34; alt=&#34;\label{fig:figs5}Max Pooling&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 5: Max Pooling
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;Una vez que se ha llegado al nivel de espacialización deseado, se llevan todas las caracterícticas a un vector que es pasado por una capa densamente conectada para entregar los outputs correspondientes.&lt;/p&gt;
-&lt;p&gt;Una Configuración típica podría verse así:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs6&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Car_Convnet.PNG&#34; alt=&#34;\label{fig:figs6}Especialización de la Red&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 6: Especialización de la Red
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;/div&gt;
-&lt;div id=&#34;como-se-relaciona-este-problema-con-estructuras&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;¿Cómo se relaciona este problema con Estructuras?&lt;/h2&gt;
-&lt;p&gt;No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes.
-Las dos principales caracerísticas de las Redes Convolucionales son:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;La extracción de Características&lt;/li&gt;
-&lt;li&gt;Translation/Shift Invariance&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Esto quiere decir que la red se especializa en detectar Patrones que no dependen de su posición ni que deben ser identicos para ser detectados. Por ejemplo una oreja de gato se detectara si es grande, si es pequeña, si es de otro color si esta rotada o desplazada.&lt;/p&gt;
-&lt;p&gt;Son estas características las que permitirían desarrollar otro tipo de problemas si es que pueden ser planteadas como un tensor de imágen o similar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;el-paper-de-finol&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;El Paper de Finol&lt;/h1&gt;
-&lt;p&gt;El Paper propone solucionar un problema cualquiera de estructuras usando redes Convolucionales. Lo que ellos primeramente plantean es la obtención de Valores propios para un material de propiedades variables.&lt;/p&gt;
-&lt;p&gt;Para ello se utiliza una barra dividida en 100 Elementos en las que se miden dos Propiedades, el Módulo de Elasticidad E y la Densidad $ $ .&lt;/p&gt;
-&lt;p&gt;En simple lo que se está planteando es una red convolucional para analizar una Imagen de 1 Pixel de Alto por 100 de Ancho, donde los Canales que representan color, en este caso representan propiedades físicas del Elemento. Dada las propiedades de la imagen esto puede extrapolarse a que las Redes convolucionales pueden analizar Data Secuencial, en este caso cada Elemento de la Barra están en secuencia debido a la continuidad del la barra. Aunque cabe destacar que la red Convolucional no se deja llevar por el orden ya que sus patrones no dependen de la posición.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Mi Supuesto&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;Esto podría traducirse en que los invesigadores pensaron en quizás un elemento equivalente de un Modulo $ E_{eq} $ en serie dado que es una barra unidimensional y el orden de los $ E_{i} $ y $ _{i} $ no influyen en la propiedad equivalente final del elemento.&lt;/p&gt;
-&lt;p&gt;Además el problema que se está resolviendo es de valores propios, no hay elementos externos que indiquen que el orden de las propiedades mecánicas influyan en el cálculo final.&lt;/p&gt;
-&lt;p&gt;Bajo estas características es que el uso de la Red Convolucional es válida.&lt;/p&gt;
-&lt;div id=&#34;solucion&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Solución&lt;/h2&gt;
-&lt;p&gt;Para resolver el problema de Valores propios para un Cristal dividido en 100 Elementos se utiliza la siguiente configuración:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs7&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Finol_Net.PNG&#34; alt=&#34;\label{fig:figs7}Solución de Finol&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 7: Solución de Finol
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;ul&gt;
-&lt;li&gt;Se utiliza una Red Secuencial aplicando un Filtro de Largo 3.&lt;/li&gt;
-&lt;li&gt;Al no utilizar padding el vector se reduce a 98 x 1 x 275 donde 275 corresponde teóricamente al número de filtros que está utilizando. Esto no sale definido en el Paper y es algo que averigué investigando por mi parte.&lt;/li&gt;
-&lt;li&gt;Se utiliza una segunda capa convolucional. La razón de esto no lo sé. Normalmente no he visto casos de dos Capas convolucionales seguidas excepto en modelos muy avanzados.&lt;/li&gt;
-&lt;li&gt;Se utiliza una capa Max Pooling para reducir de largo 2 que disminuye el tamaño de la red a la mitad.&lt;/li&gt;
-&lt;li&gt;Luego de esto se une con una Red Convencional densamente conectada. Lo que normalmente he visto es que se usa una flatten Layer que aplana la reducción de dimensiones que se ha dado hasta ahora. El valor esperado debería ser de 275 x 48, pero no sé porque ocupa 500 nodos.
-*Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;puntos-interesantes-para-la-investigacion.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Puntos Interesantes para la Investigación.&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Estoy tomando un curso en Datacamp y uno público de Stanford acerca del uso de redes Convolucionales. Dentro del curso se dan varias recomendaciones:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Para un problema de imágenes de 64 x 64 x 3 para predecir si hay un gato en la imágen o no se requieren aproximadamente 10.000 imágenes.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Se recomienda usar la mínima resolución posible para distinguir a nivel humano de tal manera de bajar el poder computacional que requiere la red.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A mayor resolución más imágenes. Menor Resolución menos Imágenes.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cualquier Matriz puede ser interpretada como una imágen. En la cual una Red Convolucional puede encontrar patrones. Por lo que perfectamente la matriz de rigidez puede ser tratado como una imagen.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs8&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/matrix_image.PNG&#34; alt=&#34;\label{fig:figs8}Transformación de Matriz en Imágen&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 8: Transformación de Matriz en Imágen
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Las redes convolucionales poseen propiedades de Memoria dado que su principal función es la Extracción de Características. Existen modelos pre-entrenados de redes que Pueden usarse para perfeccionar otras tareas.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Un ejemplo que leí fue una red que fue pre-entrenada con imágenes de muebles pero que luego se adaptó para mejor la identificación de animales. La red a pesar de no ser entrenada con animales, era capaz de reconocer bordes y características muy finas.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;era-sugerencia-quizas-no-para-la-memoria-pero-para-seguir-investigando&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)&lt;/h4&gt;
-&lt;p&gt;Uso de Redes convolucionales para calcular Inversas de la Matriz de Rigidez. Siendo este el proceso más caro de la resolución de estructuras quizás podría realizarse el desarrollo de una Red Pre-entrenada que sea capaz de calcular Inversas de Muchas Matrices de tal Manera de agilizar el proceso más caro de la resolución de estructuras.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;da-sugerencia&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;2da Sugerencia&lt;/h4&gt;
-&lt;p&gt;Si bien las redes Convolucionales pueden dar buenos resultados para data secuencial, dada su caracteristica de &lt;em&gt;“Invariante a la Traslación”&lt;/em&gt;, puede encontrar patrones incorrectos cuando el orden sí importa. Se desaconseja su uso en series de tiempo, ya que el orden de la información importa al momento de predecir.
-Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda a establecer la secuencia como un prerequisito del análisis.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Es posible realizar modelos paralelos en la que se ingrese data distinta como input de la Red. Por ejemplo la Matriz de Rigidez del problema como &lt;em&gt;“imagen”&lt;/em&gt; y los Propiedades Mecánicas como vector o hasta las Cargas a las que está sometida la estructura como vector, de esa manera todos los elementos son parte de los Input del problema para predecir de manera más acertada los desplazamientos normales o umbrales del problema.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;era-sugerencia.&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;3era Sugerencia.&lt;/h4&gt;
-&lt;p&gt;Generar una red no secuencial considerando todos los inputs del problema.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Dado que el análisis de las Imágenes poseen una característica Espacial y secuencial me da la impresión que se puede trabajar en optimizaciones al proceso de Condensación de Grados de Libertad. Sería posible que la red redujera problemas con gran cantidad de grados de libertad en Rigideces equivalentes que pueden ser planteadas como una imágen.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Así mismo dado que también posee propiedades de Profundidad podría ayudar al desarrollo de analisis de estructuras en 3 dimensiones que es algo que yo no recuerdo haber visto si no era usando algo como ETABS o SAP.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Me da la impresión de que Redes Convolucionales pueden ayudar al desarrollo de Propiedades equivalentes usando su característica secuencial para propiedades en serie y su profundidad como propiedades en paralelo.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ta-sugerencia-crear-imagenes-estructurales&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;4ta Sugerencia “Crear Imágenes Estructurales”&lt;/h4&gt;
-&lt;p&gt;Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y.
-Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.&lt;/p&gt;
-&lt;p&gt;Para un Enrejado de 9 Elementos esto sería una Imágen de 9 x 9 x 3, lo cual no supondría una gran cantidad de casos para entrenar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Activation Functions</title>
-      <link>/project/activation-functions/activation-functions/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/activation-functions/activation-functions/</guid>
-      <description>
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#activation-functions&#34;&gt;Activation Functions&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#identity&#34;&gt;Identity&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#step-function&#34;&gt;Step Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linear-function&#34;&gt;Linear Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sigmoid-function&#34;&gt;Sigmoid Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#hyperbolic-tangent&#34;&gt;Hyperbolic Tangent&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#relu&#34;&gt;ReLU&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#leaky-relu&#34;&gt;Leaky ReLU&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#softmax&#34;&gt;Softmax&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#how-to-choose-the-perfect-activation-function&#34;&gt;How to choose the perfect Activation function?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;activation-functions&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Activation Functions&lt;/h1&gt;
-&lt;p&gt;Activation functions are one of the most important characteristic of ANN. They basically decide whether a neuron should be activated or not. When a particular threshold is reached the Neuron will fire, meaning they will transmit the input signal to the next layer of the Network. Another Important feature of Activation Functions is that some of them provide the non-linearity. This is particular important because Activation functions help expand the range of problems that the Neural Networks can address. Finally Activation functions will play a major role when optimizing the edges weights when Backpropagation Algorithm comes into play, depending of their derivatives values is how the Gradient will change helping to decrease the error associated the Network prediction.&lt;/p&gt;
-&lt;p&gt;Some of these Activation Functions are:&lt;/p&gt;
-&lt;div id=&#34;identity&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Identity&lt;/h2&gt;
-&lt;p&gt;It is the most basic Activation, basically, do not alter the Neuron at all. The problem with this type of activation function is that is linear, transforming the Network into a Linear Regression limiting its classification capabilities for non-linear phenomena.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-function&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Step Function&lt;/h2&gt;
-&lt;p&gt;The binary function is extremely simple. It returns 1 if certain threshold is reached or 0 otherwise. The main drawback of this function is that his derivative is 0, meaning it is not useful in the optimizing process.&lt;/p&gt;
-&lt;p&gt;The function is defined as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x)= \left\{ \begin{array}{lcc}
-             0 &amp;amp;   if  &amp;amp; x &amp;lt; 0 \\
-             \\ 1 &amp;amp;  if  &amp;amp; x \geq 0 
-             \end{array}
-   \right. \]&lt;/span&gt;&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Step.PNG&#34; alt=&#34;\label{fig:figs}Step Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Step Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;/div&gt;
-&lt;div id=&#34;linear-function&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Linear Function&lt;/h2&gt;
-&lt;p&gt;This is another option, being the main difference the existence of a slope. In this case the derivative will be constant, which can be problematic because when trying to decrease the error no matter how right or off you are the gradient will be the same.&lt;/p&gt;
-&lt;p&gt;The function goes as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x) = a x \]&lt;/span&gt;&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Linear.PNG&#34; alt=&#34;\label{fig:figs2}Linear Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Linear Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;/div&gt;
-&lt;div id=&#34;sigmoid-function&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Sigmoid Function&lt;/h2&gt;
-&lt;p&gt;This is a very popular activation function. The main advantages of this function is that it is smooth, S-shaped, it is continuously differentiable and non-linear.&lt;/p&gt;
-&lt;p&gt;The function is defined as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ f(x)= \frac{1}{1+e^{-x}} \]&lt;/span&gt;&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Sigmoid.PNG&#34; alt=&#34;\label{fig:figs3}Sigmoid Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: Sigmoid Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;The derivative of this function is always positive and greater than 0 and x-dependent so it is very helpful when optimizing.&lt;/p&gt;
-&lt;p&gt;One of the setbacks is that only ranges from 0 to 1, for one thing is very limiting with the output but for the other it is particularly useful when dealing with probabilities.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;hyperbolic-tangent&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Hyperbolic Tangent&lt;/h2&gt;
-&lt;p&gt;Hyperbolic Tangent or $ tanh(x) $ is just an scaled version of the Sigmoid function. It is defined as follows:&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[ tanh(x)= 2 \cdot sigmoid(2x) - 1 = \frac{2}{1+e^{-2x}} - 1 \]&lt;/span&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs4&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Tanh.PNG&#34; alt=&#34;\label{fig:figs4}Hyperbolic Tangent Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 4: Hyperbolic Tangent Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;$ tanh $ works similarly to sigmoid but it is symmetric at the x - axis. Normally $ tanh $ and sigmoid can be used interchangeably depending on the requirements of the problem.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;relu&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;ReLU&lt;/h2&gt;
-&lt;p&gt;ReLu stands for Rectified Linear unit and it is defined as follows:&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[ f(x)= max(0,x) \]&lt;/span&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs5&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Relu.PNG&#34; alt=&#34;\label{fig:figs5}ReLU Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 5: ReLU Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;It is the most used function nowadays in hidden layers. The main capability is that it doesn’t activate all of the functions creating sparsity in the network, allowing efficiency in computation.&lt;/p&gt;
-&lt;p&gt;This function is limited at the positive side so it is not suggested for Output Layers. Another drawback is that not activated neurons in the range $ x &amp;lt; 0 $ will not be optimized since derivative is zero.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;leaky-relu&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Leaky ReLU&lt;/h2&gt;
-&lt;p&gt;This is an improved version of the ReLU function. It is not widely used yet and it has a subtle difference with ReLu: &lt;span class=&#34;math display&#34;&gt;\[ f(x)= \left\{ \begin{array}{lcc}
-             ax &amp;amp;   if  &amp;amp; x &amp;lt; 0 \\
-             \\ x &amp;amp;  if  &amp;amp; x \geq 0 
-             \end{array}
-   \right. \]&lt;/span&gt;&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs6&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Leaky.PNG&#34; alt=&#34;\label{fig:figs6}Leaky ReLU Function&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 6: Leaky ReLU Function
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;This solves the problem of dead neurons during Optimization process, since the derivative of $ x &amp;lt; 0 $ is not zero.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;softmax&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Softmax&lt;/h2&gt;
-&lt;p&gt;This is a sigmoid kind-of function capable of handling more than 2 classes. The function is defined as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \sigma(z)_{j}=\frac{e^{z_{j}}}{\sum_{k=1}^{K}e^{z_{k}}} \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The softmax functions are normally used in output layers when trying to solve classification problems with more than 2 classes..&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;how-to-choose-the-perfect-activation-function&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;How to choose the perfect Activation function?&lt;/h1&gt;
-&lt;p&gt;Well, there is not a clear answer to this, but definitely some guidelines we can follow:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Sigmoid functions generally work better in classification problems.&lt;/li&gt;
-&lt;li&gt;Sigmoids and tanh functions are sometimes avoided due to the &lt;em&gt;vanishing gradient problem&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;ReLU function is a general activation function and is used in most cases these days.&lt;/li&gt;
-&lt;li&gt;If we encounter a case of dead neurons in our networks the leaky ReLU function is the best choice.&lt;/li&gt;
-&lt;li&gt;Always keep in mind that ReLU function should only be used in the hidden layers.&lt;/li&gt;
-&lt;li&gt;As a rule of thumb, you can begin with using ReLU function and then move over to other activation functions in case ReLU doesn’t provide with optimum results.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-r&#34;&gt;Deep Learning with R&lt;/a&gt; provides some other Guidelines to use Activation Functions in the Output Layer:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Binary Classification: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Multiclass Single-Label Classification: &lt;strong&gt;Softmax&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Multiclass Multi-Label Classification: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Regression to Arbitrary Values: &lt;strong&gt;Identity&lt;/strong&gt; or &lt;strong&gt;None&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Regression to Values between 0 to 1: &lt;strong&gt;Sigmoid&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Intro to Neural Networks</title>
-      <link>/project/neural-nets-101/intro-to-nn/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/neural-nets-101/intro-to-nn/</guid>
-      <description>
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#what-is-an-artificial-neural-network&#34;&gt;What is an Artificial Neural Network?&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#basic-structure&#34;&gt;Basic Structure&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#what-problems-can-neural-networks-solve&#34;&gt;What Problems can Neural Networks solve?&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#classification&#34;&gt;Classification&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#regression&#34;&gt;Regression&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#typical-problems-solved-with-neural-networks&#34;&gt;Typical Problems solved with Neural Networks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;what-is-an-artificial-neural-network&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What is an Artificial Neural Network?&lt;/h2&gt;
-&lt;p&gt;The Picture you see up there is far a way from what a real Neural Network looks like:&lt;/p&gt;
-&lt;p&gt;Actually it is more similar to something like this:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/ANN.jpg&#34; alt=&#34;\label{fig:figs}Multi-Layer Perceptron&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Multi-Layer Perceptron
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;The configuration showed above is nothing but a visual representation of serial Matrix Multiplications. The neural network (aka ANN that stands for Artificial Neural Networks) itself is not an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;ANN are inspired by Neurons but they work in a completely different fashion. The main advantage of this system is that organizes successive Matrix multiplications and provides a visual representation of the different steps in the Optimization algorithm.&lt;/p&gt;
-&lt;p&gt;There are different types of Networks, Densely Connected, Convolutional, Recurrent, Long Short Memory, Radial Biased, Autoencoders, and so on. All of them having their own area of specialization, strengths and shortcomings.&lt;/p&gt;
-&lt;div id=&#34;basic-structure&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Basic Structure&lt;/h3&gt;
-&lt;p&gt;Every Network will contain Nodes/Units, emulating Neurons and Edges, emulating the connection between Units.&lt;/p&gt;
-&lt;p&gt;Normally the Units are organized by Layers, every Network should contain a first layer for Inputs, a last Layer for Outputs and Intermediate Layers, also known as Hidden Layers.&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/Basic_ANN.jpg&#34; alt=&#34;\label{fig:figs2}Basic Neural Network&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Basic Neural Network
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Input Nodes $ i_{j} $ will contain Input Values to train the Network.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Edges will provide weights $ w_{j} $.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Hidden Layer Nodes $ h_{j} $ will contain the result of Sum Product between Input Nodes and weighted edges connected to them.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Finally Output Nodes $ o_{j} $ will contain the result of Sum Product between hidden Nodes and the Edges Connected to them.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Optionally, Networks can include a Bias $ b_{j} $ to control values of the network.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The Network then will calculate values in the following way:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h_{1} = w_{1} i_{1} + w_{2} i_{2} + b_{1} = 0.15 \cdot 0.05 + 0.25 \cdot 0.10 + 0.35 = 0.3825 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h_{2} = w_{2} i_{1} + w_{4} i_{2} + b_{1} = 0.20 \cdot 0.05 + 0.30 \cdot 0.10 + 0.35 = 0.39 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ o_{1} = w_{5} h_{1} + w_{7} h_{2} + b_{2} = 0.40 \cdot 0.3825 + 0.50 \cdot 0.39 + 0.60 = 0.948 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ o_{2} = w_{6} h_{1} + w_{8} h_{2} + b_{2} = 0.45 \cdot 0.3825 + 0.55 \cdot 0.39 + 0.60 = 0.986625 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;This is called a forward pass. All the Input Values were able to move through the Network by the Edge Connections up to the Output. Normally, when the Network is trained, there are expected Output values that will be compared with the ones obtained with the Forward Pass in order to compute the Error. In this case 0.01 and 0.99 respectively.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;what-problems-can-neural-networks-solve&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;What Problems can Neural Networks solve?&lt;/h3&gt;
-&lt;p&gt;Normally there are two Problems that Neural Networks Solves, Classification and Regression.&lt;/p&gt;
-&lt;div id=&#34;classification&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Classification&lt;/h4&gt;
-&lt;p&gt;The Classification problem is the most common problem addressed by Neural Networks. It implies to classify based on a Probability. The output will calculate how likely is that an specific label corresponds to a class. Classification problems can be sub-divided into other sub-types:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Binary Classification: As the name implies, it involves two classes: Spam or not Span, Positive or Negative, Man or Woman, etc.&lt;/li&gt;
-&lt;li&gt;Multiclass Classification: In this case several labels can be applied: Is it a Dog, Cat, Horse? What Car Brand is that? etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;regression&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Regression&lt;/h4&gt;
-&lt;p&gt;This kind of problems involved calculate a number associated to a Metric. Typical Problems are predicting House Values, Temperature, Balances, Displacements, etc.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;typical-problems-solved-with-neural-networks&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Typical Problems solved with Neural Networks&lt;/h3&gt;
-&lt;p&gt;Neural Networks are powerful and they are the most cutting-edge methodology to make computers do the most incredibly/creepy things.&lt;/p&gt;
-&lt;p&gt;Even though we think computers can do anything like Analyzing Photos, Driving Cars, Recognizing Animals, Predicting Prices and so on, the scope of their work is completely limited to just one thing: &lt;strong&gt;Computing Tensors&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Tensors are the generalization to N dimensions of Matrices. Basically any problem that can be represented by Tensors is something that Neural Networks could potentially solve.&lt;/p&gt;
-&lt;p&gt;Different kind of Tensors can solve specific problems. Here some examples taken from &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-r&#34;&gt;Deep Learning with R&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Vector data—2D tensors of shape (samples, features): This is the Most common Data Structure Data Scientist uses in a daily basis. Basically a Matrix, having Features as Columns and Samples as Rows.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Timeseries data or sequence data—3D tensors of shape (samples, timesteps, features): This is something a little bit fancier, having several timeseries organized as a collection of matrices, this creates a 3D Tensor.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/3D_Tensor.png&#34; alt=&#34;\label{fig:figs3}Multiple Timeseries data&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: Multiple Timeseries data
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;ul&gt;
-&lt;li&gt;Images—4D tensors of shape (samples, height, width, channels) or (samples, channels, height, width): Images are represented as Pixel Matrices, Every Pixel also has RGB Channels giving the color properties to it, thus a 3D Tensor. Adding several samples of Images to analize and you have a 4D Tensor.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs4&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/4D_Tensor.png&#34; alt=&#34;\label{fig:figs4}Image Data&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 4: Image Data
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;ul&gt;
-&lt;li&gt;Video—5D tensors of shape (samples, frames, height, width, channels) or (samples, frames, channels, height, width): Videos are nothing but a collection of Sequencial Images. So You’ll have different Samples of Sequencial Images producing which is a 4D Tensor, since you analize several samples of Videos, you’ll get a 5D Tensor.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Neural Networks are simple visual representations of Tensor Calcultions that are capable of addressing different real life problems. So far we have covered how the Networks transmit Information from Input to Output also called Forward Pass, but there are some other concepts that are necessary to understan in order to fully unerstand how to properly train a Neural Network.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Wikipedia: &lt;a href=&#34;https://en.wikipedia.org/wiki/Artificial_neural_network&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Artificial_neural_network&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>/post/deep-learning/</link>
-      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
-      
-      <guid>/post/deep-learning/</guid>
-      <description>
-
-&lt;h2 id=&#34;deep-learning&#34;&gt;Deep Learning&lt;/h2&gt;
-
-&lt;p&gt;Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operational Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about.
-During my first real job (as a quasi-Engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason &lt;strong&gt;AI&lt;/strong&gt; was there, just sky-high level mentions in some classes.&lt;/p&gt;
-
-&lt;p&gt;Then I remember during my &lt;strong&gt;Data Science Program&lt;/strong&gt;, we had 3 different Research Projects (this was at my Butterflies and Unicorns time, if you don&amp;rsquo;t know what I&amp;rsquo;m talking, go here). One was Data Analytics to Measure Cars Price (super-duper boring), the second was Using Sentiment Analysis to Understand whether Lyrics of Top 20 Billboard were related to Decade&amp;rsquo;s Most Important Facts (I did this, and it was super interesting) and there was a third one I really tried to sneak out: Sentiment Annalysis with Machine Learning. Machine Learning sounded really scary to be my very first Data Science Project, so I put it off.&lt;/p&gt;
-
-&lt;p&gt;It turns out that a colleague just joined my team at EVS and he had this awesome Max Kuhn book: &lt;a href=&#34;https://www.bookdepository.com/Applied-Predictive-Modeling-Max-Kuhn/9781461468486?redirected=true&amp;amp;utm_medium=Google&amp;amp;utm_campaign=Base1&amp;amp;utm_source=CL&amp;amp;utm_content=Applied-Predictive-Modeling&amp;amp;selectCurrency=CLP&amp;amp;w=AF4JAU961V0NQ9A803TP&amp;amp;pdg=pla-309526196374:kwd-309526196374:cmp-1653769863:adg-64191594660:crv-318349950654:pid-9781461468486:dev-c&amp;amp;gclid=CjwKCAjw-ZvlBRBbEiwANw9UWplud3A9daFx70SYI7-0t29OmknuQProNRgQtt39d572kbgsKqflBhoCwV8QAvD_BwE&#34; target=&#34;_blank&#34;&gt;Applied Predictive Modeling&lt;/a&gt;. And I thought: &lt;strong&gt;&amp;ldquo;I&amp;rsquo;m more experienced now, so probably I can take a look at this&amp;rdquo;&lt;/strong&gt;. And well I discovered &lt;code&gt;caret&lt;/code&gt; and completely blew my mind (But I still dislike its little to null compatibility with Tidyverse, but thanks Max Kuhn for creating &lt;code&gt;parsnip&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Then Nico, I think, was the first guy mentioning Deep Learning, because he created the XoR problem in VBA and also took Andrew Ng specialization Course, and
-I started to feel interested in the Field.&lt;/p&gt;
-
-&lt;p&gt;Well, I dicovered Keras, the R API just came out (I think so) and I got this other super Book: &lt;a href=&#34;https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X&#34; target=&#34;_blank&#34;&gt;Deep Learning with R&lt;/a&gt; and I just learned so much, but not enough. I think I learned a bit of Keras but I suddenly realized I had no idea about the inner black-box, so I just wanted to learn and understand what the hell is happening inside that box.&lt;/p&gt;
-
-&lt;p&gt;Well here I am&amp;hellip; Trying to understand&amp;hellip; and I didn&amp;rsquo;t do very well. Internet has little to no information about theory. Codes are everywhere, but why that code is useful is just not important for users.&lt;/p&gt;
-
-&lt;p&gt;So my intent is creating content (R based obviously, because R is not popular for Deep Learning either) for me to learn, and hopefully spread the word about this.&lt;/p&gt;
-
-&lt;p&gt;Well, the thing is I need to finish my Thesis, and my Professor told me: &lt;strong&gt;&amp;ldquo;Why don&amp;rsquo;t you combine what you know about Deep Learning (sincerely, not too much) with Structure Engineering?&lt;/strong&gt; And you know what, this is something really unexplored in the field, so here I go.&lt;/p&gt;
-
-&lt;p&gt;Hopefully publishing my findings help to have a better understanding of what I&amp;rsquo;m doing, also i can keep track of it and help others on my way (I love teaching, so this is a good way to get started).&lt;/p&gt;
-
-&lt;p&gt;Hope to have news about my Thesis soon&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>/publication/deep-learning/</link>
-      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
-      
-      <guid>/publication/deep-learning/</guid>
-      <description>
-
-&lt;h2 id=&#34;deep-learning&#34;&gt;Deep Learning&lt;/h2&gt;
-
-&lt;p&gt;Well, I got to know Deep Learning by chance. I remember to have had a College subject called Operation Investigation Fundamentals and they taugth Artifical Intelligence algorithms. Neural networks were mentioned but I never thought I could even understand what they were about.
-During my first real job (as an engineer) I always thougth I never paid sufficient attention to that subject. The subject basically covered some optimization models and for some reason &lt;strong&gt;AI&lt;/strong&gt; was there, just sky-high level mentions in some classes.&lt;/p&gt;
-
-&lt;p&gt;Then I remember during my Data Science Program, we had 3 different Research Projects (this was at my Butterflies and Unicorns time, if you don&amp;rsquo;t know what I&amp;rsquo;m talking, go here). One was Data Analytics to Measure Cars Price (super-duper boring), the second was Using Sentiment Analysis to Understand if the Topics of Top 20 Billboard were related to Decade&amp;rsquo;s Most Important Facts (I did this, and it was super interesting) and there was a third one I really tried to sneak out: Sentiment Annalysis with Machine Learning. Machine Learning sounded really scary to be my very first Data Science Project, so I put it off.&lt;/p&gt;
-
-&lt;p&gt;It turns out that a colleague just joined my team at EVS and he had this awesome Max Kuhn book: &lt;a href=&#34;https://www.bookdepository.com/Applied-Predictive-Modeling-Max-Kuhn/9781461468486?redirected=true&amp;amp;utm_medium=Google&amp;amp;utm_campaign=Base1&amp;amp;utm_source=CL&amp;amp;utm_content=Applied-Predictive-Modeling&amp;amp;selectCurrency=CLP&amp;amp;w=AF4JAU961V0NQ9A803TP&amp;amp;pdg=pla-309526196374:kwd-309526196374:cmp-1653769863:adg-64191594660:crv-318349950654:pid-9781461468486:dev-c&amp;amp;gclid=CjwKCAjw-ZvlBRBbEiwANw9UWplud3A9daFx70SYI7-0t29OmknuQProNRgQtt39d572kbgsKqflBhoCwV8QAvD_BwE&#34; target=&#34;_blank&#34;&gt;Applied Predictive Modeling&lt;/a&gt;. And I thought: &lt;strong&gt;&amp;ldquo;I&amp;rsquo;m more experienced now, so probably I can take a look at this&amp;rdquo;&lt;/strong&gt;. And well I discovered &lt;code&gt;caret&lt;/code&gt; and completely blew my mind (But I still dislike its little to null compatibility with Tidyverse, thanks Max Kuhn for creating Parsnip).&lt;/p&gt;
-
-&lt;p&gt;Then Nico, I think, was the first guy mentioning Deep Learning, because he created the XoR problem in VBA and also took Andrew Ng specialization, and
-I started to feel interested in the Field.&lt;/p&gt;
-
-&lt;p&gt;Well, I dicovered Keras, the R API just came out (I think so) and I got this other super Book: &lt;a href=&#34;https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X&#34; target=&#34;_blank&#34;&gt;Deep Learning with R&lt;/a&gt; and I just learned so much, but not enough. I think I learned a bit of Keras but suddenly realized I had no idea about the inner black-box, so I just wanted to learn and understand what the hell is happening inside that box.&lt;/p&gt;
-
-&lt;p&gt;Well here I am&amp;hellip; Trying to understand&amp;hellip; and I didn&amp;rsquo;t do very well, The Internet has little to no information about theory. Codes are everywhere, but why that code is useful is just not important for users.&lt;/p&gt;
-
-&lt;p&gt;So my intent is creating content (R based obviously, because R is not popular for Deep Learning either) for me to learn, and hopefully spread the word about this.&lt;/p&gt;
-
-&lt;p&gt;Well, the thing is I need to finish my Thesis, and my Professor told me why don&amp;rsquo;t we combine what you know about Deep Learning (sincerely, not too much) with Structure Engineering, and you know what this is something really unexplored in the field, so here I go. Hopefully publishing my findings help to have a better understanding of what I&amp;rsquo;m doing, also i can keep track of it, and I can help others (I love teaching, so this is a good way to get started).&lt;/p&gt;
-
-&lt;p&gt;Hope to have news about my Thesis soon&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Thesis Project</title>
-      <link>/post/my-thesis/</link>
-      <pubDate>Wed, 27 Mar 2019 00:50:00 +0000</pubDate>
-      
-      <guid>/post/my-thesis/</guid>
-      <description>
-
-&lt;h2 id=&#34;why-am-i-not-graduated-yet&#34;&gt;Why am I not graduated yet?&lt;/h2&gt;
-
-&lt;p&gt;Graduation is something we all are longing. Well, I recognize this is something I&amp;rsquo;ve been evading. The main reason is because I&amp;rsquo;m not working on what I studied. But, what the hell, I think I like Data Science.&lt;/p&gt;
-
-&lt;p&gt;Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering but I asked myself, where can I possibly work as a Mathematical Engineer ? (In my current job, obviously 😅)&lt;/p&gt;
-
-&lt;p&gt;So I decide to go for Civil Engineering because it has a decent amount of advanced Maths that was something I was looking for and a High Employment Index.&lt;/p&gt;
-
-&lt;p&gt;Well I started working as a Civil Engineer in INVAR as soon as I finished my internship. I just loved it, I learned so much, but the thingwas that they didn&amp;rsquo;t pay too much. So I decided to take a position at Aguas del Valle. Sincerely, and very respectfully, it has been the worst choice of my life, not only because it was 5 hours away of my Hometown, but also because they took my soul out of my body and make me spend awful moments doing absolutely nothing. There is nothing more frustrating than doing nothing all day long in a desk in a Company you don&amp;rsquo;t feel a part of.&lt;/p&gt;
-
-&lt;p&gt;So the Evalueserve Post showed up. A friend referred me to the Data Science Program (DSP) and then I fell in love with Data Science. During the program I learned SQL, VBA, SAS 👍, R, Tableau and definitely built up my English and Communication skills. Felipe, help me prepare my first interview in English and thanks to him I had the English I needed to learn all I know so far.&lt;/p&gt;
-
-&lt;p&gt;Upskilling and moving through cities took all of my time, besides I got married (Best Decision so far) but a lot to do, hence, no time to finish my Thesis.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-happened-with-my-thesis&#34;&gt;What happened with my Thesis?&lt;/h2&gt;
-
-&lt;p&gt;Well in INVAR I worked as an Hidraulics Engineer so I started a Thesis back in 2013 about Water Hammer. Really interesting topic, that needed Finite Differences Methods to solve really complicated Partial Differential Equations. The only proffesor with this knowledge started working wih me, but after a year he got retired. So I had to find another Professor, so in order to avoid this issue to happen again, I decided to go with one of the youngest Professor, well he left me for his Phd.&lt;/p&gt;
-
-&lt;p&gt;Damn, Suddenly working in INVAR I noticed the CEO was my professor of Planning so I ask him to mentor me. This happened just before leaving to Aguas del Valle in La Serena. 6 months later a Cancer was diagnosed and he passed away, so freaking fast.
-The Chief of Department took over all of the abandoned Thesis that my Professor&amp;rsquo;s dead left behind, but he couldn&amp;rsquo;t continue to mentor me, because he considered being in La Serena was too far away.
-In 2015 I came back to Viña and I started to learn, upskill, teach, develop as a Data Scientist that I decided to put it on hold.
-On 2017 I started another Thesis. Another Professor wanted to mentor me but he was of the Structural Area. That meant I needed to move to that Area.
-We started investigating uncertainty on Structural Analysis. The thing is my work again didn&amp;rsquo;t give me any chance to continue.
-Until now. Why now? Probably I will explain it later, because it is also related with the creation of this site.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-my-thesis-is-going-to-be-about&#34;&gt;What My Thesis is going to be about?&lt;/h2&gt;
-
-&lt;p&gt;Good news, I will be able to mix my previous work with one thing I discovered as I developed as Data Science: &lt;strong&gt;Deep Learning in R&lt;/strong&gt; 👏.&lt;/p&gt;
-
-&lt;p&gt;I will be posting some progress about that. Hang tight!!&lt;/p&gt;
 </description>
     </item>
     

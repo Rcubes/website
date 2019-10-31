@@ -4,7 +4,7 @@ authors:
   - admin
 date: '2019-09-30'
 categories:
-  - Vampire Diaries
+  - Blog
   - Rambling
 tags:
   - R
@@ -35,7 +35,7 @@ __Day 1__ started with a [UAI](https://www.uai.cl/) local presenter talking abou
 
 __Day 2__ started with a [UC](https://www.uc.cl/) local presenter talking about applying Data Science in R to Government Data, then Erin Ledell talked about H2o to move forward to the small presentations in Parallel. The day finished with Poster presentations and Hadley Wickham talking about different dplyr backends.
 
-# Day 1 Summary
+# LatinR Summary
 
 ## Sports Analytics
 
@@ -113,6 +113,33 @@ blogdown::shortcode('tweet', '1177201090363822080')
 My main takeaways from this presentation are:
 
  * You don´t need to be Hadley to create an awesome package.
- * Use use
+ * Use {usethis}.
+ * Give clear instructions to users.
+ * If you have Functions used 3 times, it´s time to create a Package.
+
+ 
+## Hadley´s Talk
+
+This is always I had waited for a long time. I used to follow the different talks he is giving around the world, because he is always presenting interesting things and that day he presented dplyr backends. Of course dbplyr is super interesting and I don´t want to overlook it, but I already knew it, and use it oftenly, so not very impressed. But {dtplyr} I think is something I had been waiting for a while.
+
+During the start of the year I was stalking Hadley´s Repos and I just found this abandoned dtplyr, and he decided to revisit during this year and they just came up with something awesome. I don´t like data.table just because of the syntax, and I love dplyr just because of the syntax, so ombining effiiency that data.table has with dplyr simplicity is just the best thing ever, and a great way to show the collaborative spirit that exist in the R Community.
+
+Just a fun fact, I asked about some new possible backends for arrays, and Hadley presented the {rray} package (check it out). For some reason he wanted to show the package logo, and he couldn´t so he opened a PR just to show me that. The fun thing is that David Vaughan the maintainer, quickly responded to that. 
+
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1178021572860420097')
+```
+</center>
+Main takeaways:
+
+* Hadley is a great teacher and presenter.
+* I can´t believe how creative Hadley is and I know a lot of interesting things I just can´t imagine will start to come up in R.
+* I just learned sparklyr is a dplyr implementation in spark (sorry it was not presented).
+* I want to work in RStudio, some time.
+
+
+
 
  

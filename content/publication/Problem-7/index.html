@@ -1,0 +1,54 @@
+---
+title: Dealing with dates
+authors: 
+  - admin
+date: '2019-10-30'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - lubridate
+  - Base R
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Combining lubridate with Base R to create time difference calculations"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<div id="the-problem" class="section level2">
+<h2>The Problem</h2>
+<p>Here is the challenge:</p>
+<p>Calculate the time difference between Max and Min Dates found in a date vector.</p>
+<pre class="r"><code>library(tidyverse)
+date_vec &lt;- c(&quot;2019/10/24 10:00:00&quot;,&quot;2019/10/23 11:00:00&quot;,&quot;2019/10/25 12:00:00&quot;) </code></pre>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The Solution</h2>
+<p>The thing is super easy to get, but the idea is to create a pipeline that can calculate this in just a series of steps:</p>
+<pre class="r"><code>library(lubridate)
+
+date_vec %&gt;%
+  #Transforming characters into dates using ymd for dates and hms for time
+  ymd_hms() %&gt;%
+  #range() retrieves max and min date
+  range() %&gt;%
+  #Calculate the time difference
+  diff() %&gt;%
+  #Transform into lubridate duration object %&gt;%
+   as.duration() </code></pre>
+<pre><code>## [1] &quot;176400s (~2.04 days)&quot;</code></pre>
+</div>

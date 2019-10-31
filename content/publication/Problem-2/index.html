@@ -1,0 +1,105 @@
+---
+title: Tidy Evaluation
+authors: 
+  - admin
+date: '2019-10-16'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - Tidy Evaluation
+  - curly-curly
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "I´ll be solving a Tidy Evaluation Problem."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<p>Navigating Twitter I found this other Problem:</p>
+<div id="the-problem" class="section level2">
+<h2>The Problem</h2>
+<p>The following dummy_function is presented:</p>
+<pre class="r"><code>library(dplyr)
+#&gt; 
+a &lt;- sample(letters[1:5], 500, rep = TRUE)
+b &lt;- sample(1:10, 500, rep = TRUE)
+df1 &lt;- data.frame(a, b)
+ 
+dummy_function &lt;- function(data, var1, var2){
+  # Creating summary statistics
+  df &lt;- data %&gt;%
+    group_by(var1, var2) %&gt;%
+    summarise(n=n()) %&gt;%
+    group_by(var1) %&gt;%
+    mutate(perc=100*n/sum(n))
+    
+  df
+}
+dummy_function(df1, a, b)
+#&gt; Error: Column `var1` is unknown</code></pre>
+<p>
+Created by the <a href="https://reprex.tidyverse.org">reprex package</a> (v0.3.0)
+</p>
+<p>This is a typical problem caused by one of the coolest things provided by the tidyverse: the Non-Standard Evaluation.</p>
+<p>Non-Standard Evaluation is the ability that some R functions have (mainly in the tidyverse and all the packages following a tidy approach) when you can pass a variable within the data without quoting:</p>
+<pre class="r"><code>iris %&gt;% 
+  select(Species) %&gt;%
+  head(10)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Species"],"name":[1],"type":["fctr"],"align":["left"]}],"data":[{"1":"setosa","_rn_":"1"},{"1":"setosa","_rn_":"2"},{"1":"setosa","_rn_":"3"},{"1":"setosa","_rn_":"4"},{"1":"setosa","_rn_":"5"},{"1":"setosa","_rn_":"6"},{"1":"setosa","_rn_":"7"},{"1":"setosa","_rn_":"8"},{"1":"setosa","_rn_":"9"},{"1":"setosa","_rn_":"10"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>As you may see, you don´t need to quote Species, but R is not recognizing Species as an R object but as an existing variable within iris dataset. If you would like to do the same thing using “<em>Standard Evaluation</em>” you´d have to code something like this:</p>
+<pre class="r"><code>head(iris[&quot;Species&quot;], 10)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Species"],"name":[1],"type":["fctr"],"align":["left"]}],"data":[{"1":"setosa","_rn_":"1"},{"1":"setosa","_rn_":"2"},{"1":"setosa","_rn_":"3"},{"1":"setosa","_rn_":"4"},{"1":"setosa","_rn_":"5"},{"1":"setosa","_rn_":"6"},{"1":"setosa","_rn_":"7"},{"1":"setosa","_rn_":"8"},{"1":"setosa","_rn_":"9"},{"1":"setosa","_rn_":"10"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>In this case you see Species is not an object but a quoted string that is passed as the Variable name for object Iris.</p>
+<p>The error then pops up because in the dummy_function() you have group_by() that uses NSE having var1, var2 as arguments and var1 and var2 objects are not variables of data. What you actually want is to pass var1 and var2 values as the grouping variables.</p>
+<p>Definitely NSE is a great addition and saves typing, but when it comes to create functions it used to be a nightmare. rlang package handled this using something called quosures, and the bang-bang operator. If you want to know about this Hadley teaches it in 5 minutes:</p>
+<center>
+{{% youtube "nERXS3ssntw" %}}
+</center>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The solution</h2>
+<p>Fortunately, Hadley’s explanation is helpful to understand the problem but the solution now is super easy with the new version of rlang. You just need to wrap var1 and var2 in the new curly-curly operator to embrace the values of var1 and var2 and pass them along the group_by() function.</p>
+<pre class="r"><code>a &lt;- sample(letters[1:5], 500, rep = TRUE)
+b &lt;- sample(1:10, 500, rep = TRUE)
+df1 &lt;- data.frame(a, b)
+
+library(rlang)
+dummy_function &lt;- function(data, var1, var2){
+  # Creating summary statistics
+  df &lt;- data %&gt;%
+    group_by({{var1}}, {{var2}}) %&gt;%
+    summarise(n=n()) %&gt;%
+    group_by({{var1}}) %&gt;%
+    mutate(perc=100*n/sum(n))
+  
+  df
+}
+dummy_function(df1, a, b)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["a"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["b"],"name":[2],"type":["int"],"align":["right"]},{"label":["n"],"name":[3],"type":["int"],"align":["right"]},{"label":["perc"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"a","2":"1","3":"13","4":"11.403509"},{"1":"a","2":"2","3":"14","4":"12.280702"},{"1":"a","2":"3","3":"16","4":"14.035088"},{"1":"a","2":"4","3":"3","4":"2.631579"},{"1":"a","2":"5","3":"10","4":"8.771930"},{"1":"a","2":"6","3":"8","4":"7.017544"},{"1":"a","2":"7","3":"13","4":"11.403509"},{"1":"a","2":"8","3":"15","4":"13.157895"},{"1":"a","2":"9","3":"14","4":"12.280702"},{"1":"a","2":"10","3":"8","4":"7.017544"},{"1":"b","2":"1","3":"10","4":"10.416667"},{"1":"b","2":"2","3":"8","4":"8.333333"},{"1":"b","2":"3","3":"5","4":"5.208333"},{"1":"b","2":"4","3":"8","4":"8.333333"},{"1":"b","2":"5","3":"9","4":"9.375000"},{"1":"b","2":"6","3":"12","4":"12.500000"},{"1":"b","2":"7","3":"11","4":"11.458333"},{"1":"b","2":"8","3":"12","4":"12.500000"},{"1":"b","2":"9","3":"9","4":"9.375000"},{"1":"b","2":"10","3":"12","4":"12.500000"},{"1":"c","2":"1","3":"9","4":"9.890110"},{"1":"c","2":"2","3":"7","4":"7.692308"},{"1":"c","2":"3","3":"10","4":"10.989011"},{"1":"c","2":"4","3":"9","4":"9.890110"},{"1":"c","2":"5","3":"11","4":"12.087912"},{"1":"c","2":"6","3":"10","4":"10.989011"},{"1":"c","2":"7","3":"9","4":"9.890110"},{"1":"c","2":"8","3":"8","4":"8.791209"},{"1":"c","2":"9","3":"7","4":"7.692308"},{"1":"c","2":"10","3":"11","4":"12.087912"},{"1":"d","2":"1","3":"10","4":"10.869565"},{"1":"d","2":"2","3":"14","4":"15.217391"},{"1":"d","2":"3","3":"10","4":"10.869565"},{"1":"d","2":"4","3":"12","4":"13.043478"},{"1":"d","2":"5","3":"9","4":"9.782609"},{"1":"d","2":"6","3":"8","4":"8.695652"},{"1":"d","2":"7","3":"5","4":"5.434783"},{"1":"d","2":"8","3":"8","4":"8.695652"},{"1":"d","2":"9","3":"7","4":"7.608696"},{"1":"d","2":"10","3":"9","4":"9.782609"},{"1":"e","2":"1","3":"9","4":"8.411215"},{"1":"e","2":"2","3":"17","4":"15.887850"},{"1":"e","2":"3","3":"6","4":"5.607477"},{"1":"e","2":"4","3":"12","4":"11.214953"},{"1":"e","2":"5","3":"8","4":"7.476636"},{"1":"e","2":"6","3":"6","4":"5.607477"},{"1":"e","2":"7","3":"10","4":"9.345794"},{"1":"e","2":"8","3":"9","4":"8.411215"},{"1":"e","2":"9","3":"15","4":"14.018692"},{"1":"e","2":"10","3":"15","4":"14.018692"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>

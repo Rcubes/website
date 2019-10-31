@@ -1,0 +1,259 @@
+---
+title: Missing Value Imputation
+authors: 
+  - admin
+date: '2019-10-16'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - Imputing
+  - Replacing NAs
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "I´ll be solving an Missing Value Imputation problem."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<p>Surfing at Stack Overflow I noticed a problem that I found interesting to solve:
+The following Data was presented:</p>
+<div id="the-problem" class="section level2">
+<h2>The Problem</h2>
+<p>The following Data is presented:</p>
+<pre class="r"><code>sample &lt;-
+  structure(
+    list(
+      `Country Name` = c(
+        &quot;Aruba&quot;,
+        &quot;Afghanistan&quot;,
+        &quot;Angola&quot;,
+        &quot;Albania&quot;,
+        &quot;Andorra&quot;,
+        &quot;Arab World&quot;,
+        &quot;United Arab Emirates&quot;,
+        &quot;Argentina&quot;,
+        &quot;Armenia&quot;,
+        &quot;American Samoa&quot;,
+        &quot;Antigua and Barbuda&quot;,
+        &quot;Australia&quot;
+      ),
+      `Country Code` = c(
+        &quot;ABW&quot;,
+        &quot;AFG&quot;,
+        &quot;AGO&quot;,
+        &quot;ALB&quot;,
+        &quot;AND&quot;,
+        &quot;ARB&quot;,
+        &quot;ARE&quot;,
+        &quot;ARG&quot;,
+        &quot;ARM&quot;,
+        &quot;ASM&quot;,
+        &quot;ATG&quot;,
+        &quot;AUS&quot;
+      ),
+      `2007` = c(
+        5.39162036843645,
+        8.68057078513406,
+        12.2514974459487,
+        2.93268248162318,
+        NA,
+        4.74356585295154,
+        NA,
+        NA,
+        NA,
+        NA,
+        1.41605259409743,
+        NA
+      ),
+      `2008` = c(
+        8.95722105296535,
+        26.4186641547444,
+        12.4758291326398,
+        3.36313757366391,
+        NA,
+        NA,
+        12.2504202448139,
+        NA,
+        8.94995335353386,
+        NA,
+        5.33380639820232,
+        NA
+      ),
+      `2009` = c(
+        -2.13630037272305,-6.81116108898995,
+        13.7302839288409,
+        2.23139683475865,
+        NA,
+        2.92089711805365,
+        1.55980098148558,
+        NA,
+        3.40676682683799,
+        NA,
+        -0.550159995508869,
+        NA
+      ),
+      `2010` = c(
+        2.07773902027782,
+        2.1785375238942,
+        14.4696564932574,
+        3.61538461538463,
+        NA,
+        3.91106195534027,
+        0.879216764156813,
+        NA,
+        8.17636138473956,
+        NA,
+        3.3700254022015,
+        2.91834002677376
+      ),
+      `2011` = c(
+        4.31633194082721,
+        11.8041858089129,
+        13.4824679218511,
+        3.44283593170005,
+        NA,
+        4.75316388885632,
+        NA,
+        NA,
+        7.6500080785929,
+        NA,
+        3.45674967234599,
+        3.30385015608744
+      ),
+      `2012` = c(
+        0.627927921638161,
+        6.44121280934118,
+        10.2779049218839,
+        2.03642235579081,
+        NA,
+        4.61184432206646,
+        0.662268900269082,
+        NA,
+        2.55802007757907,
+        NA,
+        3.37688044338879,
+        1.76278015613193
+      ),
+      `2013` = c(
+        -2.37226328015073,
+        7.38577178397857,
+        8.77781429332619,
+        1.92544399507649,
+        NA,
+        3.23423783752364,
+        1.10111836375706,
+        NA,
+        5.78966778544654,
+        NA,
+        1.05949782356168,
+        2.44988864142539
+      ),
+      `2014` = c(
+        0.421637771012246,
+        4.67399603536339,
+        7.28038730361125,
+        1.61304235314414,
+        NA,
+        2.77261158414198,
+        2.34626865671643,
+        NA,
+        2.98130868933673,
+        NA,
+        1.08944157435363,
+        2.48792270531403
+      )
+    ),
+    class = c(&quot;tbl_df&quot;, &quot;tbl&quot;, &quot;data.frame&quot;),
+    row.names = c(NA,-12L)
+  )
+
+sample</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Country Code"],"name":[2],"type":["chr"],"align":["left"]},{"label":["2007"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["2008"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["2009"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["2010"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["2011"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["2012"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["2013"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["2014"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"5.391620","4":"8.957221","5":"-2.136300","6":"2.0777390","7":"4.316332","8":"0.6279279","9":"-2.372263","10":"0.4216378"},{"1":"Afghanistan","2":"AFG","3":"8.680571","4":"26.418664","5":"-6.811161","6":"2.1785375","7":"11.804186","8":"6.4412128","9":"7.385772","10":"4.6739960"},{"1":"Angola","2":"AGO","3":"12.251497","4":"12.475829","5":"13.730284","6":"14.4696565","7":"13.482468","8":"10.2779049","9":"8.777814","10":"7.2803873"},{"1":"Albania","2":"ALB","3":"2.932682","4":"3.363138","5":"2.231397","6":"3.6153846","7":"3.442836","8":"2.0364224","9":"1.925444","10":"1.6130424"},{"1":"Andorra","2":"AND","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA"},{"1":"Arab World","2":"ARB","3":"4.743566","4":"NA","5":"2.920897","6":"3.9110620","7":"4.753164","8":"4.6118443","9":"3.234238","10":"2.7726116"},{"1":"United Arab Emirates","2":"ARE","3":"NA","4":"12.250420","5":"1.559801","6":"0.8792168","7":"NA","8":"0.6622689","9":"1.101118","10":"2.3462687"},{"1":"Argentina","2":"ARG","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA"},{"1":"Armenia","2":"ARM","3":"NA","4":"8.949953","5":"3.406767","6":"8.1763614","7":"7.650008","8":"2.5580201","9":"5.789668","10":"2.9813087"},{"1":"American Samoa","2":"ASM","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA"},{"1":"Antigua and Barbuda","2":"ATG","3":"1.416053","4":"5.333806","5":"-0.550160","6":"3.3700254","7":"3.456750","8":"3.3768804","9":"1.059498","10":"1.0894416"},{"1":"Australia","2":"AUS","3":"NA","4":"NA","5":"NA","6":"2.9183400","7":"3.303850","8":"1.7627802","9":"2.449889","10":"2.4879227"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>The idea is to input Missing Values following some rules:</p>
+<ol style="list-style-type: decimal">
+<li><p>Some countries have NAs for all 8 years (columns 3:10), and in that case I want to replace all NAs with the column mean.</p></li>
+<li><p>Other countries only have NAs in some columns, in which case I want to replace NA with the previous year’s value.</p></li>
+<li><p>The final condition is that, if the NA is in the first year (2007), I want to replace it with the 2007 column mean instead of the next year (2008 was the financial crisis so all the inflation rates went nuts).</p></li>
+</ol>
+<p>Of course this can be easily programmed using Regular Programming Rules using For loops and If Statements, but the idea is to do it in a tidy way using the Tidyverse.</p>
+<pre class="r"><code>library(dplyr, warn.conflicts = FALSE)
+library(tidyr)
+library(janitor)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;janitor&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     chisq.test, fisher.test</code></pre>
+<pre class="r"><code># Getting the Column Means to Replace according to Condition 1 and 3. 
+(replacement &lt;- sample %&gt;%
+    select_if(is.numeric) %&gt;%
+    summarize_all( ~ mean(., na.rm = TRUE)) %&gt;%
+    #Transformed to List since it is a requirement for tidyr::replace_na()
+    as.list())</code></pre>
+<pre><code>## $`2007`
+## [1] 5.902665
+## 
+## $`2008`
+## [1] 11.107
+## 
+## $`2009`
+## [1] 1.793941
+## 
+## $`2010`
+## [1] 4.621814
+## 
+## $`2011`
+## [1] 6.526199
+## 
+## $`2012`
+## [1] 3.595029
+## 
+## $`2013`
+## [1] 3.261242
+## 
+## $`2014`
+## [1] 2.851846</code></pre>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The solution</h2>
+<pre class="r"><code>sample %&gt;%
+  pivot_longer(`2007`:`2014`, names_to = &quot;year&quot;, values_to = &quot;int_rate&quot;) %&gt;%
+  group_by(`Country Name`) %&gt;%
+  summarize(na_num = is.na(int_rate) %&gt;% sum) %&gt;%
+  #Joining the number of NAs na_num as a new column
+  left_join(sample, by = &quot;Country Name&quot;) %&gt;%
+  #Replacing 2007 missing as a first value. Condition 3.
+  mutate(`2007` = if_else(between(na_num, 1, 7) &amp;
+                            is.na(`2007`), replacement[[1]] , `2007`)) %&gt;%
+  #Making dataset wider 
+  pivot_longer(`2007`:`2014`, names_to = &quot;year&quot;, values_to = &quot;int_rate&quot;) %&gt;%
+  group_by(`Country Name`) %&gt;%
+  #Using fill to impute NAs with the previous one. Condition 2.
+  fill(int_rate) %&gt;%
+  pivot_wider(names_from = year, values_from = int_rate) %&gt;%
+  #Replacing Values when all values are missing. Condition 1.
+  replace_na(replace = replacement) </code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["na_num"],"name":[2],"type":["int"],"align":["right"]},{"label":["Country Code"],"name":[3],"type":["chr"],"align":["left"]},{"label":["2007"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["2008"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["2009"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["2010"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["2011"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["2012"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["2013"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["2014"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"0","3":"AFG","4":"8.680571","5":"26.418664","6":"-6.811161","7":"2.1785375","8":"11.8041858","9":"6.4412128","10":"7.385772","11":"4.6739960"},{"1":"Albania","2":"0","3":"ALB","4":"2.932682","5":"3.363138","6":"2.231397","7":"3.6153846","8":"3.4428359","9":"2.0364224","10":"1.925444","11":"1.6130424"},{"1":"American Samoa","2":"8","3":"ASM","4":"5.902665","5":"11.107005","6":"1.793941","7":"4.6218137","8":"6.5261992","9":"3.5950291","10":"3.261242","11":"2.8518463"},{"1":"Andorra","2":"8","3":"AND","4":"5.902665","5":"11.107005","6":"1.793941","7":"4.6218137","8":"6.5261992","9":"3.5950291","10":"3.261242","11":"2.8518463"},{"1":"Angola","2":"0","3":"AGO","4":"12.251497","5":"12.475829","6":"13.730284","7":"14.4696565","8":"13.4824679","9":"10.2779049","10":"8.777814","11":"7.2803873"},{"1":"Antigua and Barbuda","2":"0","3":"ATG","4":"1.416053","5":"5.333806","6":"-0.550160","7":"3.3700254","8":"3.4567497","9":"3.3768804","10":"1.059498","11":"1.0894416"},{"1":"Arab World","2":"1","3":"ARB","4":"4.743566","5":"4.743566","6":"2.920897","7":"3.9110620","8":"4.7531639","9":"4.6118443","10":"3.234238","11":"2.7726116"},{"1":"Argentina","2":"8","3":"ARG","4":"5.902665","5":"11.107005","6":"1.793941","7":"4.6218137","8":"6.5261992","9":"3.5950291","10":"3.261242","11":"2.8518463"},{"1":"Armenia","2":"1","3":"ARM","4":"5.902665","5":"8.949953","6":"3.406767","7":"8.1763614","8":"7.6500081","9":"2.5580201","10":"5.789668","11":"2.9813087"},{"1":"Aruba","2":"0","3":"ABW","4":"5.391620","5":"8.957221","6":"-2.136300","7":"2.0777390","8":"4.3163319","9":"0.6279279","10":"-2.372263","11":"0.4216378"},{"1":"Australia","2":"3","3":"AUS","4":"5.902665","5":"5.902665","6":"5.902665","7":"2.9183400","8":"3.3038502","9":"1.7627802","10":"2.449889","11":"2.4879227"},{"1":"United Arab Emirates","2":"2","3":"ARE","4":"5.902665","5":"12.250420","6":"1.559801","7":"0.8792168","8":"0.8792168","9":"0.6622689","10":"1.101118","11":"2.3462687"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>

@@ -1,0 +1,58 @@
+---
+title: List Challenge
+authors: 
+  - admin
+date: '2019-10-19'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - List
+  - Challenge
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Using R to Replace Element in One List if the same name found in Other List"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(rlang))
+```
+
+## The Problem
+ This is simple, If Names of List are found in List B then Replace:
+ 
+```{r}
+a <- list(x = 1, y = TRUE, z = "a")
+b <- list(x = 2, z = "b")
+expected <- list(x = 2, y = TRUE, z = "b")
+```
+
+## The Solution
+
+It was hard to think in something simple, because the problem is not as complicated, it is just List is a complicated object to deal with, but I came with this:
+
+```{r}
+a <- list(x = 1, y = TRUE, z = "a")
+b <- list(x = 2, z = "b")
+
+val_names <- names(a) %in% names(b) %>% names(a)[.]
+a[val_names] <- b[val_names]
+
+a
+```
+
+ 
+ 

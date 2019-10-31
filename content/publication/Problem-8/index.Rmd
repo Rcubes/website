@@ -1,0 +1,66 @@
+---
+title: Unique Id Challenge
+authors: 
+  - admin
+date: '2019-10-30'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - tidyR
+  - Unique ID
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Using TidyR to create create a complicated Unique ID"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+```
+
+## The Problem
+ 
+Another Twitter Challenge:
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('twitter', '1189641234639400961')
+```
+</center>
+
+## The Solution 
+
+It is almost there, I just added a couple of lines to get the expected output elegantly:
+
+```{r, echo=FALSE}
+(df <- tibble(
+  member = c("a", "a", "b", "b", "b", "b", "c"),
+  appt = c("1", "2", "1", "2", "3", "1", "1"),
+  episode_flag = c("new", "same", "new", "same", "same", "new", "new")
+))
+
+```
+
+```{r}
+df %>%
+  group_by(episode_flag) %>%
+  mutate(episode_ID = ifelse(episode_flag =="new", row_number(), NA)) %>%
+  # Eliminating groups to apply next function
+  ungroup() %>%
+  # Filling NAs with previous non-NA values
+  fill(episode_ID)
+```
+

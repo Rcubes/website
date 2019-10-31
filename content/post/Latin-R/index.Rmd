@@ -4,7 +4,7 @@ authors:
   - admin
 date: '2019-09-24'
 categories:
-  - Vapire Diaries
+  - Blog
   - Rambling
 tags:
   - R

@@ -2,6 +2,7 @@
 header:
   caption: ""
   image: ""
-title: Publications
-view: 4
+title: Quick Solves
+subtitle: Here I'll be providing quick Tips, Hacks and Tricks to solve short Data issues that might arise.
+view: 2
 ---

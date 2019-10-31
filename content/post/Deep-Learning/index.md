@@ -3,7 +3,7 @@ title: "Deep Learning"
 subtitle: How I ran into DL?
 summary: How I ran into DL?
 date: 2019-03-27T00:50:00
-categories: ["Vampire Diaries"]
+categories: ["Blog"]
 tags: ["Thesis", "Deep Learning"]
 authors:
 - admin

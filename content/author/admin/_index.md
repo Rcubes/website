@@ -23,9 +23,9 @@ interests:
 - Table Tennis
 name: Alfonso Tobar
 organizations:
-- name: Evalueserve Chile S.A
-  url: "https://www.evalueserve.com"
-role: Senior Business Analyst
+- name: Scotiabank Cencosud
+  url: "https://www.tarjetacencosud.cl"
+role: Senior Data Scientist
 social:
 - icon: envelope
   icon_pack: fas

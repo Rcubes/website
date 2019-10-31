@@ -1,0 +1,63 @@
+---
+title: Dealing with dates
+authors: 
+  - admin
+date: '2019-10-30'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - lubridate
+  - Base R
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Combining lubridate with Base R to create time difference calculations"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+```
+
+## The Problem
+ 
+Here is the challenge:
+
+Calculate the time difference between Max and Min Dates found in a date vector.
+
+```{r}
+library(tidyverse)
+date_vec <- c("2019/10/24 10:00:00","2019/10/23 11:00:00","2019/10/25 12:00:00") 
+```
+
+
+## The Solution
+
+The thing is super easy to get, but the idea is to create a pipeline that can calculate this in just a series of steps:
+
+```{r}
+library(lubridate)
+
+date_vec %>%
+  #Transforming characters into dates using ymd for dates and hms for time
+  ymd_hms() %>%
+  #range() retrieves max and min date
+  range() %>%
+  #Calculate the time difference
+  diff() %>%
+  #Transform into lubridate duration object %>%
+   as.duration() 
+```
+

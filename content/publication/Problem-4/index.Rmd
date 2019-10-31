@@ -1,0 +1,103 @@
+---
+title: Ugly Untied Dataset
+authors: 
+  - admin
+date: '2019-10-19'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - tidyR
+  - left_join()
+  - ugly data
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Using TidyR and dplyr Joins to fix some really ugly Data"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(rlang))
+```
+
+
+Even though the Data looks messy and an Intruitive solution didn´t pop up inmediately, It was relatively short to fix.
+
+## The Problem
+
+I want to save some words so I'll go to the source
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('twitter', '1185527244569174017')
+```
+</center>
+
+So I just replicated the data and did the following:
+
+ * Made data longer eliminating all the NAs that showed up.
+ 
+ * Divided into Intercept and sofa_study_day.
+ 
+ * Joining both together to obtain the 5 records.
+ 
+The code looks like this:
+
+```{r}
+data <- tibble::tribble(
+  ~Sofa.time.point,     ~Se,   ~Wald, ~p.value,      ~x1,      ~x2,      ~x3,      ~x4,      ~x5,
+       "intercept", 0.12395, -24.333,        0,       NA,       NA,       NA, -3.01592,       NA,
+       "intercept", 0.13165, -40.045,        0,       NA,       NA,       NA,       NA, -5.27211,
+       "intercept", 0.21603,  -7.372,        0,       NA, -1.59253,       NA,       NA,       NA,
+       "intercept", 0.23614,  -5.085,        0,       NA,       NA, -1.20082,       NA,       NA,
+       "intercept",      NA,      NA,        0,        0,       NA,       NA,       NA,       NA,
+  "sofa_study_day", 0.00411, -14.669,        0,       NA,       NA,       NA,       NA, -0.06028,
+  "sofa_study_day", 0.00479, -34.798,        0,       NA,       NA,       NA, -0.16685,       NA,
+  "sofa_study_day", 0.00615, -39.744,        0, -0.24443,       NA,       NA,       NA,       NA,
+  "sofa_study_day", 0.00756,  -9.975,        0,       NA,       NA, -0.07543,       NA,       NA,
+  "sofa_study_day", 0.02224, -24.673,        0,       NA,  -0.5488,       NA,       NA,       NA
+  )
+```
+
+```{r}
+tidy_data <- data %>%
+  pivot_longer(
+    # keeping columns from "Sofa.time.point" to "p.value"
+    -(Sofa.time.point:p.value),
+    # transform x columns into just one column
+    names_to = "x",
+    # populate with values
+    values_to = "values",
+    # dropping NAs
+    values_drop_na = TRUE
+  )
+
+# "intercept" data
+tidy_data %>%
+  filter(Sofa.time.point == "intercept") %>%
+  left_join(
+    #joined with "sofa_study_day"
+    tidy_data %>%
+      filter(Sofa.time.point == "sofa_study_day"),
+    # joining by "x"
+    by = "x",
+    # adding identifiers to columns having the same name
+    suffix = c(".intercept", ".sofa")
+  )
+```
+
+
+ 
+ 

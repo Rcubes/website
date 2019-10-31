@@ -1,0 +1,118 @@
+---
+title: Transposing a dataframe
+authors: 
+  - admin
+date: '2019-10-24'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - purrr
+  - transposing
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Using purrr to transpose a dataframe"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(rlang))
+```
+
+## The Problem
+ 
+Here is the challenge:
+
+```{r}
+data <- data.frame(
+  "id" = c(901, 902, 903, "age", "gender", "language"),
+  "rater1" = c(7, 9, 9, 21, 1, 1),
+  "rater2" = c(9, 9, 9, 39, 2, 2),
+  "rater3" = c(9, 9, 9, 38, 2, 1),
+  "rater4" = c(9, 9, 9, 33, 2, 1),
+  "rater5" = c(2, 9, 9, 21, 2, 1)
+)
+```
+
+Filter all the ratings with gender 1, or language 1, or gender 1 AND language 1.
+
+## The Solution
+
+The thing is super easy, we need to transpose, the thing transposition is not a valid operation when it comes to data frames, how can we apply this in a data frame using `tidyverse`.
+
+So in order to understand what happens I will run the solution by parts.
+
+```{r}
+data %>%
+  transpose()
+```
+The problem using transpose is that the results is a list of lists, so it´s necessary to transform inner list into vectors:
+
+```{r}
+data %>% 
+  #select raters
+  select(contains("rater")) %>%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %>%
+  #unlisting into double vectors
+  map(flatten_dbl)
+```
+
+Now every list slot can be renamed with the corresponding id:
+
+```{r}
+data %>% 
+  #select raters
+  select(contains("rater")) %>%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %>%
+  #unlisting 
+  map(flatten_dbl) %>%
+  set_names(data$id)
+
+```
+Finally we can reorganize using map_dfc() function that reorder the data into dataframes by column:
+
+```{r}
+(
+  new_data <- data %>%
+    #select raters
+    select(contains("rater")) %>%
+    #transpose, the problem is that this transform data into lists of lists.
+    transpose() %>%
+    #unlisting
+    map(flatten_dbl) %>%
+    set_names(data$id) %>%
+    map_dfc( ~ .x)
+)
+```
+
+Now we can filter accordingly the requested filterings:
+
+```{r}
+new_data %>%
+  filter(gender == 1)
+```
+```{r}
+new_data %>%
+  filter(language == 1)
+```
+
+```{r}
+new_data %>%
+  filter(gender == 1 & language == 1)
+```
+ 
+ 

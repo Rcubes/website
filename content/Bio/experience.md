@@ -18,9 +18,20 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
+
+[[experience]]
+  title = "Senior Data Scientist"
+  company = "Scotiabank Cencosud"
+  company_url = "https://www.tarjetacencosud.cl"
+  location = "Viña del Mar, Chile"
+  date_start = "2019-11-06"
+  date_end = ""
+  description = """ Decided to Apply the knowledge learned during my Data Science stage into Civil Engineering. I started working on applying Convolutional Nets to solve FInite Elements problems in Civil Engineering such as Displacement Methods and Permeability Issues in Dams."""
+  
+  
 [[experience]]
   title = "Thesis Project"
-  company = "Santa Maria university"
+  company = "Santa Maria University"
   company_url = "https://www.evalueserve.com/"
   location = "Viña del Mar, Chile"
   date_start = "2019-06-11"

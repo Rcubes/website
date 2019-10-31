@@ -1,0 +1,56 @@
+---
+title: "I got a new Job!!"
+subtitle: at Scotiabank Cencosud Advanced Analytics Team.
+summary: I just got a new job, and this is what I know so far.
+date: 2019-10-30T00:00:00
+categories: ["Blog"]
+tags: ["Scotiabank Cencosud"]
+authors:
+- admin
+draft: false
+image:
+  caption:  
+  focal_point: "Center"
+  
+---
+
+
+## My new Job
+
+My working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.
+
+The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying "*you will work here*" (although I had some hesitation). So I will be a **Senior Data Scientist** working at Scotiabank Cencosud, a Retail Company, and I´ll be part of the Advanced Analytics Team.
+
+It seems there is a lot of interesting opportunities for my carreer. So let´s break them down:
+
+> This is a real Modeling Position. 
+
+I will be primarily involved in developing Machine Learning in Production. This is something super exciting because I think I have learned and practiced a lot to be involved into this. I feel super prepared and eager to start applying the knowledge learned in the POCs I´ve worked in EVS and in the ML Diploma.
+
+> We´ll have a real Data Lake with plenty of Data
+
+This is important, I don´t remember where I read about the things I needed to pay attention when applying to a new Job, and of course if we are doing Data Science we need Data. Well Cencosud is a Company that is positioning itself as an IDO (Insight Driven organization) and its primary focus is to make Data Driven Decisions.
+
+I think, I will have the chance to work with large amounts of Data and hopefully use Spark, this is something I really want to incorporate into my skill set.
+
+> There´s space for Innovative Research
+
+At least in my conversations with the High Management during Interviews they guaranteed some space to innovate and experiment. This is something really fun to me and that I was looking for. So I expect to have the opportunity to implement new models, or algorithms that i haven´t work with before.
+
+> I will use R
+
+This was a main thing to me. I applied to several position where R was not an option, but I just couldn´t stand it. I want to work with R, and here I will have the opportunity to use it from end to end. I even twitted about it :stuck_out_tongue_winking_eye: and I got one :grin:.
+
+<center>
+{{< tweet 1183107543113093120 >}}
+</center>
+
+Many thanks to all the people that provided assitance and help to find job opportunities.
+
+> I´m well paid and with plenty of Benefits
+
+Of course I will not disclose my salary (to avoid jealousy :bowtie:), but I feel happy with the Offering. This was really an issue in my previous job, so I expect good things to happen in here.
+
+More to come after the first month, I think, but at least for now. **I´m happy**.
+
+

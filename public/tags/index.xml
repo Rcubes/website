@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Base R</title>
+      <link>/tags/base-r/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/base-r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Challenge</title>
+      <link>/tags/challenge/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/challenge/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Civil Engineering</title>
@@ -76,11 +94,29 @@
     </item>
     
     <item>
+      <title>Imputing</title>
+      <link>/tags/imputing/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/imputing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Latin R</title>
       <link>/tags/latin-r/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/latin-r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List</title>
+      <link>/tags/list/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/list/</guid>
       <description></description>
     </item>
     
@@ -103,6 +139,15 @@
     </item>
     
     <item>
+      <title>Quick Solves</title>
+      <link>/tags/quick-solves/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/quick-solves/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
@@ -121,11 +166,29 @@
     </item>
     
     <item>
+      <title>Replacing NAs</title>
+      <link>/tags/replacing-nas/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/replacing-nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Rsample</title>
       <link>/tags/rsample/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rsample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scotiabank Cencosud</title>
+      <link>/tags/scotiabank-cencosud/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/scotiabank-cencosud/</guid>
       <description></description>
     </item>
     
@@ -148,11 +211,101 @@
     </item>
     
     <item>
+      <title>Tidy Evaluation</title>
+      <link>/tags/tidy-evaluation/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidy-evaluation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unique ID</title>
+      <link>/tags/unique-id/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/unique-id/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Yardstick</title>
       <link>/tags/yardstick/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/yardstick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>curly-curly</title>
+      <link>/tags/curly-curly/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/curly-curly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>left_join()</title>
+      <link>/tags/left_join/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/left_join/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lubridate</title>
+      <link>/tags/lubridate/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lubridate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>purrr</title>
+      <link>/tags/purrr/</link>
+      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/purrr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidyR</title>
+      <link>/tags/tidyr/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidylog</title>
+      <link>/tags/tidylog/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidylog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>transposing</title>
+      <link>/tags/transposing/</link>
+      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/transposing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ugly data</title>
+      <link>/tags/ugly-data/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ugly-data/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,112 @@
+---
+title: Tidy Evaluation
+authors: 
+  - admin
+date: '2019-10-16'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - Tidy Evaluation
+  - curly-curly
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "I´ll be solving a Tidy Evaluation Problem."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(rlang))
+```
+
+
+Navigating Twitter I found this other Problem:
+
+## The Problem
+
+The following dummy_function is presented:
+
+<pre class="r"><code>library(dplyr)
+#&gt; 
+a &lt;- sample(letters[1:5], 500, rep = TRUE)
+b &lt;- sample(1:10, 500, rep = TRUE)
+df1 &lt;- data.frame(a, b)
+ 
+dummy_function &lt;- function(data, var1, var2){
+  # Creating summary statistics
+  df &lt;- data %&gt;%
+    group_by(var1, var2) %&gt;%
+    summarise(n=n()) %&gt;%
+    group_by(var1) %&gt;%
+    mutate(perc=100*n/sum(n))
+    
+  df
+}
+dummy_function(df1, a, b)
+#&gt; Error: Column `var1` is unknown</code></pre>
+<p>Created by the <a href="https://reprex.tidyverse.org">reprex package</a> (v0.3.0)</p>
+
+
+This is a typical problem caused by one of the coolest things provided by the tidyverse: the Non-Standard Evaluation.
+
+Non-Standard Evaluation is the ability that some R functions have (mainly in the tidyverse and all the packages following a tidy approach) when you can pass a variable within the data without quoting:
+
+```{r}
+iris %>% 
+  select(Species) %>%
+  head(10)
+```
+As you may see, you don´t need to quote Species, but R is not recognizing Species as an R object but as an existing variable within iris dataset. If you would like to do the same thing using "*Standard Evaluation*" you´d have to code something like this:
+
+```{r}
+head(iris["Species"], 10)
+```
+
+In this case you see Species is not an object but a quoted string that is passed as the Variable name for object Iris.
+
+The error then pops up because in the dummy_function() you have group_by() that uses NSE having var1, var2 as arguments and var1 and var2 objects are not variables of data. What you actually want is to pass var1 and var2 values as the grouping variables.
+
+Definitely NSE is a great addition and saves typing, but when it comes to create functions it used to be a nightmare. rlang package handled this using something called quosures, and the bang-bang operator. If you want to know about this Hadley teaches it in 5 minutes:
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('youtube', 'nERXS3ssntw')
+```
+</center>
+
+## The solution
+
+Fortunately, Hadley's explanation is helpful to understand the problem but the solution now is super easy with the new version of rlang. You just need to wrap var1 and var2 in the new curly-curly operator to embrace the values of var1 and var2 and pass them along the group_by() function.
+
+
+```{r}
+a <- sample(letters[1:5], 500, rep = TRUE)
+b <- sample(1:10, 500, rep = TRUE)
+df1 <- data.frame(a, b)
+
+library(rlang)
+dummy_function <- function(data, var1, var2){
+  # Creating summary statistics
+  df <- data %>%
+    group_by({{var1}}, {{var2}}) %>%
+    summarise(n=n()) %>%
+    group_by({{var1}}) %>%
+    mutate(perc=100*n/sum(n))
+  
+  df
+}
+dummy_function(df1, a, b)
+```
+

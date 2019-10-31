@@ -1,0 +1,240 @@
+---
+title: Missing Value Imputation
+authors: 
+  - admin
+date: '2019-10-16'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - Imputing
+  - Replacing NAs
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "I´ll be solving an Missing Value Imputation problem."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(eval.after = 'fig.cap', message = FALSE, warning=FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+
+Surfing at Stack Overflow I noticed a problem that I found interesting to solve:
+The following Data was presented:
+
+## The Problem
+
+The following Data is presented:
+```{r}
+sample <-
+  structure(
+    list(
+      `Country Name` = c(
+        "Aruba",
+        "Afghanistan",
+        "Angola",
+        "Albania",
+        "Andorra",
+        "Arab World",
+        "United Arab Emirates",
+        "Argentina",
+        "Armenia",
+        "American Samoa",
+        "Antigua and Barbuda",
+        "Australia"
+      ),
+      `Country Code` = c(
+        "ABW",
+        "AFG",
+        "AGO",
+        "ALB",
+        "AND",
+        "ARB",
+        "ARE",
+        "ARG",
+        "ARM",
+        "ASM",
+        "ATG",
+        "AUS"
+      ),
+      `2007` = c(
+        5.39162036843645,
+        8.68057078513406,
+        12.2514974459487,
+        2.93268248162318,
+        NA,
+        4.74356585295154,
+        NA,
+        NA,
+        NA,
+        NA,
+        1.41605259409743,
+        NA
+      ),
+      `2008` = c(
+        8.95722105296535,
+        26.4186641547444,
+        12.4758291326398,
+        3.36313757366391,
+        NA,
+        NA,
+        12.2504202448139,
+        NA,
+        8.94995335353386,
+        NA,
+        5.33380639820232,
+        NA
+      ),
+      `2009` = c(
+        -2.13630037272305,-6.81116108898995,
+        13.7302839288409,
+        2.23139683475865,
+        NA,
+        2.92089711805365,
+        1.55980098148558,
+        NA,
+        3.40676682683799,
+        NA,
+        -0.550159995508869,
+        NA
+      ),
+      `2010` = c(
+        2.07773902027782,
+        2.1785375238942,
+        14.4696564932574,
+        3.61538461538463,
+        NA,
+        3.91106195534027,
+        0.879216764156813,
+        NA,
+        8.17636138473956,
+        NA,
+        3.3700254022015,
+        2.91834002677376
+      ),
+      `2011` = c(
+        4.31633194082721,
+        11.8041858089129,
+        13.4824679218511,
+        3.44283593170005,
+        NA,
+        4.75316388885632,
+        NA,
+        NA,
+        7.6500080785929,
+        NA,
+        3.45674967234599,
+        3.30385015608744
+      ),
+      `2012` = c(
+        0.627927921638161,
+        6.44121280934118,
+        10.2779049218839,
+        2.03642235579081,
+        NA,
+        4.61184432206646,
+        0.662268900269082,
+        NA,
+        2.55802007757907,
+        NA,
+        3.37688044338879,
+        1.76278015613193
+      ),
+      `2013` = c(
+        -2.37226328015073,
+        7.38577178397857,
+        8.77781429332619,
+        1.92544399507649,
+        NA,
+        3.23423783752364,
+        1.10111836375706,
+        NA,
+        5.78966778544654,
+        NA,
+        1.05949782356168,
+        2.44988864142539
+      ),
+      `2014` = c(
+        0.421637771012246,
+        4.67399603536339,
+        7.28038730361125,
+        1.61304235314414,
+        NA,
+        2.77261158414198,
+        2.34626865671643,
+        NA,
+        2.98130868933673,
+        NA,
+        1.08944157435363,
+        2.48792270531403
+      )
+    ),
+    class = c("tbl_df", "tbl", "data.frame"),
+    row.names = c(NA,-12L)
+  )
+
+sample
+```
+
+The idea is to input Missing Values following some rules:
+
+ 1. Some countries have NAs for all 8 years (columns 3:10), and in that case I want to replace all NAs with the column mean.
+ 
+ 2. Other countries only have NAs in some columns, in which case I want to replace NA with the previous year's value.
+ 
+ 3. The final condition is that, if the NA is in the first year (2007), I want to replace it with the 2007 column mean instead of the next year (2008 was the financial crisis so all the inflation rates went nuts).
+ 
+Of course this can be easily programmed using Regular Programming Rules using For loops and If Statements, but the idea is to do it in a tidy way using the Tidyverse.
+
+
+```{r}
+library(dplyr, warn.conflicts = FALSE)
+library(tidyr)
+library(janitor)
+
+# Getting the Column Means to Replace according to Condition 1 and 3. 
+(replacement <- sample %>%
+    select_if(is.numeric) %>%
+    summarize_all( ~ mean(., na.rm = TRUE)) %>%
+    #Transformed to List since it is a requirement for tidyr::replace_na()
+    as.list())
+
+```
+
+## The solution
+
+```{r}
+sample %>%
+  pivot_longer(`2007`:`2014`, names_to = "year", values_to = "int_rate") %>%
+  group_by(`Country Name`) %>%
+  summarize(na_num = is.na(int_rate) %>% sum) %>%
+  #Joining the number of NAs na_num as a new column
+  left_join(sample, by = "Country Name") %>%
+  #Replacing 2007 missing as a first value. Condition 3.
+  mutate(`2007` = if_else(between(na_num, 1, 7) &
+                            is.na(`2007`), replacement[[1]] , `2007`)) %>%
+  #Making dataset wider 
+  pivot_longer(`2007`:`2014`, names_to = "year", values_to = "int_rate") %>%
+  group_by(`Country Name`) %>%
+  #Using fill to impute NAs with the previous one. Condition 2.
+  fill(int_rate) %>%
+  pivot_wider(names_from = year, values_from = int_rate) %>%
+  #Replacing Values when all values are missing. Condition 1.
+  replace_na(replace = replacement) 
+  
+```
+
+
+

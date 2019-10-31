@@ -1,0 +1,271 @@
+---
+title: Transposing a dataframe
+authors: 
+  - admin
+date: '2019-10-24'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - purrr
+  - transposing
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "Using purrr to transpose a dataframe"
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<div id="the-problem" class="section level2">
+<h2>The Problem</h2>
+<p>Here is the challenge:</p>
+<pre class="r"><code>data &lt;- data.frame(
+  &quot;id&quot; = c(901, 902, 903, &quot;age&quot;, &quot;gender&quot;, &quot;language&quot;),
+  &quot;rater1&quot; = c(7, 9, 9, 21, 1, 1),
+  &quot;rater2&quot; = c(9, 9, 9, 39, 2, 2),
+  &quot;rater3&quot; = c(9, 9, 9, 38, 2, 1),
+  &quot;rater4&quot; = c(9, 9, 9, 33, 2, 1),
+  &quot;rater5&quot; = c(2, 9, 9, 21, 2, 1)
+)</code></pre>
+<p>Filter all the ratings with gender 1, or language 1, or gender 1 AND language 1.</p>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The Solution</h2>
+<p>The thing is super easy, we need to transpose, the thing transposition is not a valid operation when it comes to data frames, how can we apply this in a data frame using <code>tidyverse</code>.</p>
+<p>So in order to understand what happens I will run the solution by parts.</p>
+<pre class="r"><code>data %&gt;%
+  transpose()</code></pre>
+<pre><code>## [[1]]
+## [[1]]$id
+## [1] 1
+## 
+## [[1]]$rater1
+## [1] 7
+## 
+## [[1]]$rater2
+## [1] 9
+## 
+## [[1]]$rater3
+## [1] 9
+## 
+## [[1]]$rater4
+## [1] 9
+## 
+## [[1]]$rater5
+## [1] 2
+## 
+## 
+## [[2]]
+## [[2]]$id
+## [1] 2
+## 
+## [[2]]$rater1
+## [1] 9
+## 
+## [[2]]$rater2
+## [1] 9
+## 
+## [[2]]$rater3
+## [1] 9
+## 
+## [[2]]$rater4
+## [1] 9
+## 
+## [[2]]$rater5
+## [1] 9
+## 
+## 
+## [[3]]
+## [[3]]$id
+## [1] 3
+## 
+## [[3]]$rater1
+## [1] 9
+## 
+## [[3]]$rater2
+## [1] 9
+## 
+## [[3]]$rater3
+## [1] 9
+## 
+## [[3]]$rater4
+## [1] 9
+## 
+## [[3]]$rater5
+## [1] 9
+## 
+## 
+## [[4]]
+## [[4]]$id
+## [1] 4
+## 
+## [[4]]$rater1
+## [1] 21
+## 
+## [[4]]$rater2
+## [1] 39
+## 
+## [[4]]$rater3
+## [1] 38
+## 
+## [[4]]$rater4
+## [1] 33
+## 
+## [[4]]$rater5
+## [1] 21
+## 
+## 
+## [[5]]
+## [[5]]$id
+## [1] 5
+## 
+## [[5]]$rater1
+## [1] 1
+## 
+## [[5]]$rater2
+## [1] 2
+## 
+## [[5]]$rater3
+## [1] 2
+## 
+## [[5]]$rater4
+## [1] 2
+## 
+## [[5]]$rater5
+## [1] 2
+## 
+## 
+## [[6]]
+## [[6]]$id
+## [1] 6
+## 
+## [[6]]$rater1
+## [1] 1
+## 
+## [[6]]$rater2
+## [1] 2
+## 
+## [[6]]$rater3
+## [1] 1
+## 
+## [[6]]$rater4
+## [1] 1
+## 
+## [[6]]$rater5
+## [1] 1</code></pre>
+<p>The problem using transpose is that the results is a list of lists, so it´s necessary to transform inner list into vectors:</p>
+<pre class="r"><code>data %&gt;% 
+  #select raters
+  select(contains(&quot;rater&quot;)) %&gt;%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %&gt;%
+  #unlisting into double vectors
+  map(flatten_dbl)</code></pre>
+<pre><code>## [[1]]
+## rater1 rater2 rater3 rater4 rater5 
+##      7      9      9      9      2 
+## 
+## [[2]]
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## [[3]]
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## [[4]]
+## rater1 rater2 rater3 rater4 rater5 
+##     21     39     38     33     21 
+## 
+## [[5]]
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      2      2      2 
+## 
+## [[6]]
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      1      1      1</code></pre>
+<p>Now every list slot can be renamed with the corresponding id:</p>
+<pre class="r"><code>data %&gt;% 
+  #select raters
+  select(contains(&quot;rater&quot;)) %&gt;%
+  #transpose, the problem is that this transform data into lists of lists.
+  transpose() %&gt;%
+  #unlisting 
+  map(flatten_dbl) %&gt;%
+  set_names(data$id)</code></pre>
+<pre><code>## $`901`
+## rater1 rater2 rater3 rater4 rater5 
+##      7      9      9      9      2 
+## 
+## $`902`
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## $`903`
+## rater1 rater2 rater3 rater4 rater5 
+##      9      9      9      9      9 
+## 
+## $age
+## rater1 rater2 rater3 rater4 rater5 
+##     21     39     38     33     21 
+## 
+## $gender
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      2      2      2 
+## 
+## $language
+## rater1 rater2 rater3 rater4 rater5 
+##      1      2      1      1      1</code></pre>
+<p>Finally we can reorganize using map_dfc() function that reorder the data into dataframes by column:</p>
+<pre class="r"><code>(
+  new_data &lt;- data %&gt;%
+    #select raters
+    select(contains(&quot;rater&quot;)) %&gt;%
+    #transpose, the problem is that this transform data into lists of lists.
+    transpose() %&gt;%
+    #unlisting
+    map(flatten_dbl) %&gt;%
+    set_names(data$id) %&gt;%
+    map_dfc( ~ .x)
+)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["901"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["902"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["903"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["language"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"7","2":"9","3":"9","4":"21","5":"1","6":"1","_row":"rater1"},{"1":"9","2":"9","3":"9","4":"39","5":"2","6":"2","_row":"rater2"},{"1":"9","2":"9","3":"9","4":"38","5":"2","6":"1","_row":"rater3"},{"1":"9","2":"9","3":"9","4":"33","5":"2","6":"1","_row":"rater4"},{"1":"2","2":"9","3":"9","4":"21","5":"2","6":"1","_row":"rater5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Now we can filter accordingly the requested filterings:</p>
+<pre class="r"><code>new_data %&gt;%
+  filter(gender == 1)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["901"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["902"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["903"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["language"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"7","2":"9","3":"9","4":"21","5":"1","6":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>new_data %&gt;%
+  filter(language == 1)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["901"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["902"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["903"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["language"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"7","2":"9","3":"9","4":"21","5":"1","6":"1"},{"1":"9","2":"9","3":"9","4":"38","5":"2","6":"1"},{"1":"9","2":"9","3":"9","4":"33","5":"2","6":"1"},{"1":"2","2":"9","3":"9","4":"21","5":"2","6":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>new_data %&gt;%
+  filter(gender == 1 &amp; language == 1)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["901"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["902"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["903"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["language"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"7","2":"9","3":"9","4":"21","5":"1","6":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>

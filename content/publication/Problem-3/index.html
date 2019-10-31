@@ -1,0 +1,70 @@
+---
+title: Why this is failing?
+authors: 
+  - admin
+date: '2019-10-16'
+categories:
+  - Quick Solves
+tags:
+  - Quick Solves
+  - tidylog
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "How to avoid easy errors by getting short summaries of the operations applied to data."
+highlight: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    df_print: paged
+    
+---
+
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<p>This is a pretty typical issue. Specially when you have dealing with data a long time you just stop seeing obvious things, and you just can´t find solution to inexistant problems. For instance:</p>
+<pre class="r"><code>mtcars %&gt;%
+  filter(cyl &lt; 4)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>You want to get the rows having cyl less or equal to 4 and for quite a while you keep getting 0 results.
+Obviously something is wrong with the code but you just can´t notice it.</p>
+<div id="the-solution" class="section level2">
+<h2>The Solution</h2>
+<p>Well tidylog can give you an idea. Just load tidylog and watch:</p>
+<pre class="r"><code>#loading the package this way to avoid verbose messages
+library(tidylog)
+mtcars %&gt;%
+  filter(cyl &lt; 4)</code></pre>
+<pre><code>## filter: removed all rows (100%)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Tidylog produces short log messages for dplyr and tidyr operations that help you understand what is happening with the data. Here definitely filter is incorrect, not producing an error but removing the 100% of the data, that is not what I was looking for.</p>
+<p>Everytime you build a pipeline, tidylog will tell what is happening:</p>
+<pre class="r"><code>mtcars %&gt;%
+  filter(cyl &gt; 4) %&gt;%
+  select(-disp) %&gt;%
+  mutate( overall = rowMeans(.)) %&gt;%
+  summarize_all( ~ mean(.))</code></pre>
+<pre><code>## filter: removed 11 rows (34%), 21 rows remaining</code></pre>
+<pre><code>## select: dropped one variable (disp)</code></pre>
+<pre><code>## mutate: new variable &#39;overall&#39; with 21 unique values and 0% NA</code></pre>
+<pre><code>## summarize_all: now one row and 11 columns, ungrouped</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["overall"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"16.64762","2":"7.333333","3":"180.2381","4":"3.348095","5":"3.70519","6":"17.17381","7":"0.1904762","8":"0.2380952","9":"3.47619","10":"3.47619","11":"23.58271"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
