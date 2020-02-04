@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Calculating Recency using dplyr</title>
+      <link>/publication/problem-9/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/problem-9/</guid>
+      <description>The ProblemWe have an Intern working on his Thesis Project in our office. He needed to calculate Customer recency, meaning he needed to know the amount of months since the last time the Customer made a Purchase. This was quite intriguing to me because it needs to combine some windows scoped functions with group by and some other things.
+This is the problem with the expected solution:</description>
+    </item>
+    
+    <item>
       <title>Dealing with dates</title>
       <link>/publication/problem-7/</link>
       <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>

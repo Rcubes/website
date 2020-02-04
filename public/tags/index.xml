@@ -168,7 +168,7 @@
     <item>
       <title>Quick Solves</title>
       <link>/tags/quick-solves/</link>
-      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/quick-solves/</guid>
       <description></description>
@@ -180,6 +180,15 @@
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recency</title>
+      <link>/tags/recency/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recency/</guid>
       <description></description>
     </item>
     
@@ -261,6 +270,15 @@
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/curly-curly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dplyr</title>
+      <link>/tags/dplyr/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dplyr/</guid>
       <description></description>
     </item>
     

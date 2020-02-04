@@ -28,17 +28,17 @@ output:
 <div id="TOC">
 <ul>
 <li><a href="#redes-convolucionales">Redes Convolucionales</a><ul>
-<li><a href="#como-se-relaciona-esto-con-las-redes-convolucionales">¿Cómo se relaciona esto con las Redes Convolucionales?</a></li>
-<li><a href="#como-se-va-especializando-la-red-para-ser-cada-vez-mas-detallista">¿Cómo se va especializando la red para ser cada vez más detallista?</a></li>
-<li><a href="#como-se-relaciona-este-problema-con-estructuras">¿Cómo se relaciona este problema con Estructuras?</a></li>
+<li><a href="#cómo-se-relaciona-esto-con-las-redes-convolucionales">¿Cómo se relaciona esto con las Redes Convolucionales?</a></li>
+<li><a href="#cómo-se-va-especializando-la-red-para-ser-cada-vez-más-detallista">¿Cómo se va especializando la red para ser cada vez más detallista?</a></li>
+<li><a href="#cómo-se-relaciona-este-problema-con-estructuras">¿Cómo se relaciona este problema con Estructuras?</a></li>
 </ul></li>
 <li><a href="#el-paper-de-finol">El Paper de Finol</a><ul>
-<li><a href="#solucion">Solución</a></li>
-<li><a href="#puntos-interesantes-para-la-investigacion.">Puntos Interesantes para la Investigación.</a><ul>
-<li><a href="#era-sugerencia-quizas-no-para-la-memoria-pero-para-seguir-investigando">1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)</a></li>
+<li><a href="#solución">Solución</a></li>
+<li><a href="#puntos-interesantes-para-la-investigación.">Puntos Interesantes para la Investigación.</a><ul>
+<li><a href="#era-sugerencia-quizás-no-para-la-memoria-pero-para-seguir-investigando">1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)</a></li>
 <li><a href="#da-sugerencia">2da Sugerencia</a></li>
 <li><a href="#era-sugerencia.">3era Sugerencia.</a></li>
-<li><a href="#ta-sugerencia-crear-imagenes-estructurales">4ta Sugerencia “Crear Imágenes Estructurales”</a></li>
+<li><a href="#ta-sugerencia-crear-imágenes-estructurales">4ta Sugerencia “Crear Imágenes Estructurales”</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -51,7 +51,7 @@ output:
 <p>La definición formal de Convolución es:</p>
 <p><span class="math display">\[ (f * g)(x)= \int_{-\infty}^{\infty}{f(\eta)\cdot g(x-\eta) d\eta} \]</span>
 La interpretación más clásica de esta integral corresponde al producto de funciones al desplazar una por sobre la otra.</p>
-<div id="como-se-relaciona-esto-con-las-redes-convolucionales" class="section level2">
+<div id="cómo-se-relaciona-esto-con-las-redes-convolucionales" class="section level2">
 <h2>¿Cómo se relaciona esto con las Redes Convolucionales?</h2>
 <p>El análisis de Imágenes es bastante complicado. La manera en la que un computador es capaz de ver una imágen es parseando e interpretandola por un Tensor de Pixeles. Dependiendo de la resolución dela Imagen este Tensor será cada vez más grande, por lo tanto usar Redes Densas supone un gran costo computacional por todos los $ w_{i,j}$ que será necesario calcular.</p>
 <p>Normalmente el análisis de Imágenes utiliza tensor de este estilo:</p>
@@ -95,7 +95,7 @@ Figure 4: Resultado del Entrenamiento de Filtros
 </div>
 </center>
 </div>
-<div id="como-se-va-especializando-la-red-para-ser-cada-vez-mas-detallista" class="section level2">
+<div id="cómo-se-va-especializando-la-red-para-ser-cada-vez-más-detallista" class="section level2">
 <h2>¿Cómo se va especializando la red para ser cada vez más detallista?</h2>
 Luego de la red Convolucional hay una reducción de Dimensionalidad, para llevarse acabo se utiliza una Capa de pooling, esta puede ser una Average Pooling o Max Pooling (generalmente ésta última es la más utilizada) la cual reduce la dimensión del problema para luego aplicar una nueva Capa de Red convolucional pero con más filtros que el paso anterior.
 <center>
@@ -120,7 +120,7 @@ Figure 6: Especialización de la Red
 </div>
 </center>
 </div>
-<div id="como-se-relaciona-este-problema-con-estructuras" class="section level2">
+<div id="cómo-se-relaciona-este-problema-con-estructuras" class="section level2">
 <h2>¿Cómo se relaciona este problema con Estructuras?</h2>
 <p>No tiene relación alguna. Porque este tipo de redes fue diseñada para el desarrollo del análisis de imágenes. Además es la manera más intuitiva de analizar el funcionamiento de estas redes.
 Las dos principales caracerísticas de las Redes Convolucionales son:</p>
@@ -141,7 +141,7 @@ Las dos principales caracerísticas de las Redes Convolucionales son:</p>
 <p>Esto podría traducirse en que los invesigadores pensaron en quizás un elemento equivalente de un Modulo $ E_{eq} $ en serie dado que es una barra unidimensional y el orden de los $ E_{i} $ y $ _{i} $ no influyen en la propiedad equivalente final del elemento.</p>
 <p>Además el problema que se está resolviendo es de valores propios, no hay elementos externos que indiquen que el orden de las propiedades mecánicas influyan en el cálculo final.</p>
 <p>Bajo estas características es que el uso de la Red Convolucional es válida.</p>
-<div id="solucion" class="section level2">
+<div id="solución" class="section level2">
 <h2>Solución</h2>
 <p>Para resolver el problema de Valores propios para un Cristal dividido en 100 Elementos se utiliza la siguiente configuración:</p>
 <center>
@@ -161,7 +161,7 @@ Figure 7: Solución de Finol
 *Se utilizan 3 capas ocultas para luego generar una capa de 20 unidades de salida por los 20 valores propios esperados para el problema.</li>
 </ul>
 </div>
-<div id="puntos-interesantes-para-la-investigacion." class="section level2">
+<div id="puntos-interesantes-para-la-investigación." class="section level2">
 <h2>Puntos Interesantes para la Investigación.</h2>
 <ul>
 <li><p>Estoy tomando un curso en Datacamp y uno público de Stanford acerca del uso de redes Convolucionales. Dentro del curso se dan varias recomendaciones:</p>
@@ -186,7 +186,7 @@ Figure 8: Transformación de Matriz en Imágen
 <li>Un ejemplo que leí fue una red que fue pre-entrenada con imágenes de muebles pero que luego se adaptó para mejor la identificación de animales. La red a pesar de no ser entrenada con animales, era capaz de reconocer bordes y características muy finas.</li>
 </ul></li>
 </ul>
-<div id="era-sugerencia-quizas-no-para-la-memoria-pero-para-seguir-investigando" class="section level4">
+<div id="era-sugerencia-quizás-no-para-la-memoria-pero-para-seguir-investigando" class="section level4">
 <h4>1era Sugerencia (Quizás no para la Memoria, pero para seguir investigando)</h4>
 <p>Uso de Redes convolucionales para calcular Inversas de la Matriz de Rigidez. Siendo este el proceso más caro de la resolución de estructuras quizás podría realizarse el desarrollo de una Red Pre-entrenada que sea capaz de calcular Inversas de Muchas Matrices de tal Manera de agilizar el proceso más caro de la resolución de estructuras.</p>
 </div>
@@ -207,7 +207,7 @@ Para contrarestar esto, se agrega una capa de redes recurrentes (RNN) que ayuda 
 <li><p>Me da la impresión de que Redes Convolucionales pueden ayudar al desarrollo de Propiedades equivalentes usando su característica secuencial para propiedades en serie y su profundidad como propiedades en paralelo.</p></li>
 </ul>
 </div>
-<div id="ta-sugerencia-crear-imagenes-estructurales" class="section level4">
+<div id="ta-sugerencia-crear-imágenes-estructurales" class="section level4">
 <h4>4ta Sugerencia “Crear Imágenes Estructurales”</h4>
 <p>Utilizar la estructura de la matriz de Rigidez con 3 Canales simulando el RGB: Rigidez, Cargas en Eje X y Cargas en Eje Y.
 Habría que buscar una manera de modelar dentro de la matriz los apoyos, que normalmente no son considerados dentro de la Matriz a priori.</p>

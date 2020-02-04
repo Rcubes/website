@@ -3,20 +3,26 @@
   
     <url>
     
+      <loc>/publication/problem-9/</loc>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/post/r-vs-python-ii/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/r-vs-python/</loc>
-      <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/new-job/</loc>
-      <lastmod>2019-11-06T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
     </url>
   
     <url>
@@ -228,7 +234,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -284,7 +290,7 @@
     <url>
     
       <loc>/tags/data-science/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -333,7 +339,7 @@
     <url>
     
       <loc>/tags/new-job/</loc>
-      <lastmod>2019-11-06T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -360,21 +366,21 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/quick-solves/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/quick-solves/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -393,14 +399,21 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/rambling/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/recency/</loc>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -496,7 +509,7 @@
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -517,7 +530,14 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/dplyr/</loc>
+      <lastmod>2020-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
