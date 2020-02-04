@@ -7,10 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R vs Python, Part II</title>
+      <link>/post/r-vs-python-ii/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-vs-python-ii/</guid>
+      <description>During last blog post I shared my bad experiences with R in these late days. This doesn’t mean I hate R at all, but it does mean that I’m eagerly learning Python to supply some of the R deficencies.
+In this 3 weeks of intensive Python learning I’ve learned a lot and here are some things on why moving to Python.
+The main advantage of the Python Data science environment is that you can find everything condesnsed into the Scipy stack.</description>
+    </item>
+    
+    <item>
+      <title>R vs Python</title>
+      <link>/post/r-vs-python/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-vs-python/</guid>
+      <description>Catching up about meI’ve been working in my new job for the last two months, I’ve had some pros and some cons but that will be another day’s discussion. The reason I’m writing about this is because in my new role I have to create a lot of ML models and sadly, and I really mean sadly, R is not suited for that. And it seems Python is.</description>
+    </item>
+    
+    <item>
+      <title>I got a new job</title>
+      <link>/post/new-job/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/new-job/</guid>
+      <description>My new JobMy working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.
+The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying “you will work here” (although I had some hesitation).</description>
+    </item>
     
     <item>
       <title>Dealing with dates</title>
@@ -22,16 +52,6 @@
 Calculate the time difference between Max and Min Dates found in a date vector.
 library(tidyverse)date_vec &amp;lt;- c(&amp;quot;2019/10/24 10:00:00&amp;quot;,&amp;quot;2019/10/23 11:00:00&amp;quot;,&amp;quot;2019/10/25 12:00:00&amp;quot;) The SolutionThe thing is super easy to get, but the idea is to create a pipeline that can calculate this in just a series of steps:
 library(lubridate)date_vec %&amp;gt;%#Transforming characters into dates using ymd for dates and hms for timeymd_hms() %&amp;gt;%#range() retrieves max and min daterange() %&amp;gt;%#Calculate the time differencediff() %&amp;gt;%#Transform into lubridate duration object %&amp;gt;%as.</description>
-    </item>
-    
-    <item>
-      <title>I got a new Job!!</title>
-      <link>/post/new-job/</link>
-      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/new-job/</guid>
-      <description>My new Job My working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.
-The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying &amp;ldquo;you will work here&amp;rdquo; (although I had some hesitation).</description>
     </item>
     
     <item>
@@ -237,7 +257,7 @@ Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering b
     <item>
       <title></title>
       <link>/author/admin/</link>
-      <pubDate>Wed, 16 Oct 2019 04:27:05 -0300</pubDate>
+      <pubDate>Thu, 31 Oct 2019 00:58:18 -0300</pubDate>
       
       <guid>/author/admin/</guid>
       <description>I´m a Civil Engineer, but I got to know Data Science and I just loved it. I´ve worked the last 4 years as an R developer, involved in almost every aspect of the Data Science Workflow.

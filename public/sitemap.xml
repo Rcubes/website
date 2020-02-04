@@ -3,74 +3,86 @@
   
     <url>
     
-      <loc>/publication/problem-7/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <loc>/post/r-vs-python-ii/</loc>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/post/r-vs-python/</loc>
+      <lastmod>2020-01-29T00:00:00+00:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/new-job/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-11-06T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication/problem-7/</loc>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-8/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-6/</loc>
-      <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-5/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-4/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-1/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-2/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/publication/problem-3/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/latin-r-ii/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/latin-r-i/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/latin-r/</loc>
-      <lastmod>2019-09-26T01:38:21-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
@@ -124,13 +136,13 @@
     <url>
     
       <loc>/post/deep-learning/</loc>
-      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/my-thesis/</loc>
-      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
@@ -178,13 +190,13 @@
     <url>
     
       <loc>/author/admin/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/author/alfonso/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
@@ -202,7 +214,7 @@
     <url>
     
       <loc>/tags/base-r/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -216,7 +228,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -230,7 +242,7 @@
     <url>
     
       <loc>/tags/challenge/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -244,7 +256,7 @@
     <url>
     
       <loc>/tags/conference/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -271,6 +283,13 @@
   
     <url>
     
+      <loc>/tags/data-science/</loc>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/tags/deep-learning/</loc>
       <lastmod>2019-09-24T19:01:36-03:00</lastmod>
       <priority>0</priority>
@@ -286,21 +305,21 @@
     <url>
     
       <loc>/tags/imputing/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/latin-r/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/list/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -308,6 +327,13 @@
     
       <loc>/tags/machine-learning/</loc>
       <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/new-job/</loc>
+      <lastmod>2019-11-06T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -333,41 +359,48 @@
   
     <url>
     
+      <loc>/tags/python/</loc>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/tags/quick-solves/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/quick-solves/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/publication/</loc>
-      <lastmod>2019-03-24T02:08:11-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/talk/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
     </url>
   
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/rambling/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -387,7 +420,7 @@
     <url>
     
       <loc>/tags/replacing-nas/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -395,13 +428,6 @@
     
       <loc>/tags/rsample/</loc>
       <lastmod>2019-10-16T04:27:05-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/tags/scotiabank-cencosud/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -428,21 +454,21 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/thesis/</loc>
-      <lastmod>2019-04-06T00:36:48-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/tidy-evaluation/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -456,7 +482,7 @@
     <url>
     
       <loc>/tags/unique-id/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -470,77 +496,77 @@
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/authors/alfonso/</loc>
-      <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/curly-curly/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/left_join/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/lubridate/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/purrr/</loc>
-      <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/tidyr/</loc>
-      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/tidylog/</loc>
-      <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/transposing/</loc>
-      <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/ugly-data/</loc>
-      <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
       <priority>0</priority>
     </url>
   

@@ -1,0 +1,103 @@
+---
+title: R vs Python, Part II
+authors: 
+  - admin
+date: '2020-02-03'
+categories:
+  - Blog
+  - Rambling
+tags:
+  - R
+  - Python
+  - Data Science
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "This is the great debate in Data Science, who wins?"
+highlight: true
+featured: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+During last blog post I shared my bad experiences with R in these late days. This doesn't mean I hate R at all, but it does mean that I'm eagerly learning Python to supply some of the R deficencies.
+
+In this 3 weeks of intensive Python learning I've learned a lot and here are some things on why moving to Python.
+
+The main advantage of the Python Data science environment is that you can find everything condesnsed into the Scipy stack. With just 5 packages you can perform most of the data scientist tasks out there.
+
+# Scikit - Learn
+
+Remember that I had my favorite package in R? Well I have to say this is my favorite in Python. I have never worked before with such a complete package. It is so well organized and documented. I have to say that just by reading its documentation and the API I learned tons of Machine Learning.
+
+It is true that R is quite biased towards statistics. This bias is quite noticeable when you discover a lot of new techniques that I never found in any other R package. Sklearn includes everything: Data spliting functions, tons of models or estimators (using sklearn terminology), a lot of validation strategies, Grid Search strategies, metrics, pre-processing, calibration helpers, unsupervised algorithms, ensembles algorithms and so many complementary packages that makes this framework the best one among all of the Machine Learning languages. 
+
+I think one advantage that Python has in here is that the creators of this package took this so seriously, they even have acceptation criteria to add new models into the framework that makes this package incredible stable and the state of art when it comes to modeling. Compared to R that has all of the models segregated into many different packages, plus, not having an stable unified interface and not having a lot of support for unsupervised algorithms and ensembles, I have to say Python here is way superior.
+
+I have to say that in this kind of problems the object oriented programming shines and makes Python really delightful. Cool things I have noticed:
+
+* The parallel interface using n_jobs combined with joblib is so smooth and well implemented.
+
+* The memory management of Python makes it so suitable for Production and to run large models in limited memory environments.
+
+* The creators are really focused in the package scope and they are not trying to aim to everything out there, but I would say 90% of the funtions implemented in sklearn work excellent.
+
+* The package is implemented on top of Numpy that I think is the most powerful package in Data Science because of its performance and ease to be used.
+
+* The documentation is just beautiful and easy to get access.
+
+* Tons of tutorials and examples to get up and running with your model super fast.
+
+* Ready to run on top of a cluster and be combine with Spark to be scaled up.
+
+### Does this thing have any cons?
+
+Of course, even though it is easy to learn, at the beginning you run into errors all the time. And I would like to say it is because you need to get used to the API.
+
+Some cons that I have found so far:
+
+* It is quite documentation dependant. You need to work with sklearn.
+
+* Since Python it is not a community of statisticians a lot of people makes opinions about how they use some of the sklearn features that some times you can get confused and you just don't know who to trust to.
+
+* Even though Pipelines are a very powerful tool to create models, I still prefer the recipes API, it is way cleaner and easy to learn. The pipeline funtions tends to be messy when combining list and tuples with the normal function parenthesis.
+
+> Other than that, I think sklearn is perfect.
+
+# Matplotlib
+
+I have to say I was very reluctant to use this library, because ggplot is powerful and easy to use. But once you get into this library you notice that is as easy to use as ggplot, but the graphics quality and the color palette are aesthetically superior. Something that I never liked about ggplot is the collor palette and the resolution, something is way resolved in matpotlib, and in my opinion when combined with pandas plotting becomes way easier.
+
+### Charts comparison
+
+TODO
+
+Besides that, I like that matplotlib, pandas and numpy are fully integrated, so you don't have compatibility issues, something that you do have when trying to combine matrices and ggplot in R for example.
+
+> Not too much more to say about this but, pretty, simple and full compatible.
+
+# pandas 
+
+For me this is the weakest link in the scipy stack. There is no any doubt about pandas capability and performance, but I feel (this is a personal opinion) that pandas doesn't have an own identity. Pandas is always trying to emulate what dplyr does, and sometimes it is superior (except for the syntax) and even it has some properties that makes it unique like dealing with time series, the usage of index and the ability to transpose any dataframe,  I accept it, I respet it,  I use it but I don't love it (yet).
+
+In my opinion the biggest weakness is the excessive use of the apostrophe ('). I have to say I really miss R's non-standard evaluation, and an equivalent for the filter function. I just don't like to use boolean masks within square brackets to filter out some data.
+
+# numpy
+
+I think is the responsible of Python's popularity. It can be that you don't use it all the time. Actually I'm still learning how to use it. But its speed is abosolutely uncomparable, and all of the scipy stack is built on top of this library.
+
+I have to say my first Python's impression were not good at all. I remember that we had a trainee implementing an algorithm in Python and we made all of the worst practice mistakes, making Python ridiculously bad performant. But after using the combination of all of these packages in the late weeks has been a pleasure.
+
+I won't refer to scipy or seaborn that are some other popular packages that are complementary to these ones, basically because I haven't used them.
+
+Since I'm using Python more regularly I will start uploading some use cases and issues I have been encountering the same way I do with R.
+
+More to come, in the next weeks!!
+
+See ya.

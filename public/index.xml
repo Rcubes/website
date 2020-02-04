@@ -7,8 +7,265 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>R vs Python, Part II</title>
+      <link>/post/r-vs-python-ii/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-vs-python-ii/</guid>
+      <description>
+
+
+&lt;p&gt;During last blog post I shared my bad experiences with R in these late days. This doesn’t mean I hate R at all, but it does mean that I’m eagerly learning Python to supply some of the R deficencies.&lt;/p&gt;
+&lt;p&gt;In this 3 weeks of intensive Python learning I’ve learned a lot and here are some things on why moving to Python.&lt;/p&gt;
+&lt;p&gt;The main advantage of the Python Data science environment is that you can find everything condesnsed into the Scipy stack. With just 5 packages you can perform most of the data scientist tasks out there.&lt;/p&gt;
+&lt;div id=&#34;scikit---learn&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Scikit - Learn&lt;/h1&gt;
+&lt;p&gt;Remember that I had my favorite package in R? Well I have to say this is my favorite in Python. I have never worked before with such a complete package. It is so well organized and documented. I have to say that just by reading its documentation and the API I learned tons of Machine Learning.&lt;/p&gt;
+&lt;p&gt;It is true that R is quite biased towards statistics. This bias is quite noticeable when you discover a lot of new techniques that I never found in any other R package. Sklearn includes everything: Data spliting functions, tons of models or estimators (using sklearn terminology), a lot of validation strategies, Grid Search strategies, metrics, pre-processing, calibration helpers, unsupervised algorithms, ensembles algorithms and so many complementary packages that makes this framework the best one among all of the Machine Learning languages.&lt;/p&gt;
+&lt;p&gt;I think one advantage that Python has in here is that the creators of this package took this so seriously, they even have acceptation criteria to add new models into the framework that makes this package incredible stable and the state of art when it comes to modeling. Compared to R that has all of the models segregated into many different packages, plus, not having an stable unified interface and not having a lot of support for unsupervised algorithms and ensembles, I have to say Python here is way superior.&lt;/p&gt;
+&lt;p&gt;I have to say that in this kind of problems the object oriented programming shines and makes Python really delightful. Cool things I have noticed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The parallel interface using n_jobs combined with joblib is so smooth and well implemented.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The memory management of Python makes it so suitable for Production and to run large models in limited memory environments.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The creators are really focused in the package scope and they are not trying to aim to everything out there, but I would say 90% of the funtions implemented in sklearn work excellent.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The package is implemented on top of Numpy that I think is the most powerful package in Data Science because of its performance and ease to be used.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The documentation is just beautiful and easy to get access.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Tons of tutorials and examples to get up and running with your model super fast.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ready to run on top of a cluster and be combine with Spark to be scaled up.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;does-this-thing-have-any-cons&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Does this thing have any cons?&lt;/h3&gt;
+&lt;p&gt;Of course, even though it is easy to learn, at the beginning you run into errors all the time. And I would like to say it is because you need to get used to the API.&lt;/p&gt;
+&lt;p&gt;Some cons that I have found so far:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;It is quite documentation dependant. You need to work with sklearn.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Since Python it is not a community of statisticians a lot of people makes opinions about how they use some of the sklearn features that some times you can get confused and you just don’t know who to trust to.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Even though Pipelines are a very powerful tool to create models, I still prefer the recipes API, it is way cleaner and easy to learn. The pipeline funtions tends to be messy when combining list and tuples with the normal function parenthesis.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Other than that, I think sklearn is perfect.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;matplotlib&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Matplotlib&lt;/h1&gt;
+&lt;p&gt;I have to say I was very reluctant to use this library, because ggplot is powerful and easy to use. But once you get into this library you notice that is as easy to use as ggplot, but the graphics quality and the color palette are aesthetically superior. Something that I never liked about ggplot is the collor palette and the resolution, something is way resolved in matpotlib, and in my opinion when combined with pandas plotting becomes way easier.&lt;/p&gt;
+&lt;div id=&#34;charts-comparison&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Charts comparison&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;Besides that, I like that matplotlib, pandas and numpy are fully integrated, so you don’t have compatibility issues, something that you do have when trying to combine matrices and ggplot in R for example.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Not too much more to say about this but, pretty, simple and full compatible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pandas&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;pandas&lt;/h1&gt;
+&lt;p&gt;For me this is the weakest link in the scipy stack. There is no any doubt about pandas capability and performance, but I feel (this is a personal opinion) that pandas doesn’t have an own identity. Pandas is always trying to emulate what dplyr does, and sometimes it is superior (except for the syntax) and even it has some properties that makes it unique like dealing with time series, the usage of index and the ability to transpose any dataframe, I accept it, I respet it, I use it but I don’t love it (yet).&lt;/p&gt;
+&lt;p&gt;In my opinion the biggest weakness is the excessive use of the apostrophe (’). I have to say I really miss R’s non-standard evaluation, and an equivalent for the filter function. I just don’t like to use boolean masks within square brackets to filter out some data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;numpy&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;numpy&lt;/h1&gt;
+&lt;p&gt;I think is the responsible of Python’s popularity. It can be that you don’t use it all the time. Actually I’m still learning how to use it. But its speed is abosolutely uncomparable, and all of the scipy stack is built on top of this library.&lt;/p&gt;
+&lt;p&gt;I have to say my first Python’s impression were not good at all. I remember that we had a trainee implementing an algorithm in Python and we made all of the worst practice mistakes, making Python ridiculously bad performant. But after using the combination of all of these packages in the late weeks has been a pleasure.&lt;/p&gt;
+&lt;p&gt;I won’t refer to scipy or seaborn that are some other popular packages that are complementary to these ones, basically because I haven’t used them.&lt;/p&gt;
+&lt;p&gt;Since I’m using Python more regularly I will start uploading some use cases and issues I have been encountering the same way I do with R.&lt;/p&gt;
+&lt;p&gt;More to come, in the next weeks!!&lt;/p&gt;
+&lt;p&gt;See ya.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R vs Python</title>
+      <link>/post/r-vs-python/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-vs-python/</guid>
+      <description>
+
+
+&lt;div id=&#34;catching-up-about-me&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Catching up about me&lt;/h1&gt;
+&lt;p&gt;I’ve been working in my new job for the last two months, I’ve had some pros and some cons but that will be another day’s discussion. The reason I’m writing about this is because in my new role I have to create a lot of ML models and sadly, and I really mean sadly, R is not suited for that. And it seems Python is.&lt;/p&gt;
+&lt;p&gt;This is something that breaks my heart, and makes me wonder what tool is better suited for data science, R or Python? And I want to add my two cents based on my experience and trying to be as objective as possible.&lt;/p&gt;
+&lt;p&gt;Aditionally, I run into this updated DataCamp &lt;a href=&#34;https://www.datacamp.com/community/tutorials/r-or-python-for-data-analysis&#34;&gt;Infographic&lt;/a&gt; that I think is one of the most accurate and less biased comparisons I have found so far.&lt;/p&gt;
+&lt;div id=&#34;recap-my-background-and-how-i-use-to-approach-r-vs-python&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Recap, my background and How I use to approach R vs Python&lt;/h2&gt;
+&lt;div id=&#34;disclaimer&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’ve been coding with R by 5 five years now, and heavy coding with Python the last 3 weeks.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you know me (probably not) I’m an R fan, I’ve been programming with R since 2015 I’ve done everything: Reports, ETLs, Data cleaning, Shiny Apps, Machine Learning and Deep Learning (My Thesis) and a long etc.&lt;/p&gt;
+&lt;p&gt;And I have to say I’ve been really reluctant to learn Python, I just couldn’t understand why people prefer it and why they consider it to be superior to R. I really get upset when I notice that Google releases some really cool APIs for something that I really want and natively is there for Python and I have to wait for some genius R hacker to create the API for R.&lt;/p&gt;
+&lt;p&gt;2 weeks ago I attended to a Microsoft conference and I was in a data science Talk when the keynote asked who in the audience prefered Python, and 95% of the room raised their hand. My boss stared at me saying: “Ouch”. That hurted, but at the same time opened my eyes.&lt;/p&gt;
+&lt;p&gt;Normally when I watch R vs Python things I notice a lot of Bias towards Python. I can’t find a founded reason of why you should go for Python instead of R.&lt;/p&gt;
+&lt;p&gt;When you check these R vs Python entries the reason a lot of people allege about R not being a good option is because &lt;em&gt;“… it is not suited for Production”&lt;/em&gt;. But what Production means?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Actually Production could be whatever form your data Product could be ready to be consumed, it could be a flat file, a Database, an online dashboard, a PDF report, an API…whatever your want.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Under that definition, R has a lot of different options to meet those needs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When it comes to exporting to files
+&lt;ul&gt;
+&lt;li&gt;{readr} can export to any flat file out there.&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;{arrow} can export to feather and parquet.&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;{haven} can export to SAS, SPSS files.&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;{jsonlite} can export to JSON.&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;a long etc.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If it is about DBs, you can definitely need to check out the {DBI}, {odbc}, {dbplyr} combo. WIth those three packages you can connect to almost any DB type.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;An online dashboard, well you have {Shiny} and a really &lt;a href=&#34;https://github.com/nanxstats/awesome-shiny-extensions&#34;&gt;long list&lt;/a&gt; of extensions to create really professional dashboards using the most cutting edges web frameworks such as Bootstrap, Bulma, AdminLTE, Semantic-UI, etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A PDF report, you can use the whole –down stack of packages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reports {Rmarkdown},&lt;/li&gt;
+&lt;li&gt;write your own book {bookdown},&lt;/li&gt;
+&lt;li&gt;your website (suck as this) {blogdown},&lt;/li&gt;
+&lt;li&gt;posters {posterdown} and {pagedown},&lt;/li&gt;
+&lt;li&gt;PDFs, Words, Powerpoints {Rmarkdown}, {xaringan}, {pagedown},&lt;/li&gt;
+&lt;li&gt;Scientific articles {distill}, {Rmarkdown},&lt;/li&gt;
+&lt;li&gt;A really long etc. again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;An API, well {plumber} is definitely the easiest way to make your own API.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When someone says R is not production ready, I would say I’m &lt;strong&gt;NOT SURE&lt;/strong&gt;!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;R has all the capabilities to be suited for Production&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Another common issue is that R is slow. Of course it is slow if you use for loops with no previously defined length.&lt;/p&gt;
+&lt;p&gt;I think there is enough evidence to show that R is not slow. You can check:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;H2o benchmarks &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki/Benchmarks-:-Grouping&#34;&gt;here&lt;/a&gt; showing speed for data manipulation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You can check some Deep Learning frameworks comparisons &lt;a href=&#34;https://deepsense.ai/keras-or-pytorch/&#34;&gt;here&lt;/a&gt; and you will see that R can achieve pretty good times. (Take into account that R has no native DL framework and even with the translation to Python overhead can beat some well established Frameworks in &lt;strong&gt;some&lt;/strong&gt; tasks, not all of them)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So again, speed is not an issue, if you want full speed of course you’ll want to go to C++, Scala or Java.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Another thing is the syntax. This is something that really gets me upset. Because comparisons are just not fair.&lt;/p&gt;
+&lt;p&gt;Python prides itself to have &lt;em&gt;“Among its most important characteristics the use of elegant syntax, which allows the users to read program code easily”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Sorry guys but this:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;df.loc[(df[&amp;#39;var_1&amp;#39;]&amp;gt;3) &amp;amp; df[&amp;#39;var_2&amp;#39;]&amp;lt;5,[&amp;#39;var_3&amp;#39;,&amp;#39;var_4&amp;#39;]].apply(lambda x: (x+3)**2, axis=0)&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Does not read as plain english and it is not elegant.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Of course, there are ways to write that code in a more readable way, but that code is quite compliant with Python Standards and I just can read it at first sight.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df %&amp;gt;%
+  filter(var_1 &amp;gt; 3 &amp;amp; var_2 &amp;lt; 5) %&amp;gt;%
+  select(var_3, var_4) %&amp;gt;%
+  map_df(~ (.x + 3)^2)&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sorry but, this is plain english and elegant.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Normally websites says pandas can do something really powerful like sort values with:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;df.sort_values(&amp;#39;var_1&amp;#39;, ascending = False)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which is actually pretty powerful but they compare it to:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df[-order(df[&amp;#39;var_1&amp;#39;]),]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which is unreadable, and nobody uses, and if you do, please &lt;strong&gt;STOP doing it&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Tidyverse allows to do this just by:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df %&amp;gt;%
+  arrange(var_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A fair comparison between Python and R needs to incorporate their main packages. The problem here is that Python have everything concentrated into the Scipy stack (Numpy, pandas, Scipy, matplotlib and Scikit-Learn). With those 5 packages you can do almost anything related to Data Science in Python.&lt;/p&gt;
+&lt;p&gt;In R, just by using the Tidyverse you have around 20 to 30 packages and you have a lot of small specialized packages to improve productivity.&lt;/p&gt;
+&lt;p&gt;But all of these things &lt;strong&gt;do not cover the MAIN reason of why people prefer Python over R&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Another popular reason described in these comparisons is that R is more suited for Statisticians while Python is more suited for programmers. This is &lt;strong&gt;partially&lt;/strong&gt; True. I would say that Python looks more familiar for people with a Computer Science background, while R is more friendly for people that have never programmed in their life (During Latin R I was gladly surprised to notice that a lot of R programmers were not related at all with Data Science but with other fields that leverage data).&lt;/p&gt;
+&lt;p&gt;That explains a lot about things that R is being discriminated for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;R has a messy syntax: Not necessarily, But a lot of people with no previous coding experience use R and they don´t care about following best practices, they want to get things done, no matter if you use base R, or tidyverse, or pipe, or data.table, all in the same script and alternating with no prior notice.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;R is slow: Again since most of the people don´t have coding experience they are not worried about imporving code performance.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;R has too many packages: This is true, and you can get lost here. But if you need to deal with data, normally you should go for the tidyverse, and following tidy principals all of the problems described above &lt;strong&gt;should&lt;/strong&gt; be solved.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-i-prefer-r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Why I prefer R&lt;/h1&gt;
+&lt;p&gt;This is really personal, and the main reason is the tidyverse and the pipe friendly syntax. When I code I put a lot of effort to be able to understand it at first sight. Code readability is for me the most important thing.&lt;/p&gt;
+&lt;p&gt;Then is code performance, if the code is not performant I modify syntax slightly to improve performance not affecting readability.
+{
+Then is productivity and complementary packages that I normally I use a lot, packages like {mufflr}, {glue} or {remedy} to make coding easier and more fun are crucial for me.&lt;/p&gt;
+&lt;p&gt;Finally my favorite packages, and with this I refer to packages that have no comparison:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;{dplyr} (and {tidyr}) have absolutely no comparison. It is just the most beautiful syntax to deal with data, the function names, the functionality (specially things like mutate and scope variants like *_at, *_if and *_all) are just the best thing to work with.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;{ggplot2} Even though I´m not a chart fan, again the syntax and the ease to make really complete charts (I don´t want to say beautiful because I really hate ggplot’s default color palette) is priceless.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;{recipes} and the tidymodels API (not the documentation, that I have to say is quite messy sometimes). When recipes was released I just didn’t get it and I was so confused. Once I understood how it worked my life changed. There is no easier way to apply preprocessing steps like recipes. And this became my favorite package. The when the rest of packages started to be released I fell in love with tidymodels. I use to use caret and the package was so huge that I usually got lost. With this new framework everything was so organized that I really enjoyed creating Machine Learning workflows.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These 3 packages, namely dplyr, ggplot and recipes, have no comparison in my humble opinion.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-break-up&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The break up&lt;/h1&gt;
+&lt;p&gt;When you have your favorite packages and it fails, it just break your heart, and that happened with {recipes}.&lt;/p&gt;
+&lt;p&gt;I built a simple Random Forest model with around 1M of rows, and the prepper object was 40GB. The {ranger} model object was 5GB and after the resample I got this lovely message:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“Vector size X GB cannot be allocated”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I moved to a cloud server, having 240GB of RAM and I used {furrr} to parallelize my code when R just stopped working running out of memory several times leaving incomplete processes (as many as threads could be run) running in the Task Manager, blocking memory to be used for some others processes.&lt;/p&gt;
+&lt;p&gt;After carefully investigate what was happening I noticed that everytime I ran something less RAM was available, and the dissapointment arrived. Once the model finished I was expecting Memory to be released but that never happened.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;After doing some research I found the right term: &lt;strong&gt;Memory Leakage&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Memory leakage refers when the OS is not releasing Memory once a process allocating this memory finishes. Plus, I didn´t understand why having 50GB objects used up my whole memory. The only way to free up this memory was restarting R (Ctrl + Shift + F10)&lt;/p&gt;
+&lt;p&gt;And here is the real reason why R is not a top choice for data Science, and for some reason this is something that nobody mentions but it is slightly touched in the DataCamp Infographic. R has a poor memory management, and Hadley knows it. He mentions this Memory Leakage issues in &lt;a href=&#34;http://adv-r.had.co.nz/memory.html&#34;&gt;Advance R first edition&lt;/a&gt; (for some reason it is not detailed in the 2nd Edition).&lt;/p&gt;
+&lt;p&gt;Real Data Science, and not just the small examples we use to demonstrate the power and usage of a package, depends a lot on memory usage, and you cannot mount a production system knowing that R will use up your full memory available and you cannot release it.&lt;/p&gt;
+&lt;p&gt;Probably this is something R developers are also facing and Hadley and the Rstudio guys know, but it is something intrinsic from R.&lt;/p&gt;
+&lt;p&gt;Plus, R is not natively installed in a hosting service or a Linux server as Python is, and has not parallelism “almost natively” implemented. Making Python an easier choice to go.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ok, here we explained why R is not a top choice option but we haven’t talked anything about Python…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Why Python? This will be covered in a next Post.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I got a new job</title>
+      <link>/post/new-job/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/new-job/</guid>
+      <description>
+
+
+&lt;div id=&#34;my-new-job&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;My new Job&lt;/h2&gt;
+&lt;p&gt;My working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.&lt;/p&gt;
+&lt;p&gt;The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying “&lt;em&gt;you will work here&lt;/em&gt;” (although I had some hesitation). So I will be a &lt;strong&gt;Senior Data Scientist&lt;/strong&gt; working at Scotiabank Cencosud, a Retail Company, and I´ll be part of the Advanced Analytics Team.&lt;/p&gt;
+&lt;p&gt;It seems there is a lot of interesting opportunities for my carreer. So let´s break them down:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a real Modeling Position.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I will be primarily involved in developing Machine Learning in Production. This is something super exciting because I think I have learned and practiced a lot to be involved into this. I feel super prepared and eager to start applying the knowledge learned in the POCs I´ve worked in EVS and in the ML Diploma.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We´ll have a real Data Lake with plenty of Data&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is important, I don´t remember where I read about the things I needed to pay attention when applying to a new Job, and of course if we are doing Data Science we need Data. Well Cencosud is a Company that is positioning itself as an IDO (Insight Driven organization) and its primary focus is to make Data Driven Decisions.&lt;/p&gt;
+&lt;p&gt;I think, I will have the chance to work with large amounts of Data and hopefully use Spark, this is something I really want to incorporate into my skill set.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There´s space for Innovative Research&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At least in my conversations with the High Management during Interviews they guaranteed some space to innovate and experiment. This is something really fun to me and that I was looking for. So I expect to have the opportunity to implement new models, or algorithms that i haven´t work with before.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I will use R&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This was a main thing to me. I applied to several position where R was not an option, but I just couldn´t stand it. I want to work with R, and here I will have the opportunity to use it from end to end. I even twitted about it 😜 and I got one 😁.&lt;/p&gt;
+&lt;center&gt;
+{{&amp;lt; tweet 1183107543113093120 &amp;gt;}}
+&lt;/center&gt;
+&lt;p&gt;Many thanks to all the people that provided assitance and help to find job opportunities.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I´m well paid and with plenty of Benefits&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Of course I will not disclose my salary (to avoid jealousy ), but I feel happy with the Offering. This was really an issue in my previous job, so I expect good things to happen in here.&lt;/p&gt;
+&lt;p&gt;More to come after the first month, I think, but at least for now. &lt;strong&gt;I´m happy&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Dealing with dates</title>
@@ -44,66 +301,6 @@ date_vec %&amp;gt;%
    as.duration() &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;176400s (~2.04 days)&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I got a new Job!!</title>
-      <link>/post/new-job/</link>
-      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/new-job/</guid>
-      <description>
-
-&lt;h2 id=&#34;my-new-job&#34;&gt;My new Job&lt;/h2&gt;
-
-&lt;p&gt;My working relationship with Evalueserve ended the past June and I just dedicated to finish my Thesis. On the first days of October I just started to apply to different Jobs, I have to say my first option was trying to get a Job at H2o, but I´m not there yet.&lt;/p&gt;
-
-&lt;p&gt;The thing is that after the first Interview I knew this would be my new Company, I felt some kind of feeling saying &amp;ldquo;&lt;em&gt;you will work here&lt;/em&gt;&amp;rdquo; (although I had some hesitation). So I will be a &lt;strong&gt;Senior Data Scientist&lt;/strong&gt; working at Scotiabank Cencosud, a Retail Company, and I´ll be part of the Advanced Analytics Team.&lt;/p&gt;
-
-&lt;p&gt;It seems there is a lot of interesting opportunities for my carreer. So let´s break them down:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This is a real Modeling Position.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I will be primarily involved in developing Machine Learning in Production. This is something super exciting because I think I have learned and practiced a lot to be involved into this. I feel super prepared and eager to start applying the knowledge learned in the POCs I´ve worked in EVS and in the ML Diploma.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We´ll have a real Data Lake with plenty of Data&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This is important, I don´t remember where I read about the things I needed to pay attention when applying to a new Job, and of course if we are doing Data Science we need Data. Well Cencosud is a Company that is positioning itself as an IDO (Insight Driven organization) and its primary focus is to make Data Driven Decisions.&lt;/p&gt;
-
-&lt;p&gt;I think, I will have the chance to work with large amounts of Data and hopefully use Spark, this is something I really want to incorporate into my skill set.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;There´s space for Innovative Research&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;At least in my conversations with the High Management during Interviews they guaranteed some space to innovate and experiment. This is something really fun to me and that I was looking for. So I expect to have the opportunity to implement new models, or algorithms that i haven´t work with before.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I will use R&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This was a main thing to me. I applied to several position where R was not an option, but I just couldn´t stand it. I want to work with R, and here I will have the opportunity to use it from end to end. I even twitted about it 😜 and I got one 😁.&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;- I want/need a new job. 😕&lt;br&gt;- I don&amp;#39;t mind what area: Data cleaning, process automations, data reporting, data visualization, machine learning, deep learning, long etc.🤔&lt;br&gt;- but I want to use &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt;.😅&lt;br&gt;&lt;br&gt;Is that a crime?&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hashtag/rstatses?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstatses&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/LatinR_Conf?ref_src=twsrc%5Etfw&#34;&gt;@LatinR_Conf&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hashtag/newjobplease?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#newjobplease&lt;/a&gt; 🤔🙄😅🤨😁&lt;/p&gt;&amp;mdash; Alfonso Tobar (@tobar_with_R) &lt;a href=&#34;https://twitter.com/tobar_with_R/status/1183107543113093120?ref_src=twsrc%5Etfw&#34;&gt;October 12, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;Many thanks to all the people that provided assitance and help to find job opportunities.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I´m well paid and with plenty of Benefits&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Of course I will not disclose my salary (to avoid jealousy ), but I feel happy with the Offering. This was really an issue in my previous job, so I expect good things to happen in here.&lt;/p&gt;
-
-&lt;p&gt;More to come after the first month, I think, but at least for now. &lt;strong&gt;I´m happy&lt;/strong&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1145,615 +1342,6 @@ She will be conducting a Tutorial on how to Teach R and of Course a main Speech.
 &lt;p&gt;So that is how we came up with a Project. What about considering $ [K] $ as a black and white image (1 channel), representing the stiffness of a Truss. Therefore, Convolutional Networks could be a good alternative to analyze the Matrix and train a Network capable of determinimg in a first instance the displacement of the Structure (${u}$) and afterwards the failure of the Structure, transforming the problem into a Clasification Binary Problem (Failing - not Failing).&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ll be posting more technical content about how I&amp;rsquo;ve been tackling the problem. Stay tuned!!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Stiffness Method</title>
-      <link>/project/stiffness-method/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/stiffness-method/</guid>
-      <description>
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#the-method&#34;&gt;The Method&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#the-problem&#34;&gt;The Problem&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#rcpp-basics&#34;&gt;Rcpp Basics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#creating-an-rcpp-file&#34;&gt;Creating an Rcpp file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#stiffness-method&#34;&gt;Stiffness Method&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#stiff-matrix-by-element&#34;&gt;Stiff Matrix by Element&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#active-dof-assembly&#34;&gt;Active DoF Assembly&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#connectivity-array&#34;&gt;Connectivity Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#stiffness-matrix-assembly&#34;&gt;Stiffness Matrix Assembly&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#load-vector-assembly&#34;&gt;Load Vector Assembly&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#solving-the-problem&#34;&gt;Solving the Problem&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusions&#34;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;the-method&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;The Method&lt;/h1&gt;
-&lt;p&gt;The Rayleigh Ritz Method is nothing but applying Finite Elements to Structural problems. Basically you split your structure into smaller structures that can easily be solved By solving, I mean, Calculate the specific stifness of the Structure in order to determine how the loads affects the structure. Once the individual mini-strutures are solved they are ensembled into a Merged Matrix equivalent to the total Stiffness of the Structure.&lt;/p&gt;
-&lt;p&gt;The purpose of this Document is not get into deep details about the Method. If you want to learn about this you can go to this &lt;a href=&#34;https://www.sciencedirect.com/topics/engineering/stiffness-method&#34;&gt;paper&lt;/a&gt; to learn the Maths behind this. The idea is to show how to implement this in R. Since this is a computational expensive method I’ll be using &lt;code&gt;library(Rcpp)&lt;/code&gt;.&lt;/p&gt;
-&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Problem&lt;/h2&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs1&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/3_bar_problem.jpg&#34; alt=&#34;\label{fig:figs1}Problem Structure&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Problem Structure
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;This is a simple problem and useful to understand the different steps of the Method.
-This is implementation is for a Truss with 3 Nodes and 3 Elements where:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Number of Nodes by Element
-NN_e &amp;lt;- 2
-#Number of Degrees of Freedom (DoF) by Node
-Ngl_N &amp;lt;- 2
-L &amp;lt;- 1 #Value of L
-E &amp;lt;- 2 * 10 ^ 11 # Young Module / Elasticity Metric
-A &amp;lt;- 0.0001 # Cross Sectional Area
-P &amp;lt;- 1000 # Load&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The First and most simple Step is to organize the Input Data. All of the Data will be input in &lt;code&gt;tibble&lt;/code&gt; form.&lt;/p&gt;
-&lt;p&gt;Row i of the &lt;code&gt;Nodes&lt;/code&gt; Matrix will store the X and Y Coordinates for Every Node.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Nodes &amp;lt;-
-   tibble::tribble(~ Xi, ~ Yi,
-                   0,   0,
-                   sqrt(2) / 2 * L,  sqrt(2) / 2 * L,
-                   sqrt(2) * L, 0))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
-##      Xi    Yi
-##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
-## 1 0     0    
-## 2 0.707 0.707
-## 3 1.41  0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The Row j of the &lt;code&gt;Elements&lt;/code&gt; Matrix will contain the Initial Node &lt;code&gt;ni&lt;/code&gt;, the ending Node &lt;code&gt;nf&lt;/code&gt; and the corresponding E and A properties for Element j. In this case all the Elements share the same properties.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Elements &amp;lt;-
-   tibble::tribble(~ ni, ~ nf,   ~ E,   ~ A,
-                   1,   2,    E,    A,
-                   2,   3,    E,    A,
-                   3,   1,    E,    A))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 4
-##      ni    nf            E      A
-##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt;
-## 1     1     2 200000000000 0.0001
-## 2     2     3 200000000000 0.0001
-## 3     3     1 200000000000 0.0001&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The Row i of the &lt;code&gt;Loads&lt;/code&gt; Matrix contains the x and y vectorial component of the Loads for Node i.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Loads &amp;lt;-
-   tibble::tribble(~ Px, ~ Py,
-                   0,   0,
-                   0,   P,
-                   0,   0))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
-##      Px    Py
-##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
-## 1     0     0
-## 2     0  1000
-## 3     0     0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The Row i correspond to the freedom of the X and Y Component of the Node i. 1 meaning no Movement and 0 meaning free movement.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(Supports &amp;lt;-
-   tibble::tribble(~ Rx, ~ Ry,
-                   1,   1,
-                   0,   0,
-                   0,   1))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 3 x 2
-##      Rx    Ry
-##   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
-## 1     1     1
-## 2     0     0
-## 3     0     1&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;rcpp-basics&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Rcpp Basics&lt;/h2&gt;
-&lt;p&gt;Rcpp is the R API package to access to the huge benefits that C++ offers. I´m not an expert in C++ actually I just learned a bit of C++ because Rcpp offers easy sintax to access to C++ Elements but always showing equivalents in the R Environment.&lt;/p&gt;
-&lt;p&gt;C++ is far for being an adequate language for Data Science, but once you want to optimize code or algorithms is definitely the way to go. In these case I´ll be showing the algorithm to the different steps of the Stiffness Method and how can be implemented in Rcpp.&lt;/p&gt;
-&lt;p&gt;My main sources to learn Rcpp were this excellent &lt;a href=&#34;https://teuder.github.io/rcpp4everyone_en/&#34;&gt;Rcpp for Everyone&lt;/a&gt; and of course &lt;a href=&#34;http://adv-r.had.co.nz/Rcpp.html&#34;&gt;Hadley´s Help&lt;/a&gt;. With these two resources you should have more than enough to create your first Rcpp functions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;creating-an-rcpp-file&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Creating an Rcpp file&lt;/h2&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/cpp_file.png&#34; alt=&#34;\label{fig:figs2}Create a C++ File&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Create a C++ File
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;If you work with RStudio you can go to File &amp;gt; New File &amp;gt; C++ File and will open a C++ Template like this:&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:figs3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/img/cpp_template.png&#34; alt=&#34;\label{fig:figs3}C++ Template&#34;  /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: C++ Template
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;The main thing you need to be aware of is loading the required libraries from C++. In this case we will use the following:&lt;/p&gt;
-&lt;p&gt;All C++ code chunks will be combined to the chunk below:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::depends(RcppEigen)]]
-#include &amp;lt;Rcpp.h&amp;gt;
-#include &amp;lt;RcppEigen.h&amp;gt;
-#include &amp;lt;Eigen/LU&amp;gt; 
-#include &amp;lt;Eigen/Eigenvalues&amp;gt; 
-
-using namespace Rcpp;
-using namespace Eigen;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As you may know C++ is a compiled language. Compilation means, in really simple words, to optimize and speed up the code making it available in R through functions. If you want functions to be available in the R environment they need to be preceeded by this special comment. Otherwise they can be called from within the C++ environment as intermediate functions but they won´t work in R.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;stiffness-method&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Stiffness Method&lt;/h2&gt;
-&lt;div id=&#34;stiff-matrix-by-element&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Stiff Matrix by Element&lt;/h3&gt;
-&lt;p&gt;This Step calculates Stiff for the mini-structures, meaning every single bar.&lt;/p&gt;
-&lt;p&gt;Every Element Matrix has the following form that needs to be created according to its properties.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-[K]_j=\begin{bmatrix}
-    c^2 &amp;amp;  &amp;amp;  &amp;amp; sim\\
-    cs &amp;amp; s^2 &amp;amp;  &amp;amp; \\
-    -c^2 &amp;amp; -cs &amp;amp; c^2 &amp;amp; \\
-    -cs &amp;amp; -s^2 &amp;amp; cs &amp;amp; s^2 \\
-    \end{bmatrix}
-\]&lt;/span&gt;
-The pseudo code is as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Ne \leftarrow \text{Number of Rows in the Element Matrix} \\
-c \leftarrow  \text{ Sparse Matrix for Director Cosines, Dimension Ne x 1 } \\
-s \leftarrow  \text{ Sparse Matrix for Director Sinus, Dimension Ne x 1 } \\
-L \leftarrow  \text{ Sparse Matrix for Element Length, Dimension Ne x 1 } \\
-\text{for j = 1 to Ne do}
-\left\{ \begin{array}{lcc}
-             Ni=Elements(j,1) \\ 
-             Nf=Elements(j,2) \\
-             \Delta x = Nodes(Nf,1) - Nodes(Ni,1) \\
-             \Delta y = Nodes(Nf,2) - Nodes(Ni,2) \\
-             L(j)=\sqrt{\Delta x^2 + \Delta y^2} \\
-             c(j) = {\Delta x\over L(j)} \\
-             s(j) = {\Delta y\over L(j)}
-             \end{array}
-   \right.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Now translating this into Rcpp looks like this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You need define every object to use preceeded by its type.&lt;/li&gt;
-&lt;li&gt;The output will be an R List since I want object storing the different Element Matrix.&lt;/li&gt;
-&lt;li&gt;All of the Function arguments are Mandatory by default and need to go in the same order that will be used. If an Optional Argument is needed the default value needs to be defined as in NN_e.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
-// First you define the Output Type. In this case an R List.
-List K_Element(NumericMatrix Nodes, NumericMatrix Elements, int NN_e = 2){
-  
-  // Ne is defined by using the nrow method to calculate number of rows.
-  int Num_Elements = Elements.nrow();
-  // c, s and L are defined Vectors since the second Dimension is 1.
-  NumericVector c (Num_Elements);
-  NumericVector s (Num_Elements);
-  NumericVector L (Num_Elements);
-  
-  int j,Ni,Nf;
-  // dx and dy are defined as doubles since they can contain decimals
-  double dx,dy;
-  List K_list (Num_Elements);
-  
-  
-  // C++ is defined from 0 as the first element. So the pseudo code needs to be adjusted accordingly.
-  // Notice the for syntax, from 0 to NE-1 defined as j&amp;lt;Num_Elementos and the ++j iterator
-  for(j=0;j&amp;lt;Num_Elements;++j){
-    Ni=Elements(j,0) -1;
-    Nf=Elements(j,1) - 1;
-    dx=Nodes(Nf,0)-Nodes(Ni,0);
-    dy=Nodes(Nf,1)-Nodes(Ni,1);
-    //pow is the C++ operator for ^
-    L[j]=sqrt(pow(dx,2)+pow(dy,2));
-    c(j)=dx/L(j);
-    s(j)=dy/L(j);
-    
-  // This is a special way to define a Matrix by Element coming from library(RcppEigen)
-    Matrix4f ke;
-    ke &amp;lt;&amp;lt; pow(c[j],2),c[j]*s[j],-pow(c[j],2),-c[j]*s[j],
-         c[j]*s[j],pow(s[j],2),-c[j]*s[j], -pow(s[j],2),
-         -pow(c[j],2),-c[j]*s[j],pow(c[j],2),c[j]*s[j],
-          -c[j]*s[j],-pow(s[j],2),c[j]*s[j],pow(s[j],2);
-    //Here you populate every List Element with the corresponding Element Matrix
-    K_list[j]= Elements(j,NN_e)*Elements(j,NN_e + 1)/L[j]*ke;  
-    
-    
-  }
-  
- 
-  
-  return K_list;
-}
-/*** R
-(K_E &amp;lt;- K_Element(Nodes,Elements))
-*/&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;active-dof-assembly&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Active DoF Assembly&lt;/h3&gt;
-&lt;p&gt;The Stiffness Method needs to determine what Dof are actually active, meaning that are free to move, hence are unknowns of the equation of the problem.
-In order to do that it is necessary to determine which ones are free to move depending on the support Matrix and a Position Number is assigned to them.&lt;/p&gt;
-&lt;p&gt;Pseudocode as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Nn \leftarrow \text{Number of Rows in the Node Matrix} \\
-Gl_act \leftarrow  \text{ Sparse Matrix Dimension (NN \cdot Ngl_N) x 1 } \\
-cont = 0 \\
-\begin{aligned}
-&amp;amp; \text{for i = 1 to Nn do } \\
-&amp;amp; \text{for k = 1 to Ngl_N do} \\
-\end{aligned} \\
-\left\{ \begin{array}{lcc}
-             \text{if Apoyos(i,k) = 0 then} \\
-             cont= cont +1 \\
-             pos=Ngl_N \cdot (i-1) + k \\
-             Gl_act(pos)=cont \\
-             \end{array}
-   \right.
-\]&lt;/span&gt;
-Rcpp Code:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]] 
-// Sparse Vector that uses Support Matrix as Input 
-NumericVector Gr_Active(NumericMatrix Support, int Ngl_N = 2){
-  int Num_Nodes = Support.nrow();
-  int cont=0, i, k;
-  //Defining Dimension of Gl Vector
-  NumericVector Gl (Num_Nodes*Ngl_N);
-  
-  for(i = 0; i &amp;lt; Num_Nodes; ++i){
-    for(k = 0; k &amp;lt; Ngl_N; ++k){
-      
-      if(Apoyos(i,k)==0){
-        //Counter needs to be adapted since C++ starts off at Zero
-        Gl[Ngl_N*i+k] = ++cont;
-        
-      }
-    }  
-    
-  }
-  return Gl;
-  
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;connectivity-array&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Connectivity Array&lt;/h3&gt;
-&lt;p&gt;The Method determines an array to identify how the different elements are connected each other. This way it is possible to create an equivalent Matrix representing the Equivalent Stiffness of the ensembled elements.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Ngle = Ngl_N \cdot NN_e \\
-conect \leftarrow  \text{ Sparse Matrix Dimension Ne x Ngle } \\
-\begin{aligned}
-&amp;amp; \text{for j = 1 to Ne do } \\
-&amp;amp; \text{for k = 1 to NN_e do} \\
-&amp;amp; N_k=Elementos(j,k) \\
-&amp;amp; pos1= (N_k - 1) \cdot Ngl_N \\
-\end{aligned} \\
-\text{ for l= 1 to Ngl_N do } \\
-\left\{ \begin{array}{lcc}
-             pos2=pos1+l \\
-             pos3= (k-1) \cdot Ngl_N + l \\
-             conect(j,pos3) = Gl_act(pos2) \\
-             \end{array}
-   \right.
-\]&lt;/span&gt;
-Rcpp Code:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
-// This is a Numeric Matrix using Elements Matrix and Gl Vector as Input
-NumericMatrix Arr_Connect(NumericMatrix Elements, NumericVector Gl, int NN_e = 2, int Ngl_N = 2){
-  int Num_Elements = Elements.nrow();
-  // Several counters an be defined simultaneously if sharing the same properties.
-  int j, k, l, pos1, pos2, pos3;
-  NumericMatrix conect(Num_Elements, NN_e * Ngl_N);
-  
-  for(j=0; j &amp;lt; Num_Elements; ++j){
-    for(k=0; k &amp;lt; NN_e; ++k){
-      pos1 = (Elements(j,k) - 1) * Ngl_N;
-      for(l=0; l &amp;lt; Ngl_N; ++l){
-        pos2 = pos1 + l;
-       // pos3 had to be adjusted because C++ index starting at 0     
-        pos3 = k * Ngl_N + l;
-        conect(j,pos3) = Gl[pos2];
-      }
-    }
-  }
-  
-  return conect;
-  
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;stiffness-matrix-assembly&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Stiffness Matrix Assembly&lt;/h3&gt;
-&lt;p&gt;Once the Connectivity Array and the Active DoFs are determined the Global Stiffness Matrix can be assembled. This matrix contains the Contribution of every element to an specific Node. Less Elements joined to a specific Node will end up adding less stiffness than a lot of elements being part of a Node.&lt;/p&gt;
-&lt;p&gt;Pseudocode as follows:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ N_R \leftarrow \text{ sum of all of the entries of the support Matrix }  \\
-NGl_total = Ngl_N \cdot Nn - N_R \\
-K \leftarrow \text{ Sparse Matrix Ngl_total x Ngl_total }  \\
-\begin{aligned}
-&amp;amp; \text{for j = 1 to Ne do } \\
-&amp;amp; \text{for k = 1 to Ngle do} \\
-\end{aligned} \\
-\text{ for l= 1 to Ngl_e do } \\
-\left\{ \begin{array}{lcc}
-             pos1=conect(j,k) \\
-             pos2=conect(j,l) \\
-             text{ if conect(j,k) \neq 0 and conect(j,l) \neq 0 then } \\
-             K(pos1,pos2)=K_E{j}(k,l) + K(pos1,pos2) \\
-             \end{array}
-   \right.
-\]&lt;/span&gt;
-Rcpp Code:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
-//Numeric Matrix using Support, Gl and Conect Matrix and K_E List as Inputs
-NumericMatrix K_Total(List K_E, NumericMatrix Support, NumericVector Gl, NumericMatrix conect, 
-                      int NN_e = 2, int Ngl_N =2 ){
-  
-  int Num_Elements = K_E.length();
-  int Num_Nodes = Support.nrow();
-  int Nr=sum(Support), j, k, l, pos1, pos2;
-  NumericMatrix K( Ngl_N * Num_Nodos- Nr );
-  int Ngl_E = NN_e * Ngl_N;
-  
-  
-  for(j=0; j&amp;lt;Num_Elements; ++j){
-    for(k=0; k&amp;lt;Ngl_E; ++k){
-      for(l=0; l&amp;lt;Ngl_E; ++l){
-        pos1 = conect(j,k);
-        pos2 = conect(j,l);
-        //Notice that List Elements need to be pulled using brakets
-        NumericMatrix Ke = K_E[j];
-        // and operator uses double ampersand and inequality syntax follow same rules than R
-        if(pos1 != 0 &amp;amp;&amp;amp; pos2 !=0){
-          // += is the C++ operator to sum the new value to the current one.
-          K(pos1 - 1, pos2 - 1) += Ke(k,l);
-        }
-      }
-    }
-  }
-  
-  return K;
-  
-  
-  
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;load-vector-assembly&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Load Vector Assembly&lt;/h3&gt;
-&lt;p&gt;This is the equivalent load Vector considering only Loads for active DoFs that are participating in the solution of the problem.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ F \leftarrow \text{ Sparse Matrix dimension Ngl_total x 1 }  \\
-\begin{aligned}
-&amp;amp; \text{for i = 1 to Nn do } \\
-\end{aligned} \\
-\text{ for k= 1 to Ngl_n do } \\
-\left\{ \begin{array}{lcc}
-             pos1=Ngl_n \cdot (i-1) + k \\
-             pos2=Gl_act(pos1) \\
-             \text{ if pos2 Loads(i,k) } \\
-             F(pos2)=Cargas(i,k)\\
-             \end{array}
-   \right.
-\]&lt;/span&gt;
-Rcpp Code:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// [[Rcpp::export]]
-NumericVector f_Total(NumericMatrix Loads, NumericVector Gl, int Nr, int Ngl_N = 2 ){
-  int Num_Nodos = Loads.nrow();
-  int N_t = Ngl_N * Num_Nodos - Nr;
-  NumericVector F (N_t);
-  int i,k,pos1,pos2;
-  
-  for(i=0; i &amp;lt; Num_Nodos; ++i){
-    for(k=0; k &amp;lt; Ngl_N; ++k){
-      pos1 = Ngl_N * i + k;
-      pos2 = Gl[pos1];
-      if(pos2 != 0){
-        F[pos2 - 1] = Cargas(i,k);
-      }
-    }
-  }
-  
-  return F;
-  
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;solving-the-problem&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Solving the Problem&lt;/h3&gt;
-&lt;p&gt;All this Steps allows to pose the following problem:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ [K] \cdot \{u\} = \{F\} \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In order to get the desired displacements it is just necessary to inverse $ [K] $.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[  \{u\} = [K]^{-1} \cdot \{F\}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;For this case I´ll be using RcppEigen, a Rcpp Linear Algebra Library that allows some extra Matrix operations that are useful for, in this case, Matrix inversion:&lt;/p&gt;
-&lt;pre class=&#34;cpp&#34;&gt;&lt;code&gt;// I have defined a new object type called MapMatd whih is a Matrix with no specific size of doubles
-typedef Map&amp;lt;MatrixXd&amp;gt; MapMatd;
-// Defined a Vector with same characteristics as before
-typedef Map&amp;lt;VectorXd&amp;gt; MapVecd;
-
-// [[Rcpp::export]]
-// I use a VectorXd non defined size X with double data type d
-VectorXd u_vect(NumericMatrix K_Total, NumericVector f_Total){
-  //I need to cast R Objects coming from Inputs into Eigen Objects. In this case i would just say trust me.
-  const MapMatd K(as&amp;lt;MapMatd&amp;gt;(K_Total));
-  const MapVecd f(as&amp;lt;MapVecd&amp;gt;(f_Total));
-  
-  //Applying Inverse Method, this is only available because K and f are already Eigen objets
-  VectorXd result = K.inverse()*f;
-  
-  return result;
-  
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Conclusions&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;R and Rcpp share a very similar syntax.&lt;/li&gt;
-&lt;li&gt;All R objects are compatible with Rcpp, even Lists&lt;/li&gt;
-&lt;li&gt;The Main advantage of using Rcpp is that is way too faster than Regular R. This makes it especially suitable for Algorithms and Matrix manipulation.&lt;/li&gt;
-&lt;li&gt;Notice that Matrices use () for indexing whereas Vectors and Lists use [].&lt;/li&gt;
-&lt;li&gt;Rcpp starts at 0, make the proper adjustments when dealing with indices.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I´ll be posting another Entry using the recently reated functions to show how fast they are. Stay tuned!!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Final Project at the ML Diploma (Part III)</title>
-      <link>/project/machine-learning-diploma-iii/</link>
-      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/machine-learning-diploma-iii/</guid>
-      <description>
-&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tidymodels&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1&lt;/span&gt; Tidymodels&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#spliting-the-data&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.1&lt;/span&gt; Spliting the Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#pre-processing&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;1.2&lt;/span&gt; Pre Processing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#create-the-logistic-regression&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;2&lt;/span&gt; Create the Logistic Regression&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#conclusions&#34;&gt;&lt;span class=&#34;toc-section-number&#34;&gt;3&lt;/span&gt; Conclusions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now we have an idea on how the data looks like it is time to Model.&lt;/p&gt;
-&lt;div id=&#34;tidymodels&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;1&lt;/span&gt; Tidymodels&lt;/h1&gt;
-&lt;p&gt;I´m a huge fan of tidymodels framework and the way Max Kuhn has put together all of this system. I´ll be using several packages from this framework in order to show different steps of the Machine Learning Process.&lt;/p&gt;
-&lt;div id=&#34;spliting-the-data&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.1&lt;/span&gt; Spliting the Data&lt;/h2&gt;
-&lt;p&gt;We will be splitting Data into Training and Test Sets with 70/30 proportion based on the Ins Response Variable.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rsample)
-#Reproducibility
-set.seed(27101986)
-#70/30 Split stratifying the Target Variable Ins
-split &amp;lt;- initial_split(data, prop = 0.7, strata = &amp;quot;Ins&amp;quot;)
-data_training &amp;lt;- split %&amp;gt;% training()
-data_testing &amp;lt;- split %&amp;gt;% testing()&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pre-processing&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;span class=&#34;header-section-number&#34;&gt;1.2&lt;/span&gt; Pre Processing&lt;/h2&gt;
-&lt;p&gt;After splitting Data I will be conducting Pre Processing with the great Recipes Package.&lt;/p&gt;
-&lt;p&gt;Recipes basically mimics the Pre Processing Steps to a Baking Recipe following different sequential steps in order to prepare and Bake the Data (Make the Data Ready to Model).&lt;/p&gt;
-&lt;p&gt;Recipes have &lt;code&gt;step_*&lt;/code&gt; functions in charge of applying different Pre-Processing Steps. Plus includes Variable helpers to call Variables by Type or Role.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(recipes)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Attaching package: &amp;#39;recipes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:stringr&amp;#39;:
-## 
-##     fixed&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:stats&amp;#39;:
-## 
-##     step&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sets the Recipe indicating that Ins will be modeled using all the rest of the variables
-advance_rec &amp;lt;- recipe(Ins ~ . , data = data_training) %&amp;gt;%
-  step_dummy(all_nominal(), -all_outcomes()) %&amp;gt;% #create dummy variables for all categorical variables excepting the Ins Variable
-  step_nzv(all_numeric()) %&amp;gt;% #eliminates numerical variables with variance near to zero
-  step_corr(all_predictors()) %&amp;gt;% #eliminates highly correlated variables
-  step_BoxCox(all_predictors()) %&amp;gt;% #fix highly skewed variables
-  step_center(all_numeric()) %&amp;gt;% #substracts mean
-  step_scale(all_numeric()) %&amp;gt;% #divides by sd. This both steps standardize the variables
-  #Prepares the data according to the data in the Training Set
-  prep(training = data_training)
-  
-  #Applies Training Data according to Preprocessing
-  train_advance &amp;lt;- bake(advance_rec, new_data = data_training)
-  #The main difference with Bake is that Bake skips the processes affecting the outcome variable, suh as resamples, logs transform, etc. 
-  test_advance &amp;lt;- bake(advance_rec, new_data = data_testing)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;create-the-logistic-regression&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;2&lt;/span&gt; Create the Logistic Regression&lt;/h1&gt;
-&lt;p&gt;We will use Logistic regresson using Parsnip and we will Assess the Model using yardstick&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(parsnip)
-
-#Using Parsnip to run classification, using glm engine and fitting train data already pre-processed
-full_advance &amp;lt;- logistic_reg(mode = &amp;quot;classification&amp;quot;) %&amp;gt;%
-                                set_engine(&amp;quot;glm&amp;quot;) %&amp;gt;%
-                                  fit(Ins ~ ., data = train_advance)
-
-#Predicting Class with Model &amp;quot;Full Advance&amp;quot; in the Test Set
-full_pred_advance &amp;lt;- full_advance %&amp;gt;%
-                  predict(new_data= test_advance, type = &amp;quot;class&amp;quot;)
-
-#Predicting class Probabilities with Model &amp;quot;Full Advance&amp;quot;
-full_pred_probs_advance &amp;lt;- full_advance %&amp;gt;%
-                  predict(new_data= test_advance, type = &amp;quot;prob&amp;quot;)
-
-
-library(yardstick)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## For binary classification, the first factor level is assumed to be the event.
-## Set the global option `yardstick.event_first` to `FALSE` to change this.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Attaching package: &amp;#39;yardstick&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:readr&amp;#39;:
-## 
-##     spec&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;comparison_test &amp;lt;- bind_cols(
-  &amp;quot;Real&amp;quot; = test_advance$Ins,
-  &amp;quot;Prediction&amp;quot; = full_pred_advance,
-  &amp;quot;Class1&amp;quot; = full_pred_probs_advance$.pred_yes
-  
-) %&amp;gt;% setNames(c(&amp;quot;Real&amp;quot;,&amp;quot;Prediction&amp;quot;,&amp;quot;Class1&amp;quot;))
-
-#Calculating Confusion Matrix
-comparison_test %&amp;gt;% 
-    conf_mat(Real,Prediction)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##           Truth
-## Prediction  yes   no
-##        yes 1003  464
-##        no  1248 3547&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Calculating Assesment Metrics for Model
-comparison_test %&amp;gt;% 
-    conf_mat(Real,Prediction) %&amp;gt;%
-    summary()&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;.metric&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;.estimator&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;.estimate&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;accuracy&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.7266049&#34;},{&#34;1&#34;:&#34;kap&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.3571922&#34;},{&#34;1&#34;:&#34;sens&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.4455797&#34;},{&#34;1&#34;:&#34;spec&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.8843181&#34;},{&#34;1&#34;:&#34;ppv&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.6837082&#34;},{&#34;1&#34;:&#34;npv&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.7397289&#34;},{&#34;1&#34;:&#34;mcc&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.3737526&#34;},{&#34;1&#34;:&#34;j_index&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.3298979&#34;},{&#34;1&#34;:&#34;bal_accuracy&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.6649489&#34;},{&#34;1&#34;:&#34;detection_prevalence&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.2342702&#34;},{&#34;1&#34;:&#34;precision&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.6837082&#34;},{&#34;1&#34;:&#34;recall&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.4455797&#34;},{&#34;1&#34;:&#34;f_meas&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.5395374&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#ROC Curve
-comparison_test %&amp;gt;%
-  roc_curve(Real,Class1) %&amp;gt;%
-    autoplot()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Setting direction: controls &amp;lt; cases&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in coords.roc(curv, x = unique(c(-Inf, options$predictor, Inf)), :
-## An upcoming version of pROC will set the &amp;#39;transpose&amp;#39; argument to FALSE
-## by default. Set transpose = TRUE explicitly to keep the current behavior,
-## or transpose = FALSE to adopt the new one and silence this warning. Type
-## help(coords_transpose) for additional information.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/Machine-Learning-Diploma-III/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#ROC AUC
-comparison_test %&amp;gt;%
-  roc_auc(Real,Class1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Setting direction: controls &amp;lt; cases&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;.metric&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;.estimator&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;.estimate&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;roc_auc&#34;,&#34;2&#34;:&#34;binary&#34;,&#34;3&#34;:&#34;0.7733382&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Calculated Model
-full_advance$fit %&amp;gt;%
-  tidy() &lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;term&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;estimate&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;std.error&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;statistic&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;p.value&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;(Intercept)&#34;,&#34;2&#34;:&#34;6.117855e-01&#34;,&#34;3&#34;:&#34;0.01993088&#34;,&#34;4&#34;:&#34;3.069536e+01&#34;,&#34;5&#34;:&#34;6.563661e-207&#34;},{&#34;1&#34;:&#34;AcctAge&#34;,&#34;2&#34;:&#34;1.274360e-01&#34;,&#34;3&#34;:&#34;0.02041803&#34;,&#34;4&#34;:&#34;6.241345e+00&#34;,&#34;5&#34;:&#34;4.338251e-10&#34;},{&#34;1&#34;:&#34;DDABal&#34;,&#34;2&#34;:&#34;-3.345807e-01&#34;,&#34;3&#34;:&#34;0.04233735&#34;,&#34;4&#34;:&#34;-7.902732e+00&#34;,&#34;5&#34;:&#34;2.728554e-15&#34;},{&#34;1&#34;:&#34;Checks&#34;,&#34;2&#34;:&#34;8.001763e-02&#34;,&#34;3&#34;:&#34;0.02764014&#34;,&#34;4&#34;:&#34;2.894979e+00&#34;,&#34;5&#34;:&#34;3.791843e-03&#34;},{&#34;1&#34;:&#34;Phone&#34;,&#34;2&#34;:&#34;1.188238e-01&#34;,&#34;3&#34;:&#34;0.02661229&#34;,&#34;4&#34;:&#34;4.464997e+00&#34;,&#34;5&#34;:&#34;8.006974e-06&#34;},{&#34;1&#34;:&#34;Teller&#34;,&#34;2&#34;:&#34;-1.992734e-01&#34;,&#34;3&#34;:&#34;0.02252055&#34;,&#34;4&#34;:&#34;-8.848515e+00&#34;,&#34;5&#34;:&#34;8.869169e-19&#34;},{&#34;1&#34;:&#34;SavBal&#34;,&#34;2&#34;:&#34;-6.805505e-01&#34;,&#34;3&#34;:&#34;0.04626114&#34;,&#34;4&#34;:&#34;-1.471106e+01&#34;,&#34;5&#34;:&#34;5.474173e-49&#34;},{&#34;1&#34;:&#34;ATMAmt&#34;,&#34;2&#34;:&#34;-3.045024e-01&#34;,&#34;3&#34;:&#34;0.03644366&#34;,&#34;4&#34;:&#34;-8.355428e+00&#34;,&#34;5&#34;:&#34;6.519615e-17&#34;},{&#34;1&#34;:&#34;POS&#34;,&#34;2&#34;:&#34;9.988335e-02&#34;,&#34;3&#34;:&#34;0.03999723&#34;,&#34;4&#34;:&#34;2.497256e+00&#34;,&#34;5&#34;:&#34;1.251584e-02&#34;},{&#34;1&#34;:&#34;POSAmt&#34;,&#34;2&#34;:&#34;-1.015285e-01&#34;,&#34;3&#34;:&#34;0.03693182&#34;,&#34;4&#34;:&#34;-2.749079e+00&#34;,&#34;5&#34;:&#34;5.976290e-03&#34;},{&#34;1&#34;:&#34;CCBal&#34;,&#34;2&#34;:&#34;6.859325e-02&#34;,&#34;3&#34;:&#34;0.01891700&#34;,&#34;4&#34;:&#34;3.626011e+00&#34;,&#34;5&#34;:&#34;2.878328e-04&#34;},{&#34;1&#34;:&#34;CCPurc&#34;,&#34;2&#34;:&#34;-2.941948e-02&#34;,&#34;3&#34;:&#34;0.02026686&#34;,&#34;4&#34;:&#34;-1.451605e+00&#34;,&#34;5&#34;:&#34;1.466114e-01&#34;},{&#34;1&#34;:&#34;Income&#34;,&#34;2&#34;:&#34;1.272866e-01&#34;,&#34;3&#34;:&#34;0.03479794&#34;,&#34;4&#34;:&#34;3.657877e+00&#34;,&#34;5&#34;:&#34;2.543134e-04&#34;},{&#34;1&#34;:&#34;LORes&#34;,&#34;2&#34;:&#34;-6.014610e-02&#34;,&#34;3&#34;:&#34;0.02823814&#34;,&#34;4&#34;:&#34;-2.129960e+00&#34;,&#34;5&#34;:&#34;3.317495e-02&#34;},{&#34;1&#34;:&#34;HMVal&#34;,&#34;2&#34;:&#34;-1.935050e-01&#34;,&#34;3&#34;:&#34;0.03770266&#34;,&#34;4&#34;:&#34;-5.132397e+00&#34;,&#34;5&#34;:&#34;2.860749e-07&#34;},{&#34;1&#34;:&#34;Age&#34;,&#34;2&#34;:&#34;-2.219778e-05&#34;,&#34;3&#34;:&#34;0.02288118&#34;,&#34;4&#34;:&#34;-9.701325e-04&#34;,&#34;5&#34;:&#34;9.992259e-01&#34;},{&#34;1&#34;:&#34;CRScore&#34;,&#34;2&#34;:&#34;1.337544e-02&#34;,&#34;3&#34;:&#34;0.02203018&#34;,&#34;4&#34;:&#34;6.071418e-01&#34;,&#34;5&#34;:&#34;5.437568e-01&#34;},{&#34;1&#34;:&#34;Dep&#34;,&#34;2&#34;:&#34;1.028510e-01&#34;,&#34;3&#34;:&#34;0.03356444&#34;,&#34;4&#34;:&#34;3.064284e+00&#34;,&#34;5&#34;:&#34;2.181913e-03&#34;},{&#34;1&#34;:&#34;DepAmt&#34;,&#34;2&#34;:&#34;-1.901625e-02&#34;,&#34;3&#34;:&#34;0.02478175&#34;,&#34;4&#34;:&#34;-7.673488e-01&#34;,&#34;5&#34;:&#34;4.428742e-01&#34;},{&#34;1&#34;:&#34;DDA_yes&#34;,&#34;2&#34;:&#34;2.707683e-01&#34;,&#34;3&#34;:&#34;0.02521098&#34;,&#34;4&#34;:&#34;1.074009e+01&#34;,&#34;5&#34;:&#34;6.597812e-27&#34;},{&#34;1&#34;:&#34;DirDep_yes&#34;,&#34;2&#34;:&#34;7.152448e-03&#34;,&#34;3&#34;:&#34;0.02218401&#34;,&#34;4&#34;:&#34;3.224146e-01&#34;,&#34;5&#34;:&#34;7.471386e-01&#34;},{&#34;1&#34;:&#34;NSF_yes&#34;,&#34;2&#34;:&#34;-2.370392e-02&#34;,&#34;3&#34;:&#34;0.02123988&#34;,&#34;4&#34;:&#34;-1.116010e+00&#34;,&#34;5&#34;:&#34;2.644177e-01&#34;},{&#34;1&#34;:&#34;Sav_yes&#34;,&#34;2&#34;:&#34;-2.547525e-01&#34;,&#34;3&#34;:&#34;0.02196270&#34;,&#34;4&#34;:&#34;-1.159932e+01&#34;,&#34;5&#34;:&#34;4.153464e-31&#34;},{&#34;1&#34;:&#34;ATM_yes&#34;,&#34;2&#34;:&#34;1.292603e-01&#34;,&#34;3&#34;:&#34;0.02414396&#34;,&#34;4&#34;:&#34;5.353733e+00&#34;,&#34;5&#34;:&#34;8.615816e-08&#34;},{&#34;1&#34;:&#34;CD_yes&#34;,&#34;2&#34;:&#34;-2.918515e-01&#34;,&#34;3&#34;:&#34;0.01859470&#34;,&#34;4&#34;:&#34;-1.569541e+01&#34;,&#34;5&#34;:&#34;1.625822e-55&#34;},{&#34;1&#34;:&#34;LOC_yes&#34;,&#34;2&#34;:&#34;6.110583e-03&#34;,&#34;3&#34;:&#34;0.01938014&#34;,&#34;4&#34;:&#34;3.153013e-01&#34;,&#34;5&#34;:&#34;7.525329e-01&#34;},{&#34;1&#34;:&#34;MM_yes&#34;,&#34;2&#34;:&#34;-2.589903e-01&#34;,&#34;3&#34;:&#34;0.01974444&#34;,&#34;4&#34;:&#34;-1.311713e+01&#34;,&#34;5&#34;:&#34;2.627075e-39&#34;},{&#34;1&#34;:&#34;CC_yes&#34;,&#34;2&#34;:&#34;-1.798393e-01&#34;,&#34;3&#34;:&#34;0.02157689&#34;,&#34;4&#34;:&#34;-8.334809e+00&#34;,&#34;5&#34;:&#34;7.762339e-17&#34;},{&#34;1&#34;:&#34;SDB_yes&#34;,&#34;2&#34;:&#34;-3.708755e-02&#34;,&#34;3&#34;:&#34;0.01901094&#34;,&#34;4&#34;:&#34;-1.950853e+00&#34;,&#34;5&#34;:&#34;5.107453e-02&#34;},{&#34;1&#34;:&#34;HMOwn_yes&#34;,&#34;2&#34;:&#34;-1.060297e-02&#34;,&#34;3&#34;:&#34;0.02920242&#34;,&#34;4&#34;:&#34;-3.630853e-01&#34;,&#34;5&#34;:&#34;7.165412e-01&#34;},{&#34;1&#34;:&#34;Branch_B2&#34;,&#34;2&#34;:&#34;-4.272629e-03&#34;,&#34;3&#34;:&#34;0.02524865&#34;,&#34;4&#34;:&#34;-1.692221e-01&#34;,&#34;5&#34;:&#34;8.656220e-01&#34;},{&#34;1&#34;:&#34;Branch_B3&#34;,&#34;2&#34;:&#34;-2.564723e-02&#34;,&#34;3&#34;:&#34;0.02535713&#34;,&#34;4&#34;:&#34;-1.011440e+00&#34;,&#34;5&#34;:&#34;3.118057e-01&#34;},{&#34;1&#34;:&#34;Branch_B1&#34;,&#34;2&#34;:&#34;2.605656e-02&#34;,&#34;3&#34;:&#34;0.02565672&#34;,&#34;4&#34;:&#34;1.015584e+00&#34;,&#34;5&#34;:&#34;3.098275e-01&#34;},{&#34;1&#34;:&#34;Branch_B7&#34;,&#34;2&#34;:&#34;3.878624e-02&#34;,&#34;3&#34;:&#34;0.02309364&#34;,&#34;4&#34;:&#34;1.679521e+00&#34;,&#34;5&#34;:&#34;9.305058e-02&#34;},{&#34;1&#34;:&#34;Branch_B5&#34;,&#34;2&#34;:&#34;-1.824560e-02&#34;,&#34;3&#34;:&#34;0.02531664&#34;,&#34;4&#34;:&#34;-7.206961e-01&#34;,&#34;5&#34;:&#34;4.710965e-01&#34;},{&#34;1&#34;:&#34;Branch_B6&#34;,&#34;2&#34;:&#34;-8.867298e-03&#34;,&#34;3&#34;:&#34;0.02270427&#34;,&#34;4&#34;:&#34;-3.905563e-01&#34;,&#34;5&#34;:&#34;6.961252e-01&#34;},{&#34;1&#34;:&#34;Branch_B4&#34;,&#34;2&#34;:&#34;-1.583160e-02&#34;,&#34;3&#34;:&#34;0.02902725&#34;,&#34;4&#34;:&#34;-5.454048e-01&#34;,&#34;5&#34;:&#34;5.854752e-01&#34;},{&#34;1&#34;:&#34;Branch_B16&#34;,&#34;2&#34;:&#34;1.673182e-01&#34;,&#34;3&#34;:&#34;0.02501004&#34;,&#34;4&#34;:&#34;6.690040e+00&#34;,&#34;5&#34;:&#34;2.231092e-11&#34;},{&#34;1&#34;:&#34;Branch_B8&#34;,&#34;2&#34;:&#34;-4.156275e-02&#34;,&#34;3&#34;:&#34;0.02204090&#34;,&#34;4&#34;:&#34;-1.885710e+00&#34;,&#34;5&#34;:&#34;5.933403e-02&#34;},{&#34;1&#34;:&#34;Res_suburb&#34;,&#34;2&#34;:&#34;2.037763e-02&#34;,&#34;3&#34;:&#34;0.02505362&#34;,&#34;4&#34;:&#34;8.133607e-01&#34;,&#34;5&#34;:&#34;4.160113e-01&#34;},{&#34;1&#34;:&#34;Res_urban&#34;,&#34;2&#34;:&#34;4.361963e-02&#34;,&#34;3&#34;:&#34;0.02516920&#34;,&#34;4&#34;:&#34;1.733056e+00&#34;,&#34;5&#34;:&#34;8.308567e-02&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusions&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;span class=&#34;header-section-number&#34;&gt;3&lt;/span&gt; Conclusions&lt;/h1&gt;
-&lt;p&gt;We have run a Machine Learning Process using:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rsamples for splitting data.&lt;/li&gt;
-&lt;li&gt;recipes for Pre-Processing.&lt;/li&gt;
-&lt;li&gt;parsnip to fit the model&lt;/li&gt;
-&lt;li&gt;yardstick to measure the performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finally 41 variables were kept getting a 72% of accuracy and a 77.3% of ROC AUC.&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     

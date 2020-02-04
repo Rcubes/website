@@ -34,10 +34,10 @@ subtitle = ""
   
   
 [[feature]]
-  icon = "project-diagram"
-  icon_pack = "fas"
-  name = "Keras"
-  description = "My thesis project gave the chance to start digging into Neural Nets. Currently I'm finishing my Thesis focused on using ConvNets to solving Finite Element Problems in Civil Engineering."
+  icon = "python"
+  icon_pack = "fab"
+  name = "Python"
+  description = "This is a Work in Progress, but now I'm definitely into learning Python and its Data Science Tools. For now I think pandas and Scikit Learn are my friends, and I'm working on Numpy and matplotlib."
   
 [[feature]]
   icon = "graduation-cap"

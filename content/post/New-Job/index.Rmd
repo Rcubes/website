@@ -1,17 +1,29 @@
 ---
-title: "I got a new Job!!"
-subtitle: at Scotiabank Cencosud Advanced Analytics Team.
-summary: I just got a new job, and this is what I know so far.
-date: 2019-10-30T00:00:00
-categories: ["Blog"]
-tags: ["Scotiabank Cencosud"]
-authors:
-- admin
-draft: false
+title: I got a new job
+authors: 
+  - admin
+date: '2019-11-06'
+categories:
+  - Blog
+  - Rambling
+tags:
+  - R
+  - New job
+  - Data Science
 image:
-  caption:  
+  caption: ""
   focal_point: "Center"
-  
+summary: "I just want to tell you about my new job"
+highlight: true
+featured: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
 ---
 
 

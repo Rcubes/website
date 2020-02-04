@@ -26,7 +26,7 @@ date_format = "Jan 2006"
   location = "Viña del Mar, Chile"
   date_start = "2019-11-06"
   date_end = ""
-  description = """ Decided to Apply the knowledge learned during my Data Science stage into Civil Engineering. I started working on applying Convolutional Nets to solve FInite Elements problems in Civil Engineering such as Displacement Methods and Permeability Issues in Dams."""
+  description = """Working mainly on designing Machine Learning Models in the Advanced Analytics Department for Marketing."""
   
   
 [[experience]]
@@ -74,7 +74,7 @@ date_format = "Jan 2006"
   location = "Viña del Mar, Chile"
   date_start = "2016-06-01"
   date_end = "2019-06-10"
-  description = """Trainer in charge of the Advanced Classes covering topics like Performance, Non-standard charts, LOD and Tableau Advanced Tips and Tricks"""
+  description = """Trainer in charge of the Advanced Classes covering topics like Performance, Non-standard charts, LOD and Tableau Advanced Tips and Tricks."""
 
 [[experience]]
   title = "Analista de Produccion Elqui"

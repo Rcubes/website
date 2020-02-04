@@ -1,0 +1,161 @@
+---
+title: R vs Python
+authors: 
+  - admin
+date: '2020-01-29'
+categories:
+  - Blog
+  - Rambling
+tags:
+  - R
+  - Python
+  - Data Science
+image:
+  caption: ""
+  focal_point: "Smart"
+summary: "This is the great debate in Data Science, who wins?"
+highlight: true
+featured: true
+math: true
+output:
+  blogdown::html_page:
+    toc: false
+    number_sections: false
+    toc_depth: 4
+    fig_caption: yes
+    
+---
+
+
+
+<div id="catching-up-about-me" class="section level1">
+<h1>Catching up about me</h1>
+<p>I’ve been working in my new job for the last two months, I’ve had some pros and some cons but that will be another day’s discussion. The reason I’m writing about this is because in my new role I have to create a lot of ML models and sadly, and I really mean sadly, R is not suited for that. And it seems Python is.</p>
+<p>This is something that breaks my heart, and makes me wonder what tool is better suited for data science, R or Python? And I want to add my two cents based on my experience and trying to be as objective as possible.</p>
+<p>Aditionally, I run into this updated DataCamp <a href="https://www.datacamp.com/community/tutorials/r-or-python-for-data-analysis">Infographic</a> that I think is one of the most accurate and less biased comparisons I have found so far.</p>
+<div id="recap-my-background-and-how-i-use-to-approach-r-vs-python" class="section level2">
+<h2>Recap, my background and How I use to approach R vs Python</h2>
+<div id="disclaimer" class="section level3">
+<h3>Disclaimer</h3>
+<blockquote>
+<p>I’ve been coding with R by 5 five years now, and heavy coding with Python the last 3 weeks.</p>
+</blockquote>
+<p>If you know me (probably not) I’m an R fan, I’ve been programming with R since 2015 I’ve done everything: Reports, ETLs, Data cleaning, Shiny Apps, Machine Learning and Deep Learning (My Thesis) and a long etc.</p>
+<p>And I have to say I’ve been really reluctant to learn Python, I just couldn’t understand why people prefer it and why they consider it to be superior to R. I really get upset when I notice that Google releases some really cool APIs for something that I really want and natively is there for Python and I have to wait for some genius R hacker to create the API for R.</p>
+<p>2 weeks ago I attended to a Microsoft conference and I was in a data science Talk when the keynote asked who in the audience prefered Python, and 95% of the room raised their hand. My boss stared at me saying: “Ouch”. That hurted, but at the same time opened my eyes.</p>
+<p>Normally when I watch R vs Python things I notice a lot of Bias towards Python. I can’t find a founded reason of why you should go for Python instead of R.</p>
+<p>When you check these R vs Python entries the reason a lot of people allege about R not being a good option is because <em>“… it is not suited for Production”</em>. But what Production means?</p>
+<blockquote>
+<p>Actually Production could be whatever form your data Product could be ready to be consumed, it could be a flat file, a Database, an online dashboard, a PDF report, an API…whatever your want.</p>
+</blockquote>
+<p>Under that definition, R has a lot of different options to meet those needs:</p>
+<ul>
+<li>When it comes to exporting to files
+<ul>
+<li>{readr} can export to any flat file out there.<br />
+</li>
+<li>{arrow} can export to feather and parquet.<br />
+</li>
+<li>{haven} can export to SAS, SPSS files.<br />
+</li>
+<li>{jsonlite} can export to JSON.<br />
+</li>
+<li>a long etc.</li>
+</ul></li>
+<li><p>If it is about DBs, you can definitely need to check out the {DBI}, {odbc}, {dbplyr} combo. WIth those three packages you can connect to almost any DB type.</p></li>
+<li><p>An online dashboard, well you have {Shiny} and a really <a href="https://github.com/nanxstats/awesome-shiny-extensions">long list</a> of extensions to create really professional dashboards using the most cutting edges web frameworks such as Bootstrap, Bulma, AdminLTE, Semantic-UI, etc.</p></li>
+</ul>
+<p>A PDF report, you can use the whole –down stack of packages:</p>
+<ul>
+<li>Reports {Rmarkdown},</li>
+<li>write your own book {bookdown},</li>
+<li>your website (suck as this) {blogdown},</li>
+<li>posters {posterdown} and {pagedown},</li>
+<li>PDFs, Words, Powerpoints {Rmarkdown}, {xaringan}, {pagedown},</li>
+<li>Scientific articles {distill}, {Rmarkdown},</li>
+<li>A really long etc. again.</li>
+</ul>
+<p>An API, well {plumber} is definitely the easiest way to make your own API.</p>
+<blockquote>
+<p>When someone says R is not production ready, I would say I’m <strong>NOT SURE</strong>!!!</p>
+</blockquote>
+<p><strong>R has all the capabilities to be suited for Production</strong>.</p>
+<p>Another common issue is that R is slow. Of course it is slow if you use for loops with no previously defined length.</p>
+<p>I think there is enough evidence to show that R is not slow. You can check:</p>
+<ul>
+<li><p>H2o benchmarks <a href="https://github.com/Rdatatable/data.table/wiki/Benchmarks-:-Grouping">here</a> showing speed for data manipulation.</p></li>
+<li><p>You can check some Deep Learning frameworks comparisons <a href="https://deepsense.ai/keras-or-pytorch/">here</a> and you will see that R can achieve pretty good times. (Take into account that R has no native DL framework and even with the translation to Python overhead can beat some well established Frameworks in <strong>some</strong> tasks, not all of them)</p></li>
+</ul>
+<blockquote>
+<p>So again, speed is not an issue, if you want full speed of course you’ll want to go to C++, Scala or Java.</p>
+</blockquote>
+<p>Another thing is the syntax. This is something that really gets me upset. Because comparisons are just not fair.</p>
+<p>Python prides itself to have <em>“Among its most important characteristics the use of elegant syntax, which allows the users to read program code easily”</em>.</p>
+<p>Sorry guys but this:</p>
+<pre class="python"><code>df.loc[(df[&#39;var_1&#39;]&gt;3) &amp; df[&#39;var_2&#39;]&lt;5,[&#39;var_3&#39;,&#39;var_4&#39;]].apply(lambda x: (x+3)**2, axis=0)</code></pre>
+<blockquote>
+<p><strong>Does not read as plain english and it is not elegant.</strong></p>
+</blockquote>
+<p>Of course, there are ways to write that code in a more readable way, but that code is quite compliant with Python Standards and I just can read it at first sight.</p>
+<pre class="r"><code>df %&gt;%
+  filter(var_1 &gt; 3 &amp; var_2 &lt; 5) %&gt;%
+  select(var_3, var_4) %&gt;%
+  map_df(~ (.x + 3)^2)</code></pre>
+<blockquote>
+<p>Sorry but, this is plain english and elegant.</p>
+</blockquote>
+<p>Normally websites says pandas can do something really powerful like sort values with:</p>
+<pre class="python"><code>df.sort_values(&#39;var_1&#39;, ascending = False)</code></pre>
+<p>which is actually pretty powerful but they compare it to:</p>
+<pre class="r"><code>df[-order(df[&#39;var_1&#39;]),]</code></pre>
+<p>which is unreadable, and nobody uses, and if you do, please <strong>STOP doing it</strong>.</p>
+<p>Tidyverse allows to do this just by:</p>
+<pre class="r"><code>df %&gt;%
+  arrange(var_1)</code></pre>
+<p>A fair comparison between Python and R needs to incorporate their main packages. The problem here is that Python have everything concentrated into the Scipy stack (Numpy, pandas, Scipy, matplotlib and Scikit-Learn). With those 5 packages you can do almost anything related to Data Science in Python.</p>
+<p>In R, just by using the Tidyverse you have around 20 to 30 packages and you have a lot of small specialized packages to improve productivity.</p>
+<p>But all of these things <strong>do not cover the MAIN reason of why people prefer Python over R</strong>.</p>
+<p>Another popular reason described in these comparisons is that R is more suited for Statisticians while Python is more suited for programmers. This is <strong>partially</strong> True. I would say that Python looks more familiar for people with a Computer Science background, while R is more friendly for people that have never programmed in their life (During Latin R I was gladly surprised to notice that a lot of R programmers were not related at all with Data Science but with other fields that leverage data).</p>
+<p>That explains a lot about things that R is being discriminated for:</p>
+<ul>
+<li><p>R has a messy syntax: Not necessarily, But a lot of people with no previous coding experience use R and they don´t care about following best practices, they want to get things done, no matter if you use base R, or tidyverse, or pipe, or data.table, all in the same script and alternating with no prior notice.</p></li>
+<li><p>R is slow: Again since most of the people don´t have coding experience they are not worried about imporving code performance.</p></li>
+<li><p>R has too many packages: This is true, and you can get lost here. But if you need to deal with data, normally you should go for the tidyverse, and following tidy principals all of the problems described above <strong>should</strong> be solved.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="why-i-prefer-r" class="section level1">
+<h1>Why I prefer R</h1>
+<p>This is really personal, and the main reason is the tidyverse and the pipe friendly syntax. When I code I put a lot of effort to be able to understand it at first sight. Code readability is for me the most important thing.</p>
+<p>Then is code performance, if the code is not performant I modify syntax slightly to improve performance not affecting readability.
+{
+Then is productivity and complementary packages that I normally I use a lot, packages like {mufflr}, {glue} or {remedy} to make coding easier and more fun are crucial for me.</p>
+<p>Finally my favorite packages, and with this I refer to packages that have no comparison:</p>
+<ul>
+<li><p>{dplyr} (and {tidyr}) have absolutely no comparison. It is just the most beautiful syntax to deal with data, the function names, the functionality (specially things like mutate and scope variants like *_at, *_if and *_all) are just the best thing to work with.</p></li>
+<li><p>{ggplot2} Even though I´m not a chart fan, again the syntax and the ease to make really complete charts (I don´t want to say beautiful because I really hate ggplot’s default color palette) is priceless.</p></li>
+<li><p>{recipes} and the tidymodels API (not the documentation, that I have to say is quite messy sometimes). When recipes was released I just didn’t get it and I was so confused. Once I understood how it worked my life changed. There is no easier way to apply preprocessing steps like recipes. And this became my favorite package. The when the rest of packages started to be released I fell in love with tidymodels. I use to use caret and the package was so huge that I usually got lost. With this new framework everything was so organized that I really enjoyed creating Machine Learning workflows.</p></li>
+</ul>
+<p>These 3 packages, namely dplyr, ggplot and recipes, have no comparison in my humble opinion.</p>
+</div>
+<div id="the-break-up" class="section level1">
+<h1>The break up</h1>
+<p>When you have your favorite packages and it fails, it just break your heart, and that happened with {recipes}.</p>
+<p>I built a simple Random Forest model with around 1M of rows, and the prepper object was 40GB. The {ranger} model object was 5GB and after the resample I got this lovely message:</p>
+<p><em>“Vector size X GB cannot be allocated”</em></p>
+<p>I moved to a cloud server, having 240GB of RAM and I used {furrr} to parallelize my code when R just stopped working running out of memory several times leaving incomplete processes (as many as threads could be run) running in the Task Manager, blocking memory to be used for some others processes.</p>
+<p>After carefully investigate what was happening I noticed that everytime I ran something less RAM was available, and the dissapointment arrived. Once the model finished I was expecting Memory to be released but that never happened.</p>
+<blockquote>
+<p>After doing some research I found the right term: <strong>Memory Leakage</strong>.</p>
+</blockquote>
+<p>Memory leakage refers when the OS is not releasing Memory once a process allocating this memory finishes. Plus, I didn´t understand why having 50GB objects used up my whole memory. The only way to free up this memory was restarting R (Ctrl + Shift + F10)</p>
+<p>And here is the real reason why R is not a top choice for data Science, and for some reason this is something that nobody mentions but it is slightly touched in the DataCamp Infographic. R has a poor memory management, and Hadley knows it. He mentions this Memory Leakage issues in <a href="http://adv-r.had.co.nz/memory.html">Advance R first edition</a> (for some reason it is not detailed in the 2nd Edition).</p>
+<p>Real Data Science, and not just the small examples we use to demonstrate the power and usage of a package, depends a lot on memory usage, and you cannot mount a production system knowing that R will use up your full memory available and you cannot release it.</p>
+<p>Probably this is something R developers are also facing and Hadley and the Rstudio guys know, but it is something intrinsic from R.</p>
+<p>Plus, R is not natively installed in a hosting service or a Linux server as Python is, and has not parallelism “almost natively” implemented. Making Python an easier choice to go.</p>
+<blockquote>
+<p>Ok, here we explained why R is not a top choice option but we haven’t talked anything about Python…</p>
+</blockquote>
+<p>Why Python? This will be covered in a next Post.</p>
+</div>

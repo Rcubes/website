@@ -76,6 +76,15 @@
     </item>
     
     <item>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deep Learning</title>
       <link>/tags/deep-learning/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
@@ -130,11 +139,29 @@
     </item>
     
     <item>
+      <title>New job</title>
+      <link>/tags/new-job/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/new-job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Parsnip</title>
       <link>/tags/parsnip/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/parsnip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
@@ -150,7 +177,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -180,15 +207,6 @@
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rsample/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scotiabank Cencosud</title>
-      <link>/tags/scotiabank-cencosud/</link>
-      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/scotiabank-cencosud/</guid>
       <description></description>
     </item>
     

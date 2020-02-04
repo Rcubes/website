@@ -37,7 +37,7 @@ date_format = "Jan 2006"
   certificate_url = ""
   date_start = "2019-09-25"
   date_end = ""
-  description = "3 Hours Tutorial conducted by Phd. Erin Ledell Head of ML at H2o."
+  description = "3 Hours Tutorial conducted by Phd. Erin Ledell Head of ML at [H2o](https://www.h2o.ai/)."
 
 
 
