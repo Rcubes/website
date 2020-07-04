@@ -15,6 +15,7 @@ education:
 email: "bigdrummer2@gmail.com"
 # interests:
 # - Data Science
+# - Python
 # - R & Tidyverse
 # - Machine Learning
 # - Deep Learning
