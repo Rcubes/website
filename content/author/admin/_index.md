@@ -30,7 +30,7 @@ role: Senior Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: '/Contact'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/tobar_with_R
