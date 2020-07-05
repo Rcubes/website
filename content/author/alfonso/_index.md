@@ -1,7 +1,7 @@
 ---
 authors:
 - alfonso
-bio: I'm passioned about R, Machine Learning, Speedcubing, Drumming and Table Tennis.
+bio: I'm passioned about R, Python, Machine Learning, Speedcubing, Drumming and Table Tennis.
 
 education:
   courses:
@@ -50,7 +50,7 @@ user_groups:
 I'm almost a Civil Engineer that for **_well-unknown_**  reasons ended up working as a Data Scientist prior to finish my Thesis Project (more to come on this) and it seems I enjoy it.  
 I love solving the Rubik's Cube when analizing data in R, that should be enough insight to figure out **_why the site name_**.
 
-I´ve been working in Data Science for the past 4 years working on some interesting and a lot of not-so-interesting Data Science projects. I started getting bored since R started to be banned from Production Processes in my previous Company (probably I'll write about this later) so I decided to come up with this site to showcase the Power of R and some use-cases in my Thesis, and hopefully my new job :grinning:.
+I´ve been working in Data Science for the past 5 years working on some interesting and a lot of not-so-interesting Data Science projects. I started getting bored since R started to be banned from Production Processes in my previous Company (probably I'll write about this later) so I decided to come up with this site to showcase the Power of R and some use-cases in my Thesis, and hopefully my new job :grinning:.
 
 The purpose of this site is to honor Yihui Xie's quote: **__"I web, therefore I am ~~Spiderman~~"__** (but I have to say I feel more identified with Tony Stark, not because I'm a Genius, Billionaire, Playboy nor Philanthropist, but I like his creativity...and his **Armor**)  and of course learn together about how R can achieve really cool Data Science Stuffs. I feel I'm a pretty advanced useR, I've been using R since I joined EVS and the **Tidyverse** just changed my life.  
 

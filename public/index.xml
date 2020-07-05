@@ -7,8 +7,468 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 00:50:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Reusable Plotting Functions in Python</title>
+      <link>/publication/problem-10/</link>
+      <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/problem-10/</guid>
+      <description>
+
+&lt;h1 id=&#34;creating-reusable-plotting-functions&#34;&gt;Creating reusable plotting Functions&lt;/h1&gt;
+
+&lt;p&gt;In my new job I´ve noticed they like to explain variables impact into some target in the following way:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;example.PNG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Normally we have a natural Rate of an Event happening shown as this TN dashed line. And you have a particular variable that is splitted into Categories showing what is the specific Rate of the Event by Category.&lt;/p&gt;
+
+&lt;p&gt;Since this is happening so often, I decided to build a simple function to avoid all the work behind the scenes. In order to show this, I will use the well-known Titanic dataset from Kaggle, which can be downloaded from &lt;a href=&#34;https://www.kaggle.com/c/titanic/data&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So first of all. let´s import the data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;train.csv&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;PassengerId&lt;/th&gt;
+      &lt;th&gt;Survived&lt;/th&gt;
+      &lt;th&gt;Pclass&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Sex&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;SibSp&lt;/th&gt;
+      &lt;th&gt;Parch&lt;/th&gt;
+      &lt;th&gt;Ticket&lt;/th&gt;
+      &lt;th&gt;Fare&lt;/th&gt;
+      &lt;th&gt;Cabin&lt;/th&gt;
+      &lt;th&gt;Embarked&lt;/th&gt;
+      &lt;th&gt;Signing_date&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Braund, Mr. Owen Harris&lt;/td&gt;
+      &lt;td&gt;male&lt;/td&gt;
+      &lt;td&gt;22.0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;A/5 21171&lt;/td&gt;
+      &lt;td&gt;7.2500&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;S&lt;/td&gt;
+      &lt;td&gt;1911-05-17&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Cumings, Mrs. John Bradley (Florence Briggs Th...&lt;/td&gt;
+      &lt;td&gt;female&lt;/td&gt;
+      &lt;td&gt;38.0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;PC 17599&lt;/td&gt;
+      &lt;td&gt;71.2833&lt;/td&gt;
+      &lt;td&gt;C85&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1911-07-23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Heikkinen, Miss. Laina&lt;/td&gt;
+      &lt;td&gt;female&lt;/td&gt;
+      &lt;td&gt;26.0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;STON/O2. 3101282&lt;/td&gt;
+      &lt;td&gt;7.9250&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;S&lt;/td&gt;
+      &lt;td&gt;1911-09-08&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Futrelle, Mrs. Jacques Heath (Lily May Peel)&lt;/td&gt;
+      &lt;td&gt;female&lt;/td&gt;
+      &lt;td&gt;35.0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;113803&lt;/td&gt;
+      &lt;td&gt;53.1000&lt;/td&gt;
+      &lt;td&gt;C123&lt;/td&gt;
+      &lt;td&gt;S&lt;/td&gt;
+      &lt;td&gt;1911-06-26&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Allen, Mr. William Henry&lt;/td&gt;
+      &lt;td&gt;male&lt;/td&gt;
+      &lt;td&gt;35.0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;373450&lt;/td&gt;
+      &lt;td&gt;8.0500&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;S&lt;/td&gt;
+      &lt;td&gt;1911-10-25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This dataset is intended to find survival rate of passengers depending of the features associated to them. In this case the Target variable is &lt;code&gt;Survived&lt;/code&gt;. If we want to understand the Surviving rate we can just simply use &lt;code&gt;.value_counts()&lt;/code&gt; to get those numbers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.Survived.value_counts(normalize = True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    0.616162
+1    0.383838
+Name: Survived, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can notice that 61% of passengers did not survived, but is there any difference when we take subsets of the data? For example does the survival rate change when analizing by sex? We expect so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.groupby([&#39;Sex&#39;]).Survived.value_counts(normalize = True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Sex     Survived
+female  1           0.742038
+        0           0.257962
+male    0           0.811092
+        1           0.188908
+Name: Survived, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Actually, when splitting by Sex we notice that 74% of women survived whereas only 18% of men survived. So is there a good way to plot this? So our aim will be to show only survival rate (because death rate is just the complement) and show how that compares to the Natural Survival Rate:&lt;/p&gt;
+
+&lt;h1 id=&#34;the-trick&#34;&gt;The Trick&lt;/h1&gt;
+
+&lt;p&gt;The first trick is that since Survived is a binary variable, it is possible to get the same survival rates, but only for the &amp;ldquo;1&amp;rdquo;  doing the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.groupby(&#39;Sex&#39;).Survived.mean()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Sex
+female    0.742038
+male      0.188908
+Name: Survived, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This can be easily plot using &lt;code&gt;pandas.plot()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+df.groupby(&#39;Sex&#39;).Survived.mean().plot(kind = &#39;bar&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_12_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I will create the &lt;code&gt;plot_rate_by()&lt;/code&gt; in order to make this interesting and be very flexible. Also this will add some other functionalities such as adding titles and allow this for any dataset:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def plot_rate_by(data,by,Target, TN, title, x, y, x_label = None, rot = 0):
+    TN *=100 # converts to percentage
+    # plots ading title, and optional label rotation
+    ax = (data.groupby(by)[Target].mean()*100).plot(kind = &#39;bar&#39;, title = title, rot = rot) 
+    plt.axhline(TN, color = &#39;r&#39;, linestyle = &#39;--&#39;) # adds dashed line
+    # adds the red text box, in coordinates x and y to avoid overlapping
+    plt.text(x,y,f&#39;TN = {TN}%&#39;,bbox=dict(facecolor=&#39;red&#39;, alpha=0.5)) 
+    ax.set_xlabel(x_label) # optional Label for the x Axis
+    return plt.show()
+    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So now, it is just  matter of tun the function with the parameters and that&amp;rsquo;s it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+# Natural Rate for survivors
+tn = np.round(df.Survived.value_counts(normalize = True).loc[1],3) 
+plot_rate_by(df, by = &#39;Sex&#39;, Target = &#39;Survived&#39;, TN = tn, 
+  title = &#39;Survivors by Sex&#39;, x = 0.4, y = 40, x_label = None)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_16_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And it can be done for any categorical variable, for example, &lt;code&gt;Pclass&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_rate_by(df, by = &#39;Pclass&#39;, Target = &#39;Survived&#39;, TN = tn, title = &#39;Survivors by Pclass&#39;, x = 1.6, y = 40, x_label = None)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_18_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another thing that normally happens at my job is that they want to do this with variables that are continous. This cannot be done directly, so it is necessary to create some binning. This can be done easily. Let´s say we want to use Fare. So what is the Survival rate for people paying cheaper tickets, let´s say &lt;10, or some other values &lt;100, &lt;300 and &gt;=300. In order to this I will use &lt;code&gt;numpy.select&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I think numpy select is not very self explanatory. Basically works as a case when in which you have to define a condition list, boolean masks, and a choice list with vallues when condition is met.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;condlist = [df.Fare &amp;lt; 10, df.Fare &amp;lt; 100, df.Fare &amp;lt; 300, df.Fare &amp;gt;= 300] # list of conditions
+choicelist = [&#39;&amp;lt;10&#39;,&#39;&amp;lt;100&#39;,&#39;&amp;lt;300&#39;,&#39;&amp;gt;=300&#39;]
+
+df[&#39;Fare_binning&#39;] = np.select(condlist, choicelist)
+df[[&#39;Fare&#39;,&#39;Fare_binning&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Fare&lt;/th&gt;
+      &lt;th&gt;Fare_binning&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;7.2500&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;71.2833&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;7.9250&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;53.1000&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;8.0500&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;886&lt;/th&gt;
+      &lt;td&gt;13.0000&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;887&lt;/th&gt;
+      &lt;td&gt;30.0000&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;888&lt;/th&gt;
+      &lt;td&gt;23.4500&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;889&lt;/th&gt;
+      &lt;td&gt;30.0000&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;890&lt;/th&gt;
+      &lt;td&gt;7.7500&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;891 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Well normally you don&amp;rsquo;t know priorly what are good binnings to show your data so this type of operation needs to be extremely flexible. How can this transform into a function?
+Let´s say we have a list of tha boundary values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;vals_l = [10,100,300]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A for loop can be used to use this values into conditions using &lt;code&gt;.lt()&lt;/code&gt; method and creating the choices:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;condlist = []
+choicelist = []
+#Doing this operation for every boundary
+for v in vals_l:
+    condlist.append(df[&#39;Fare&#39;].lt(v)) # data[&#39;Fare&#39;].lt(v) is equivalent to data.Fare &amp;lt; v
+    choicelist.append(&#39;&amp;lt;&#39;+str(v)) #concatening boundary and the &amp;lt; sign
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, it is necessary to add the last category for the &amp;gt;=. This can be done as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;condlist.append(df[&#39;Fare&#39;].ge(vals_l[-1]))
+choicelist.append(&#39;&amp;gt;=&#39;+str(vals_l[-1]))
+
+choicelist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;[&#39;&amp;lt;10&#39;, &#39;&amp;lt;100&#39;, &#39;&amp;lt;300&#39;, &#39;&amp;gt;=300&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It can be seen that all of the categories has been correctly created. Now putting all together into a function will look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def convert_to_range(data, field, vals_l):
+    vals_l = vals_l
+    condlist = []
+    choicelist = []
+    for v in vals_l:
+        condlist.append(data[field].lt(v))
+        choicelist.append(&#39;&amp;lt;&#39;+str(v))
+    
+    condlist.append(data[field].ge(vals_l[-1]))
+    choicelist.append(&#39;&amp;gt;=&#39;+str(vals_l[-1]))
+    return pd.Categorical(np.select(condlist, choicelist), categories=choicelist, ordered = True) #converts everything into a pandas categorical variable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;binning_function&#39;] = convert_to_range(df,&#39;Fare&#39;,vals_l)
+df[[&#39;Fare_binning&#39;,&#39;binning_function&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Fare_binning&lt;/th&gt;
+      &lt;th&gt;binning_function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;886&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;887&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;888&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;889&lt;/th&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+      &lt;td&gt;&amp;lt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;890&lt;/th&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+      &lt;td&gt;&amp;lt;10&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;891 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can check that results are identical, and now this can be easily applied to any continuos variable.
+The lesson here is, I´m lazy I don´t want to things everytime, so I do it well once and then I recycle the functions.&lt;/p&gt;
+
+&lt;p&gt;Now the &lt;code&gt;plot_rate_by()&lt;/code&gt; function can be used:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_rate_by(df, by = &#39;binning_function&#39;, Target = &#39;Survived&#39;, TN = tn, title = &#39;Survivors by Fare Categories&#39;, x = -0.3, y = 42, x_label = None)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_32_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hope you like this. And can be useful to understand that being lazy is good if this makes you a recycler. Not sure if this sounds OK but anyways.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Calculating Recency using dplyr</title>
@@ -1386,39 +1846,6 @@ mtcars %&amp;gt;%
 &lt;p&gt;“Finish your daily work with a test failing so you can now exactly how to resume your work the next day.”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Tomorrow is day 2. Stay tuned!!&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Latin R</title>
-      <link>/post/latin-r/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/latin-r/</guid>
-      <description>
-
-
-&lt;div id=&#34;latin-r&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Latin R&lt;/h2&gt;
-&lt;p&gt;Latin R is a conference organized by RLadies Latam and is the oportunity we have here in Chile to get acquainted about the last R breakthrough and how is being using in Research, companies, etc.
-They also provide a full day of Tutorials and of course important keynotes are invited to come over. This year I think is huge, because 3 Main R users are coming:&lt;/p&gt;
-&lt;div id=&#34;mine-çetinkaya-rundel&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Mine Çetinkaya-Rundel&lt;/h3&gt;
-&lt;p&gt;She is one of the most important persons involved into R Teaching. Statistics Professor from Duke University. I personally had the chance to take some Coursera and Datacamp Courses with her and I learned a lot, really good teacher and really knowledgable. Having her now here in Chile to meet her in person is such a great Honor. I just can´t wait to hear about what she has to say.
-She will be conducting a Tutorial on how to Teach R and of Course a main Speech.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;erin-ledell&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Erin Ledell&lt;/h3&gt;
-&lt;p&gt;I have to say I don’t know a lot about her but she has a great curriculum: Chief Machine Learning Scientist at H2O, co-founder of Rladies Global and Woman+ in ML/DS, plus BioStatistics Phd at Berkeley, that is more than enough. She will be conducting a Tutorial on Machine Learning and Deep Learning that of course I´ll be taking so I´ll give more details on a later post.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;hadley-wickham&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Hadley Wickham&lt;/h3&gt;
-&lt;p&gt;This Guy needs no Introduction. He is the Chief Scientist at RStudio and he will be giving the Main Speech of the Conference plus a Package Development Tutorial. Of ourse I will be in first row of this Tutorial and I expect to learn a lot and have a lot of questions prepared beforehand.&lt;/p&gt;
-&lt;p&gt;This guys is by far my most important inspiration when it comes to working in R. Definitely this guy has made my life way easier because of all of the packages that he has created and I use almost every day.&lt;/p&gt;
-&lt;p&gt;I’ll be the next 3 days in the Conference and I expect to share some pictures and experiences about the things I will learn.&lt;/p&gt;
-&lt;p&gt;Stay tuned!!!&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

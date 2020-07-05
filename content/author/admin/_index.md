@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: I'm passioned about R, Machine Learning, Speedcubing, Drumming and Table Tennis.
+bio: I'm passioned about R, Python, Machine Learning, Speedcubing, Drumming and Table Tennis.
 
 education:
   courses:
@@ -47,9 +47,9 @@ user_groups:
 - Visitors
 ---
 
-I´m a Civil Engineer, but I got to know Data Science and I just loved it. I´ve worked the last 4 years as an R developer, involved in almost every aspect of the Data Science Workflow.
+I´m a Civil Engineer, but I got to know Data Science and I just loved it. I´ve worked the last 5 years as an R and Python developer, involved in almost every aspect of the Data Science Workflow.
 
-I love teaching and I aspire to eventually teach R classes to help Data Scientist around the world know and get better with this awesome language.
+I love teaching and I aspire to eventually teach Data Science classes to help Data Scientist around the world know and get better with this awesome language.
 
 In my spare time I love Drumming, playing Table Tennis, solving the Rubik´s Cube and spending time with my beautiful wife Valentina.
 

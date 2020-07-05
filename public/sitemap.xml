@@ -3,6 +3,12 @@
   
     <url>
     
+      <loc>/publication/problem-10/</loc>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/publication/problem-9/</loc>
       <lastmod>2020-02-04T00:24:56-03:00</lastmod>
     </url>
@@ -196,13 +202,13 @@
     <url>
     
       <loc>/author/admin/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-07-04T00:34:13-04:00</lastmod>
     </url>
   
     <url>
     
       <loc>/author/alfonso/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-07-04T00:34:13-04:00</lastmod>
     </url>
   
     <url>
@@ -345,8 +351,22 @@
   
     <url>
     
+      <loc>/tags/pandas/</loc>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/tags/parsnip/</loc>
       <lastmod>2019-10-16T04:27:05-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/tags/plotting/</loc>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -373,14 +393,14 @@
     <url>
     
       <loc>/tags/quick-solves/</loc>
-      <lastmod>2020-02-04T00:24:56-03:00</lastmod>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/quick-solves/</loc>
-      <lastmod>2020-02-04T00:24:56-03:00</lastmod>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -509,14 +529,14 @@
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2020-02-04T00:24:56-03:00</lastmod>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/authors/alfonso/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-07-04T00:34:13-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -530,7 +550,7 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2020-02-04T00:24:56-03:00</lastmod>
+      <lastmod>2020-07-05T00:50:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   

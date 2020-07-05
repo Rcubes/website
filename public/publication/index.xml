@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Reusable Plotting Functions in Python</title>
+      <link>/publication/problem-10/</link>
+      <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/problem-10/</guid>
+      <description>Creating reusable plotting Functions In my new job I´ve noticed they like to explain variables impact into some target in the following way:
+Normally we have a natural Rate of an Event happening shown as this TN dashed line. And you have a particular variable that is splitted into Categories showing what is the specific Rate of the Event by Category.
+Since this is happening so often, I decided to build a simple function to avoid all the work behind the scenes.</description>
+    </item>
+    
+    <item>
       <title>Calculating Recency using dplyr</title>
       <link>/publication/problem-9/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>

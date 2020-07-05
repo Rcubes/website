@@ -148,11 +148,29 @@
     </item>
     
     <item>
+      <title>Pandas</title>
+      <link>/tags/pandas/</link>
+      <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Parsnip</title>
       <link>/tags/parsnip/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/parsnip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plotting</title>
+      <link>/tags/plotting/</link>
+      <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/plotting/</guid>
       <description></description>
     </item>
     
@@ -168,7 +186,7 @@
     <item>
       <title>Quick Solves</title>
       <link>/tags/quick-solves/</link>
-      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/tags/quick-solves/</guid>
       <description></description>
