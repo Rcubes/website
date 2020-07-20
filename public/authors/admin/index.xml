@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Wed, 19 Aug 2020 00:50:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 00:50:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,16 +15,26 @@
     <item>
       <title>Using Naive Bayes as a Baseline Model</title>
       <link>/publication/problem-11/</link>
-      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/publication/problem-11/</guid>
       <description>Naive bayes The other day I had to prepare a class showing the benefits of using Naive Bayes. I have to say this is not a super powerful model, mainly because it makes assumptions that are most of the time not true. Nevertheless, I noticed this can be an excellent way to create a baseline model. It is easy, not very complicated to implement and the best thing is that is super fast.</description>
     </item>
     
     <item>
-      <title>How to use MLflow</title>
+      <title>I will start teaching</title>
+      <link>/post/teaching/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/teaching/</guid>
+      <description>Academia Desafio LatamBecause of Coronavirus pandemic I started to look for opportunities. I’m not sure if it is the right moment to do it, but I found the opportunity to start teaching Python and I took it. I applied with no hopes, and I received a reply message sharing the Data Science program syllabus plus an invitation to a technical interview.
+I won’t spoil the interview, but I found it so difficult.</description>
+    </item>
+    
+    <item>
+      <title>How to use MLflow with Python</title>
       <link>/post/mlflow/</link>
-      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 13 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/post/mlflow/</guid>
       <description>How to use MLflow I have to say that I love modeling, but at the same time it demands the best of me in terms of being organized. I´m a mess, and that definitely is not helpful when modeling. So I had to put lots of efforts on creating my own folder system that helps me to organize my code, my data and my outputs. But even having all of that there is something I couldn&amp;rsquo;t managed to organize and those are my experiments.</description>

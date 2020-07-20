@@ -7,13 +7,13 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Wed, 19 Aug 2020 00:50:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 00:50:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using Naive Bayes as a Baseline Model</title>
       <link>/publication/problem-11/</link>
-      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/publication/problem-11/</guid>
       <description>
@@ -631,9 +631,36 @@ weighted avg       0.67      0.66      0.67     71222
     </item>
     
     <item>
-      <title>How to use MLflow</title>
+      <title>I will start teaching</title>
+      <link>/post/teaching/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/teaching/</guid>
+      <description>
+
+
+&lt;div id=&#34;academia-desafio-latam&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Academia Desafio Latam&lt;/h2&gt;
+&lt;p&gt;Because of Coronavirus pandemic I started to look for opportunities. I’m not sure if it is the right moment to do it, but I found the opportunity to start teaching Python and I took it. I applied with no hopes, and I received a reply message sharing the Data Science program syllabus plus an invitation to a technical interview.&lt;/p&gt;
+&lt;p&gt;I won’t spoil the interview, but I found it so difficult. Not even in my previous or current job had such a comprehensive interview. Here in Chile, technical interviews are not very deep. I think this is mainly because recruiters or even technical leaders are not very specialized in technical aspects but focused into management.&lt;/p&gt;
+&lt;p&gt;So in my case I had 47 questions that needed to be responded live explaining concepts regarding Python, Statistics and Machine Learning. I think I was well prepared for the interview, but I got surprised of the results. I did very good at the interview, so recruiters asked me to prepare a simulated class. I prepared a Naive Bayes Model and I had to explain some of the theory behind, show examples on how the algorithm works and some other concepts regarding GAM models (I had to learn about those because I have never fitted one). Again I did well in the simulated class and today is my first day. I will try to share of the experience teaching and showcase problems that may come up when dealing with their projects.&lt;/p&gt;
+&lt;p&gt;I’m super excited, I’ve always wanted to teach Data Science in a formal Institution. And without even getting started I have to say the following things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I was really impressed about the program, if you are in Chile you can learn more &lt;a href=&#34;https://desafiolatam.com/data-science/&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;It considers Python, Statistics, Machine Learning, SQL and databases and some Big Data Frameworks. It also includes a final Capstone Project.&lt;/li&gt;
+&lt;li&gt;It’s focused on implementation in Python which is nice. A lot of theory will be covered but it is also really hands-on.&lt;/li&gt;
+&lt;li&gt;The requirements to apply are not very high, and this could be deceptive because the level in the program is quite important.&lt;/li&gt;
+&lt;li&gt;I had the chance to see the final Capstone Project Presentations and I was really impressed with the results. That is why I feel enthusiastic about the program. I really liked the results, students had to create a presentation plus designing and App with a model that solves an specific problem. In their presentations stakeholders of related fields were able to watch the results and establish job opportunities and commercial deals about the product they prototyped.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So this is it. I will be sharing more experiences, so Stay Tuned!!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to use MLflow with Python</title>
       <link>/post/mlflow/</link>
-      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 13 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/post/mlflow/</guid>
       <description>
@@ -2701,60 +2728,6 @@ dummy_function(df1, a, b)&lt;/code&gt;&lt;/pre&gt;
 &lt;div data-pagedtable=&#34;false&#34;&gt;
 &lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
 {&#34;columns&#34;:[{&#34;label&#34;:[&#34;a&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;b&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;n&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;int&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;perc&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;13&#34;,&#34;4&#34;:&#34;11.403509&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;12.280702&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;16&#34;,&#34;4&#34;:&#34;14.035088&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;3&#34;,&#34;4&#34;:&#34;2.631579&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;8.771930&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.017544&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;13&#34;,&#34;4&#34;:&#34;11.403509&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;13.157895&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;12.280702&#34;},{&#34;1&#34;:&#34;a&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.017544&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.416667&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.333333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;5&#34;,&#34;4&#34;:&#34;5.208333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.333333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.375000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;11.458333&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.375000&#34;},{&#34;1&#34;:&#34;b&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;12.500000&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.692308&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.989011&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;12.087912&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.989011&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.890110&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.791209&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.692308&#34;},{&#34;1&#34;:&#34;c&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;11&#34;,&#34;4&#34;:&#34;12.087912&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.869565&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;14&#34;,&#34;4&#34;:&#34;15.217391&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;10.869565&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;13.043478&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.782609&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.695652&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;5&#34;,&#34;4&#34;:&#34;5.434783&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;8.695652&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;7&#34;,&#34;4&#34;:&#34;7.608696&#34;},{&#34;1&#34;:&#34;d&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;9.782609&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;1&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;8.411215&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;2&#34;,&#34;3&#34;:&#34;17&#34;,&#34;4&#34;:&#34;15.887850&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;3&#34;,&#34;3&#34;:&#34;6&#34;,&#34;4&#34;:&#34;5.607477&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;4&#34;,&#34;3&#34;:&#34;12&#34;,&#34;4&#34;:&#34;11.214953&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;5&#34;,&#34;3&#34;:&#34;8&#34;,&#34;4&#34;:&#34;7.476636&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;6&#34;,&#34;3&#34;:&#34;6&#34;,&#34;4&#34;:&#34;5.607477&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;7&#34;,&#34;3&#34;:&#34;10&#34;,&#34;4&#34;:&#34;9.345794&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;8&#34;,&#34;3&#34;:&#34;9&#34;,&#34;4&#34;:&#34;8.411215&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;9&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;14.018692&#34;},{&#34;1&#34;:&#34;e&#34;,&#34;2&#34;:&#34;10&#34;,&#34;3&#34;:&#34;15&#34;,&#34;4&#34;:&#34;14.018692&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Why this is failing?</title>
-      <link>/publication/problem-3/</link>
-      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/problem-3/</guid>
-      <description>
-&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;This is a pretty typical issue. Specially when you have dealing with data a long time you just stop seeing obvious things, and you just can´t find solution to inexistant problems. For instance:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
-  filter(cyl &amp;lt; 4)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;disp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;You want to get the rows having cyl less or equal to 4 and for quite a while you keep getting 0 results.
-Obviously something is wrong with the code but you just can´t notice it.&lt;/p&gt;
-&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Solution&lt;/h2&gt;
-&lt;p&gt;Well tidylog can give you an idea. Just load tidylog and watch:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#loading the package this way to avoid verbose messages
-library(tidylog)
-mtcars %&amp;gt;%
-  filter(cyl &amp;lt; 4)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## filter: removed all rows (100%)&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;disp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
-  &lt;/script&gt;
-&lt;/div&gt;
-&lt;p&gt;Tidylog produces short log messages for dplyr and tidyr operations that help you understand what is happening with the data. Here definitely filter is incorrect, not producing an error but removing the 100% of the data, that is not what I was looking for.&lt;/p&gt;
-&lt;p&gt;Everytime you build a pipeline, tidylog will tell what is happening:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
-  filter(cyl &amp;gt; 4) %&amp;gt;%
-  select(-disp) %&amp;gt;%
-  mutate( overall = rowMeans(.)) %&amp;gt;%
-  summarize_all( ~ mean(.))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## filter: removed 11 rows (34%), 21 rows remaining&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## select: dropped one variable (disp)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## mutate: new variable &amp;#39;overall&amp;#39; with 21 unique values and 0% NA&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## summarize_all: now one row and 11 columns, ungrouped&lt;/code&gt;&lt;/pre&gt;
-&lt;div data-pagedtable=&#34;false&#34;&gt;
-&lt;script data-pagedtable-source type=&#34;application/json&#34;&gt;
-{&#34;columns&#34;:[{&#34;label&#34;:[&#34;mpg&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;cyl&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;hp&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;drat&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;wt&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;qsec&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;vs&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;am&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;gear&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;carb&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;overall&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;16.64762&#34;,&#34;2&#34;:&#34;7.333333&#34;,&#34;3&#34;:&#34;180.2381&#34;,&#34;4&#34;:&#34;3.348095&#34;,&#34;5&#34;:&#34;3.70519&#34;,&#34;6&#34;:&#34;17.17381&#34;,&#34;7&#34;:&#34;0.1904762&#34;,&#34;8&#34;:&#34;0.2380952&#34;,&#34;9&#34;:&#34;3.47619&#34;,&#34;10&#34;:&#34;3.47619&#34;,&#34;11&#34;:&#34;23.58271&#34;}],&#34;options&#34;:{&#34;columns&#34;:{&#34;min&#34;:{},&#34;max&#34;:[10]},&#34;rows&#34;:{&#34;min&#34;:[10],&#34;max&#34;:[10]},&#34;pages&#34;:{}}}
   &lt;/script&gt;
 &lt;/div&gt;
 &lt;/div&gt;

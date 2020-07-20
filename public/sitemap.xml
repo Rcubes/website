@@ -4,13 +4,19 @@
     <url>
     
       <loc>/publication/problem-11/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/post/teaching/</loc>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
     </url>
   
     <url>
     
       <loc>/post/mlflow/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
     </url>
   
     <url>
@@ -225,6 +231,13 @@
   
     <url>
     
+      <loc>/tags/academia-desafio-latam/</loc>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/author/</loc>
       <priority>0</priority>
     </url>
@@ -252,7 +265,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -350,7 +363,7 @@
     <url>
     
       <loc>/tags/mlflow/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -364,14 +377,14 @@
     <url>
     
       <loc>/tags/machine-learning-learning/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/tags/naive-bayes/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -419,7 +432,14 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2020-02-03T23:37:19-03:00</lastmod>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/categories/quick-solves/</loc>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -427,13 +447,6 @@
     
       <loc>/tags/quick-solves/</loc>
       <lastmod>2020-07-05T01:36:33-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/categories/quick-solves/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -520,7 +533,14 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2019-10-31T00:58:18-03:00</lastmod>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/categories/teaching/</loc>
+      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -562,7 +582,7 @@
     <url>
     
       <loc>/authors/admin/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -583,7 +603,7 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -618,7 +638,7 @@
     <url>
     
       <loc>/tags/sklearn/</loc>
-      <lastmod>2020-07-20T00:35:58-04:00</lastmod>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   

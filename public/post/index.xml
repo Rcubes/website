@@ -13,9 +13,19 @@
     
     
     <item>
-      <title>How to use MLflow</title>
+      <title>I will start teaching</title>
+      <link>/post/teaching/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/teaching/</guid>
+      <description>Academia Desafio LatamBecause of Coronavirus pandemic I started to look for opportunities. I’m not sure if it is the right moment to do it, but I found the opportunity to start teaching Python and I took it. I applied with no hopes, and I received a reply message sharing the Data Science program syllabus plus an invitation to a technical interview.
+I won’t spoil the interview, but I found it so difficult.</description>
+    </item>
+    
+    <item>
+      <title>How to use MLflow with Python</title>
       <link>/post/mlflow/</link>
-      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      <pubDate>Mon, 13 Jul 2020 00:50:00 +0000</pubDate>
       
       <guid>/post/mlflow/</guid>
       <description>How to use MLflow I have to say that I love modeling, but at the same time it demands the best of me in terms of being organized. I´m a mess, and that definitely is not helpful when modeling. So I had to put lots of efforts on creating my own folder system that helps me to organize my code, my data and my outputs. But even having all of that there is something I couldn&amp;rsquo;t managed to organize and those are my experiments.</description>
