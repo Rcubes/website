@@ -1,5 +1,5 @@
 ---
-title: "How to use MLflow"
+title: "How to use MLflow with Python"
 subtitle: The Basics.
 summary: This is a short tutorial on my deep dive on MLflow
 date: 2020-08-07T00:50:00
