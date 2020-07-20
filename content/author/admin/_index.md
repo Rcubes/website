@@ -26,7 +26,12 @@ name: Alfonso Tobar
 organizations:
 - name: Scotiabank Cencosud
   url: "https://www.tarjetacencosud.cl"
-role: Senior Data Scientist
+
+- name: Academia Desafío Latam
+  url: "https://desafiolatam.com/"
+  
+role: Senior Data Scientist and Instructor
+
 social:
 - icon: envelope
   icon_pack: fas
@@ -49,7 +54,7 @@ user_groups:
 
 I´m a Civil Engineer, but I got to know Data Science and I just loved it. I´ve worked the last 5 years as an R and Python developer, involved in almost every aspect of the Data Science Workflow.
 
-I love teaching and I aspire to eventually teach Data Science classes to help Data Scientist around the world know and get better with this awesome language.
+I love teaching and ~~I aspire to eventually teach~~ I'm currently teaching Intro to Python, Data Science Fundamentals and Machine Learning at Academia Desafio Latam to help Data Scientist ~~around the world~~ in Chile to get better.
 
 In my spare time I love Drumming, playing Table Tennis, solving the Rubik´s Cube and spending time with my beautiful wife Valentina.
 

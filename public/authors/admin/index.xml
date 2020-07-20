@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> &lt;i class=&#39;fab fa-creative-commons fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-by fa-2x&#39;&gt;&lt;/i&gt;&lt;i class=&#39;fab fa-creative-commons-sa fa-2x&#39;&gt;&lt;/i&gt;&lt;br&gt;&amp;copy;Alfonso Tobar. Made with &lt;i class=&#39;fab fa-r-project&#39;&gt;&lt;/i&gt; Blogdown Package.</copyright>
-    <lastBuildDate>Sun, 05 Jul 2020 00:50:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 00:50:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Naive Bayes as a Baseline Model</title>
+      <link>/publication/problem-11/</link>
+      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/problem-11/</guid>
+      <description>Naive bayes The other day I had to prepare a class showing the benefits of using Naive Bayes. I have to say this is not a super powerful model, mainly because it makes assumptions that are most of the time not true. Nevertheless, I noticed this can be an excellent way to create a baseline model. It is easy, not very complicated to implement and the best thing is that is super fast.</description>
+    </item>
+    
+    <item>
+      <title>How to use MLflow</title>
+      <link>/post/mlflow/</link>
+      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/post/mlflow/</guid>
+      <description>How to use MLflow I have to say that I love modeling, but at the same time it demands the best of me in terms of being organized. I´m a mess, and that definitely is not helpful when modeling. So I had to put lots of efforts on creating my own folder system that helps me to organize my code, my data and my outputs. But even having all of that there is something I couldn&amp;rsquo;t managed to organize and those are my experiments.</description>
+    </item>
     
     <item>
       <title>Reusable Plotting Functions in Python</title>
@@ -278,12 +296,11 @@ Ok, Long Story Short&amp;hellip; I was about to study Mathematical Engineering b
     <item>
       <title></title>
       <link>/author/admin/</link>
-      <pubDate>Sun, 05 Jul 2020 01:36:33 -0400</pubDate>
+      <pubDate>Sun, 05 Jul 2020 01:44:10 -0400</pubDate>
       
       <guid>/author/admin/</guid>
       <description>I´m a Civil Engineer, but I got to know Data Science and I just loved it. I´ve worked the last 5 years as an R and Python developer, involved in almost every aspect of the Data Science Workflow.
-I love teaching and I aspire to eventually teach Data Science classes to help Data Scientist around the world know and get better with this awesome language.
-In my spare time I love Drumming, playing Table Tennis, solving the Rubik´s Cube and spending time with my beautiful wife Valentina.</description>
+I love teaching and I aspire to eventually teach I&amp;rsquo;m currently teaching Intro to Python, Data Science Fundamentals and Machine Learning at Academia Desafio Latam to help Data Scientist around the world in Chile to get better.</description>
     </item>
     
   </channel>

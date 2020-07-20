@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Using Naive Bayes as a Baseline Model</title>
+      <link>/publication/problem-11/</link>
+      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/publication/problem-11/</guid>
+      <description>Naive bayes The other day I had to prepare a class showing the benefits of using Naive Bayes. I have to say this is not a super powerful model, mainly because it makes assumptions that are most of the time not true. Nevertheless, I noticed this can be an excellent way to create a baseline model. It is easy, not very complicated to implement and the best thing is that is super fast.</description>
+    </item>
+    
+    <item>
       <title>Reusable Plotting Functions in Python</title>
       <link>/publication/problem-10/</link>
       <pubDate>Sun, 05 Jul 2020 00:50:00 +0000</pubDate>

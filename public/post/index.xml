@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>How to use MLflow</title>
+      <link>/post/mlflow/</link>
+      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/post/mlflow/</guid>
+      <description>How to use MLflow I have to say that I love modeling, but at the same time it demands the best of me in terms of being organized. I´m a mess, and that definitely is not helpful when modeling. So I had to put lots of efforts on creating my own folder system that helps me to organize my code, my data and my outputs. But even having all of that there is something I couldn&amp;rsquo;t managed to organize and those are my experiments.</description>
+    </item>
+    
+    <item>
       <title>R vs Python, Part II</title>
       <link>/post/r-vs-python-ii/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>

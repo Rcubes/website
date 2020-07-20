@@ -130,11 +130,38 @@
     </item>
     
     <item>
+      <title>MLflow</title>
+      <link>/tags/mlflow/</link>
+      <pubDate>Fri, 07 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/mlflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Machine Learning</title>
       <link>/tags/machine-learning/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Learning</title>
+      <link>/tags/machine-learning-learning/</link>
+      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Naive Bayes</title>
+      <link>/tags/naive-bayes/</link>
+      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/naive-bayes/</guid>
       <description></description>
     </item>
     
@@ -324,6 +351,15 @@
       <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/purrr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sklearn</title>
+      <link>/tags/sklearn/</link>
+      <pubDate>Wed, 19 Aug 2020 00:50:00 +0000</pubDate>
+      
+      <guid>/tags/sklearn/</guid>
       <description></description>
     </item>
     
