@@ -19,11 +19,22 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 
+
+[[experience]]
+  title = "Data Scientist Instructor"
+  company = "Academia Desafío Latam"
+  company_url = "https://desafiolatam.com/"
+  location = "Santiago, Chile"
+  date_start = "2020-07-20"
+  date_end = ""
+  description = """Started to teach Data Science in the Intro to Python, Data Science Fundamentals and Machine Learning Modules."""
+
+
 [[experience]]
   title = "Senior Data Scientist"
   company = "Scotiabank Cencosud"
   company_url = "https://www.tarjetacencosud.cl"
-  location = "Viña del Mar, Chile"
+  location = "Vitacura, Santiago, Chile"
   date_start = "2019-11-06"
   date_end = ""
   description = """Working mainly on designing Machine Learning Models in the Advanced Analytics Department for Marketing."""
