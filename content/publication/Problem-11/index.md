@@ -1,7 +1,7 @@
 ---
 title: "Using Naive Bayes as a Baseline Model"
 summary: This is a short demo on how to implement a NB model in SKlearn
-date: 2020-08-19T00:50:00
+date: 2020-07-20T00:50:00
 categories: ["Quick Solves"]
 tags: ["Naive Bayes","sklearn", "Machine Learning Learning"]
 authors:

@@ -2,7 +2,7 @@
 title: "How to use MLflow with Python"
 subtitle: The Basics.
 summary: This is a short tutorial on my deep dive on MLflow
-date: 2020-08-07T00:50:00
+date: 2020-07-13T00:50:00
 categories: ["Blog"]
 tags: ["MLflow", "Machine Learning Learning"]
 authors:
