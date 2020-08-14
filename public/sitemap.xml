@@ -10,7 +10,7 @@
     <url>
     
       <loc>/post/teaching/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
     </url>
   
     <url>
@@ -232,7 +232,7 @@
     <url>
     
       <loc>/tags/academia-desafio-latam/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -265,7 +265,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -432,14 +432,7 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/categories/quick-solves/</loc>
-      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -447,6 +440,13 @@
     
       <loc>/tags/quick-solves/</loc>
       <lastmod>2020-07-05T01:36:33-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
+      <loc>/categories/quick-solves/</loc>
+      <lastmod>2020-07-20T01:02:15-04:00</lastmod>
       <priority>0</priority>
     </url>
   
@@ -533,14 +533,14 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
       <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/teaching/</loc>
-      <lastmod>2020-07-20T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-20T12:27:48-04:00</lastmod>
       <priority>0</priority>
     </url>
   
